@@ -1,0 +1,114 @@
+{
+  "run_id": "gemini-4-argon__baseline_zero_shot__eval_v1",
+  "assembled_by": "python -m step6_evaluation.collect_runs",
+  "parts": [
+    {
+      "source": "outputs/bench_frontier/gemini-4-argon__baseline_zero_shot__eval_id",
+      "predictions_sha256": "b2bc195515c790e0d6ee59ce8c37039161e125b78124061f0949b2fc2123ebac",
+      "n_lines": 300,
+      "ledger.json": {
+        "total_usd": 4.000566,
+        "by_model": {
+          "gemini-4-argon": {
+            "provider": "gemini",
+            "calls": 300,
+            "cache_hits": 120,
+            "batch_calls": 0,
+            "input_tokens": 1449433,
+            "output_tokens": 110170,
+            "reasoning_tokens": 0,
+            "cost_usd": 4.000566000000001,
+            "saved_by_cache_usd": 2.64404,
+            "unpriced_calls": 0
+          }
+        }
+      },
+      "run.json": {
+        "model": "gemini-4-argon (baseline_zero_shot)",
+        "gold": "data/eval_id/cases.jsonl",
+        "params": "frontier"
+      }
+    },
+    {
+      "source": "outputs/bench_frontier/gemini-4-argon__baseline_zero_shot__eval_ood_template",
+      "predictions_sha256": "e72f62b902acc74b924a1faef927d9c1e7f4716f216313e6567a875ad5d38787",
+      "n_lines": 50,
+      "ledger.json": {
+        "total_usd": 1.105296,
+        "by_model": {
+          "gemini-4-argon": {
+            "provider": "gemini",
+            "calls": 50,
+            "cache_hits": 0,
+            "batch_calls": 0,
+            "input_tokens": 402923,
+            "output_tokens": 29945,
+            "reasoning_tokens": 0,
+            "cost_usd": 1.1052960000000005,
+            "saved_by_cache_usd": 0.0,
+            "unpriced_calls": 0
+          }
+        }
+      },
+      "run.json": {
+        "model": "gemini-4-argon (baseline_zero_shot)",
+        "gold": "data/eval_ood_template/cases.jsonl",
+        "params": "frontier"
+      }
+    },
+    {
+      "source": "outputs/bench_frontier/gemini-4-argon__baseline_zero_shot__eval_ood_hand",
+      "predictions_sha256": "6c10ff431fe71d8286fd6e8349af45c0df456440b1384a9ba106b057c004f186",
+      "n_lines": 50,
+      "ledger.json": {
+        "total_usd": 1.114718,
+        "by_model": {
+          "gemini-4-argon": {
+            "provider": "gemini",
+            "calls": 50,
+            "cache_hits": 0,
+            "batch_calls": 0,
+            "input_tokens": 405069,
+            "output_tokens": 30458,
+            "reasoning_tokens": 0,
+            "cost_usd": 1.1147179999999999,
+            "saved_by_cache_usd": 0.0,
+            "unpriced_calls": 0
+          }
+        }
+      },
+      "run.json": {
+        "model": "gemini-4-argon (baseline_zero_shot)",
+        "gold": "data/eval_ood_hand/cases.jsonl",
+        "params": "frontier"
+      }
+    },
+    {
+      "source": "outputs/bench_frontier/gemini-4-argon__baseline_zero_shot__eval_ood_llm",
+      "predictions_sha256": "cb6fb8232fde952a8b468ecc400f0fe1bf850c0f3ea9b06adea83c0aea0a0880",
+      "n_lines": 100,
+      "ledger.json": {
+        "total_usd": 2.255166,
+        "by_model": {
+          "gemini-4-argon": {
+            "provider": "gemini",
+            "calls": 100,
+            "cache_hits": 0,
+            "batch_calls": 0,
+            "input_tokens": 823358,
+            "output_tokens": 60845,
+            "reasoning_tokens": 0,
+            "cost_usd": 2.2551659999999996,
+            "saved_by_cache_usd": 0.0,
+            "unpriced_calls": 0
+          }
+        }
+      },
+      "run.json": {
+        "model": "gemini-4-argon (baseline_zero_shot)",
+        "gold": "data/eval_ood_llm/cases.jsonl",
+        "params": "frontier"
+      }
+    }
+  ]
+}

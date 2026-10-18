@@ -1,0 +1,81 @@
+{
+  "train": {
+    "as_of": {
+      "n": 3000,
+      "covered": 3000,
+      "correct": 3000
+    },
+    "mrz": {
+      "n": 2801,
+      "covered": 2801,
+      "correct": 2801,
+      "no_mrz_cases": 199
+    },
+    "expiry": {
+      "n": 2911,
+      "covered": 2793,
+      "correct": 2793
+    },
+    "expired": {
+      "n": 2911,
+      "covered": 2793,
+      "correct": 2793
+    },
+    "poa_date": {
+      "n": 2972,
+      "covered": 2661,
+      "correct": 2661
+    },
+    "poa_window": {
+      "n": 2972,
+      "covered": 2661,
+      "correct": 2661
+    },
+    "expired_label_missed": {
+      "n": 155
+    },
+    "poa_nd": {
+      "ambiguous_dmy": 292,
+      "illegible_scan": 19
+    }
+  },
+  "dev": {
+    "as_of": {
+      "n": 150,
+      "covered": 150,
+      "correct": 150
+    },
+    "mrz": {
+      "n": 137,
+      "covered": 137,
+      "correct": 137,
+      "no_mrz_cases": 13
+    },
+    "expiry": {
+      "n": 146,
+      "covered": 137,
+      "correct": 137
+    },
+    "expired": {
+      "n": 146,
+      "covered": 137,
+      "correct": 137
+    },
+    "poa_date": {
+      "n": 145,
+      "covered": 129,
+      "correct": 129
+    },
+    "poa_window": {
+      "n": 145,
+      "covered": 129,
+      "correct": 129
+    },
+    "expired_label_missed": {
+      "n": 6
+    },
+    "poa_nd": {
+      "ambiguous_dmy": 16
+    }
+  }
+}

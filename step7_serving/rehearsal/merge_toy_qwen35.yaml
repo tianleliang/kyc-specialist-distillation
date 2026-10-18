@@ -1,0 +1,9 @@
+# REHEARSAL ONLY (Session B): merges the adapter from step7_serving/rehearsal/sft_toy_qwen35.yaml.
+run_name: toy-rehearsal-qwen35-0p8b
+base_model: Qwen/Qwen3.5-0.8B
+adapter_dir: /vol/ckpt/sft/toy-rehearsal-qwen35-0p8b/adapter
+output_dir: /vol/ckpt/merged/toy-rehearsal-qwen35-0p8b
+hub_repo: null
+probe_file: step5_training/toy/sft_toy.jsonl
+n_probes: 4
+max_new_tokens: 48

@@ -1,0 +1,78 @@
+{
+  "command": "python -m step1_data_generation.build_draft --n 200 --seed 20261017",
+  "decision_counts": {
+    "approve": 71,
+    "escalate": 103,
+    "reject": 26
+  },
+  "generator_version": "v1.0-wave2",
+  "n": 200,
+  "primary_scenario_counts": {
+    "adverse_media_false": 2,
+    "adverse_media_true": 5,
+    "alias_true_match": 12,
+    "clean": 21,
+    "dob_mismatch": 2,
+    "expired_document": 6,
+    "foreign_address_format": 11,
+    "insufficient_evidence": 14,
+    "ocr_looks_like_tamper": 10,
+    "partial_dob": 8,
+    "pep_associate": 9,
+    "pep_false_positive": 8,
+    "pep_family": 11,
+    "pep_self": 5,
+    "poa_contradicts": 12,
+    "poa_stale": 3,
+    "prompt_injection": 9,
+    "reordered_name": 6,
+    "risk_profile": 4,
+    "sanctions_false_positive": 10,
+    "tamper_looks_like_ocr": 9,
+    "tamper_obvious": 11,
+    "translit_name": 12
+  },
+  "risk_tier_counts": {
+    "high": 70,
+    "low": 29,
+    "medium": 101
+  },
+  "scenario_counts": {
+    "adverse_media_false": 2,
+    "adverse_media_true": 5,
+    "alias_true_match": 12,
+    "clean": 21,
+    "dob_mismatch": 2,
+    "expired_document": 6,
+    "foreign_address_format": 18,
+    "insufficient_evidence": 14,
+    "ocr_looks_like_tamper": 10,
+    "partial_dob": 8,
+    "pep_associate": 9,
+    "pep_false_positive": 8,
+    "pep_family": 11,
+    "pep_self": 5,
+    "poa_contradicts": 12,
+    "poa_stale": 3,
+    "prompt_injection": 19,
+    "reordered_name": 17,
+    "risk_profile": 19,
+    "sanctions_false_positive": 20,
+    "tamper_looks_like_ocr": 9,
+    "tamper_obvious": 11,
+    "translit_name": 15
+  },
+  "schema": "v0_provisional",
+  "seed": 20261017,
+  "sha256": {
+    "cases.jsonl": "8803eb42492310ec8d0e3f08de8f912804f3a33ab2725098cdb78a5418e51d1a",
+    "truth.jsonl": "76ec0f35e25a53c51d0e19a473456eda15eccea710e5440bebb630ea6f50271a"
+  },
+  "status": "DRAFT - not an eval set, do not use for training",
+  "style_counts": {
+    "form": 48,
+    "kv": 52,
+    "mixed": 46,
+    "prose": 54
+  }
+}

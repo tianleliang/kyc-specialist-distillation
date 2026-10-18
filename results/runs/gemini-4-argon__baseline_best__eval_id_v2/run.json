@@ -1,0 +1,8 @@
+{
+  "model": "Gemini 4 Argon (best prompt)",
+  "params": "frontier (undisclosed)",
+  "price_key": "gemini-4-argon",
+  "gold": "data/eval_id_v2/cases.jsonl",
+  "table1_group": "eval_id_v2",
+  "table1_order": 2
+}

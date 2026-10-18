@@ -1,0 +1,4 @@
+{
+  "model": "Qwen3.5-0.8B (baseline_zero_shot) eval_ood_hand",
+  "gold": "data/eval_ood_hand/cases.jsonl"
+}

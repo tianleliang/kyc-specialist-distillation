@@ -1,0 +1,4 @@
+# Merged over step6_evaluation/metrics.py:DEFAULT_PRICES by make_tables.sh.
+# Self-hosted runs were scored on one Modal L4 with 16 concurrent requests, so the GPU-hour is
+# shared by 16 in-flight cases: cost per case = usd_per_hour * latency / 3600 / 16.
+modal-l4-c16: {usd_per_hour: 0.80, concurrency: 16}

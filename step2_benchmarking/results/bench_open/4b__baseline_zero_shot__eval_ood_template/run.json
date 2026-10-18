@@ -1,0 +1,4 @@
+{
+  "model": "Qwen3.5-4B (baseline_zero_shot) eval_ood_template",
+  "gold": "data/eval_ood_template/cases.jsonl"
+}

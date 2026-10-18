@@ -1,0 +1,5 @@
+{
+  "model": "claude-opus-5-5 (baseline_zero_shot)",
+  "gold": "data/eval_id/cases.jsonl",
+  "params": "frontier"
+}

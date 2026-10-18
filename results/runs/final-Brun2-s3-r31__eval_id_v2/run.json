@@ -1,0 +1,13 @@
+{
+  "model": "B-run2 halfway, served with reader v3.1",
+  "params": "4B",
+  "price_key": "modal-l4-c16",
+  "gold": "data/eval_id_v2/cases.jsonl",
+  "table1_group": "eval_id_v2",
+  "table1_order": 12,
+  "display": {
+    "latency_p50_ms": "not deployed",
+    "latency_p95_ms": "not deployed",
+    "cost_per_1k_usd": "not deployed"
+  }
+}

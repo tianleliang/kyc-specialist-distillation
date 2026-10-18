@@ -1,0 +1,21 @@
+# secrets
+.env
+.env.*
+!.env.example
+*.key
+Keys.md
+# python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+# data / outputs (large or regenerable)
+data/raw/
+step3_domain_adapter/corpus/*.pdf
+outputs/
+checkpoints/
+*.safetensors
+*.bin
+wandb/
+.DS_Store
+step3_domain_adapter/corpus/manual_pdfs/

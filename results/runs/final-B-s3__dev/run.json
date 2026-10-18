@@ -1,0 +1,13 @@
+{
+  "model": "B halfway (+ pre-checks v2)",
+  "params": "4B",
+  "price_key": "modal-l4-c16",
+  "gold": "data/dev/cases.jsonl",
+  "table1_group": "dev",
+  "table1_order": 115,
+  "display": {
+    "latency_p50_ms": "not deployed",
+    "latency_p95_ms": "not deployed",
+    "cost_per_1k_usd": "not deployed"
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "judge_model": "claude-sonnet-5-5",
+  "n_verdicts": 24060,
+  "prompt": "step0_rules/prompts/judge_unsupported_claims_v2.md",
+  "runs": {
+    "0.8b__baseline_best__eval_id": {
+      "n_sentences_judged": 1686,
+      "n_unjudged": 0,
+      "n_unsupported": 1072,
+      "unsupported_rate": 0.6358244365361803
+    },
+    "0.8b__baseline_zero_shot__eval_id": {
+      "n_sentences_judged": 1603,
+      "n_unjudged": 0,
+      "n_unsupported": 1181,
+      "unsupported_rate": 0.7367436057392389
+    },
+    "2b__baseline_best__eval_id": {
+      "n_sentences_judged": 1894,
+      "n_unjudged": 0,
+      "n_unsupported": 869,
+      "unsupported_rate": 0.4588173178458289
+    },
+    "2b__baseline_zero_shot__eval_id": {
+      "n_sentences_judged": 2256,
+      "n_unjudged": 0,
+      "n_unsupported": 1448,
+      "unsupported_rate": 0.6418439716312057
+    },
+    "4b__baseline_best__eval_id": {
+      "n_sentences_judged": 1989,
+      "n_unjudged": 0,
+      "n_unsupported": 1056,
+      "unsupported_rate": 0.530920060331825
+    },
+    "4b__baseline_zero_shot__eval_id": {
+      "n_sentences_judged": 1626,
+      "n_unjudged": 0,
+      "n_unsupported": 970,
+      "unsupported_rate": 0.5965559655596556
+    },
+    "claude-opus-5-5__baseline_best__eval_id": {
+      "n_sentences_judged": 1852,
+      "n_unjudged": 0,
+      "n_unsupported": 154,
+      "unsupported_rate": 0.08315334773218143
+    },
+    "claude-opus-5-5__baseline_zero_shot__eval_id": {
+      "n_sentences_judged": 1748,
+      "n_unjudged": 0,
+      "n_unsupported": 324,
+      "unsupported_rate": 0.1853546910755149
+    },
+    "final-A-s3__eval_id": {
+      "n_sentences_judged": 1847,
+      "n_unjudged": 0,
+      "n_unsupported": 284,
+      "unsupported_rate": 0.1537628586897672
+    },
+    "final-A-s4__eval_id": {
+      "n_sentences_judged": 1850,
+      "n_unjudged": 0,
+      "n_unsupported": 276,
+      "unsupported_rate": 0.1491891891891892
+    },
+    "final-B-s3__eval_id": {
+      "n_sentences_judged": 1849,
+      "n_unjudged": 0,
+      "n_unsupported": 246,
+      "unsupported_rate": 0.13304488912925905
+    },
+    "final-B-s4__eval_id": {
+      "n_sentences_judged": 1847,
+      "n_unjudged": 0,
+      "n_unsupported": 262,
+      "unsupported_rate": 0.14185165132647537
+    },
+    "final-Brun2-s3__eval_id": {
+      "n_sentences_judged": 1849,
+      "n_unjudged": 0,
+      "n_unsupported": 304,
+      "unsupported_rate": 0.1644131963223364
+    },
+    "final-Brun2-s4__eval_id": {
+      "n_sentences_judged": 1851,
+      "n_unjudged": 0,
+      "n_unsupported": 320,
+      "unsupported_rate": 0.1728795245813074
+    },
+    "gemini-4-argon__baseline_best__eval_id": {
+      "n_sentences_judged": 1849,
+      "n_unjudged": 0,
+      "n_unsupported": 162,
+      "unsupported_rate": 0.08761492698756085
+    },
+    "gemini-4-argon__baseline_zero_shot__eval_id": {
+      "n_sentences_judged": 1629,
+      "n_unjudged": 0,
+      "n_unsupported": 370,
+      "unsupported_rate": 0.22713321055862493
+    },
+    "gpt-6-astra__baseline_best__eval_id": {
+      "n_sentences_judged": 1859,
+      "n_unjudged": 0,
+      "n_unsupported": 136,
+      "unsupported_rate": 0.07315761161915008
+    },
+    "gpt-6-astra__baseline_zero_shot__eval_id": {
+      "n_sentences_judged": 1720,
+      "n_unjudged": 0,
+      "n_unsupported": 313,
+      "unsupported_rate": 0.1819767441860465
+    }
+  }
+}

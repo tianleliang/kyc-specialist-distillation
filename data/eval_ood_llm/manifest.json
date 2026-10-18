@@ -1,0 +1,183 @@
+{
+  "command": "python -m step1_data_generation.ood_llm --allow-eval --n 100 --seed 4020000",
+  "config_path": "step1_data_generation\\configs\\eval_ood_template.yaml",
+  "cost": {
+    "by_model": {
+      "claude-sonnet-5-5": {
+        "batch_calls": 0,
+        "cache_hits": 63,
+        "calls": 63,
+        "cost_usd": 0.0,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "provider": "anthropic",
+        "reasoning_tokens": 0,
+        "saved_by_cache_usd": 1.010626,
+        "unpriced_calls": 0
+      },
+      "gemini-3.8-flash": {
+        "batch_calls": 0,
+        "cache_hits": 62,
+        "calls": 62,
+        "cost_usd": 0.0,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "provider": "gemini",
+        "reasoning_tokens": 0,
+        "saved_by_cache_usd": 0.2749725,
+        "unpriced_calls": 0
+      }
+    },
+    "total_usd": 0.0
+  },
+  "decision_counts": {
+    "approve": 34,
+    "escalate": 62,
+    "reject": 4
+  },
+  "generator_version": "v1.0-wave2",
+  "git_commit": "d1f03448101d0737224480bd6ea3741ceb7573d8",
+  "kept_by_model": {
+    "claude-sonnet-5-5": 51,
+    "gemini-3.8-flash": 49
+  },
+  "mock": false,
+  "models": [
+    "claude-sonnet-5-5",
+    "gemini-3.8-flash"
+  ],
+  "n_kept": 100,
+  "n_rendered": 125,
+  "n_target": 100,
+  "oversample": 1.25,
+  "prompt": {
+    "system_sha256": "fc9389decd6213a0cda34876886254cf1edaafe61894224b1965d5580f162658",
+    "template": "ood_renderer",
+    "template_sha256": "b7f2a1d0dfe433a028b5ef22ea29e361374304aa4893d851a47fa9e56f6c2d78",
+    "vars_sha256": {
+      "required_strings": "669845a69f7cead2d4dc08b7b40821f27ad13fbad68bc6b4829a0f1cb4f0ab17",
+      "style": "a26ef20ed17303e2655d844c9e8735059c90a6ddc712bd14ceb233a3028b5a70",
+      "truth": "8bdfc9536d934a78506978dc1d913a193ae3c362deff4be4c916cf84e2ea88cd"
+    }
+  },
+  "renderer": "llm_ood_renderer_v1",
+  "schema": "v1",
+  "seed": 4020000,
+  "sha256": {
+    "cases.jsonl": "f25c221f69b0e87cf3c530467e30ecdd7cc70d361891ddc06efe5eb6cf81c901",
+    "dropped.jsonl": "289898976cac6e553ff913aeacf43cf4096b28791e72f4e5177d748169d8babc",
+    "truth.jsonl": "7408620d82c2fa412e9742135b1781e0b11203fe086ea3500edb68e762b0b036"
+  },
+  "split": "eval_ood_llm",
+  "status_by_model": {
+    "claude-sonnet-5-5": {
+      "kept": 51,
+      "surplus": 12
+    },
+    "gemini-3.8-flash": {
+      "kept": 49,
+      "missing_or_fixed": 1,
+      "surplus": 12
+    }
+  },
+  "status_by_primary_scenario": {
+    "adverse_media_false": {
+      "kept": 4,
+      "missing_or_fixed": 1
+    },
+    "adverse_media_true": {
+      "kept": 3,
+      "surplus": 1
+    },
+    "alias_true_match": {
+      "kept": 3
+    },
+    "clean": {
+      "kept": 5,
+      "surplus": 2
+    },
+    "dob_mismatch": {
+      "kept": 6,
+      "surplus": 1
+    },
+    "expired_document": {
+      "kept": 6,
+      "surplus": 1
+    },
+    "foreign_address_format": {
+      "kept": 3
+    },
+    "insufficient_evidence": {
+      "kept": 5
+    },
+    "name_mismatch": {
+      "kept": 3
+    },
+    "ocr_looks_like_tamper": {
+      "kept": 6,
+      "surplus": 2
+    },
+    "partial_dob": {
+      "kept": 1,
+      "surplus": 1
+    },
+    "pep_associate": {
+      "kept": 2,
+      "surplus": 1
+    },
+    "pep_false_positive": {
+      "kept": 3
+    },
+    "pep_family": {
+      "kept": 7,
+      "surplus": 2
+    },
+    "pep_self": {
+      "kept": 3,
+      "surplus": 2
+    },
+    "poa_contradicts": {
+      "kept": 4,
+      "surplus": 2
+    },
+    "poa_name_differs": {
+      "kept": 4
+    },
+    "poa_stale": {
+      "kept": 4,
+      "surplus": 1
+    },
+    "prompt_injection": {
+      "kept": 6
+    },
+    "reordered_name": {
+      "kept": 2,
+      "surplus": 1
+    },
+    "risk_profile": {
+      "kept": 1,
+      "surplus": 2
+    },
+    "sanctions_false_positive": {
+      "kept": 7,
+      "surplus": 2
+    },
+    "tamper_looks_like_ocr": {
+      "kept": 3,
+      "surplus": 1
+    },
+    "tamper_obvious": {
+      "kept": 1,
+      "surplus": 1
+    },
+    "translit_name": {
+      "kept": 8,
+      "surplus": 1
+    }
+  },
+  "status_totals": {
+    "kept": 100,
+    "missing_or_fixed": 1,
+    "surplus": 24
+  }
+}

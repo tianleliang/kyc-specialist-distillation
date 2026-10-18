@@ -1,0 +1,31 @@
+# Placeholder rows and sections for results that do not exist yet (rendered as PENDING by
+# step6_evaluation/report.py --pending). Remove an entry once its run is in results/runs/.
+intro: |
+  **Draft (Sun 10/18, Session D).** All numbers below are computed from the committed runs in `results/runs/`
+  (rebuild: `bash make_tables.sh`). Rows and columns marked PENDING / pending are not measured yet:
+  B-v3 (pre-checker reader v3 + retrain), the LLM-judge unsupported-claims column (Session J, `eval_id` only),
+  and latency / cost of our model (measured at deploy, one warm L4, concurrency 1:
+  `python -m step7_serving.measure_latency`). Frontier models run without tools, as customers use them;
+  Final B uses the code pre-checks (packet text only), and both rows (model alone = A, model + pre-checks = B) are reported.
+table1:
+  - group: eval_v1
+    model: "B-v3 (after diagnosis): pre-checker reader v3 + retrain"
+    params: 4B
+    cases: 500
+  - group: eval_hard
+    model: "B-v3 (after diagnosis)"
+    params: 4B
+    cases: 150
+table2:
+  - pipeline: "v1 B: model + pre-checks"
+    stage: "B-v3 halfway (pre-checker reader v3)"
+    compared_to: "+ pre-checks v2 (halfway) (B halfway)"
+  - pipeline: "v1 B: model + pre-checks"
+    stage: "B-v3 final (+ post-train)"
+    compared_to: "B-v3 halfway"
+sections:
+  - title: "Fresh eval_id v2 (generated Sun, untouched): B-v3 vs Argon"
+    text: |
+      **PENDING.** A fresh in-distribution set generated Sunday from a new seed range, frozen before any model saw it,
+      scored once for B-v3 and Gemini 4 Argon (best prompt). Purpose: a check that B-v3's diagnosis-driven fixes
+      (made after looking at frozen-v1 errors) did not overfit frozen v1. Numbers go here when the run exists.

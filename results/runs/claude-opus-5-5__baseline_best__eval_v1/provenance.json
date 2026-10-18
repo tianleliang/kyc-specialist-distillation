@@ -1,0 +1,114 @@
+{
+  "run_id": "claude-opus-5-5__baseline_best__eval_v1",
+  "assembled_by": "python -m step6_evaluation.collect_runs",
+  "parts": [
+    {
+      "source": "outputs/bench_frontier/claude-opus-5-5__baseline_best__eval_id",
+      "predictions_sha256": "89d154a467d4f7160b67e22a424591102c799569c94816056fcc9d19e59090a0",
+      "n_lines": 300,
+      "ledger.json": {
+        "total_usd": 34.948832,
+        "by_model": {
+          "claude-opus-5-5": {
+            "provider": "anthropic",
+            "calls": 300,
+            "cache_hits": 0,
+            "batch_calls": 0,
+            "input_tokens": 6797598,
+            "output_tokens": 387922,
+            "reasoning_tokens": 0,
+            "cost_usd": 34.94883200000002,
+            "saved_by_cache_usd": 0.0,
+            "unpriced_calls": 0
+          }
+        }
+      },
+      "run.json": {
+        "model": "claude-opus-5-5 (baseline_best)",
+        "gold": "data/eval_id/cases.jsonl",
+        "params": "frontier"
+      }
+    },
+    {
+      "source": "outputs/bench_frontier/claude-opus-5-5__baseline_best__eval_ood_template",
+      "predictions_sha256": "f74d00a0193ae543450ab8fc78239ba8859d227db748f51c329e853382db56b0",
+      "n_lines": 50,
+      "ledger.json": {
+        "total_usd": 5.866776,
+        "by_model": {
+          "claude-opus-5-5": {
+            "provider": "anthropic",
+            "calls": 50,
+            "cache_hits": 0,
+            "batch_calls": 0,
+            "input_tokens": 1134789,
+            "output_tokens": 66381,
+            "reasoning_tokens": 0,
+            "cost_usd": 5.8667760000000015,
+            "saved_by_cache_usd": 0.0,
+            "unpriced_calls": 0
+          }
+        }
+      },
+      "run.json": {
+        "model": "claude-opus-5-5 (baseline_best)",
+        "gold": "data/eval_ood_template/cases.jsonl",
+        "params": "frontier"
+      }
+    },
+    {
+      "source": "outputs/bench_frontier/claude-opus-5-5__baseline_best__eval_ood_hand",
+      "predictions_sha256": "157214498f177f6da37622569fdafbd564666f51b8c7727caeaf5d73f0c7908f",
+      "n_lines": 50,
+      "ledger.json": {
+        "total_usd": 5.869312,
+        "by_model": {
+          "claude-opus-5-5": {
+            "provider": "anthropic",
+            "calls": 50,
+            "cache_hits": 0,
+            "batch_calls": 0,
+            "input_tokens": 1136128,
+            "output_tokens": 66240,
+            "reasoning_tokens": 0,
+            "cost_usd": 5.869312,
+            "saved_by_cache_usd": 0.0,
+            "unpriced_calls": 0
+          }
+        }
+      },
+      "run.json": {
+        "model": "claude-opus-5-5 (baseline_best)",
+        "gold": "data/eval_ood_hand/cases.jsonl",
+        "params": "frontier"
+      }
+    },
+    {
+      "source": "outputs/bench_frontier/claude-opus-5-5__baseline_best__eval_ood_llm",
+      "predictions_sha256": "301f34497244aa7a7c4f325effb41aa669f33b5180d0feeb98990efd5f95a46c",
+      "n_lines": 100,
+      "ledger.json": {
+        "total_usd": 11.649428,
+        "by_model": {
+          "claude-opus-5-5": {
+            "provider": "anthropic",
+            "calls": 100,
+            "cache_hits": 0,
+            "batch_calls": 0,
+            "input_tokens": 2289992,
+            "output_tokens": 124473,
+            "reasoning_tokens": 0,
+            "cost_usd": 11.649427999999999,
+            "saved_by_cache_usd": 0.0,
+            "unpriced_calls": 0
+          }
+        }
+      },
+      "run.json": {
+        "model": "claude-opus-5-5 (baseline_best)",
+        "gold": "data/eval_ood_llm/cases.jsonl",
+        "params": "frontier"
+      }
+    }
+  ]
+}

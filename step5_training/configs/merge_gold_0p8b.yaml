@@ -1,0 +1,14 @@
+run_name: merge-sft-gold-qwen35-0p8b
+base_model: Qwen/Qwen3.5-0.8B
+adapter_dir: /vol/ckpt/sft/sft-gold-qwen35-0p8b/adapter
+output_dir: /vol/ckpt/merged/sft-gold-qwen35-0p8b
+hub_repo: null
+hub_private: true
+push_adapter: true
+probe_file: data/sft/gold_dev_probe.jsonl
+n_probes: 8
+max_new_tokens: 96
+min_differing_probes: 0   # post-train (s4) changes logits but not the first 96 greedy tokens; logit-delta check (>=1e-3) still guards
+enable_thinking: false
+gpu: L4
+timeout_hours: 1

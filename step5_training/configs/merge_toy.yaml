@@ -1,0 +1,9 @@
+# REHEARSAL ONLY: merges the adapter from sft_toy.yaml.
+run_name: toy-sft-rehearsal
+base_model: Qwen/Qwen3-0.6B
+adapter_dir: /vol/ckpt/sft/toy-sft-rehearsal/adapter
+output_dir: /vol/ckpt/merged/toy-sft-rehearsal
+hub_repo: null
+probe_file: step5_training/toy/sft_toy.jsonl
+n_probes: 4
+max_new_tokens: 48

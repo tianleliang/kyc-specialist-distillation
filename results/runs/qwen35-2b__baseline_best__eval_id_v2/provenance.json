@@ -1,0 +1,81 @@
+{
+  "run_id": "qwen35-2b__baseline_best__eval_id_v2",
+  "assembled_by": "python -m step6_evaluation.collect_runs",
+  "parts": [
+    {
+      "source": "outputs/bench_open/2b__baseline_best__eval_id_v2",
+      "predictions_sha256": "f441e613853ba2f93b7cbc9abda933bc43b2caa3590a91e76b7a6bfb259613f7",
+      "n_lines": 300,
+      "endpoint_run.json": {
+        "started_utc": "2026-10-18T22:44:03+00:00",
+        "base_url": "https://tianleliang--zorbe-bench-2b-v2-vllm.us-east.modal.run/v1",
+        "model": "Qwen3.5-2B",
+        "api_key_env": "VLLM_API_KEY",
+        "cases": "data/eval_id_v2/cases.jsonl",
+        "cases_sha256": "01b7079bda7d5e26d711db226efb63e477d7d44b6dd40c65ed4e0c76c01b8892",
+        "n_cases": 300,
+        "n_written": 300,
+        "n_errors": 0,
+        "n_proxy_fallbacks": 0,
+        "n_cached": 0,
+        "n_resumed": 0,
+        "concurrency": 16,
+        "warmup": 2,
+        "wall_s": 275.238,
+        "throughput_cases_per_s": 1.09,
+        "latency_p50_ms": 14093.135,
+        "latency_p95_ms": 19505.4205,
+        "request": {
+          "prompt": "baseline_best",
+          "response_format": "json_schema",
+          "max_tokens": 2048,
+          "temperature": 0.0,
+          "extra_body": {},
+          "prechecks": false,
+          "template": "baseline_best",
+          "template_sha256": "ddb459d147cae2f834180a404d43af7695514166f185775b7899596392aeb308",
+          "system_sha256": "9b3b4620bc72f5aa383022fc38f5a5b633362e6cd5a210fa6cd90dd1517f3c5a",
+          "vars_sha256": {
+            "schema": "b9fbde069819fd001d2a83215bf001a8b4d836760f9f11a5f16f676b4c2d7d82",
+            "policy": "9f30e2c8fc95233496c1f218e90d2fee30b0dc5514e08c9838b720371b5dc652",
+            "field_guide": "23216e0492ea39c79c30d838bce49e6aae240d58007d6e1bd496af2b89e76474",
+            "examples": "a852da45ca883840856dc85eab5883d16904200361da83ab5fe4930753515420"
+          },
+          "few_shot_case_ids": [
+            "trn-1000000-001577",
+            "trn-1000000-001026"
+          ],
+          "schema_sha256": "df82fd48feb4642e0fb699447c4ae98eb19803263cd0a4a487ae8058a18cb41a"
+        },
+        "argv": [
+          "--cases",
+          "data/eval_id_v2/cases.jsonl",
+          "--out",
+          "outputs/bench_open/2b__baseline_best__eval_id_v2",
+          "--base-url",
+          "https://tianleliang--zorbe-bench-2b-v2-vllm.us-east.modal.run/v1",
+          "--model",
+          "Qwen3.5-2B",
+          "--api-key-env",
+          "VLLM_API_KEY",
+          "--prompt",
+          "baseline_best",
+          "--frontier-prompt",
+          "--response-format",
+          "schema",
+          "--schema",
+          "step0_rules/schema/v1_serving.json",
+          "--warmup",
+          "2",
+          "--concurrency",
+          "16",
+          "--resume"
+        ]
+      },
+      "run.json": {
+        "model": "Qwen3.5-2B",
+        "gold": "data/eval_id_v2/cases.jsonl"
+      }
+    }
+  ]
+}

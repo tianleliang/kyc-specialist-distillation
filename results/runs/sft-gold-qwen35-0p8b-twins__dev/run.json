@@ -1,0 +1,13 @@
+{
+  "model": "gold SFT 0.8B + twins",
+  "params": "0.8B",
+  "price_key": "modal-l4-c16",
+  "gold": "data/dev/cases.jsonl",
+  "table1_group": "dev",
+  "table1_order": 1,
+  "display": {
+    "latency_p50_ms": "not deployed",
+    "latency_p95_ms": "not deployed",
+    "cost_per_1k_usd": "not deployed"
+  }
+}

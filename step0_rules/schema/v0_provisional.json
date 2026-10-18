@@ -1,0 +1,238 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/tianleliang/zorbe-kyc/schema/v0_provisional.json",
+  "title": "KYC case adjudication output, v0 PROVISIONAL",
+  "description": "PROVISIONAL overnight placeholder so the pipeline can be tested end to end. NOT the submission schema; Tianle sets the real one. Flat and enum-heavy; no oneOf/anyOf, no pattern/format keywords, every object closed and every property required, so it fits OpenAI strict structured outputs, Anthropic and Gemini.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "identity",
+    "screening",
+    "risk_tier",
+    "risk_drivers",
+    "required_actions",
+    "decision",
+    "narrative"
+  ],
+  "$defs": {
+    "finding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "reason_code",
+        "reason"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "consistent",
+            "mismatch",
+            "unreadable"
+          ]
+        },
+        "reason_code": {
+          "type": "string",
+          "enum": [
+            "exact_match",
+            "transliteration_variant",
+            "name_order_variant",
+            "different_name",
+            "declared_vs_document_mismatch",
+            "ocr_noise_repaired",
+            "possible_ocr_or_tamper",
+            "tamper_indicators",
+            "document_expired",
+            "illegible",
+            "not_on_document",
+            "poa_address_matches",
+            "poa_address_format_variant",
+            "poa_address_contradicts",
+            "poa_outside_window",
+            "poa_missing",
+            "poa_illegible"
+          ]
+        },
+        "reason": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "properties": {
+    "identity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "verified",
+        "name",
+        "date_of_birth",
+        "document_number",
+        "expiry",
+        "address"
+      ],
+      "properties": {
+        "verified": {
+          "type": "boolean"
+        },
+        "name": {
+          "$ref": "#/$defs/finding"
+        },
+        "date_of_birth": {
+          "$ref": "#/$defs/finding"
+        },
+        "document_number": {
+          "$ref": "#/$defs/finding"
+        },
+        "expiry": {
+          "$ref": "#/$defs/finding"
+        },
+        "address": {
+          "$ref": "#/$defs/finding"
+        }
+      }
+    },
+    "screening": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "hit_id",
+          "disposition",
+          "evidence",
+          "rationale"
+        ],
+        "properties": {
+          "hit_id": {
+            "type": "string"
+          },
+          "disposition": {
+            "type": "string",
+            "enum": [
+              "true_match",
+              "false_positive",
+              "needs_review"
+            ]
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "name_exact",
+                "name_variant_or_alias",
+                "name_partial",
+                "dob_exact",
+                "dob_partial",
+                "dob_mismatch",
+                "dob_not_listed",
+                "nationality_match",
+                "nationality_mismatch",
+                "nationality_not_listed",
+                "pep_relationship_listed",
+                "age_consistent",
+                "age_conflicts",
+                "location_matches",
+                "location_differs",
+                "occupation_matches",
+                "occupation_differs",
+                "no_secondary_identifiers"
+              ]
+            }
+          },
+          "rationale": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "risk_tier": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ]
+    },
+    "risk_drivers": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "sanctions_match",
+          "pep_exposure",
+          "pep_associate_or_family",
+          "adverse_media",
+          "unresolved_screening_hit",
+          "document_integrity_concern",
+          "identity_inconsistency",
+          "insufficient_evidence",
+          "expired_document",
+          "address_unverified",
+          "packet_contains_instructions",
+          "high_risk_occupation",
+          "source_of_funds_inconsistent",
+          "activity_inconsistent",
+          "high_risk_product_remote_channel",
+          "cross_border"
+        ]
+      }
+    },
+    "required_actions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "request_valid_id_document",
+          "request_document_rescan_or_original",
+          "request_new_proof_of_address",
+          "confirm_details_with_applicant",
+          "verify_source_of_funds",
+          "verify_source_of_wealth",
+          "senior_management_approval",
+          "enhanced_ongoing_monitoring",
+          "manual_screening_review",
+          "adverse_media_review",
+          "sanctions_compliance_review",
+          "document_fraud_review",
+          "security_review_of_packet"
+        ]
+      }
+    },
+    "decision": {
+      "type": "string",
+      "enum": [
+        "approve",
+        "reject",
+        "escalate"
+      ]
+    },
+    "narrative": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 8,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "sentence",
+          "evidence_refs"
+        ],
+        "properties": {
+          "sentence": {
+            "type": "string"
+          },
+          "evidence_refs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Packet section ids the sentence relies on: CTX, APP, ID, MRZ, POA, SCR, or a hit id (H1, H2, ...)."
+          }
+        }
+      }
+    }
+  }
+}

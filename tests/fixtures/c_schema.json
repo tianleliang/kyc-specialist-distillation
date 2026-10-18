@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "TEST FIXTURE for Session C's eval harness only. Not a schema proposal or decision.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["identity", "screening", "risk_tier", "risk_drivers", "required_actions", "decision", "narrative"],
+  "properties": {
+    "identity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["verified", "findings"],
+      "properties": {
+        "verified": {"type": "boolean"},
+        "findings": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["field", "status", "reason"],
+            "properties": {
+              "field": {"enum": ["name", "dob", "document_number", "expiry", "address"]},
+              "status": {"enum": ["consistent", "mismatch", "unreadable"]},
+              "reason": {"type": "string"}
+            }
+          }
+        }
+      }
+    },
+    "screening": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["hit_id", "disposition", "evidence"],
+        "properties": {
+          "hit_id": {"type": "string"},
+          "disposition": {"enum": ["true_match", "false_positive", "needs_review"]},
+          "evidence": {"type": "string"}
+        }
+      }
+    },
+    "risk_tier": {"enum": ["low", "medium", "high"]},
+    "risk_drivers": {"type": "array", "items": {"type": "string"}},
+    "required_actions": {
+      "type": "array",
+      "items": {"enum": ["verify_source_of_funds", "request_new_id", "request_new_poa", "senior_approval", "enhanced_monitoring", "manual_screening_review"]}
+    },
+    "decision": {"enum": ["approve", "reject", "escalate"]},
+    "narrative": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["sentence", "evidence_refs"],
+        "properties": {
+          "sentence": {"type": "string"},
+          "evidence_refs": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    }
+  }
+}

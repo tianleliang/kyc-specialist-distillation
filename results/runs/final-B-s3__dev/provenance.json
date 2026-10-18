@@ -1,0 +1,71 @@
+{
+  "run_id": "final-B-s3__dev",
+  "assembled_by": "python -m step6_evaluation.collect_runs",
+  "parts": [
+    {
+      "source": "outputs/student/final-B-s3__dev",
+      "predictions_sha256": "add9e3b6e80cd78b60b6006a89218cca3a204f0f714b0924fd78c2e78e8d436d",
+      "n_lines": 150,
+      "endpoint_run.json": {
+        "started_utc": "2026-10-18T05:09:34+00:00",
+        "base_url": "https://tianleliang--zorbe-final-b-s3-vllm.us-east.modal.run/v1",
+        "model": "final-B-s3",
+        "api_key_env": "VLLM_API_KEY",
+        "cases": "data/dev/cases.jsonl",
+        "cases_sha256": "b18c5b04959ea79a949c397c662bab9b1d0d22f3bada691295224306e84e0cd8",
+        "n_cases": 150,
+        "n_written": 150,
+        "n_errors": 0,
+        "n_proxy_fallbacks": 0,
+        "n_cached": 0,
+        "n_resumed": 0,
+        "concurrency": 16,
+        "warmup": 2,
+        "wall_s": 428.449,
+        "throughput_cases_per_s": 0.35,
+        "latency_p50_ms": 34062.085,
+        "latency_p95_ms": 132872.29200000002,
+        "request": {
+          "prompt": "student_short",
+          "response_format": "json_schema",
+          "max_tokens": 2048,
+          "temperature": 0.0,
+          "extra_body": {},
+          "prechecks": true,
+          "template": "student_short",
+          "template_sha256": "ffb18a734e5c01265763eb6ba631df855d072b2c466fc68fc874a62f56fbbe2b",
+          "system_sha256": "f84d656eb20f0cd2078b2907310f8812b754e4825c7a8476249d47f4d9298ff9",
+          "vars_sha256": {},
+          "few_shot_case_ids": [],
+          "schema_sha256": "df82fd48feb4642e0fb699447c4ae98eb19803263cd0a4a487ae8058a18cb41a"
+        },
+        "argv": [
+          "--cases",
+          "data/dev/cases.jsonl",
+          "--out",
+          "outputs/student/final-B-s3__dev",
+          "--base-url",
+          "https://tianleliang--zorbe-final-b-s3-vllm.us-east.modal.run/v1",
+          "--model",
+          "final-B-s3",
+          "--api-key-env",
+          "VLLM_API_KEY",
+          "--prompt",
+          "student_short",
+          "--schema",
+          "step0_rules/schema/v1_serving.json",
+          "--warmup",
+          "2",
+          "--concurrency",
+          "16",
+          "--resume",
+          "--prechecks"
+        ]
+      },
+      "run.json": {
+        "model": "final-B-s3",
+        "gold": "data/dev/cases.jsonl"
+      }
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+# kyc-specialist-distillation
+
+**A 4B open-weight specialist for KYC onboarding adjudication that statistically matches two of three frontier models on fresh in-distribution cases, answers faster than the frontier APIs on an H100, and costs about 1/10th to 1/50th as much per case.**
+
+One case packet in (applicant profile, OCR'd ID document with MRZ, proof of address, sanctions / PEP / adverse-media hits, jurisdiction) → one JSON decision out (identity findings, screening dispositions, risk tier, required actions, approve / reject / escalate, a grounded narrative).
+
+## Results (fresh eval_id v2, 300 cases generated after all development, never seen by any part of the system)
+
+| | Decision accuracy | vs ours, paired 95% CI | Unsupported narrative claims | p50 latency | $ / 1,000 cases |
+|---|---|---|---|---|---|
+| **Ours (Qwen3.5-4B specialist)** | **96.3%** | – | 13.7% | **3.3 s on H100** · 24.3 s on L4 | **$3.59** (H100) · $0.47–5.36 (L4) |
+| GPT-6 Astra (best prompt) | 99.3% | Astra ahead (+3.0, +0.7 to +5.3) | 7.4% | 12.1 s | $175 |
+| Claude Opus 5.5 (best prompt) | 97.7% | **tie** (+1.3, −1.3 to +4.0) | 8.6% | 11.5 s | $116 |
+| Gemini 4 Argon (best prompt) | 95.0% | **tie** (−1.3, −4.7 to +2.0) | 8.8% | 8.6 s | $37 |
+| Qwen3.5-4B untrained (best prompt) | 56.0% | | 52.0% | | |
+
+- On the frozen eval v1 (500 cases incl. 200 out-of-distribution), the specialist scores 94.6% (Argon 95.8, Opus 98.4, Astra 99.2); out-of-distribution free prose is where it still trails.
+- Full tables (every metric of the brief, case counts, stage deltas): [`documentation/04_writeup/benchmark_report_submission.md`](documentation/04_writeup/benchmark_report_submission.md). Generated report with confidence intervals: [`documentation/04_writeup/benchmark_report.md`](documentation/04_writeup/benchmark_report.md).
+- Our latency is measured one request at a time on a warm endpoint (100 dev cases on L4, 30 on H100); frontier latency is measured through their public APIs during the benchmark. Different hardware; same caller-side measurement.
+
+## What's in the pipeline
+
+Qwen3.5-4B (Apache 2.0: commercial use and derivative weights allowed) → **domain adapter** on public KYC/AML text (merged) → **black-box distillation** from GPT-6.1 Sol and Gemini 4 Argon with our invented **Counterfactual Twin Distillation** (pairs of cases that differ by one decision-flipping fact) → **SFT post-train** on exact synthetic labels → served with a **deterministic code pre-checker** (MRZ check digits, expiry, proof-of-address age, document-integrity class) whose result the model was trained to read. Step-by-step map: [`GUIDE.md`](GUIDE.md).
+
+## Endpoint, weights
+
+- **Endpoint:** OpenAI-compatible `POST https://tianleliang--zorbe-kyc-final-brun2-s4-proxy.us-east.modal.run/v1/chat/completions`, model `zorbe-kyc`, bearer token (shared privately), 1× NVIDIA L4, always warm. Send the bare case packet as the user message; the proxy adds the prompt, pre-checks and JSON schema.
+- **Weights (merged, public):** https://huggingface.co/tianle-terrence-liang/zorbe-kyc-specialist-4b
+- **Output schema:** [`step0_rules/schema/v1.json`](step0_rules/schema/v1.json) (serving variant `v1_serving.json`); **policy:** [`step0_rules/policy_v1.md`](step0_rules/policy_v1.md).
+
+## Reproduce
+
+Python 3.11+, from a clean clone, no API keys and no GPU needed:
+
+```bash
+pip install -r requirements.txt
+bash make_tables.sh        # rebuilds every benchmark table from the saved outputs in results/runs/
+bash regenerate_eval.sh    # rebuilds every frozen eval split from its seed/config and verifies the sha256 manifests
+python -m step6_evaluation.make_submission_report   # the headline tables (benchmark_report_submission.md)
+```
+
+Training and serving commands (Modal GPU, cost money) are in each step folder's README; the agent briefs that ran them are in [`documentation/06_agent_instructions/`](documentation/06_agent_instructions/).
+
+## Models, assistants, data
+
+- **Frontier models** (teachers, baselines, judge; never shipped): GPT-6.1 Sol (main teacher), Gemini 4 Argon (second teacher + baseline), GPT-6 Astra and Claude Opus 5.5 (baselines), Claude Sonnet 5.5 (blind unsupported-claims judge; also wrote half of the LLM out-of-distribution set with Gemini 3.8 Flash). Claude never taught.
+- **Coding assistants:** Claude Code (desktop and cloud sessions) wrote and ran the code under written briefs (`documentation/06_agent_instructions/`, reports in `documentation/05_progress_reports/`); Claude in Obsidian (Claudian) for planning, audits and the decision log. Every design decision is Tianle's and logged in [`documentation/01_decisions/decision_log.md`](documentation/01_decisions/decision_log.md).
+- **Data:** fully synthetic (answer-first generator; no real people, documents or list entries). How it was built: [`step1_data_generation/README.md`](step1_data_generation/README.md).
+- Requirements of the case mapped to where they are met: [`documentation/00_requirements/REQUIREMENTS.md`](documentation/00_requirements/REQUIREMENTS.md).

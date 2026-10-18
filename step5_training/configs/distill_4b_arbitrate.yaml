@@ -1,0 +1,27 @@
+# Gold-label SFT control (Table 2 control row), Qwen3.5-0.8B. Also the first full-scale pipeline test.
+run_name: distill-4b-arbitrate
+base_model: Qwen/Qwen3.5-4B
+train_file: data/sft/distill_arbitrate_splice.jsonl
+val_file: null
+eval_manifest: data/eval/MANIFEST.json
+allow_no_eval_manifest: false
+backend: trl
+gpu: A100-80GB
+timeout_hours: 3
+max_seq_len: 4096
+epochs: 2
+learning_rate: 2.0e-4
+batch_size: 4
+grad_accum: 4
+warmup_ratio: 0.03
+scheduler: cosine
+weight_decay: 0.0
+seed: 17
+logging_steps: 10
+enable_thinking: false
+max_train_rows: null
+lora:
+  r: 16
+  alpha: 32
+  dropout: 0.0
+  target_modules: all-linear

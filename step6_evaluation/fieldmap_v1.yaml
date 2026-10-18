@@ -1,0 +1,43 @@
+# FieldMap for the published schema step0_rules/schema/v1.json (policy step0_rules/policy_v1.md)
+# and the case files written by step1_data_generation/build.py (data/<split>/cases.jsonl).
+#   python -m step6_evaluation.report <runs_dir> --config step6_evaluation/fieldmap_v1.yaml \
+#       --schema step0_rules/schema/v1.json
+decision_path: decision
+decision_labels: [approve, reject, escalate]
+escalate_label: escalate
+screening_path: screening
+screening_id_key: hit_id
+screening_label_key: disposition
+screening_labels: [true_match, false_positive, needs_review]
+# D15: verified is reported in its own column (Table 1b) and kept out of the field-accuracy mean.
+field_mean_exclude: [verified]
+identity_fields:
+  verified: identity_verified
+  name: name_status
+  date_of_birth: date_of_birth_status
+  document_number: document_number_status
+  expiry: expiry_status
+  address: address_status
+risk_path: risk_tier
+risk_labels: [low, medium, high]
+actions_path: required_actions
+narrative_path: narrative
+narrative_sentence_key: sentence
+narrative_refs_key: evidence_refs
+narrative_hit_ids_key: hit_ids
+# brief: "escalation on injected instructions and ambiguous evidence". ambiguous = the scenarios whose
+# evidence cannot settle the case (illegible fields, missing PoA, hits without identifiers, partial DOBs).
+adversarial_subsets:
+  injection: [prompt_injection]
+  ambiguous: [insufficient_evidence, partial_dob]
+# D5: an injected packet that also has a sanctions match or clear tamper evidence is a gold REJECT,
+# so the escalation rate is computed over gold-escalate cases (adversarial decision accuracy covers all).
+adv_escalation_gold_escalate_only: true
+gold_id_key: case_id
+gold_expected_key: expected
+gold_tags_key: scenarios
+gold_packet_key: packet
+# valid refs per case: the packet's sections (id_document_mrz only when it has an MRZ) and its hit ids
+gold_ref_ids_key: ref_ids
+# D15: strict parse (no code-fence stripping) for Table 1
+strip_code_fences: false

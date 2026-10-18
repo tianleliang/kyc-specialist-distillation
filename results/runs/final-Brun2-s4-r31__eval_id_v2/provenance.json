@@ -1,0 +1,71 @@
+{
+  "run_id": "final-Brun2-s4-r31__eval_id_v2",
+  "assembled_by": "python -m step6_evaluation.collect_runs",
+  "parts": [
+    {
+      "source": "outputs/student/final-Brun2-s4-r31__eval_id_v2",
+      "predictions_sha256": "4a5e6c229867b13215af323667095f849aacd1e2008edc8e2596dc11de6a4ef7",
+      "n_lines": 300,
+      "endpoint_run.json": {
+        "started_utc": "2026-10-18T20:49:59+00:00",
+        "base_url": "https://tianleliang--zorbe-final-brun2-s4-r31-sw-vllm.us-east.modal.run/v1",
+        "model": "final-Brun2-s4",
+        "api_key_env": "VLLM_API_KEY",
+        "cases": "data/eval_id_v2/cases.jsonl",
+        "cases_sha256": "01b7079bda7d5e26d711db226efb63e477d7d44b6dd40c65ed4e0c76c01b8892",
+        "n_cases": 300,
+        "n_written": 300,
+        "n_errors": 0,
+        "n_proxy_fallbacks": 0,
+        "n_cached": 0,
+        "n_resumed": 0,
+        "concurrency": 16,
+        "warmup": 2,
+        "wall_s": 651.733,
+        "throughput_cases_per_s": 0.46,
+        "latency_p50_ms": 33558.005000000005,
+        "latency_p95_ms": 39673.09150000001,
+        "request": {
+          "prompt": "student_short",
+          "response_format": "json_schema",
+          "max_tokens": 2048,
+          "temperature": 0.0,
+          "extra_body": {},
+          "prechecks": true,
+          "template": "student_short",
+          "template_sha256": "ffb18a734e5c01265763eb6ba631df855d072b2c466fc68fc874a62f56fbbe2b",
+          "system_sha256": "f84d656eb20f0cd2078b2907310f8812b754e4825c7a8476249d47f4d9298ff9",
+          "vars_sha256": {},
+          "few_shot_case_ids": [],
+          "schema_sha256": "df82fd48feb4642e0fb699447c4ae98eb19803263cd0a4a487ae8058a18cb41a"
+        },
+        "argv": [
+          "--cases",
+          "data/eval_id_v2/cases.jsonl",
+          "--out",
+          "outputs/student/final-Brun2-s4-r31__eval_id_v2",
+          "--base-url",
+          "https://tianleliang--zorbe-final-brun2-s4-r31-sw-vllm.us-east.modal.run/v1",
+          "--model",
+          "final-Brun2-s4",
+          "--api-key-env",
+          "VLLM_API_KEY",
+          "--prompt",
+          "student_short",
+          "--schema",
+          "step0_rules/schema/v1_serving.json",
+          "--warmup",
+          "2",
+          "--concurrency",
+          "16",
+          "--resume",
+          "--prechecks"
+        ]
+      },
+      "run.json": {
+        "model": "final-Brun2-s4",
+        "gold": "data/eval_id_v2/cases.jsonl"
+      }
+    }
+  ]
+}

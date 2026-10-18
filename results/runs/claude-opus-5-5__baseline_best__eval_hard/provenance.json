@@ -1,0 +1,33 @@
+{
+  "run_id": "claude-opus-5-5__baseline_best__eval_hard",
+  "assembled_by": "python -m step6_evaluation.collect_runs",
+  "parts": [
+    {
+      "source": "step2_benchmarking/results/bench_hard/claude-opus-5-5__baseline_best__eval_hard",
+      "predictions_sha256": "9a51d10ef295e098cb14a51f3f4d1291fe26d3f37028bbaa3015b170b4e765f2",
+      "n_lines": 150,
+      "ledger.json": {
+        "total_usd": 17.785084,
+        "by_model": {
+          "claude-opus-5-5": {
+            "provider": "anthropic",
+            "calls": 150,
+            "cache_hits": 0,
+            "batch_calls": 0,
+            "input_tokens": 3402646,
+            "output_tokens": 208725,
+            "reasoning_tokens": 0,
+            "cost_usd": 17.785083999999998,
+            "saved_by_cache_usd": 0.0,
+            "unpriced_calls": 0
+          }
+        }
+      },
+      "run.json": {
+        "model": "claude-opus-5-5 (baseline_best)",
+        "gold": "data/eval_hard/cases.jsonl",
+        "params": "frontier"
+      }
+    }
+  ]
+}

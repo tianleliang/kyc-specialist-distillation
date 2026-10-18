@@ -1,0 +1,14 @@
+{
+ "input": "data/sft/gold_train.jsonl",
+ "output": "data/sft/gold_train_pc.jsonl",
+ "rows": 3000,
+ "blocks_added": 3000,
+ "assistant_targets_changed": 0,
+ "nd_counts": {
+  "as_of": 0,
+  "mrz": 199,
+  "expiry": 207,
+  "poa_date": 339,
+  "integrity": 123
+ }
+}

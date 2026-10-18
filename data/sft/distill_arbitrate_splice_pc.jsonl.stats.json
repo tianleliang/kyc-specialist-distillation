@@ -1,0 +1,14 @@
+{
+ "input": "data/sft/distill_arbitrate_splice.jsonl",
+ "output": "data/sft/distill_arbitrate_splice_pc.jsonl",
+ "rows": 2954,
+ "blocks_added": 2954,
+ "assistant_targets_changed": 0,
+ "nd_counts": {
+  "as_of": 0,
+  "mrz": 195,
+  "expiry": 201,
+  "poa_date": 335,
+  "integrity": 122
+ }
+}

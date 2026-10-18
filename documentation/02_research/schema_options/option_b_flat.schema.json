@@ -1,0 +1,330 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "KYC decision, option B (flat, enum codes)",
+  "description": "DRAFT option for Tianle. Not a decision.",
+  "type": "object",
+  "properties": {
+    "identity_verified": {
+      "type": "boolean"
+    },
+    "name_status": {
+      "type": "string",
+      "enum": [
+        "consistent",
+        "mismatch",
+        "unreadable"
+      ]
+    },
+    "name_reason": {
+      "type": "string",
+      "enum": [
+        "all_sources_agree",
+        "transliteration_variant",
+        "reordered_tokens",
+        "ocr_confusable_resolved",
+        "viz_mrz_disagree",
+        "application_document_disagree",
+        "check_digit_failed",
+        "document_expired",
+        "poa_stale",
+        "poa_future_dated",
+        "poa_name_differs",
+        "poa_address_differs",
+        "country_format_difference",
+        "field_illegible",
+        "field_missing",
+        "impossible_date"
+      ]
+    },
+    "date_of_birth_status": {
+      "type": "string",
+      "enum": [
+        "consistent",
+        "mismatch",
+        "unreadable"
+      ]
+    },
+    "date_of_birth_reason": {
+      "type": "string",
+      "enum": [
+        "all_sources_agree",
+        "transliteration_variant",
+        "reordered_tokens",
+        "ocr_confusable_resolved",
+        "viz_mrz_disagree",
+        "application_document_disagree",
+        "check_digit_failed",
+        "document_expired",
+        "poa_stale",
+        "poa_future_dated",
+        "poa_name_differs",
+        "poa_address_differs",
+        "country_format_difference",
+        "field_illegible",
+        "field_missing",
+        "impossible_date"
+      ]
+    },
+    "document_number_status": {
+      "type": "string",
+      "enum": [
+        "consistent",
+        "mismatch",
+        "unreadable"
+      ]
+    },
+    "document_number_reason": {
+      "type": "string",
+      "enum": [
+        "all_sources_agree",
+        "transliteration_variant",
+        "reordered_tokens",
+        "ocr_confusable_resolved",
+        "viz_mrz_disagree",
+        "application_document_disagree",
+        "check_digit_failed",
+        "document_expired",
+        "poa_stale",
+        "poa_future_dated",
+        "poa_name_differs",
+        "poa_address_differs",
+        "country_format_difference",
+        "field_illegible",
+        "field_missing",
+        "impossible_date"
+      ]
+    },
+    "expiry_status": {
+      "type": "string",
+      "enum": [
+        "consistent",
+        "mismatch",
+        "unreadable"
+      ]
+    },
+    "expiry_reason": {
+      "type": "string",
+      "enum": [
+        "all_sources_agree",
+        "transliteration_variant",
+        "reordered_tokens",
+        "ocr_confusable_resolved",
+        "viz_mrz_disagree",
+        "application_document_disagree",
+        "check_digit_failed",
+        "document_expired",
+        "poa_stale",
+        "poa_future_dated",
+        "poa_name_differs",
+        "poa_address_differs",
+        "country_format_difference",
+        "field_illegible",
+        "field_missing",
+        "impossible_date"
+      ]
+    },
+    "address_status": {
+      "type": "string",
+      "enum": [
+        "consistent",
+        "mismatch",
+        "unreadable"
+      ]
+    },
+    "address_reason": {
+      "type": "string",
+      "enum": [
+        "all_sources_agree",
+        "transliteration_variant",
+        "reordered_tokens",
+        "ocr_confusable_resolved",
+        "viz_mrz_disagree",
+        "application_document_disagree",
+        "check_digit_failed",
+        "document_expired",
+        "poa_stale",
+        "poa_future_dated",
+        "poa_name_differs",
+        "poa_address_differs",
+        "country_format_difference",
+        "field_illegible",
+        "field_missing",
+        "impossible_date"
+      ]
+    },
+    "screening": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "hit_id": {
+            "type": "string"
+          },
+          "list_type": {
+            "type": "string",
+            "enum": [
+              "sanctions",
+              "pep",
+              "adverse_media"
+            ]
+          },
+          "disposition": {
+            "type": "string",
+            "enum": [
+              "true_match",
+              "false_positive",
+              "needs_review"
+            ]
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "name_exact",
+                "name_variant_or_transliteration",
+                "alias_match",
+                "weak_alias_only",
+                "name_dissimilar",
+                "dob_full_match",
+                "dob_partial_match",
+                "dob_conflict",
+                "dob_not_on_list",
+                "nationality_match",
+                "nationality_conflict",
+                "pob_match",
+                "pob_conflict",
+                "document_number_match",
+                "document_number_conflict",
+                "gender_conflict",
+                "relationship_stated_in_packet",
+                "relationship_not_established",
+                "vendor_score_only"
+              ]
+            }
+          }
+        },
+        "required": [
+          "hit_id",
+          "list_type",
+          "disposition",
+          "evidence"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "risk_tier": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ]
+    },
+    "risk_drivers": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "sanctions_true_match",
+          "pep_foreign",
+          "pep_domestic",
+          "pep_family_or_associate",
+          "adverse_media_financial_crime",
+          "adverse_media_other",
+          "unresolved_screening_hit",
+          "high_risk_jurisdiction",
+          "source_of_funds_unclear",
+          "activity_inconsistent_with_profile",
+          "non_face_to_face_channel",
+          "high_risk_product",
+          "identity_document_issue",
+          "address_verification_issue",
+          "document_tampering_suspected",
+          "instructions_in_packet",
+          "none"
+        ]
+      }
+    },
+    "required_actions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "senior_management_approval",
+          "verify_source_of_wealth",
+          "verify_source_of_funds",
+          "enhanced_ongoing_monitoring",
+          "request_valid_id_document",
+          "request_secondary_id",
+          "request_new_proof_of_address",
+          "document_authenticity_review",
+          "sanctions_compliance_review",
+          "enhanced_adverse_media_review",
+          "pep_relationship_confirmation",
+          "manual_packet_integrity_review"
+        ]
+      }
+    },
+    "decision": {
+      "type": "string",
+      "enum": [
+        "approve",
+        "reject",
+        "escalate"
+      ]
+    },
+    "narrative": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "sentence": {
+            "type": "string"
+          },
+          "evidence_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "application",
+                "id_document_visual",
+                "id_document_mrz",
+                "proof_of_address",
+                "screening_hits",
+                "context"
+              ]
+            }
+          }
+        },
+        "required": [
+          "sentence",
+          "evidence_refs"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 4,
+      "maxItems": 8
+    }
+  },
+  "required": [
+    "identity_verified",
+    "name_status",
+    "name_reason",
+    "date_of_birth_status",
+    "date_of_birth_reason",
+    "document_number_status",
+    "document_number_reason",
+    "expiry_status",
+    "expiry_reason",
+    "address_status",
+    "address_reason",
+    "screening",
+    "risk_tier",
+    "risk_drivers",
+    "required_actions",
+    "decision",
+    "narrative"
+  ],
+  "additionalProperties": false
+}

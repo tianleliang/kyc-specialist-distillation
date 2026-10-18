@@ -1,0 +1,15 @@
+# Fold the 4B domain adapter into Qwen3.5-4B -> the "adapted base" for the final runs.
+run_name: merge-adapter-qwen35-4b
+base_model: Qwen/Qwen3.5-4B
+adapter_dir: /vol/ckpt/adapter/adapter-qwen35-4b/adapter
+output_dir: /vol/ckpt/merged/adapter-qwen35-4b
+hub_repo: null
+hub_private: true
+push_adapter: false
+probe_file: data/sft/gold_dev_probe.jsonl
+n_probes: 8
+max_new_tokens: 96
+min_differing_probes: 1
+enable_thinking: false
+gpu: L4
+timeout_hours: 1

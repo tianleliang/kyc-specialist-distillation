@@ -1,0 +1,367 @@
+{
+  "reader_dev:email": {
+    "as_of": {
+      "n": 92,
+      "covered": 92,
+      "correct": 92
+    },
+    "mrz": {
+      "n": 87,
+      "covered": 87,
+      "correct": 87,
+      "no_mrz_cases": 5
+    },
+    "expiry": {
+      "n": 90,
+      "covered": 86,
+      "correct": 86
+    },
+    "expired": {
+      "n": 90,
+      "covered": 86,
+      "correct": 86
+    },
+    "poa_date": {
+      "n": 92,
+      "covered": 83,
+      "correct": 83
+    },
+    "poa_window": {
+      "n": 92,
+      "covered": 83,
+      "correct": 83
+    },
+    "integ_date_of_birth": {
+      "n": 92,
+      "covered": 91,
+      "correct": 91
+    },
+    "integ_document_number": {
+      "n": 92,
+      "covered": 92,
+      "correct": 92
+    },
+    "integ_expiry": {
+      "n": 92,
+      "covered": 92,
+      "correct": 92
+    },
+    "integ_overall": {
+      "n": 92,
+      "covered": 91,
+      "correct": 91
+    },
+    "expired_label_missed": {
+      "n": 6
+    },
+    "poa_nd": {
+      "ambiguous_dmy": 7,
+      "illegible_scan": 2
+    },
+    "integ_confusions": []
+  },
+  "reader_dev:form": {
+    "as_of": {
+      "n": 94,
+      "covered": 94,
+      "correct": 94
+    },
+    "mrz": {
+      "n": 90,
+      "covered": 90,
+      "correct": 90,
+      "no_mrz_cases": 4
+    },
+    "expiry": {
+      "n": 92,
+      "covered": 89,
+      "correct": 89
+    },
+    "expired": {
+      "n": 92,
+      "covered": 89,
+      "correct": 89
+    },
+    "poa_date": {
+      "n": 94,
+      "covered": 87,
+      "correct": 87
+    },
+    "poa_window": {
+      "n": 94,
+      "covered": 87,
+      "correct": 87
+    },
+    "integ_date_of_birth": {
+      "n": 94,
+      "covered": 93,
+      "correct": 93
+    },
+    "integ_document_number": {
+      "n": 94,
+      "covered": 94,
+      "correct": 94
+    },
+    "integ_expiry": {
+      "n": 94,
+      "covered": 94,
+      "correct": 94
+    },
+    "integ_overall": {
+      "n": 94,
+      "covered": 93,
+      "correct": 93
+    },
+    "expired_label_missed": {
+      "n": 4
+    },
+    "poa_nd": {
+      "other": 2,
+      "ambiguous_dmy": 4,
+      "illegible_scan": 1
+    },
+    "integ_confusions": []
+  },
+  "reader_dev:kv": {
+    "as_of": {
+      "n": 91,
+      "covered": 91,
+      "correct": 91
+    },
+    "mrz": {
+      "n": 83,
+      "covered": 83,
+      "correct": 83,
+      "no_mrz_cases": 8
+    },
+    "expiry": {
+      "n": 86,
+      "covered": 79,
+      "correct": 79
+    },
+    "expired": {
+      "n": 86,
+      "covered": 79,
+      "correct": 79
+    },
+    "poa_date": {
+      "n": 90,
+      "covered": 82,
+      "correct": 82
+    },
+    "poa_window": {
+      "n": 90,
+      "covered": 82,
+      "correct": 82
+    },
+    "integ_date_of_birth": {
+      "n": 91,
+      "covered": 89,
+      "correct": 89
+    },
+    "integ_document_number": {
+      "n": 91,
+      "covered": 91,
+      "correct": 91
+    },
+    "integ_expiry": {
+      "n": 91,
+      "covered": 89,
+      "correct": 89
+    },
+    "integ_overall": {
+      "n": 91,
+      "covered": 87,
+      "correct": 87
+    },
+    "expired_label_missed": {
+      "n": 3
+    },
+    "poa_nd": {
+      "ambiguous_dmy": 8
+    },
+    "integ_confusions": []
+  },
+  "reader_dev:mixed": {
+    "as_of": {
+      "n": 105,
+      "covered": 105,
+      "correct": 105
+    },
+    "mrz": {
+      "n": 93,
+      "covered": 93,
+      "correct": 93,
+      "no_mrz_cases": 12
+    },
+    "expiry": {
+      "n": 101,
+      "covered": 95,
+      "correct": 95
+    },
+    "expired": {
+      "n": 101,
+      "covered": 95,
+      "correct": 95
+    },
+    "poa_date": {
+      "n": 104,
+      "covered": 103,
+      "correct": 103
+    },
+    "poa_window": {
+      "n": 104,
+      "covered": 103,
+      "correct": 103
+    },
+    "integ_date_of_birth": {
+      "n": 105,
+      "covered": 105,
+      "correct": 105
+    },
+    "integ_document_number": {
+      "n": 105,
+      "covered": 105,
+      "correct": 105
+    },
+    "integ_expiry": {
+      "n": 105,
+      "covered": 104,
+      "correct": 104
+    },
+    "integ_overall": {
+      "n": 105,
+      "covered": 104,
+      "correct": 104
+    },
+    "expired_label_missed": {
+      "n": 5
+    },
+    "poa_nd": {
+      "ambiguous_dmy": 1
+    },
+    "integ_confusions": []
+  },
+  "reader_dev:ocr_dump": {
+    "as_of": {
+      "n": 120,
+      "covered": 120,
+      "correct": 120
+    },
+    "mrz": {
+      "n": 109,
+      "covered": 109,
+      "correct": 109,
+      "no_mrz_cases": 11
+    },
+    "expiry": {
+      "n": 117,
+      "covered": 107,
+      "correct": 107
+    },
+    "expired": {
+      "n": 117,
+      "covered": 107,
+      "correct": 107
+    },
+    "poa_date": {
+      "n": 119,
+      "covered": 112,
+      "correct": 112
+    },
+    "poa_window": {
+      "n": 119,
+      "covered": 112,
+      "correct": 112
+    },
+    "integ_date_of_birth": {
+      "n": 120,
+      "covered": 117,
+      "correct": 117
+    },
+    "integ_document_number": {
+      "n": 120,
+      "covered": 120,
+      "correct": 120
+    },
+    "integ_expiry": {
+      "n": 120,
+      "covered": 118,
+      "correct": 118
+    },
+    "integ_overall": {
+      "n": 120,
+      "covered": 117,
+      "correct": 117
+    },
+    "expired_label_missed": {
+      "n": 7
+    },
+    "poa_nd": {
+      "other": 6,
+      "illegible_scan": 1
+    },
+    "integ_confusions": []
+  },
+  "reader_dev:prose": {
+    "as_of": {
+      "n": 98,
+      "covered": 98,
+      "correct": 98
+    },
+    "mrz": {
+      "n": 96,
+      "covered": 96,
+      "correct": 96,
+      "no_mrz_cases": 2
+    },
+    "expiry": {
+      "n": 97,
+      "covered": 96,
+      "correct": 96
+    },
+    "expired": {
+      "n": 97,
+      "covered": 96,
+      "correct": 96
+    },
+    "poa_date": {
+      "n": 95,
+      "covered": 89,
+      "correct": 89
+    },
+    "poa_window": {
+      "n": 95,
+      "covered": 89,
+      "correct": 89
+    },
+    "integ_date_of_birth": {
+      "n": 98,
+      "covered": 98,
+      "correct": 98
+    },
+    "integ_document_number": {
+      "n": 98,
+      "covered": 98,
+      "correct": 98
+    },
+    "integ_expiry": {
+      "n": 98,
+      "covered": 98,
+      "correct": 98
+    },
+    "integ_overall": {
+      "n": 98,
+      "covered": 98,
+      "correct": 98
+    },
+    "expired_label_missed": {
+      "n": 4
+    },
+    "poa_nd": {
+      "ambiguous_dmy": 5,
+      "illegible_scan": 1
+    },
+    "integ_confusions": []
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "model": "gemini-4-argon (baseline_zero_shot)",
+  "gold": "data/eval_ood_template/cases.jsonl",
+  "params": "frontier"
+}

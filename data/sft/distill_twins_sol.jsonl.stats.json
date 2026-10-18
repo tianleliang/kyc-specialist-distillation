@@ -1,0 +1,37 @@
+{
+ "step": "twins_filter",
+ "kept": 980,
+ "dropped": {
+  "both_twins_fail": 4,
+  "case_not_in_gold": 2000,
+  "one_twin_fails": 16
+ },
+ "dropped_total": 2020,
+ "pairs": 1000,
+ "pairs_kept": 980,
+ "sft_records": 1960,
+ "dpo_pairs": 1960,
+ "gold_decision_flips": 1000,
+ "teacher_flip_consistency": 0.986,
+ "contamination_gate": {
+  "checked": true,
+  "manifests": [
+   "data\\eval\\MANIFEST.json"
+  ],
+  "config": {
+   "ngram": 8,
+   "containment": 0.5,
+   "jaccard": 0.7,
+   "max_df": 0.05,
+   "num_perm": 128,
+   "bands": 32
+  },
+  "n_train": 1960,
+  "n_eval": 500,
+  "boilerplate_ngrams_dropped": 84,
+  "eval_records_without_distinctive_text": 0,
+  "contaminated_eval_records": 0
+ },
+ "output": "data\\sft\\distill_twins_sol.jsonl",
+ "output_records": 1960
+}

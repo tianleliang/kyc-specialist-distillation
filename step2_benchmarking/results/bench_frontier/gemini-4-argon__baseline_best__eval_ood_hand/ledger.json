@@ -1,0 +1,17 @@
+{
+  "total_usd": 1.852546,
+  "by_model": {
+    "gemini-4-argon": {
+      "provider": "gemini",
+      "calls": 50,
+      "cache_hits": 0,
+      "batch_calls": 0,
+      "input_tokens": 798138,
+      "output_tokens": 25627,
+      "reasoning_tokens": 0,
+      "cost_usd": 1.8525459999999996,
+      "saved_by_cache_usd": 0.0,
+      "unpriced_calls": 0
+    }
+  }
+}

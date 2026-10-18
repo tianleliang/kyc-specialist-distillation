@@ -1,0 +1,4 @@
+# Session I extras (step7_serving/proxy.py, step2_benchmarking/run_endpoint.py). Base deps are in requirements.txt.
+fastapi>=0.110
+httpx>=0.27
+uvicorn>=0.30

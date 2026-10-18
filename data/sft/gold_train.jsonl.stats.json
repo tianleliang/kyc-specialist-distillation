@@ -1,0 +1,33 @@
+{
+ "step": "sft_floor",
+ "kept": 3000,
+ "dropped": {},
+ "dropped_total": 0,
+ "per_teacher": {
+  "gold": 3000
+ },
+ "invalid_kept": {},
+ "gold_cases": 3000,
+ "gold_cases_covered": 3000,
+ "contamination_gate": {
+  "checked": true,
+  "manifests": [
+   "data\\eval\\MANIFEST.json"
+  ],
+  "config": {
+   "ngram": 8,
+   "containment": 0.5,
+   "jaccard": 0.7,
+   "max_df": 0.05,
+   "num_perm": 128,
+   "bands": 32
+  },
+  "n_train": 3000,
+  "n_eval": 500,
+  "boilerplate_ngrams_dropped": 84,
+  "eval_records_without_distinctive_text": 0,
+  "contaminated_eval_records": 0
+ },
+ "output": "data\\sft\\gold_train.jsonl",
+ "output_records": 3000
+}

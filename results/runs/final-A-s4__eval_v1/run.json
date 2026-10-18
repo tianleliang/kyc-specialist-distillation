@@ -1,0 +1,21 @@
+{
+  "model": "Final A (model alone)",
+  "params": "4B",
+  "price_key": "modal-l4-c16",
+  "gold": [
+    "data/eval_id/cases.jsonl",
+    "data/eval_ood_template/cases.jsonl",
+    "data/eval_ood_hand/cases.jsonl",
+    "data/eval_ood_llm/cases.jsonl"
+  ],
+  "table1_group": "eval_v1",
+  "table1_order": 14,
+  "display": {
+    "latency_p50_ms": "not deployed",
+    "latency_p95_ms": "not deployed",
+    "cost_per_1k_usd": "not deployed"
+  },
+  "pipeline": "v1 A: model alone",
+  "stage": "+ post-train (Final A)",
+  "stage_order": 2
+}

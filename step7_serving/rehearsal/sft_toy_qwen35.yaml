@@ -1,0 +1,16 @@
+# REHEARSAL ONLY (Session B): train -> merge -> serve on the 24 toy rows, using the same base
+# vLLM serves in the smoke test (Qwen3.5-0.8B). Not a model choice. Fallback: step5_training/configs/sft_toy.yaml (Qwen3-0.6B).
+run_name: toy-rehearsal-qwen35-0p8b
+base_model: Qwen/Qwen3.5-0.8B
+train_file: step5_training/toy/sft_toy.jsonl
+eval_manifest: null
+allow_no_eval_manifest: true
+backend: trl
+gpu: L4
+timeout_hours: 0.5
+max_seq_len: 1024
+epochs: 3
+learning_rate: 2.0e-4
+batch_size: 4
+grad_accum: 1
+logging_steps: 1

@@ -1,0 +1,30 @@
+# DPO, 16-bit LoRA on top of the MERGED SFT model (see step5_training/dpo.py for why).
+run_name: PLACEHOLDER_run_name
+base_model: PLACEHOLDER_merged_sft_dir    # e.g. /vol/ckpt/merged/<sft run> or its HF repo id
+train_file: PLACEHOLDER_pairs_jsonl       # DPO format: prompt / chosen / rejected
+val_file: null
+eval_manifest: PLACEHOLDER_eval_manifest
+allow_no_eval_manifest: false
+backend: unsloth
+gpu: A100-80GB
+timeout_hours: 3
+max_seq_len: 4096
+max_prompt_len: 3072
+epochs: 1
+learning_rate: 5.0e-6
+batch_size: 2
+grad_accum: 8
+warmup_ratio: 0.1
+scheduler: cosine
+weight_decay: 0.0
+seed: 17
+logging_steps: 5
+enable_thinking: false
+beta: 0.1
+loss_type: sigmoid
+max_train_rows: null
+lora:
+  r: 16
+  alpha: 32
+  dropout: 0.0
+  target_modules: all-linear

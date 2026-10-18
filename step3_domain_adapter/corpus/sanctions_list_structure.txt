@@ -1,0 +1,548 @@
+==============================================================================
+OpenSanctions dataset metadata: US OFAC SDN (metadata only; lookups/assertions removed)
+Source: https://raw.githubusercontent.com/opensanctions/opensanctions/main/datasets/us/ofac/us_ofac_sdn.yml
+==============================================================================
+
+title: US OFAC Specially Designated Nationals (SDN) List
+coverage:
+  frequency: daily
+  start: "2015-12-05"
+  schedule: "0 */2 * * *"
+summary: >
+  The primary United States' sanctions list, specially designated nationals (SDN) part.
+description: |
+  As part of its enforcement efforts, OFAC publishes a list of individuals and
+  companies owned or controlled by, or acting for or on behalf of, targeted
+  countries. It also lists individuals, groups, and entities, such as terrorists
+  and narcotics traffickers designated under programs that are not country-specific.
+  Collectively, such individuals and companies are called "Specially Designated
+  Nationals" or "SDNs." Their assets are blocked and U.S. persons are generally
+  prohibited from dealing with them.
+publisher:
+  name: Office of Foreign Assets Control
+  acronym: OFAC
+  description: >
+    OFAC is a divison of the United States Department of the Treasury that administers
+    and enforces economic and trade sanctions based on US foreign policy and national
+    security goals against targeted foreign countries and regimes, terrorists,
+    international narcotics traffickers, those engaged in activities related to the
+    proliferation of weapons of mass destruction, and other threats to the national
+    security, foreign policy or economy of the United​ States.
+  country: us
+  url: https://www.treasury.gov/
+  official: true
+url: https://www.treasury.gov/resource-center/sanctions/Pages/default.aspx
+data:
+  url: https://www.treasury.gov/ofac/downloads/sanctions/1.0/sdn_advanced.xml
+  format: XML
+  lang: eng
+
+
+==============================================================================
+OpenSanctions dataset metadata: EU Financial Sanctions Files (metadata only)
+Source: https://raw.githubusercontent.com/opensanctions/opensanctions/main/datasets/eu/fsf/eu_fsf.yml
+==============================================================================
+
+title: "EU Financial Sanctions Files (FSF)"
+coverage:
+  schedule: "0 */2 * * *"
+  frequency: daily
+  start: 2021-01-24
+summary: >
+  As part of the Common Foreign Security Policy the European Union publishes
+  a sanctions list that is implemented by all member states.
+description: |
+  The combined sanctions list for the European Union, which is also the sanctions list
+  used by most of the member states in place of publishing their own. Some countries, like
+  France, do publish additional sanctions data with additional legal implications.
+
+  Description from the web site:
+
+  > The correct application of financial sanctions is crucial in order to meet the
+  > objectives of the Common Foreign and Security Policy and especially to help prevent
+  > the financing of terrorism. The application of financial sanctions constitutes an
+  > obligation for both the public and private sector. In this regard, the EU assigns
+  > particular responsibility to credit and financial institutions, since they are
+  > involved in the bulk of financial transfers and transactions affected by the relevant
+  > Regulations.
+  >
+  > In order to facilitate the application of financial sanctions, the European
+  > Banking Federation, the European Savings Banks Group, the European Association of
+  > Co-operative Banks and the European Association of Public Banks ("the EU Credit Sector
+  > Federations") and the Commission recognised the need for an EU consolidated list
+  > of persons, groups and entities subject to CFSP related financial sanctions. It was
+  > therefore agreed that the Credit Sector Federations would set up a database
+  > containing the consolidated list for the Commission, which would host and maintain
+  > the database and keep it up-to-date. This database was developed first and foremost
+  > to assist the members of the EU Credit Sector Federations in their compliance with
+  > financial sanctions.
+  >
+  > **Disclaimer:** While every effort is made to ensure that the database and the
+  > consolidated list correctly reproduce all relevant data of the officially adopted
+  > texts published in the Official Journal of the European Union, neither the Commission
+  > nor the EU credit sector federations accepts any liability for possible omissions
+  > of relevant data or mistakes, and for any use made of the database or of the
+  > consolidated list. Only the information published in the Official Journal of the EU
+  > is deemed authentic.
+
+  The data is published in a password-protected area but the generated download links
+  can be used to programmatically update the material.
+
+  This dataset covers, amongst others, the following EU policy mechanisms:
+
+  - Council Regulation (EC) No 2580/2001 imposing sanctions based on Council Common Position 2001/931/CFSP
+  - Council regulation (EU) 2016/1686 imposing sanctions based on Council Decision (CFSP) 2016/1693
+publisher:
+  name: Directorate‑General for Financial Stability, Financial Services and Capital Markets Union
+  acronym: DG FISMA
+  description: |
+    The Directorate‑General for Financial Stability, Financial Services and Capital Markets
+    Union is the Commission department responsible for EU policy on financial services.
+  country: eu
+  url: https://commission.europa.eu/about-european-commission/departments-and-executive-agencies/financial-stability-financial-services-and-capital-markets-union_en
+  official: true
+url: https://www.eeas.europa.eu/eeas/european-union-sanctions_en#10710
+data:
+  url: https://webgate.ec.europa.eu/fsd/fsf/public/files/xmlFullSanctionsList_1_1/content?token=dG9rZW4tMjAxNw
+  format: XML
+
+
+==============================================================================
+OpenSanctions dataset metadata: UN Security Council Consolidated List (metadata only)
+Source: https://raw.githubusercontent.com/opensanctions/opensanctions/main/datasets/_global/un_sc_sanctions/un_sc_sanctions.yml
+==============================================================================
+
+title: UN Security Council Consolidated Sanctions
+coverage:
+  schedule: "0 */4 * * *"
+  frequency: daily
+  start: "2015-12-05"
+summary: >
+  The Security Council's set of sanctions serve as the foundation for most
+  national sanctions lists.
+description: |
+  The Security Council sanctions are developed by a set of committees, each
+  dedicated to establishing individual listings within its regime. Technical
+  explanations are available on the [download page](https://www.un.org/securitycouncil/content/un-sc-consolidated-list).
+
+  The UN SC web site describes the policy as follows:
+
+  > The Security Council can take action to maintain or restore international peace and security under Chapter VII of the United Nations Charter. Sanctions measures, under Article 41, encompass a broad range of enforcement options that do not involve the use of armed force. Since 1966, the Security Council has established 30 sanctions regimes, in Southern Rhodesia, South Africa, the former Yugoslavia (2), Haiti, Iraq (2), Angola, Rwanda, Sierra Leone, Somalia and Eritrea, Eritrea and Ethiopia, Liberia (3), DRC, Côte d’Ivoire, Sudan, Lebanon, DPRK, Iran, Libya (2), Guinea-Bissau, CAR, Yemen, South Sudan and Mali, as well as against ISIL (Da'esh) and Al-Qaida and the Taliban.
+  >
+  > Security Council sanctions have taken a number of different forms, in pursuit of a variety of goals. The measures have ranged from comprehensive economic and trade sanctions to more targeted measures such as arms embargoes, travel bans, and financial or commodity restrictions. The Security Council has applied sanctions to support peaceful transitions, deter non-constitutional changes, constrain terrorism, protect human rights and promote non-proliferation.
+  >
+  > Sanctions do not operate, succeed or fail in a vacuum. The measures are most effective at maintaining or restoring international peace and security when applied as part of a comprehensive strategy encompassing peacekeeping, peacebuilding and peacemaking. Contrary to the assumption that sanctions are punitive, many regimes are designed to support governments and regions working towards peaceful transition. The Libyan and Guinea-Bissau sanctions regimes all exemplify this approach.
+  >
+  > Today, there are 14 ongoing sanctions regimes which focus on supporting political settlement of conflicts, nuclear non-proliferation, and counter-terrorism. Each regime is administered by a sanctions committee chaired by a non-permanent member of the Security Council. There are 10 monitoring groups, teams and panels that support the work of 11 of the 14 sanctions committees.
+  >
+  > The Council applies sanctions with ever-increasing cognisance of the rights of those targeted. In the 2005 World Summit declaration, the General Assembly called on the Security Council, with the support of the Secretary-General, to ensure that fair and clear procedures are in place for the imposition and lifting of sanctions measures. The establishment of a focal point for de-listing, and the Office of the Ombudsperson to the ISIL (Da'esh) & Al-Qaida Sanctions Committee are examples of this approach in practice.
+publisher:
+  name: United Nations Security Council
+  acronym: UNSC
+  description: |
+    The Security Council is one of the principal organs of the United Nations, charged with
+    ensuring international peace and security. Its powers include establishing peacekeeping
+    operations, enacting international sanctions, and authorizing military action.
+  url: "https://www.un.org/en/sc/"
+  official: true
+  country: un
+url: "https://www.un.org/securitycouncil/sanctions/information"
+data:
+  url: https://scsanctions.un.org/resources/xml/en/consolidated.xml
+  format: XML
+
+
+==============================================================================
+FollowTheMoney schema: Person
+Source: https://raw.githubusercontent.com/opensanctions/followthemoney/main/followthemoney/schema/Person.yaml
+==============================================================================
+
+Person:
+  extends:
+    - LegalEntity
+  label: Person
+  plural: People
+  description: >
+    A natural person, as opposed to a corporation of some type.
+  matchable: true
+  featured:
+    - name
+    - nationality
+    - birthDate
+  required:
+    - name
+  caption:
+    - name
+    - alias
+    - previousName
+    - weakAlias
+    - abbreviation
+    - lastName
+    - email
+    - phone
+  temporalExtent:
+    start:
+      - birthDate
+    end:
+      - deathDate
+  properties:
+    title:
+      label: Title
+    # The `firstName`, `lastName`, `secondName` etc. properties intentionally do not use
+    # the `name` property type. Many FtM tools (including Aleph) use name properties to
+    # compare/match entities, but matching entites just on e.g. a first name would lead to
+    # too many false positives.
+    firstName:
+      label: First name
+      description: "The part of a name that indicates the person, also often called given name or forename"
+    secondName:
+      label: Second name
+      description: "Deprecated, use one of the other more specific name properties instead"
+      deprecated: true
+    middleName:
+      label: Middle name
+      description: "The part of name written between a person's given name and family name. Often abbreviated as a middle initial."
+    fatherName:
+      label: Patronymic
+      description: "The part of a name based on the given name of one's father"
+    motherName:
+      label: Matronymic
+      description: "The part of a name based on the given name of one's mother"
+    lastName:
+      label: Last name
+      description: "The part of a name that indicates one's family, also often called surname or family name"
+    nameSuffix:
+      label: Name suffix
+      examples:
+        - OBE
+    birthDate:
+      label: Birth date
+      type: date
+    birthPlace:
+      label: Place of birth
+    birthCountry:
+      label: Country of birth
+      # nb. Sometimes a territory which is historical, eg. Soviet Union, Yugoslavia, Zaire.
+      type: country
+    deathDate:
+      label: Death date
+      description: Joined the choir invisible.
+      type: date
+    position:
+      label: Position
+      matchable: false
+    biography:
+      label: Biography
+      description: A biographical narrative of the person.
+      matchable: false
+      type: text
+    # OS note: the distinction between nationality and citizenship is pretty fine, the two props
+    # exist mainly so that we can preserve the distinction if it exists in source data.
+    # Nationality is a broader concept of being "of a country", citizenship narrower (as in holding
+    # the passport and/or right to vote).
+    nationality:
+      label: Nationality
+      type: country
+    citizenship:
+      label: Citizenship
+      type: country
+    passportNumber:
+      label: Passport number
+      type: identifier
+    # Awkward data section below
+    socialSecurityNumber:
+      label: Social security number
+      type: identifier
+      format: ssn
+    gender:
+      label: Gender
+      type: gender
+    ethnicity:
+      label: Ethnicity
+    height:
+      label: Height
+      type: number
+    weight:
+      label: Weight
+      type: number
+    eyeColor:
+      label: Eye color
+    hairColor:
+      label: Hair color
+    appearance:
+      label: Physical appearance
+    religion:
+      label: Religion
+    political:
+      label: Political association
+    profession:
+      label: Profession
+    education:
+      label: Education
+    spokenLanguage:
+      label: Spoken language
+      type: language
+
+
+==============================================================================
+FollowTheMoney schema: Sanction
+Source: https://raw.githubusercontent.com/opensanctions/followthemoney/main/followthemoney/schema/Sanction.yaml
+==============================================================================
+
+Sanction:
+  label: Sanction
+  plural: Sanctions
+  description: "A sanction designation."
+  extends:
+    - Interval
+  matchable: false
+  featured:
+    - entity
+    - country
+    - authority
+    - program
+    - startDate
+  required:
+    - entity
+  caption:
+    - program
+  properties:
+    entity:
+      label: "Entity"
+      reverse:
+        name: sanctions
+        label: "Sanctions"
+      type: entity
+      range: Thing
+    authority:
+      label: "Authority"
+    authorityId:
+      label: "Authority-issued identifier"
+      # eg. OFAC IDs, FCDO IDs, etc.
+      type: identifier
+    unscId:
+      label: "UN SC identifier"
+      description: "Identifier issued by the UN Security Council for sanctions designations"
+      type: identifier
+      maxLength: 16
+    program:
+      label: "Program"
+    programId:
+      # This is a unique identifier for the program issued by OpenSanctions, but
+      # could also be used for authority-issued IDs in other usage scenarios.
+      label: "Program ID"
+      type: identifier
+      maxLength: 64
+    programUrl:
+      label: "Program URL"
+      type: url
+    provisions:
+      label: "Scope of sanctions"
+    status:
+      label: "Status"
+      examples:
+        - Active
+        - Inactive
+        - Expired
+        - Suspended
+    duration:
+      label: "Duration"
+      type: number
+    reason:
+      label: "Reason"
+      description: An explanation of the designation's justification.
+      type: text
+    country:
+      label: "Country"
+      type: country
+    listingDate:
+      label: "Listing date"
+      description: "The date on which the designation is listed; distinct from the `startDate`, which is the date on which the designation goes into effect"
+      type: date
+
+
+==============================================================================
+FollowTheMoney schema: Passport
+Source: https://raw.githubusercontent.com/opensanctions/followthemoney/main/followthemoney/schema/Passport.yaml
+==============================================================================
+
+Passport:
+  label: "Passport"
+  plural: "Passports"
+  description: >
+    A passport held by a person.
+  extends:
+    - Identification
+  matchable: false
+  featured:
+    - number
+    - country
+    - type
+    - holder
+    - startDate
+    - endDate
+  required:
+    - holder
+    - number
+  caption:
+    - passportNumber
+    - number
+  properties:
+    passportNumber:
+      label: "Passport number"
+      description: "Deprecated, use `Identification:number` instead"
+      deprecated: true
+      type: identifier
+      hidden: true
+    surname:
+      label: "Surname"
+      description: "Deprecated, use `Identification:holder` link's `lastName` instead"
+      deprecated: true
+    givenName:
+      label: "Given name"
+      description: "Deprecated, use `Identification:holder` link's `firstName` / `middleName` instead"
+      deprecated: true
+    birthDate:
+      label: "Birth date"
+      type: date
+    birthPlace:
+      label: "Place of birth"
+    gender:
+      label: "Gender"
+      type: gender
+    personalNumber:
+      label: "Personal number"
+      type: identifier
+
+
+==============================================================================
+FollowTheMoney schema: Identification
+Source: https://raw.githubusercontent.com/opensanctions/followthemoney/main/followthemoney/schema/Identification.yaml
+==============================================================================
+
+Identification:
+  label: "Identification"
+  plural: "Identifications"
+  description: >
+    A form of identification associated with its holder and some issuing country. This
+    can be used for national ID cards, voter enrollments, and similar instruments.
+  extends:
+    - Interval
+  matchable: false
+  featured:
+    - number
+    - country
+    - type
+    - holder
+    - startDate
+    - endDate
+  required:
+    - holder
+    - number
+  caption:
+    - number
+  properties:
+    holder:
+      label: "Identification holder"
+      type: entity
+      range: LegalEntity
+      reverse:
+        label: "Identifications"
+        name: identification
+    type:
+      label: "Type"
+      examples:
+        - Passport
+        - Driving license
+    country:
+      label: "Country"
+      type: country
+    number:
+      label: "Document number"
+      type: identifier
+      maxLength: 64
+    authority:
+      label: "Authority"
+      description: "Government body issuing the identification document"
+
+
+==============================================================================
+FollowTheMoney schema: Address
+Source: https://raw.githubusercontent.com/opensanctions/followthemoney/main/followthemoney/schema/Address.yaml
+==============================================================================
+
+# OSM: https://wiki.openstreetmap.org/wiki/Proposed_features/House_numbers/Karlsruhe_Schema#Tags
+# Seen in the wild:
+#
+# - full
+# - remarks / note
+# - c/o
+# - location
+# - unknown
+# - address-details / street
+# - house number / house name
+# - address1 / address2 / address3
+# - city
+# - po box
+# - zip code / postcode / postal_code
+# - region
+# - area / state / province
+# - country
+Address:
+  label: Address
+  plural: Addresses
+  extends:
+    - Thing
+  description: >
+    A location associated with an entity.
+  matchable: true
+  generated: false
+  featured:
+    - full
+    - city
+    - street
+    - country
+  caption:
+    - full
+    - summary
+    - city
+    - remarks
+  properties:
+    full:
+      label: "Full address"
+      type: address
+    remarks:
+      label: "Remarks"
+      description: "Handling instructions, like 'care of'"
+    postOfficeBox:
+      label: "PO Box"
+      description: "A mailbox identifier at the post office"
+    street:
+      label: "Street address"
+    street2:
+      label: "Street address (ctd.)"
+    city:
+      label: "City"
+      description: "City, town, village or other locality"
+    postalCode:
+      label: "Postal code"
+      description: "Zip code or postcode"
+      maxLength: 16
+    region:
+      label: "Region"
+      description: "Also province or area"
+    state:
+      label: "State"
+      description: "State or federal unit"
+    latitude:
+      label: "Latitude"
+      type: "number"
+    longitude:
+      label: "Longitude"
+      type: "number"
+    osmId:
+      label: "OpenStreetmap Place ID"
+      type: "identifier"
+    googlePlaceId:
+      label: "Google Places ID"
+      type: "identifier"

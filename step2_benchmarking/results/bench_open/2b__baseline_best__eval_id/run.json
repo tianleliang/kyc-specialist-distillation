@@ -1,0 +1,4 @@
+{
+  "model": "Qwen3.5-2B (baseline_best) eval_id",
+  "gold": "data/eval_id/cases.jsonl"
+}

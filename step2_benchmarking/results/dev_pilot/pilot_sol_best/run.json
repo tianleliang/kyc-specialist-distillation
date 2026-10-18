@@ -1,0 +1,5 @@
+{
+  "model": "gpt-6.1-sol (baseline_best)",
+  "gold": "data/dev/cases.jsonl",
+  "params": "frontier"
+}

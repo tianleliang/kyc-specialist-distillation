@@ -1,0 +1,15 @@
+# Merge LoRA into base, verify merged != base, optionally push to HF.
+run_name: PLACEHOLDER_run_name
+base_model: PLACEHOLDER_base_model        # exactly the base the adapter was trained on
+adapter_dir: PLACEHOLDER_adapter_dir      # e.g. /vol/ckpt/sft/<run_name>/adapter
+output_dir: PLACEHOLDER_output_dir        # e.g. /vol/ckpt/merged/<run_name>
+hub_repo: null                            # e.g. <hf-user>/zorbe-kyc-<size>; null = no push
+hub_private: true                         # public vs private bucket is a pending decision
+push_adapter: true                        # brief asks for weights AND adapters in the bucket
+probe_file: null                          # SFT/DPO-format JSONL (a TRAIN or dev slice, never eval)
+n_probes: 8
+max_new_tokens: 96
+min_differing_probes: 1
+enable_thinking: false
+gpu: L4
+timeout_hours: 1

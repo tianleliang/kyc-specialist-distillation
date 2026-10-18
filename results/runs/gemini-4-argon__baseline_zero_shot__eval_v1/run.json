@@ -1,0 +1,14 @@
+{
+  "model": "Gemini 4 Argon (zero-shot)",
+  "params": "frontier (undisclosed)",
+  "price_key": "gemini-4-argon",
+  "gold": [
+    "data/eval_id/cases.jsonl",
+    "data/eval_ood_template/cases.jsonl",
+    "data/eval_ood_hand/cases.jsonl",
+    "data/eval_ood_llm/cases.jsonl"
+  ],
+  "table1_group": "eval_v1",
+  "table1_order": 5,
+  "notes": "120 of 500 responses were reused from the local response cache (same request made earlier) and not billed again; $ / 1k prices every call at list price, so it is slightly above the billed ledger total"
+}

@@ -1,0 +1,14 @@
+{
+  "model": "Qwen3.5-0.8B (best prompt)",
+  "params": "0.8B",
+  "price_key": "modal-l4-c16",
+  "gold": [
+    "data/eval_id/cases.jsonl",
+    "data/eval_ood_template/cases.jsonl",
+    "data/eval_ood_hand/cases.jsonl",
+    "data/eval_ood_llm/cases.jsonl"
+  ],
+  "table1_group": "eval_v1",
+  "table1_order": 8,
+  "notes": "vLLM on one L4, 16 concurrent requests: latency includes queueing"
+}

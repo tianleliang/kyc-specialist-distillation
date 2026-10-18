@@ -1,0 +1,18 @@
+# REHEARSAL ONLY: plumbing check of train_adapter -> measure_adapter on Modal with a tiny real model.
+# Not a model choice. ~5 min on an L4, well under $1.
+run_name: adapter-toy-rehearsal
+base_model: Qwen/Qwen3-0.6B
+corpus_dir: step3_domain_adapter/corpus
+heldout_mod: 10
+chunk_chars: 4000
+max_chars_per_file: 60000
+backend: trl
+gpu: L4
+timeout_hours: 0.5
+max_seq_len: 512
+epochs: 1
+learning_rate: 1.0e-4
+batch_size: 4
+grad_accum: 1
+max_train_blocks: 200
+logging_steps: 5

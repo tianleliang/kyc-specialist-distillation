@@ -1,0 +1,17 @@
+{
+  "total_usd": 5.38084,
+  "by_model": {
+    "gpt-6-astra": {
+      "provider": "openai",
+      "calls": 50,
+      "cache_hits": 0,
+      "batch_calls": 0,
+      "input_tokens": 330389,
+      "output_tokens": 41539,
+      "reasoning_tokens": 7482,
+      "cost_usd": 5.380840000000001,
+      "saved_by_cache_usd": 0.0,
+      "unpriced_calls": 0
+    }
+  }
+}

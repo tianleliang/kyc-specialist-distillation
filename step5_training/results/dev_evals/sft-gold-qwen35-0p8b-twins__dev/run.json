@@ -1,0 +1,4 @@
+{
+  "model": "sft-gold-qwen35-0p8b-twins",
+  "gold": "data/dev/cases.jsonl"
+}

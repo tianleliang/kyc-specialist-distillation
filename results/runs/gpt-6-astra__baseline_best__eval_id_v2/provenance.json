@@ -1,0 +1,33 @@
+{
+  "run_id": "gpt-6-astra__baseline_best__eval_id_v2",
+  "assembled_by": "python -m step6_evaluation.collect_runs",
+  "parts": [
+    {
+      "source": "outputs/bench_frontier/gpt-6-astra__baseline_best__eval_id_v2",
+      "predictions_sha256": "a5f2a5ce8fbc87ca1d288004e2706563f9216a9456d2fdc7945ceb4ee090dec8",
+      "n_lines": 300,
+      "ledger.json": {
+        "total_usd": 52.59384,
+        "by_model": {
+          "gpt-6-astra": {
+            "provider": "openai",
+            "calls": 300,
+            "cache_hits": 0,
+            "batch_calls": 0,
+            "input_tokens": 4167104,
+            "output_tokens": 218456,
+            "reasoning_tokens": 27066,
+            "cost_usd": 52.59383999999995,
+            "saved_by_cache_usd": 0.0,
+            "unpriced_calls": 0
+          }
+        }
+      },
+      "run.json": {
+        "model": "gpt-6-astra (baseline_best)",
+        "gold": "data/eval_id_v2/cases.jsonl",
+        "params": "frontier"
+      }
+    }
+  ]
+}

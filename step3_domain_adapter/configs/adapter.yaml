@@ -1,0 +1,28 @@
+# Stage 2 domain adapter: continued pretraining with a 16-bit LoRA on step3_domain_adapter/corpus/*.txt.
+# Fill the PLACEHOLDERs (Tianle's decisions), then:
+#   modal run -m step3_domain_adapter.train_adapter --config step3_domain_adapter/configs/adapter.yaml --dry-run
+#   modal run -m step3_domain_adapter.train_adapter --config step3_domain_adapter/configs/adapter.yaml
+#   modal run -m step3_domain_adapter.measure_adapter --config step3_domain_adapter/configs/adapter.yaml
+run_name: PLACEHOLDER                 # e.g. adapter-qwen35-2b-v1
+base_model: PLACEHOLDER               # the Qwen3.5 size chosen in stage 1 (D16: 0.8B / 2B / 4B), HF repo id
+corpus_dir: step3_domain_adapter/corpus
+exclude_files: []                     # e.g. [address_formats] to drop the YAML-heavy file
+heldout_mod: 10                       # 1 in 10 chunks held out for measure_adapter.py
+chunk_chars: 4000
+max_chars_per_file: 400000            # caps the 750 kB FinCEN rule so it does not dominate
+backend: unsloth                      # trl is the fallback if Unsloth fights the Qwen3.5 kernels
+gpu: A100-80GB
+timeout_hours: 2.0
+max_seq_len: 1024
+epochs: 2
+learning_rate: 1.0e-4                 # lower than SFT: raw-text CPT forgets fast at 2e-4
+batch_size: 8
+grad_accum: 2
+warmup_ratio: 0.03
+scheduler: cosine
+logging_steps: 10
+lora:
+  r: 32
+  alpha: 64
+  dropout: 0.0
+  target_modules: all-linear

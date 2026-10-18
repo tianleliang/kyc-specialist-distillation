@@ -1,0 +1,175 @@
+U.S. DEPARTMENT OF THE TREASURY READ THE LATEST TREASURY NEWS
+HOME SDN LIST DATA FORMATS DATA SCHE… OFAC TECHNICAL ACTIONS (IN REVE…
+Specially
+Designated
+Nationals List
+(SDN List)
+Consolidated
+Sanctions List
+(Non-SDN Lists)
+Additional
+Sanctions Lists
+Search OFAC's
+Sanctions Lists
+Sanctions
+Programs and
+Country
+Information
+Recent Actions
+OFAC License
+Application Page
+Additional OFAC
+Resources
+Frequently
+Asked Questions
+Civil Penalties
+and Enforcement
+OFAC Technical Actions (in
+reverse chronological order)
+Year: 2025
+Date Technical Notice Description
+02/06/2025 OFAC RSS Feed Retirement
+Year: 2024
+Date Technical Notice Description
+11/22/2024 Retirement of OFAC RSS Feed on January 31,
+2025
+05/16/2024 403 Errors on Redirect to OFAC Sanctions List
+Data
+05/07/2024 Change to namespace in SDN.XML and
+CONSOLIDATED.XML files. 
+Year: 2023
+Date Technical Notice Description
+Office of Foreign Assets Control
+A PART OF TREASURY'S
+OFFICE OF TERRORISM AND
+FINANCIAL INTELLIGENCE
+An official website of the United States government Here’s how you know
+10/17/26, 6:03 PM OFAC Technical Actions (in reverse chronological order) | Office of Foreign Assets Control
+https://ofac.treasury.gov/sdn-list-data-formats-data-schemas/ofac-technical-actions-in-reverse-chronological-order 1/5
+
+Information
+OFAC Reporting
+System
+Selected General
+Licenses Issued
+by OFAC
+Contact OFAC
+Date Technical Notice Description
+08/15/2023
+OFAC to retire PIP, DEL, and SDALL.ZIP file
+formats of the sanctions list on or about, the
+week of September 18, 2023
+07/06/2023
+OFAC to retire PIP, DEL, and SDALL.ZIP file
+formats of the sanctions list on or about, the
+week of September 18, 2023 (Updated)
+06/09/2023 OFAC to retire its FTP server (OFACFTP.treas.gov)
+on or about June 10, 2024
+05/10/2023 Important Technical Notice for Users of the OFAC
+website on SSL Certificates
+Year: 2022
+Date Technical Notice Description
+05/23/2022 Important Technical Notice for Users of the OFAC
+website on SSL Certificates
+Year: 2021
+Date Technical Notice Description
+08/27/2021 Important Technical Notice for Users of the OFAC
+website
+Year: 2020
+Date Technical Notice Description
+06/22/2020 Important Technical Notice for Users of the OFAC
+website
+Year: 2019
+10/17/26, 6:03 PM OFAC Technical Actions (in reverse chronological order) | Office of Foreign Assets Control
+https://ofac.treasury.gov/sdn-list-data-formats-data-schemas/ofac-technical-actions-in-reverse-chronological-order 2/5
+
+Date Technical Notice Description
+08/20/2019 Fix to error in SDN look-up value
+05/01/2019 Important Technical Notice for Users of the OFAC
+Website and Sanctions List Data Files
+04/16/2019 Important technical notice for users of OFAC's
+Sanctions List Data Files
+03/20/2019 Important technical notice for users of OFAC's
+Sanctions List Data Files
+Year: 2018
+Date Technical Notice Description
+10/24/2018 Important Technical Notice for Users of the OFAC
+Website
+10/16/2018 Important Technical Notice for Users of OFAC's
+SDALL.ZIP
+06/05/2018 Important Technical Notice for Users of the OFAC
+Website
+04/30/2018 Upgrade of OFAC's FTP Server
+01/05/2017
+Year: 2017
+Date Technical Notice Description
+11/03/2017 Important Technical Notice for Users of the OFAC
+Website
+02/27/2017 Date formatting change in the SDN.XML file
+10/17/26, 6:03 PM OFAC Technical Actions (in reverse chronological order) | Office of Foreign Assets Control
+https://ofac.treasury.gov/sdn-list-data-formats-data-schemas/ofac-technical-actions-in-reverse-chronological-order 3/5
+
+Date Technical Notice Description
+02/22/2017 Compressed Version of the SDN.XML File Now
+Available
+01/10/2017 Important Technical Notice for Users of the OFAC
+website
+01/05/2017 Correction to SDN Advanced XML Location Data
+Year: 2015
+Date Technical Notice Description
+11/23/2015
+Announcement Regarding the Use of HTTPS for
+the Download of OFAC's SDN and Consolidated
+List Files
+07/10/2015
+Retirement of Independent Data Files for the FSE
+List, SSI List and the NS-PLC List and Migration to
+the Consolidated Sanctions List Data Files
+07/06/2015
+Final Reminder about the Retirement of
+Independent Data Files for the FSE List, SSI List
+and the NS-PLC List and Migration to the
+Consolidated Sanctions List Data Files
+06/10/2015
+Reminder about the Retirement of Independent
+Data Files for the FSE List, SSI List and the NS-PLC
+List and Migration to the Consolidated Sanctions
+List Data Files
+04/06/2015 Release of Advanced Format for the Consolidated
+Non-SDN Data Files
+02/25/2015
+Extension of Timeframe for the Termination of
+Independent Data Files for the FSE, SSI and NS-
+PLC Lists
+10/17/26, 6:03 PM OFAC Technical Actions (in reverse chronological order) | Office of Foreign Assets Control
+https://ofac.treasury.gov/sdn-list-data-formats-data-schemas/ofac-technical-actions-in-reverse-chronological-order 4/5
+
+Date Technical Notice Description
+01/05/2015 Release of New, Advanced Format for the
+Specially Designated and Blocked Persons List
+OFFICE OF
+TERRORISM AND
+FINANCIAL
+INTELLIGENCE
+ADDITIONAL RESOURCES
+P r i v a c y A c t
+S m a l l B u s i n e s s C o n t a c t s
+B u d g e t a n d P e r f o r m a n c e
+T r e a s u r y D i r e c t . g o v S e c u r i t i e s / B o n d s
+F r e e d o m o f I n f o r m a t i o n A c t ( F O I A )
+N o F E A R A c t D a t a
+W h i s t l e b l o w e r P r o t e c t i o n
+HELPFUL OFAC LINKS
+S i g n U p F o r O F A C E - m a i l A l e r t s
+C o n t a c t O F A C
+D e a l i n g w i t h a n " O F A C A l e r t "
+L i s t o f C o u n t r y - r e l a t e d S a n c t i o n s
+A p p e a l a n O F A C d e s i g n a t i o n o r o t h e r l i s t i n g OTHER GOVERNMENT SITES
+U S A . g o v
+U S A J O B S . g o v
+O P M . g o v
+M y M o n e y . g o v
+D a t a . g o v
+Privacy Policy • Google Privacy • Site Policies and Notices • Accessibility
+10/17/26, 6:03 PM OFAC Technical Actions (in reverse chronological order) | Office of Foreign Assets Control
+https://ofac.treasury.gov/sdn-list-data-formats-data-schemas/ofac-technical-actions-in-reverse-chronological-order 5/5

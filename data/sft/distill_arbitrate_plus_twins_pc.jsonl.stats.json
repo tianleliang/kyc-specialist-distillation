@@ -1,0 +1,14 @@
+{
+ "input": "data/sft/distill_arbitrate_plus_twins.jsonl",
+ "output": "data/sft/distill_arbitrate_plus_twins_pc.jsonl",
+ "rows": 3934,
+ "blocks_added": 3934,
+ "assistant_targets_changed": 0,
+ "nd_counts": {
+  "as_of": 0,
+  "mrz": 281,
+  "expiry": 267,
+  "poa_date": 431,
+  "integrity": 158
+ }
+}

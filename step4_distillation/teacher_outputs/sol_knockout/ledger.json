@@ -1,0 +1,17 @@
+{
+  "total_usd": 10.917774,
+  "by_model": {
+    "gpt-6.1-sol": {
+      "provider": "openai",
+      "calls": 300,
+      "cache_hits": 0,
+      "batch_calls": 0,
+      "input_tokens": 4196187,
+      "output_tokens": 252540,
+      "reasoning_tokens": 35258,
+      "cost_usd": 10.917774000000001,
+      "saved_by_cache_usd": 0.0,
+      "unpriced_calls": 0
+    }
+  }
+}

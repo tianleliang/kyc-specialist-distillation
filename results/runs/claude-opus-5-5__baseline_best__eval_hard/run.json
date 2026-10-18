@@ -1,0 +1,8 @@
+{
+  "model": "Claude Opus 5.5 (best prompt)",
+  "params": "frontier (undisclosed)",
+  "price_key": "claude-opus-5-5",
+  "gold": "data/eval_hard/cases.jsonl",
+  "table1_group": "eval_hard",
+  "table1_order": 4
+}

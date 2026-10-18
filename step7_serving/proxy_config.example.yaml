@@ -1,0 +1,51 @@
+# step7_serving/proxy.py config. Copy and edit; secrets never go here (only env var NAMES).
+upstream_url: http://localhost:8000/v1      # vLLM's OpenAI-compatible server
+upstream_model: PLACEHOLDER                 # the merged model name vLLM serves (base model: Tianle's decision)
+served_model: zorbe-kyc
+upstream_api_key_env: null                  # e.g. VLLM_API_KEY if vLLM runs with --api-key
+api_keys_env: PROXY_API_KEYS                # comma-separated bearer tokens for callers
+schema_path: step0_rules/schema/v1_serving.json        # v1 + maxLength/maxItems so constrained decoding can't loop;
+                                                    # every output valid here is valid under the published v1.json
+policy: step0_rules/policy_v1.md
+template: student_short           # D21b: the trained model gets the short prompt (policy learned in training)
+default_max_tokens: 2048
+max_tokens_cap: 4096
+default_temperature: 0.0
+max_attempts: 2                             # one retry
+fallback_on_upstream_error: true            # upstream 5xx/timeout twice -> escalate fallback (flagged)
+repair_fences: true                         # accept ```json fences / prose around the object (flagged)
+timeout_s: 600
+log_path: null                              # e.g. outputs/proxy/requests.jsonl
+# Schema-valid escalate fallback (v1). Top-level enums offering "escalate" are set automatically;
+# these dotted paths fill the rest. Every identity finding is "unreadable / field_illegible" (not
+# assessed), no screening item is invented, and no action is invented.
+fallback_overrides:
+  schema_version: "1.0"
+  decision: escalate
+  name_status: unreadable
+  name_reason: field_illegible
+  date_of_birth_status: unreadable
+  date_of_birth_reason: field_illegible
+  document_number_status: unreadable
+  document_number_reason: field_illegible
+  expiry_status: unreadable
+  expiry_reason: field_illegible
+  address_status: unreadable
+  address_reason: field_illegible
+  identity_verified: false
+  screening: []
+  risk_tier: high
+  risk_drivers: [insufficient_evidence]
+  required_actions: []
+  narrative.0.sentence: "The automated review did not produce a valid assessment for this packet."
+  narrative.0.evidence_refs: [context]
+  narrative.0.hit_ids: []
+  narrative.1.sentence: "No identity, screening or risk conclusion is drawn from the automated output."
+  narrative.1.evidence_refs: [context]
+  narrative.1.hit_ids: []
+  narrative.2.sentence: "The case is escalated to an analyst for manual review of the full packet."
+  narrative.2.evidence_refs: [context]
+  narrative.2.hit_ids: []
+  narrative.3.sentence: "Decision: escalate for manual review."
+  narrative.3.evidence_refs: [context]
+  narrative.3.hit_ids: []

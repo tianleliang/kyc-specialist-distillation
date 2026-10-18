@@ -1,0 +1,547 @@
+==============================================================================
+mrz (Python) README: ICAO 9303 MRZ TD1/TD2/TD3/MRVA/MRVB generation and checking
+Source: https://raw.githubusercontent.com/Arg0s1080/mrz/master/README.md
+==============================================================================
+
+# MRZ Generator & MRZ Checker
+
+## Description:
+Machine Readable Zone generator and checker for official travel documents sizes 1, 2, 3, MRVA and MRVB (Passports, Visas, national id cards and other travel documents)
+
+MRZ Generator and MRZ Checker are built according to International Civil Aviation Organization specifications (ICAO 9303):
+
+* [Specifications Common to all Machine Readable Travel Documents (MRTDs)](https://www.icao.int/publications/Documents/9303_p3_cons_en.pdf)
+* [Specifications for Machine Readable Passports (MRPs)](https://www.icao.int/publications/Documents/9303_p4_cons_en.pdf)
+* [Specifications for TD1 Size Machine Readable Official Travel Documents (MROTDs)](https://www.icao.int/publications/Documents/9303_p5_cons_en.pdf)
+* [Specifications for TD2 Size Machine Readable Official Travel Documents (MROTDs)](https://www.icao.int/publications/Documents/9303_p6_cons_en.pdf)
+* [Specifications for Machine Readable Visas (MRV)](https://www.icao.int/publications/Documents/9303_p7_cons_en.pdf)
+
+
+###### See all 9303 ICAO docs ([البيت العربي](https://github.com/Arg0s1080/mrz/tree/master/docs/ICAO9303/Arab/Files_ar.rst), [中文](https://github.com/Arg0s1080/mrz/tree/master/docs/ICAO9303/Chinese/Files_zh.rst), [English](https://github.com/Arg0s1080/mrz/tree/master/docs/ICAO9303/English/Files_en.rst), [Français](https://github.com/Arg0s1080/mrz/tree/master/docs/ICAO9303/French/Files_fr.rst), [Русский](https://github.com/Arg0s1080/mrz/tree/master/docs/ICAO9303/Russian/Files_ru.rst) and [Español](https://github.com/Arg0s1080/mrz/tree/master/docs/ICAO9303/Spanish/Files_es.rst))
+
+## Fields Distribution of Official Travel Documents:
+![image](https://raw.githubusercontent.com/Arg0s1080/mrz/master/docs/Fields_Distribution.png)
+
+## Usage Generator:
+#### TD1's (id cards):
+
+    Params:                      Case insensitive
+
+        document_type    (str):  The first letter shall be 'I', 'A' or 'C'
+        country_code     (str):  3 letters code (ISO 3166-1) or country name (in English)
+        document_number  (str):  Document number
+        birth_date       (str):  YYMMDD
+        sex              (str):  Genre. Male: 'M', Female: 'F' or Undefined: 'X', "<" or ""
+        expiry_date      (str):  YYMMDD
+        nationality      (str):  3 letters code (ISO 3166-1) or country name (in English)
+        surname          (str):  Holder primary identifier(s). This field will be transliterated
+        given_names      (str):  Holder secondary identifier(s). This field will be transliterated
+        optional_data1   (str):  Optional personal data at the discretion of the issuing State.
+                                 Non-mandatory field. Empty string by default
+        optional_data2   (str):  Optional personal data at the discretion of the issuing State.
+                                 Non-mandatory field. Empty string by default
+        transliteration (dict):  Transliteration dictionary for non-ascii chars. Latin based by default
+        force           (bool):  Disables checks for country, nationality and document_type fields.
+                                 Allows to use 3-letter-codes not included in the countries dictionary
+                                 and to use document_type codes without restrictions.
+                                 
+#### TD2
+
+    Params:                      Case insensitive
+
+        document_type    (str):  The first letter shall be 'I', 'A' or 'C'
+        country_code     (str):  3 letters code (ISO 3166-1) or country name (in English)
+        surname          (str):  Holder primary identifier(s). This field will be transliterated.
+        given_names      (str):  Holder secondary identifier(s). This field will be transliterated.
+        document_number  (str):  Document number.
+        nationality      (str):  3 letters code (ISO 3166-1) or country name
+        birth_date       (str):  YYMMDD
+        sex              (str):  Genre. Male: 'M', Female: 'F' or Undefined: 'X', "<" or ""
+        expiry_date      (str):  YYMMDD
+        optional_data    (str):  Optional personal data at the discretion of the issuing State.
+                                 Non-mandatory field. Empty string by default
+        transliteration (dict):  Transliteration dictionary for non-ascii chars. Latin based by default
+        force           (bool):  Disables checks for country, nationality and document_type fields.
+                                 Allows to use 3-letter-codes not included in the countries dictionary
+                                 and to use document_type codes without restrictions.
+                                 
+#### TD3 (Passports)
+
+    Params:                      Case insensitive
+
+        document_type    (str):  Normally 'P' for passport
+        country_code     (str):  3 letters code (ISO 3166-1) or country name (in English)
+        surname          (str):  Primary identifier(s)
+        given_names      (str):  Secondary identifier(s)
+        document_number  (str):  Document number
+        nationality      (str):  3 letters code (ISO 3166-1) or country name
+        birth_date       (str):  YYMMDD
+        sex              (str):  Genre. Male: 'M', Female: 'F' or Undefined: 'X', "<" or ""
+        expiry_date      (str):  YYMMDD
+        optional data    (str):  Personal number. In some countries non-mandatory field. Empty string by default
+        transliteration (dict):  Transliteration dictionary for non-ascii chars. Latin based by default
+        force           (bool):  Disables checks for country, nationality and document_type fields.
+                                 Allows to use 3-letter-codes not included in the countries dictionary
+                                 and to use document_type codes without restrictions.
+                                 
+#### MRVA (Visas type A)
+
+    Params:                      Case insensitive
+    
+        document_type    (str):  The First letter must be 'V'
+        country_code     (str):  3 letters code (ISO 3166-1) or country name (in English)
+        surname          (str):  Primary identifier(s)
+        given_names      (str):  Secondary identifier(s)
+        document_number  (str):  Document number
+        nationality      (str):  3 letters code (ISO 3166-1) or country name
+        birth_date       (str):  YYMMDD
+        sex              (str):  Genre. Male: 'M', Female: 'F' or Undefined: 'X', "<" or ""
+        expiry_date      (str):  YYMMDD
+        optional_data    (str):  Optional personal data at the discretion of the issuing State.
+                                 Non-mandatory field. Empty string by default.
+        transliteration (dict):  Transliteration dictionary for non-ascii chars. Latin based by default
+        force           (bool):  Disables checks for country, nationality and document_type fields.
+                                 Allows to use 3-letter-codes not included in the countries dictionary
+                                 and to use document_type codes without restrictions.
+                          
+#### MRVB (Visas type B)
+
+    Params:                      Case insensitive
+    
+        document_type    (str):  The First letter must be 'V'
+        country_code     (str):  3 letters code (ISO 3166-1) or country name (in English)
+        surname          (str):  Primary identifier(s)
+        given_names      (str):  Secondary identifier(s)
+        document_number  (str):  Document number
+        nationality      (str):  3 letters code (ISO 3166-1) or country name
+        birth_date       (str):  YYMMDD
+        sex              (str):  Genre. Male: 'M', Female: 'F' or Undefined: 'X', "<" or ""
+        expiry_date      (str):  YYMMDD
+        optional_data    (str):  Optional personal data at the discretion of the issuing State.
+                                 Non-mandatory field. Empty string by default.
+        transliteration (dict):  Transliteration dictionary for non-ascii chars. Latin based by default
+        force           (bool):  Disables checks for country, nationality and document_type fields.
+                                 Allows to use 3-letter-codes not included in the countries dictionary
+                                 and to use document_type codes without restrictions.
+                                 
+##### Passport generator example (ICAO9303 Specimen):
+![image](https://raw.githubusercontent.com/Arg0s1080/mrz/master/docs/images/passports/ICAO_Example.png)
+
+##### TD3CodeGenerator -> str: 
+
+```python
+from mrz.generator.td3 import TD3CodeGenerator
+
+code = TD3CodeGenerator("P", "UTO", "Eriksson", "Anna María", "L898902C3", "UTO", "740812", "F", "120415","ZE184226B")
+
+print(code)
+```
+    
+
+##### Output:
+    P<UTOERIKSSON<<ANNA<MARIA<<<<<<<<<<<<<<<<<<<
+    L898902C36UTO7408122F1204159ZE184226B<<<<<10
+
+###### Note: See other uses in [mrz.generator examples folder](https://github.com/Arg0s1080/mrz/tree/master/examples/mrz_generator_samples)
+
+## Usage Checker:
+#### TD1's (id cards):
+
+    Params:
+
+        mrz_string        (str):  MRZ string of TD1. Must be 90 uppercase characters long (3 lines)
+        check_expiry     (bool):  If it's set to True, it is verified and reported as warning that the
+                                  document is not expired and that expiry_date is not greater than 10 years
+        compute_warnings (bool):  If it's set True, warnings compute as False
+
+#### TD2:
+
+    Params:
+
+        mrz_string        (str):  MRZ string of TD2. Must be 72 characters long (uppercase) (2 lines)
+        check_expiry     (bool):  If it's set to True, it is verified and reported as warning that the
+                                  document is not expired and that expiry_date is not greater than 10 years
+        compute_warnings (bool):  If it's set True, warnings compute as False
+        
+#### TD3 (Passports):
+
+    Params:
+
+        mrz_string        (str):  MRZ string of TD3. Must be 88 characters long (uppercase) (2 lines)
+        check_expiry     (bool):  If it's set to True, it is verified and reported as warning that the
+                                  document is not expired and that expiry_date is not greater than 10 years
+        compute_warnings (bool):  If it's set True, warnings compute as False
+        
+#### MRVA:
+
+    Params:
+
+        mrz_string        (str):  MRZ string of Visas type A. Must be 88 characters long (uppercase) (2 lines)
+        check_expiry     (bool):  If it's set to True, it is verified and reported as warning that the
+                                  document is not expired and that expiry_date is not greater than 10 years
+        compute_warnings (bool):  If it's set True, warnings compute as False
+        
+#### MRVB:
+
+    Params:
+
+        mrz_string        (str):  MRZ string of Visas type B. Must be 72 characters long (uppercase) (2 lines)
+        check_expiry     (bool):  If it's set to True, it is verified and reported as warning that the
+                                  document is not expired and that expiry_date is not greater than 10 years
+        compute_warnings (bool):  If it's set True, warnings compute as False
+        
+##### Id Card Checker example
+![image](https://raw.githubusercontent.com/Arg0s1080/mrz/master/docs/images/id_cards/Sweden.png)
+
+##### TD1CodeChecker -> bool
+```python
+from mrz.checker.td1 import TD1CodeChecker
+    
+check = TD1CodeChecker("I<SWE59000002<8198703142391<<<\n"
+                       "8703145M1701027SWE<<<<<<<<<<<8\n"
+                       "SPECIMEN<<SVEN<<<<<<<<<<<<<<<<")
+result = bool(check)
+print(result)
+```
+
+##### Output
+    True
+
+###### Note: See other uses in [mrz.checker examples folder](https://github.com/Arg0s1080/mrz/tree/master/examples/mrz_checker_samples)
+
+
+##### Fields extraction example (valid for td1, td2, td3 and visas)
+```python
+from mrz.checker.td1 import TD1CodeChecker, get_country
+
+td1_check = TD1CodeChecker("IDLIEID98754015<<<<<<<<<<<<<<<\n"
+                           "8205122M1906224LIE<<<<<<<<<<<6\n"
+                           "OSPELT<BECK<<MARISA<<<<<<<<<<<")
+
+fields = td1_check.fields()
+
+print(fields.name, fields.surname)
+print(get_country(fields.country))
+
+```
+
+##### Output
+```
+MARISA OSPELT BECK
+Liechtenstein
+```
+###### Note: See other uses in [mrz.checker examples folder](https://github.com/Arg0s1080/mrz/tree/master/examples/mrz_checker_samples) and [this issue](https://github.com/Arg0s1080/mrz/issues/6)
+
+
+## Installation:
+
+#### From [Pypi repo](https://pypi.org/project/mrz/) (It may not be the latest version):
+    pip install mrz 
+    
+#### Cloning this repo (It may not work fine):
+```
+git clone https://github.com/Arg0s1080/mrz.git
+cd mrz
+sudo python3 setup.py install
+```
+
+## Features:
+- [x] Transliteration of special Latin characters (acutes, tildes, diaeresis, graves, circumflex, etc)
+- [x] Arabic chars transliteration
+- [x] Several variations of Cyrillic added: Serbian, Macedonian, Belarusian, Ukrainian and Bulgarian
+- [x] Transliteration of modern Greek (experimental)
+- [x] Transliteration of modern Hebrew (without vowels) (experimental)
+- [x] Generation of the country code from its name in English (Ex.: "Netherlands" -> "NLD")
+- [x] Name truncation detection
+- [x] Error report, warnings report and full report in Checker.
+- [x] Possibility that warnings compute as errors using compute_warnings keyword in Checker.
+- [x] Possibility of disabling checks for country code, nationality and type of document, allowing to use 3-letter-codes not included in the countries dictionary and to use document_type codes without restrictions in Generator.
+- [x] Added new checks for periods of time in Checker.
+- [x] Visas support
+- [x] Fields extraction in checker (name, surname, country, sex, etc) (version 0.5.0)
+
+
+###### TODO:
+- [ ] Automatic name truncation in Generator
+- [ ] Possibility of disabling checks for country code, nationality, type of document and the others fields in Checker.
+- [ ] Add logging
+
+### IMPORTANT:
+
+- MRZ is a Python module to be used as library in other programs. So, its intended audience are developers. 
+**MRZ will never have a user interface nor will have CLI support.** (Of course.. if someone wants, can do it)
+However, **if someone is curious and wants to generate or check the mrz code of a passport or ID card, 
+can modify any of the [examples](https://github.com/Arg0s1080/mrz/tree/master/examples)**.
+
+- Right now I am very busy and have very little free time. Please, before creating an issue or consulting by email, 
+read [this issue](https://github.com/Arg0s1080/mrz/issues/31)
+
+
+==============================================================================
+mrz (JavaScript, cheminfo) README: MRZ formats and parsing
+Source: https://raw.githubusercontent.com/cheminfo/mrz/main/README.md
+==============================================================================
+
+<h3 align="center">
+  <a href="https://www.zakodium.com">
+    <img src="https://www.zakodium.com/brand/zakodium-logo-white.svg" width="50" alt="Zakodium logo" />
+  </a>
+  <p>
+    Maintained by <a href="https://www.zakodium.com">Zakodium</a>
+  </p>
+</h3>
+
+# mrz
+
+[![NPM version](https://img.shields.io/npm/v/mrz.svg)](https://www.npmjs.com/package/mrz)
+[![npm download](https://img.shields.io/npm/dm/mrz.svg)](https://www.npmjs.com/package/mrz)
+[![test coverage](https://img.shields.io/codecov/c/github/cheminfo/mrz.svg)](https://codecov.io/gh/cheminfo/mrz)
+[![license](https://img.shields.io/npm/l/mrz.svg)](https://github.com/cheminfo/mrz/blob/main/LICENSE)
+
+Parse MRZ (Machine Readable Zone) from identity documents.
+
+## Installation
+
+```console
+npm install mrz
+```
+
+## Example
+
+```js
+const parse = require('mrz').parse;
+
+const mrz = [
+  'I<UTOD23145890<1233<<<<<<<<<<<',
+  '7408122F1204159UTO<<<<<<<<<<<2',
+  'ERIKSSON<<ANNA<MARIA<<<<<<<<<<',
+];
+
+var result = parse(mrz);
+console.log(result);
+```
+
+## API
+
+### `parse(mrz, [options])`
+
+Parses the provided MRZ. The argument can be an array of lines or a single string
+including line breaks. This function throws an error if the input is in an
+unsupported format. It will never throw an error when there are invalid fields
+in the MRZ. Instead, the `result.valid` value will be `false` and
+details about the invalid fields can be found in `result.details`.
+
+#### Options
+
+##### `options.autocorrect`
+
+If set to `true`, some ambiguous characters will be automatically corrected by the parser if the field is supposed to
+only contain numeric or alphabetic characters.
+For example, in a date field, the letter "O" will be converted to the number "0".
+
+Information about autocorrected characters will be added to the result details.
+
+Default: `false`.
+
+#### Shape of the parse result
+
+##### result.format
+
+String identifying the format of the parsed MRZ. Supported formats are:
+
+- TD1 (identity card with three MRZ lines)
+- TD2 (identity card with two MRZ lines)
+- TD3 (passport)
+- SWISS_DRIVING_LICENSE
+- FRENCH_NATIONAL_ID
+
+##### result.valid
+
+`true` if all fields are valid. `false` otherwise.
+
+##### result.fields
+
+Object mapping field names to their respective value. The value is set to `null`
+if it is invalid. The value may be different from the raw value. For example,
+`result.fields.sex` will be "male" when the raw value was "M".
+
+##### result.documentNumber
+
+The document number, as can be found in the visual elements of the document, outside the MRZ. For some documents, it may
+be composed of multiple parsed fields. It may also not include the MRZ field named `documentNumber`. If any of the used
+fields is invalid, this field will be set to `null`.
+
+##### result.details
+
+Array of objects describing all parsed fields. Its structure is:
+
+- label {string} - Full english term for the field.
+- field {string|null} - Name of the field in `result.fields`. Null for some fields such as separators that don't contain a value.
+- value {string} - Value of the field (if it's valid) or `null`.
+- valid {boolean} - Whether the field is valid.
+- ranges {Array} - Array of ranges that are necessary to compute this field.
+  Ranges are objects with `line`, `start`, `end` and `raw`.
+- line {number} - Index of the line where the field's value is located.
+- start {number} - Index of the start of the field's value in `line`.
+- end {number} - Index of the end of the field's value in `line`.
+- error {undefined|string} - Contains a message describing the error if the field is invalid.
+- autocorrect {array} - Contains indices of characters that were autocorrected and their original value.
+
+### `formats`
+
+Static mapping of supported formats.
+
+### `states`
+
+Static mapping of state code to state name.
+
+## Specifications
+
+### TD1, TD2 and TD3
+
+https://www.icao.int/publications/pages/publication.aspx?docnum=9303
+
+### Swiss driving license
+
+https://www.astra.admin.ch/dam/astra/fr/dokumente/dokumente-strassenverkehr/kreisschreiben/ch-fak.pdf.download.pdf/Le%20permis%20de%20conduire%20suisse%20format%20carte%20de%20cr%C3%A9dit%20(PCC).pdf
+
+### French national id
+
+https://fr.wikipedia.org/wiki/Carte_nationale_d%27identit%C3%A9_en_France#Codage_bande_%C3%A0_lecture_optique
+
+## License
+
+[MIT](./LICENSE)
+
+
+==============================================================================
+PassportEye README: MRZ recognition
+Source: https://raw.githubusercontent.com/konstantint/PassportEye/master/README.rst
+==============================================================================
+
+==========================================================================
+PassportEye: Python tools for image processing of identification documents
+==========================================================================
+.. image:: https://travis-ci.org/konstantint/PassportEye.svg?branch=master
+    :target: https://travis-ci.org/konstantint/PassportEye
+
+The package provides tools for recognizing machine readable zones (MRZ) from scanned identification documents.
+The documents may be located rather arbitrarily on the page - the code tries to find anything resembling a MRZ 
+and parse it from there.
+
+The recognition procedure may be rather slow - around 10 or more seconds for some documents. Its precision is
+not perfect, yet seemingly decent as far as test documents available to the developer were concerned - in
+around 80% of the cases, whenever there is a clearly visible MRZ on a page, the system will recognize it and extract the text
+to the best of the abilities of the underlying OCR engine (Google Tesseract).
+
+The failed examples seem to be most often either clearly badly scanned documents, where text is way too blurred, or,
+more seriously, some types of IDs (Romanian being one example), where the MRZ is too close to the remaining part of the card - 
+a situation not accounted for too well by the current algorithm.
+
+Installation
+------------
+
+The simplest way to install the package is via ``pip``::
+
+    $ pip install PassportEye
+
+Note that `PassportEye` depends on `numpy`, `scipy`, `matplotlib` and `scikit-image`, among other things. The installation of those requirements, although automatic,
+may take time or fail sometimes for various reasons (e.g. lack of necessary libraries). If this happens, consider installing the dependencies explicitly from the binary packages, such as those provided by the OS distribution or the "wheel" packages. Another convenient option is to use a Python distribution with pre-packaged `numpy`/`scipy`/`matplotlib` binaries (Anaconda Python being a great choice at the moment).
+
+In addition, you must have the `Tesseract OCR <https://github.com/tesseract-ocr>`_ installed and added to the system path: the ``tesseract`` tool must be 
+accessible at the command line. Note that the most recent version of Tesseract does not by default include its "legacy" model in some installations (e.g. Windows). The legacy model, however
+shows slightly better performance for MRZ text detection according to our tests and is therefore used by default. If the respective model is not installed by default, you should download
+the `eng.traineddata` file [here](https://github.com/tesseract-ocr/tessdata) and replace with it the (smaller) `eng.traineddata` file that came with your installation.
+
+PassportEye requires Python version 3.6 or higher.
+
+Usage
+-----
+
+On installation, the package installs a standalone tool ``mrz`` into your Python scripts path. Running::
+
+    $ mrz <filename>
+    
+will process a given filename, extracting the MRZ information it finds and printing it out in tabular form.
+Running ``mrz --json <filename>`` will output the same information in JSON. Running ``mrz --save-roi <roi.png>`` will,
+in addition, extract the detected MRZ ("region of interest") into a separate png file for further exploration.
+Note that the tool provides a limited support for PDF files -- it attempts to extract the first DCT-encoded image 
+from the PDF and applies the recognition on it. This seems to work fine with most scanner-produced one-page PDFs, but
+has not been tested extensively.
+
+If your Tesseract installation has the "legacy" ``*.traineddata`` models installed (in its ``tessdata`` directory), consider running::
+
+    $ mrz --legacy <filename>
+
+This will enable the "legacy" recognizer which, despite the name, seems to work better for MRZ recognition. If you do not know
+whether you have the relevant files, just try running the command above and see whether you get an error. 
+
+In order to use the recognition function in Python code, simply do::
+
+    >> from passporteye import read_mrz
+    >> mrz = read_mrz(image_file)
+
+Where image_file can be either a path to a file on disk, or a byte stream containing image data.
+
+The returned object (unless it is None, which means no ROI was detected) contains the fields extracted from the MRZ along
+with some metainformation. For the description of the available fields, see the docstring for the `passporteye.mrz.text.MRZ` class.
+Note that you can convert the object to a dictionary using the ``to_dict()`` method.
+
+If you want to have the ROI reported alongside the MRZ, call the ``read_mrz`` function as follows::
+
+    >> mrz = read_mrz(image_file, save_roi=True)
+
+The ROI can then be accessed as ``mrz.aux['roi']`` -- it is a numpy ndarray, representing the (grayscale) image region where the OCR was applied.
+
+Finally, in order to use the "legacy recognizer", pass the ``--oem 0`` extra command line argument to Tesseract as follows::
+
+    >> mrz = read_mrz(image_file, extra_cmdline_params='--oem 0')
+
+For more flexibility, you may instead use a ``MRZPipeline`` object, which will provide you access to all intermediate computations as follows::
+
+    >> from passporteye.mrz.image import MRZPipeline
+    >> p = MRZPipeline(file, extra_cmdline_params='--oem 0')
+    >> mrz = p.result
+
+The "pipeline" object stores the intermediate computations in its ``data`` dictionary. Although you need to understand the underlying algorithm
+to make sense of it, sometimes it may provide for insightful visualizations. This code, for example, will plot the binarized version of the original image
+which is used in the algorithm to extract ROIs alongside the boxes corresponding to the extracted ROIs::
+
+    >> imshow(p['img_binary'])
+    >> for b in p['boxes']:
+    ..     plot(b.points[:,1], b.points[:,0], c='b')
+    ..     b.plot()
+
+Development
+-----------
+
+If you plan to develop or debug the package, consider installing it by running::
+
+    $ pip install -e ".[dev]"
+
+This will install the package in "editable" mode and add a couple of useful extras (such as `pytest`). 
+You can then run the tests by typing::
+
+    $ py.test
+    
+At the root of the source distribution.
+
+The command-line script ``evaluate_mrz`` can be used to assess the performance of the current recognition pipeline on a set 
+of sample images: this is useful if you want to see the effects of changes to the code. Just run::
+
+    $ evaluate_mrz -j 4
+
+(where ``-j 4`` would request to use 4 cores in parallel). The same script may be used to run the recognition pipeline on a 
+given directory of images, sorting successes and failures, see ``evaluate_mrz -h`` for options.
+
+
+Contributing
+------------
+
+Feel free to contribute or report issues via Github: https://github.com/konstantint/PassportEye
+
+Copyright & License
+-------------------
+
+Copyright: 2016, Konstantin Tretyakov.
+License: MIT

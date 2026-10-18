@@ -1,0 +1,13 @@
+{
+  "model": "GPT-6 Astra (best prompt)",
+  "params": "frontier (undisclosed)",
+  "price_key": "gpt-6-astra",
+  "gold": [
+    "data/eval_id/cases.jsonl",
+    "data/eval_ood_template/cases.jsonl",
+    "data/eval_ood_hand/cases.jsonl",
+    "data/eval_ood_llm/cases.jsonl"
+  ],
+  "table1_group": "eval_v1",
+  "table1_order": 2
+}

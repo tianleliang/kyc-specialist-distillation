@@ -1,0 +1,70 @@
+| split | field | n | coverage | accuracy (when determinable) | errors |
+|---|---|---:|---:|---:|---:|
+| reader_dev:email | as_of | 92 | 100.0% | 100.00% | 0 |
+| reader_dev:email | mrz | 87 | 100.0% | 100.00% | 0 |
+| reader_dev:email | expiry | 90 | 95.6% | 100.00% | 0 |
+| reader_dev:email | expired | 90 | 95.6% | 100.00% | 0 |
+| reader_dev:email | poa_date | 92 | 90.2% | 100.00% | 0 |
+| reader_dev:email | poa_window | 92 | 90.2% | 100.00% | 0 |
+| reader_dev:form | as_of | 94 | 100.0% | 100.00% | 0 |
+| reader_dev:form | mrz | 90 | 100.0% | 100.00% | 0 |
+| reader_dev:form | expiry | 92 | 96.7% | 100.00% | 0 |
+| reader_dev:form | expired | 92 | 96.7% | 100.00% | 0 |
+| reader_dev:form | poa_date | 94 | 92.6% | 100.00% | 0 |
+| reader_dev:form | poa_window | 94 | 92.6% | 100.00% | 0 |
+| reader_dev:kv | as_of | 91 | 100.0% | 100.00% | 0 |
+| reader_dev:kv | mrz | 83 | 100.0% | 100.00% | 0 |
+| reader_dev:kv | expiry | 86 | 91.9% | 100.00% | 0 |
+| reader_dev:kv | expired | 86 | 91.9% | 100.00% | 0 |
+| reader_dev:kv | poa_date | 90 | 91.1% | 100.00% | 0 |
+| reader_dev:kv | poa_window | 90 | 91.1% | 100.00% | 0 |
+| reader_dev:mixed | as_of | 105 | 100.0% | 100.00% | 0 |
+| reader_dev:mixed | mrz | 93 | 100.0% | 100.00% | 0 |
+| reader_dev:mixed | expiry | 101 | 94.1% | 100.00% | 0 |
+| reader_dev:mixed | expired | 101 | 94.1% | 100.00% | 0 |
+| reader_dev:mixed | poa_date | 104 | 99.0% | 100.00% | 0 |
+| reader_dev:mixed | poa_window | 104 | 99.0% | 100.00% | 0 |
+| reader_dev:ocr_dump | as_of | 120 | 100.0% | 100.00% | 0 |
+| reader_dev:ocr_dump | mrz | 109 | 100.0% | 100.00% | 0 |
+| reader_dev:ocr_dump | expiry | 117 | 91.5% | 100.00% | 0 |
+| reader_dev:ocr_dump | expired | 117 | 91.5% | 100.00% | 0 |
+| reader_dev:ocr_dump | poa_date | 119 | 94.1% | 100.00% | 0 |
+| reader_dev:ocr_dump | poa_window | 119 | 94.1% | 100.00% | 0 |
+| reader_dev:prose | as_of | 98 | 100.0% | 100.00% | 0 |
+| reader_dev:prose | mrz | 96 | 100.0% | 100.00% | 0 |
+| reader_dev:prose | expiry | 97 | 99.0% | 100.00% | 0 |
+| reader_dev:prose | expired | 97 | 99.0% | 100.00% | 0 |
+| reader_dev:prose | poa_date | 95 | 93.7% | 100.00% | 0 |
+| reader_dev:prose | poa_window | 95 | 93.7% | 100.00% | 0 |
+| split | field | n | coverage | accuracy (when determinable) | errors |
+|---|---|---:|---:|---:|---:|
+| reader_dev:email | integ_date_of_birth | 92 | 98.9% | 100.00% | 0 |
+| reader_dev:email | integ_document_number | 92 | 100.0% | 100.00% | 0 |
+| reader_dev:email | integ_expiry | 92 | 100.0% | 100.00% | 0 |
+| reader_dev:email | integ_overall | 92 | 98.9% | 100.00% | 0 |
+| reader_dev:form | integ_date_of_birth | 94 | 98.9% | 100.00% | 0 |
+| reader_dev:form | integ_document_number | 94 | 100.0% | 100.00% | 0 |
+| reader_dev:form | integ_expiry | 94 | 100.0% | 100.00% | 0 |
+| reader_dev:form | integ_overall | 94 | 98.9% | 100.00% | 0 |
+| reader_dev:kv | integ_date_of_birth | 91 | 97.8% | 100.00% | 0 |
+| reader_dev:kv | integ_document_number | 91 | 100.0% | 100.00% | 0 |
+| reader_dev:kv | integ_expiry | 91 | 97.8% | 100.00% | 0 |
+| reader_dev:kv | integ_overall | 91 | 95.6% | 100.00% | 0 |
+| reader_dev:mixed | integ_date_of_birth | 105 | 100.0% | 100.00% | 0 |
+| reader_dev:mixed | integ_document_number | 105 | 100.0% | 100.00% | 0 |
+| reader_dev:mixed | integ_expiry | 105 | 99.0% | 100.00% | 0 |
+| reader_dev:mixed | integ_overall | 105 | 99.0% | 100.00% | 0 |
+| reader_dev:ocr_dump | integ_date_of_birth | 120 | 97.5% | 100.00% | 0 |
+| reader_dev:ocr_dump | integ_document_number | 120 | 100.0% | 100.00% | 0 |
+| reader_dev:ocr_dump | integ_expiry | 120 | 98.3% | 100.00% | 0 |
+| reader_dev:ocr_dump | integ_overall | 120 | 97.5% | 100.00% | 0 |
+| reader_dev:prose | integ_date_of_birth | 98 | 100.0% | 100.00% | 0 |
+| reader_dev:prose | integ_document_number | 98 | 100.0% | 100.00% | 0 |
+| reader_dev:prose | integ_expiry | 98 | 100.0% | 100.00% | 0 |
+| reader_dev:prose | integ_overall | 98 | 100.0% | 100.00% | 0 |
+[reader_dev:email] no-MRZ docs: 5, MRZ invented: 0; expected=document_expired: 6, said NOT EXPIRED: 0; PoA n/d reasons: {'ambiguous_dmy': 7, 'illegible_scan': 2}
+[reader_dev:form] no-MRZ docs: 4, MRZ invented: 0; expected=document_expired: 4, said NOT EXPIRED: 0; PoA n/d reasons: {'other': 2, 'ambiguous_dmy': 4, 'illegible_scan': 1}
+[reader_dev:kv] no-MRZ docs: 8, MRZ invented: 0; expected=document_expired: 3, said NOT EXPIRED: 0; PoA n/d reasons: {'ambiguous_dmy': 8}
+[reader_dev:mixed] no-MRZ docs: 12, MRZ invented: 0; expected=document_expired: 5, said NOT EXPIRED: 0; PoA n/d reasons: {'ambiguous_dmy': 1}
+[reader_dev:ocr_dump] no-MRZ docs: 11, MRZ invented: 0; expected=document_expired: 7, said NOT EXPIRED: 0; PoA n/d reasons: {'other': 6, 'illegible_scan': 1}
+[reader_dev:prose] no-MRZ docs: 2, MRZ invented: 0; expected=document_expired: 4, said NOT EXPIRED: 0; PoA n/d reasons: {'ambiguous_dmy': 5, 'illegible_scan': 1}

@@ -1,0 +1,28 @@
+# Final B, stage 4 (post-train): merged stage-3 model + gold SFT with Sol narratives (gold_with_teacher_narrative.py), 1 epoch, lr 1e-4.
+# Prompt: student_short + PRE-CHECKS block (step4_distillation/add_prechecks.py).
+run_name: final-B-s4
+base_model: /vol/ckpt/merged/final-B-s3
+train_file: data/sft/gold_train_solnarr_pc.jsonl
+val_file: null
+eval_manifest: data/eval/MANIFEST.json
+allow_no_eval_manifest: false
+backend: trl
+gpu: A100-80GB
+timeout_hours: 2
+max_seq_len: 4096
+epochs: 1
+learning_rate: 1.0e-4
+batch_size: 4
+grad_accum: 4
+warmup_ratio: 0.03
+scheduler: cosine
+weight_decay: 0.0
+seed: 17
+logging_steps: 10
+enable_thinking: false
+max_train_rows: null
+lora:
+  r: 16
+  alpha: 32
+  dropout: 0.0
+  target_modules: all-linear

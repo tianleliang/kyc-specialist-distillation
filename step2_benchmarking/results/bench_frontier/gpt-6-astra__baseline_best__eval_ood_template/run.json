@@ -1,0 +1,5 @@
+{
+  "model": "gpt-6-astra (baseline_best)",
+  "gold": "data/eval_ood_template/cases.jsonl",
+  "params": "frontier"
+}

@@ -1,0 +1,9 @@
+# Session F extras (shared/frontier_api/, step5_training/). Base deps are in requirements.txt.
+# Provider SDKs (lazily imported; tests run without them except one signature check)
+openai>=2
+anthropic>=1
+google-genai>=1.40
+# Modal CLI/SDK to launch step5_training/*.py. GPU-side training deps are pinned inside the Modal image.
+modal>=1.0
+# Optional, for `python -m step5_training.cpu_smoke` and tests/f_train_cpu_smoke_test.py (large download):
+# torch transformers>=5 trl>=1.16 peft>=0.21 datasets accelerate tokenizers

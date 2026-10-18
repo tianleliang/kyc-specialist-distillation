@@ -1,0 +1,17 @@
+{
+  "model": "Qwen3.5-4B (best prompt)",
+  "params": "4B",
+  "price_key": "modal-l4-c16",
+  "gold": [
+    "data/eval_id/cases.jsonl",
+    "data/eval_ood_template/cases.jsonl",
+    "data/eval_ood_hand/cases.jsonl",
+    "data/eval_ood_llm/cases.jsonl"
+  ],
+  "table1_group": "eval_v1",
+  "table1_order": 12,
+  "notes": "vLLM on one L4, 16 concurrent requests: latency includes queueing",
+  "pipeline": "v1 A: model alone",
+  "stage": "base Qwen3.5-4B, best prompt",
+  "stage_order": 0
+}

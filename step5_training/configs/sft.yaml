@@ -1,0 +1,28 @@
+# SFT, 16-bit LoRA. Every PLACEHOLDER is a decision for Tianle; step5_training/sft.py refuses to run
+# until none are left. Hyperparameters are standard LoRA starting points, not tuned.
+run_name: PLACEHOLDER_run_name            # e.g. sft-qwen35-2b-v1 (outputs go to /vol/ckpt/sft/<run_name>)
+base_model: PLACEHOLDER_base_model        # HF id, e.g. one of the Qwen3.5 sizes (decision pending)
+train_file: PLACEHOLDER_train_jsonl       # SFT format, see step5_training/common.py
+val_file: null                            # optional, same format, never an eval file
+eval_manifest: PLACEHOLDER_eval_manifest  # e.g. data/eval/MANIFEST.json from split_guard freeze
+allow_no_eval_manifest: false
+backend: unsloth                          # unsloth | trl (fallback if Unsloth fights Qwen3.5)
+gpu: A100-80GB                            # L4 is enough for <=2B at 4k context; A100 is faster
+timeout_hours: 4
+max_seq_len: 4096
+epochs: 2
+learning_rate: 2.0e-4
+batch_size: 4
+grad_accum: 4
+warmup_ratio: 0.03
+scheduler: cosine
+weight_decay: 0.0
+seed: 17
+logging_steps: 10
+enable_thinking: false                    # must match serving (chat_template_kwargs)
+max_train_rows: null
+lora:
+  r: 16
+  alpha: 32
+  dropout: 0.0
+  target_modules: all-linear              # Unsloth backend maps this to q/k/v/o/gate/up/down

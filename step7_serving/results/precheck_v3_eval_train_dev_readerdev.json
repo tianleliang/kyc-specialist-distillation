@@ -1,0 +1,186 @@
+{
+  "train": {
+    "as_of": {
+      "n": 3000,
+      "covered": 3000,
+      "correct": 3000
+    },
+    "mrz": {
+      "n": 2801,
+      "covered": 2801,
+      "correct": 2801,
+      "no_mrz_cases": 199
+    },
+    "expiry": {
+      "n": 2911,
+      "covered": 2793,
+      "correct": 2793
+    },
+    "expired": {
+      "n": 2911,
+      "covered": 2793,
+      "correct": 2793
+    },
+    "poa_date": {
+      "n": 2972,
+      "covered": 2780,
+      "correct": 2780
+    },
+    "poa_window": {
+      "n": 2972,
+      "covered": 2780,
+      "correct": 2780
+    },
+    "integ_date_of_birth": {
+      "n": 3000,
+      "covered": 2982,
+      "correct": 2982
+    },
+    "integ_document_number": {
+      "n": 3000,
+      "covered": 2999,
+      "correct": 2999
+    },
+    "integ_expiry": {
+      "n": 3000,
+      "covered": 2986,
+      "correct": 2986
+    },
+    "integ_overall": {
+      "n": 3000,
+      "covered": 2971,
+      "correct": 2971
+    },
+    "expired_label_missed": {
+      "n": 155
+    },
+    "poa_nd": {
+      "ambiguous_dmy": 168,
+      "illegible_scan": 19,
+      "other": 5
+    },
+    "integ_confusions": []
+  },
+  "dev": {
+    "as_of": {
+      "n": 150,
+      "covered": 150,
+      "correct": 150
+    },
+    "mrz": {
+      "n": 137,
+      "covered": 137,
+      "correct": 137,
+      "no_mrz_cases": 13
+    },
+    "expiry": {
+      "n": 146,
+      "covered": 137,
+      "correct": 137
+    },
+    "expired": {
+      "n": 146,
+      "covered": 137,
+      "correct": 137
+    },
+    "poa_date": {
+      "n": 145,
+      "covered": 137,
+      "correct": 137
+    },
+    "poa_window": {
+      "n": 145,
+      "covered": 137,
+      "correct": 137
+    },
+    "integ_date_of_birth": {
+      "n": 150,
+      "covered": 149,
+      "correct": 149
+    },
+    "integ_document_number": {
+      "n": 150,
+      "covered": 150,
+      "correct": 150
+    },
+    "integ_expiry": {
+      "n": 150,
+      "covered": 149,
+      "correct": 149
+    },
+    "integ_overall": {
+      "n": 150,
+      "covered": 148,
+      "correct": 148
+    },
+    "expired_label_missed": {
+      "n": 6
+    },
+    "poa_nd": {
+      "ambiguous_dmy": 8
+    },
+    "integ_confusions": []
+  },
+  "reader_dev": {
+    "as_of": {
+      "n": 600,
+      "covered": 600,
+      "correct": 600
+    },
+    "mrz": {
+      "n": 558,
+      "covered": 558,
+      "correct": 558,
+      "no_mrz_cases": 42
+    },
+    "expiry": {
+      "n": 583,
+      "covered": 552,
+      "correct": 552
+    },
+    "expired": {
+      "n": 583,
+      "covered": 552,
+      "correct": 552
+    },
+    "poa_date": {
+      "n": 594,
+      "covered": 556,
+      "correct": 556
+    },
+    "poa_window": {
+      "n": 594,
+      "covered": 556,
+      "correct": 556
+    },
+    "integ_date_of_birth": {
+      "n": 600,
+      "covered": 593,
+      "correct": 593
+    },
+    "integ_document_number": {
+      "n": 600,
+      "covered": 600,
+      "correct": 600
+    },
+    "integ_expiry": {
+      "n": 600,
+      "covered": 595,
+      "correct": 595
+    },
+    "integ_overall": {
+      "n": 600,
+      "covered": 590,
+      "correct": 590
+    },
+    "expired_label_missed": {
+      "n": 29
+    },
+    "poa_nd": {
+      "ambiguous_dmy": 25,
+      "other": 8,
+      "illegible_scan": 5
+    },
+    "integ_confusions": []
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "judge_model": "claude-sonnet-5-5",
+  "n_verdicts": 13727,
+  "prompt": "step0_rules/prompts/judge_unsupported_claims_v2.md",
+  "runs": {
+    "0.8b__baseline_best__eval_id_v2": {
+      "n_sentences_judged": 1679,
+      "n_unjudged": 6,
+      "n_unsupported": 1020,
+      "unsupported_rate": null
+    },
+    "2b__baseline_best__eval_id_v2": {
+      "n_sentences_judged": 1891,
+      "n_unjudged": 6,
+      "n_unsupported": 856,
+      "unsupported_rate": null
+    },
+    "4b__baseline_best__eval_id_v2": {
+      "n_sentences_judged": 2019,
+      "n_unjudged": 6,
+      "n_unsupported": 1050,
+      "unsupported_rate": null
+    },
+    "4b__baseline_zero_shot__eval_id_v2": {
+      "n_sentences_judged": 1638,
+      "n_unjudged": 8,
+      "n_unsupported": 973,
+      "unsupported_rate": null
+    },
+    "claude-opus-5-5__baseline_best__eval_id_v2": {
+      "n_sentences_judged": 1846,
+      "n_unjudged": 6,
+      "n_unsupported": 159,
+      "unsupported_rate": null
+    },
+    "final-A-s3__eval_id_v2": {
+      "n_sentences_judged": 1842,
+      "n_unjudged": 6,
+      "n_unsupported": 299,
+      "unsupported_rate": null
+    },
+    "final-Brun2-s3__eval_id_v2": {
+      "n_sentences_judged": 1841,
+      "n_unjudged": 6,
+      "n_unsupported": 253,
+      "unsupported_rate": null
+    },
+    "final-Brun2-s4__eval_id_v2": {
+      "n_sentences_judged": 1844,
+      "n_unjudged": 6,
+      "n_unsupported": 253,
+      "unsupported_rate": null
+    },
+    "gemini-4-argon__baseline_best__eval_id_v2": {
+      "n_sentences_judged": 1839,
+      "n_unjudged": 6,
+      "n_unsupported": 162,
+      "unsupported_rate": null
+    },
+    "gpt-6-astra__baseline_best__eval_id_v2": {
+      "n_sentences_judged": 1843,
+      "n_unjudged": 6,
+      "n_unsupported": 137,
+      "unsupported_rate": null
+    }
+  }
+}

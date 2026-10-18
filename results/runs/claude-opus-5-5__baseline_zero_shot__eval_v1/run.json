@@ -1,0 +1,13 @@
+{
+  "model": "Claude Opus 5.5 (zero-shot)",
+  "params": "frontier (undisclosed)",
+  "price_key": "claude-opus-5-5",
+  "gold": [
+    "data/eval_id/cases.jsonl",
+    "data/eval_ood_template/cases.jsonl",
+    "data/eval_ood_hand/cases.jsonl",
+    "data/eval_ood_llm/cases.jsonl"
+  ],
+  "table1_group": "eval_v1",
+  "table1_order": 3
+}

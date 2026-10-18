@@ -1,0 +1,70 @@
+{
+  "run_id": "final-A-s4__eval_hard",
+  "assembled_by": "python -m step6_evaluation.collect_runs",
+  "parts": [
+    {
+      "source": "outputs/student/final-A-s4__eval_hard",
+      "predictions_sha256": "7c2cca8faa8498d65793c36dfd30833b65c5fbd6bff0c4fd1760aea524acd814",
+      "n_lines": 150,
+      "endpoint_run.json": {
+        "started_utc": "2026-10-18T13:43:03+00:00",
+        "base_url": "https://tianleliang--zorbe-final-a-s4-fz-vllm.us-east.modal.run/v1",
+        "model": "final-A-s4",
+        "api_key_env": "VLLM_API_KEY",
+        "cases": "data/eval_hard/cases.jsonl",
+        "cases_sha256": "b53d37072c9ccc81e2bb2aa0bbf0cf90ee5e572cced50637e0d03bce3672d0cd",
+        "n_cases": 150,
+        "n_written": 150,
+        "n_errors": 0,
+        "n_proxy_fallbacks": 0,
+        "n_cached": 0,
+        "n_resumed": 0,
+        "concurrency": 16,
+        "warmup": 2,
+        "wall_s": 334.991,
+        "throughput_cases_per_s": 0.448,
+        "latency_p50_ms": 33966.41,
+        "latency_p95_ms": 42113.27599999999,
+        "request": {
+          "prompt": "student_short",
+          "response_format": "json_schema",
+          "max_tokens": 2048,
+          "temperature": 0.0,
+          "extra_body": {},
+          "prechecks": false,
+          "template": "student_short",
+          "template_sha256": "ffb18a734e5c01265763eb6ba631df855d072b2c466fc68fc874a62f56fbbe2b",
+          "system_sha256": "f84d656eb20f0cd2078b2907310f8812b754e4825c7a8476249d47f4d9298ff9",
+          "vars_sha256": {},
+          "few_shot_case_ids": [],
+          "schema_sha256": "df82fd48feb4642e0fb699447c4ae98eb19803263cd0a4a487ae8058a18cb41a"
+        },
+        "argv": [
+          "--cases",
+          "data/eval_hard/cases.jsonl",
+          "--out",
+          "outputs/student/final-A-s4__eval_hard",
+          "--base-url",
+          "https://tianleliang--zorbe-final-a-s4-fz-vllm.us-east.modal.run/v1",
+          "--model",
+          "final-A-s4",
+          "--api-key-env",
+          "VLLM_API_KEY",
+          "--prompt",
+          "student_short",
+          "--schema",
+          "step0_rules/schema/v1_serving.json",
+          "--warmup",
+          "2",
+          "--concurrency",
+          "16",
+          "--resume"
+        ]
+      },
+      "run.json": {
+        "model": "final-A-s4",
+        "gold": "data/eval_hard/cases.jsonl"
+      }
+    }
+  ]
+}

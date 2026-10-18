@@ -1,0 +1,22 @@
+{
+  "model": "B halfway (+ pre-checks v2)",
+  "params": "4B",
+  "price_key": "modal-l4-c16",
+  "gold": [
+    "data/eval_id/cases.jsonl",
+    "data/eval_ood_template/cases.jsonl",
+    "data/eval_ood_hand/cases.jsonl",
+    "data/eval_ood_llm/cases.jsonl"
+  ],
+  "table1_group": "eval_v1",
+  "table1_order": 15,
+  "display": {
+    "latency_p50_ms": "not deployed",
+    "latency_p95_ms": "not deployed",
+    "cost_per_1k_usd": "not deployed"
+  },
+  "pipeline": "v1 B: model + pre-checks",
+  "stage": "+ pre-checks v2 (halfway)",
+  "stage_order": 1,
+  "compare_to": "final-A-s3__eval_v1"
+}

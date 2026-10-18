@@ -1,0 +1,75 @@
+{
+  "run_id": "qwen35-4b__baseline_zero_shot__eval_id_v2",
+  "assembled_by": "python -m step6_evaluation.collect_runs",
+  "parts": [
+    {
+      "source": "outputs/bench_open/4b__baseline_zero_shot__eval_id_v2",
+      "predictions_sha256": "f6caf7fb670549898269d2ca22560462fe2f0a1a8e0f27a0d6c07710972a8485",
+      "n_lines": 300,
+      "endpoint_run.json": {
+        "started_utc": "2026-10-18T22:49:43+00:00",
+        "base_url": "https://tianleliang--zorbe-bench-4b-v2-vllm.us-east.modal.run/v1",
+        "model": "Qwen3.5-4B",
+        "api_key_env": "VLLM_API_KEY",
+        "cases": "data/eval_id_v2/cases.jsonl",
+        "cases_sha256": "01b7079bda7d5e26d711db226efb63e477d7d44b6dd40c65ed4e0c76c01b8892",
+        "n_cases": 300,
+        "n_written": 300,
+        "n_errors": 0,
+        "n_proxy_fallbacks": 0,
+        "n_cached": 0,
+        "n_resumed": 0,
+        "concurrency": 16,
+        "warmup": 2,
+        "wall_s": 506.447,
+        "throughput_cases_per_s": 0.592,
+        "latency_p50_ms": 25635.379999999997,
+        "latency_p95_ms": 35240.0685,
+        "request": {
+          "prompt": "baseline_zero_shot",
+          "response_format": "json_schema",
+          "max_tokens": 2048,
+          "temperature": 0.0,
+          "extra_body": {},
+          "prechecks": false,
+          "template": "baseline_zero_shot",
+          "template_sha256": "bfbe45066138f7fbd1b18c547fa33caf51170dfe997c23600f65dc0338ebaf05",
+          "system_sha256": "cbe4f5eaea89932ddc2e374fc758bb27f779b34a90bf46f1f7b4a29943d9c581",
+          "vars_sha256": {
+            "schema": "b9fbde069819fd001d2a83215bf001a8b4d836760f9f11a5f16f676b4c2d7d82"
+          },
+          "few_shot_case_ids": [],
+          "schema_sha256": "df82fd48feb4642e0fb699447c4ae98eb19803263cd0a4a487ae8058a18cb41a"
+        },
+        "argv": [
+          "--cases",
+          "data/eval_id_v2/cases.jsonl",
+          "--out",
+          "outputs/bench_open/4b__baseline_zero_shot__eval_id_v2",
+          "--base-url",
+          "https://tianleliang--zorbe-bench-4b-v2-vllm.us-east.modal.run/v1",
+          "--model",
+          "Qwen3.5-4B",
+          "--api-key-env",
+          "VLLM_API_KEY",
+          "--prompt",
+          "baseline_zero_shot",
+          "--frontier-prompt",
+          "--response-format",
+          "schema",
+          "--schema",
+          "step0_rules/schema/v1_serving.json",
+          "--warmup",
+          "2",
+          "--concurrency",
+          "16",
+          "--resume"
+        ]
+      },
+      "run.json": {
+        "model": "Qwen3.5-4B",
+        "gold": "data/eval_id_v2/cases.jsonl"
+      }
+    }
+  ]
+}

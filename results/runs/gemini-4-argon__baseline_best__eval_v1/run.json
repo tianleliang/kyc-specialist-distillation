@@ -1,0 +1,13 @@
+{
+  "model": "Gemini 4 Argon (best prompt)",
+  "params": "frontier (undisclosed)",
+  "price_key": "gemini-4-argon",
+  "gold": [
+    "data/eval_id/cases.jsonl",
+    "data/eval_ood_template/cases.jsonl",
+    "data/eval_ood_hand/cases.jsonl",
+    "data/eval_ood_llm/cases.jsonl"
+  ],
+  "table1_group": "eval_v1",
+  "table1_order": 6
+}

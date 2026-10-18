@@ -1,0 +1,4 @@
+{
+  "model": "distill-4b-floor",
+  "gold": "data/dev/cases.jsonl"
+}

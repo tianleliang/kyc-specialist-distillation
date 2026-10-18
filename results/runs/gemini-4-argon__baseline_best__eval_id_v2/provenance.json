@@ -1,0 +1,33 @@
+{
+  "run_id": "gemini-4-argon__baseline_best__eval_id_v2",
+  "assembled_by": "python -m step6_evaluation.collect_runs",
+  "parts": [
+    {
+      "source": "outputs/bench_frontier/gemini-4-argon__baseline_best__eval_id_v2",
+      "predictions_sha256": "c797979f2f45d88c23c40364d0bee55e8a57dc6da1678480f681ee0f7368ba18",
+      "n_lines": 300,
+      "ledger.json": {
+        "total_usd": 10.305562,
+        "by_model": {
+          "gemini-4-argon": {
+            "provider": "gemini",
+            "calls": 300,
+            "cache_hits": 21,
+            "batch_calls": 0,
+            "input_tokens": 4435971,
+            "output_tokens": 143362,
+            "reasoning_tokens": 0,
+            "cost_usd": 10.305561999999998,
+            "saved_by_cache_usd": 0.7717159999999997,
+            "unpriced_calls": 0
+          }
+        }
+      },
+      "run.json": {
+        "model": "gemini-4-argon (baseline_best)",
+        "gold": "data/eval_id_v2/cases.jsonl",
+        "params": "frontier"
+      }
+    }
+  ]
+}

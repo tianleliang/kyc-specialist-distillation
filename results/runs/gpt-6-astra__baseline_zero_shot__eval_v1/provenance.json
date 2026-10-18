@@ -1,0 +1,114 @@
+{
+  "run_id": "gpt-6-astra__baseline_zero_shot__eval_v1",
+  "assembled_by": "python -m step6_evaluation.collect_runs",
+  "parts": [
+    {
+      "source": "outputs/bench_frontier/gpt-6-astra__baseline_zero_shot__eval_id",
+      "predictions_sha256": "9fa38d2bfaacee53c1edeeecec5def02154d91d1ad0dcf896c585965816cdf46",
+      "n_lines": 300,
+      "ledger.json": {
+        "total_usd": 32.13254,
+        "by_model": {
+          "gpt-6-astra": {
+            "provider": "openai",
+            "calls": 300,
+            "cache_hits": 2,
+            "batch_calls": 0,
+            "input_tokens": 1953354,
+            "output_tokens": 251980,
+            "reasoning_tokens": 44781,
+            "cost_usd": 32.13253999999999,
+            "saved_by_cache_usd": 0.21996,
+            "unpriced_calls": 0
+          }
+        }
+      },
+      "run.json": {
+        "model": "gpt-6-astra (baseline_zero_shot)",
+        "gold": "data/eval_id/cases.jsonl",
+        "params": "frontier"
+      }
+    },
+    {
+      "source": "outputs/bench_frontier/gpt-6-astra__baseline_zero_shot__eval_ood_template",
+      "predictions_sha256": "6638a033c69c1d310301c363dc351128fe912ed802614b83459a00618d65c6eb",
+      "n_lines": 50,
+      "ledger.json": {
+        "total_usd": 5.45629,
+        "by_model": {
+          "gpt-6-astra": {
+            "provider": "openai",
+            "calls": 50,
+            "cache_hits": 0,
+            "batch_calls": 0,
+            "input_tokens": 328299,
+            "output_tokens": 43466,
+            "reasoning_tokens": 7531,
+            "cost_usd": 5.456290000000001,
+            "saved_by_cache_usd": 0.0,
+            "unpriced_calls": 0
+          }
+        }
+      },
+      "run.json": {
+        "model": "gpt-6-astra (baseline_zero_shot)",
+        "gold": "data/eval_ood_template/cases.jsonl",
+        "params": "frontier"
+      }
+    },
+    {
+      "source": "outputs/bench_frontier/gpt-6-astra__baseline_zero_shot__eval_ood_hand",
+      "predictions_sha256": "e1cca47094e14d03437b0856652537a16b98b15dc339c9a66144f6aef81de221",
+      "n_lines": 50,
+      "ledger.json": {
+        "total_usd": 5.38084,
+        "by_model": {
+          "gpt-6-astra": {
+            "provider": "openai",
+            "calls": 50,
+            "cache_hits": 0,
+            "batch_calls": 0,
+            "input_tokens": 330389,
+            "output_tokens": 41539,
+            "reasoning_tokens": 7482,
+            "cost_usd": 5.380840000000001,
+            "saved_by_cache_usd": 0.0,
+            "unpriced_calls": 0
+          }
+        }
+      },
+      "run.json": {
+        "model": "gpt-6-astra (baseline_zero_shot)",
+        "gold": "data/eval_ood_hand/cases.jsonl",
+        "params": "frontier"
+      }
+    },
+    {
+      "source": "outputs/bench_frontier/gpt-6-astra__baseline_zero_shot__eval_ood_llm",
+      "predictions_sha256": "960f04f9b1cf97c436d30ce3306f54a996d7770627f21727d8827f1365bc2dbf",
+      "n_lines": 100,
+      "ledger.json": {
+        "total_usd": 10.95692,
+        "by_model": {
+          "gpt-6-astra": {
+            "provider": "openai",
+            "calls": 100,
+            "cache_hits": 0,
+            "batch_calls": 0,
+            "input_tokens": 669907,
+            "output_tokens": 85157,
+            "reasoning_tokens": 14198,
+            "cost_usd": 10.95692,
+            "saved_by_cache_usd": 0.0,
+            "unpriced_calls": 0
+          }
+        }
+      },
+      "run.json": {
+        "model": "gpt-6-astra (baseline_zero_shot)",
+        "gold": "data/eval_ood_llm/cases.jsonl",
+        "params": "frontier"
+      }
+    }
+  ]
+}

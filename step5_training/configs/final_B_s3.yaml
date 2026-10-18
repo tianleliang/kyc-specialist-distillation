@@ -1,0 +1,29 @@
+# Final B, stage 3 (distill): adapted base (Qwen3.5-4B + domain adapter, merged) + WINNER distill recipe.
+# Prompt: student_short + PRE-CHECKS block (step4_distillation/add_prechecks.py).
+# launch_final.sh <winner> writes a filled copy to outputs/final/ (PLACEHOLDER_WINNER -> winner); this file stays as is.
+run_name: final-B-s3
+base_model: /vol/ckpt/merged/adapter-qwen35-4b
+train_file: data/sft/PLACEHOLDER_WINNER_pc.jsonl
+val_file: null
+eval_manifest: data/eval/MANIFEST.json
+allow_no_eval_manifest: false
+backend: trl
+gpu: A100-80GB
+timeout_hours: 3
+max_seq_len: 4096
+epochs: 2
+learning_rate: 2.0e-4
+batch_size: 4
+grad_accum: 4
+warmup_ratio: 0.03
+scheduler: cosine
+weight_decay: 0.0
+seed: 17
+logging_steps: 10
+enable_thinking: false
+max_train_rows: null
+lora:
+  r: 16
+  alpha: 32
+  dropout: 0.0
+  target_modules: all-linear

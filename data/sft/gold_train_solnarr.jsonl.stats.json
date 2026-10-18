@@ -1,0 +1,14 @@
+{
+ "step": "gold_with_teacher_narrative",
+ "gold": "data/sft/gold_train.jsonl",
+ "teacher": "data/sft/distill_floor_sol.jsonl",
+ "output": "data/sft/gold_train_solnarr.jsonl",
+ "rows": 3000,
+ "narratives_replaced": 2978,
+ "kept_gold_narrative": 22,
+ "kept_why": {
+  "decision_differs": 20,
+  "risk_tier_differs": 2
+ },
+ "contamination": "inputs gated at build time; prompts copied from the gold file; not re-gated"
+}

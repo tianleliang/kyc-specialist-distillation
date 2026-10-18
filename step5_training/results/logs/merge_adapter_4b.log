@@ -1,0 +1,67 @@
+✓ Initialized. View run at 
+https://modal.com/apps/tianleliang/main/ap-9JHzz0ukNPbFHP860hMW46
+✓ Created objects.
+├── ✓ Uploaded PythonPackage:step5_training, PythonPackage:step6_evaluation, 
+│   PythonPackage:shared
+├── ✓ Uploaded PythonPackage:step5_training
+└── ✓ Created Function merge_remote.
+[merge] merge-adapter-qwen35-4b: /vol/ckpt/adapter/adapter-qwen35-4b/adapter + Qwen/Qwen3.5-4B -> /vol/ckpt/merged/adapter-qwen35-4b (hub: no push), 8 probes
+/usr/local/lib/python3.11/site-packages/huggingface_hub/constants.py:302: FutureWarning: The `HF_HUB_ENABLE_HF_TRANSFER` environment variable is deprecated as 'hf_transfer' is not used anymore. Please use `HF_XET_HIGH_PERFORMANCE` instead to enable high performance transfer with Xet. Visit https://huggingface.co/docs/huggingface_hub/package_reference/environment_variables#hfxethighperformance for more details.
+  warnings.warn(
+
+[1ALoading weights:   0%|          | 0/426 [00:00<?, ?it/s]
+[1ALoading weights:   4%|▎         | 15/426 [00:00<00:02, 144.30it/s]
+[1ALoading weights:  19%|█▉        | 81/426 [00:00<00:00, 364.42it/s]
+[1ALoading weights:  27%|██▋       | 116/426 [00:00<00:01, 281.85it/s]
+[1ALoading weights:  34%|███▍      | 145/426 [00:00<00:01, 222.34it/s]
+[1ALoading weights:  40%|███▉      | 169/426 [00:00<00:01, 221.86it/s]
+[1ALoading weights:  45%|████▌     | 192/426 [00:00<00:01, 172.38it/s]
+[1ALoading weights:  52%|█████▏    | 221/426 [00:01<00:01, 194.35it/s]
+[1ALoading weights:  58%|█████▊    | 245/426 [00:01<00:00, 197.96it/s]
+[1ALoading weights:  63%|██████▎   | 268/426 [00:01<00:00, 189.87it/s]
+[1ALoading weights:  68%|██████▊   | 288/426 [00:01<00:00, 191.28it/s]
+[1ALoading weights:  72%|███████▏  | 308/426 [00:01<00:00, 173.03it/s]
+[1ALoading weights:  77%|███████▋  | 326/426 [00:01<00:00, 164.38it/s]
+[1ALoading weights:  81%|████████  | 343/426 [00:01<00:00, 165.71it/s]
+[1ALoading weights:  88%|████████▊ | 373/426 [00:01<00:00, 199.68it/s]
+[1ALoading weights:  92%|█████████▏| 394/426 [00:01<00:00, 200.85it/s]
+[1ALoading weights:  97%|█████████▋| 415/426 [00:02<00:00, 187.35it/s]Loading weights: 100%|██████████| 426/426 [00:02<00:00, 203.81it/s]
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `causal_conv1d_update` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+
+[1AWriting model shards:   0%|          | 0/1 [00:00<?, ?it/s]
+[1AWriting model shards: 100%|██████████| 1/1 [00:18<00:00, 18.02s/it]
+[1AWriting model shards: 100%|██████████| 1/1 [00:18<00:00, 18.02s/it]
+
+[1ALoading weights:   0%|          | 0/426 [00:00<?, ?it/s]
+[1ALoading weights:  49%|████▉     | 209/426 [00:00<00:00, 2088.01it/s]
+[1ALoading weights: 100%|██████████| 426/426 [00:00<00:00, 2389.57it/s]
+{
+ "base_model": "Qwen/Qwen3.5-4B",
+ "adapter_dir": "/vol/ckpt/adapter/adapter-qwen35-4b/adapter",
+ "output_dir": "/vol/ckpt/merged/adapter-qwen35-4b",
+ "lora_b_norm": 43.243222806602716,
+ "n_probes": 8,
+ "n_outputs_differ": 8,
+ "max_next_token_logit_delta": 5.015625,
+ "examples": [
+  {
+   "prompt": "<packet>\nCASE FILE - NEW CUSTOMER\n\n[CTX] Case context\nCase reference: KYC-2603-221473\nOnboarding country: Germany (DE)\nProduct: brokerage account\nChannel: mobile app\nApplication date: 31 March 2026\nReview date (as of): 31 March 2026\n\n[APP] Customer details\nApplicant name: Maximilian B\u00f6ttbach\nDate of",
+   "base": "{\n  \"case_reference\": \"KYC-2603-221473\",\n  \"decision\": \"ESCALATE\",\n  \"reason\": \"Synthetic watchlist match detected for surname BOTTBACH with high match score (71) and significant discrepancies in date of birth (1991 vs 1999) and nationality (KAZ vs AUT). Policy requires escalation for contradictory ",
+   "merged": "{\n  \"case_reference\": \"KYC-2603-221473\",\n  \"decision\": \"ESCALATE\",\n  \"reason\": \"Name match on sanctions list\",\n  \"details\": {\n    \"applicant_name\": \"Maximilian B\u00f6ttbach\",\n    \"screened_name\": \"Jorg Stefan BOTTBACH\",\n    \"match_score\": 71,\n    \"screening"
+  },
+  {
+   "prompt": "<packet>\nCASE FILE - NEW CUSTOMER\n\nCase context (CTX). Case KYC-2601-881001 concerns an application for a current account opened via the mobile app channel in Germany (DE), received on 14 JAN 2026 and assessed as of 14 JAN 2026.\n\nApplicant profile (APP). The applicant submitted the following: full n",
+   "base": "{\n  \"case_id\": \"KYC-2601-881001\",\n  \"decision\": \"ESCALATE\",\n  \"reason\": \"Screening hit H1 indicates a potential match for a sanctioned entity (ListGuard v4, UK-HMT-SYN) with a high match score (76) and strong alias match. The applicant's name (Lea Weiinger) and nationality (AUT) partially overlap wi",
+   "merged": "{\n  \"case_id\": \"KYC-2601-881001\",\n  \"decision\": \"ESCALATE\",\n  \"reason\": \"Synthetic hit on applicant name (Lea Weiinger) in ListGuard v4 (synthetic) against UK-HMT-SYN sanctions list. Hit details: listed name Schwhauser, Lea; aliases Schwhauser Lea [strong]; SCHWHAUSER, Lea"
+  },
+  {
+   "prompt": "<packet>\nKYC ONBOARDING CASE PACKET\n\n[CTX] Jurisdiction and product\nCase reference: KYC-2602-791808\nOnboarding country: United Kingdom (GB)\nProduct: business account\nChannel: branch\nApplication date: 28 February 2026\nAs-of date: 28 February 2026\n\n[APP] Application form\nFull name: Jamal Abdullah Shar",
+   "base": "{\n  \"case_reference\": \"KYC-2602-791808\",\n  \"decision\": \"ESCALATE\",\n  \"reason\": \"High-confidence match (97%) on sanctions watchlist (UK-HMT-SYN) with strong alias matches and identical date of birth and nationality. Application details (name, DOB, nationality) align with listed entity despite minor s",
+   "merged": "{\n  \"case_reference\": \"KYC-2602-791808\",\n  \"decision\": \"ESCALATE\",\n  \"reason\": \"High-confidence match (score 97) on watchlist ListGuard v4 (synthetic) for UK-HMT-SYN (sanctions). Listed name 'Al Chareemi, Djamal Abdallah' has strong aliases including 'Djamal Abdallah el-Shar"
+  }
+ ]
+}
+Stopping app - local entrypoint completed.
+✓ App completed. View run at 
+https://modal.com/apps/tianleliang/main/ap-9JHzz0ukNPbFHP860hMW46

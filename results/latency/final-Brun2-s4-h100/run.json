@@ -1,0 +1,4 @@
+{
+  "model": "final-Brun2-s4-h100 (endpoint, c=1)",
+  "gold": "data/dev/cases.jsonl"
+}

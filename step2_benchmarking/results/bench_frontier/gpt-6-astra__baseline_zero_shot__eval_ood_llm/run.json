@@ -1,0 +1,5 @@
+{
+  "model": "gpt-6-astra (baseline_zero_shot)",
+  "gold": "data/eval_ood_llm/cases.jsonl",
+  "params": "frontier"
+}

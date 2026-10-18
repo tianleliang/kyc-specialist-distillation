@@ -1,0 +1,20 @@
+{
+  "name": "final-Brun2-s4",
+  "base_url": "https://tianleliang--zorbe-kyc-final-brun2-s4-proxy.us-east.modal.run/v1",
+  "model": "zorbe-kyc",
+  "cases": "data/dev/cases.jsonl",
+  "n": 100,
+  "n_timed": 100,
+  "n_errors": 0,
+  "concurrency": 1,
+  "warmup": 3,
+  "latency_p50_ms": 24269.2,
+  "latency_p95_ms": 29086.9,
+  "latency_mean_ms": 24125.5,
+  "gpu": "L4",
+  "gpu_usd_per_hour": 0.8,
+  "cost_per_1k_usd": 5.3612,
+  "cost_note": "one request at a time on one dedicated GPU (upper bound); CPU proxy cost not included (pennies)",
+  "compare_to": "results/runs/final-Brun2-s4__dev",
+  "decision_agreement_with_saved_run": "100/100"
+}

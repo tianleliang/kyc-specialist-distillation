@@ -1,0 +1,8 @@
+{
+  "model": "GPT-6 Astra (best prompt)",
+  "params": "frontier (undisclosed)",
+  "price_key": "gpt-6-astra",
+  "gold": "data/eval_id_v2/cases.jsonl",
+  "table1_group": "eval_id_v2",
+  "table1_order": 0
+}

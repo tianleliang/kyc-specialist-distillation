@@ -1,0 +1,316 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "KYC decision, option A (brief-mirror, nested)",
+  "description": "DRAFT option for Tianle. Not a decision.",
+  "type": "object",
+  "properties": {
+    "identity": {
+      "type": "object",
+      "properties": {
+        "verified": {
+          "type": "boolean"
+        },
+        "findings": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "consistent",
+                    "mismatch",
+                    "unreadable"
+                  ]
+                },
+                "reason": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "status",
+                "reason"
+              ],
+              "additionalProperties": false
+            },
+            "date_of_birth": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "consistent",
+                    "mismatch",
+                    "unreadable"
+                  ]
+                },
+                "reason": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "status",
+                "reason"
+              ],
+              "additionalProperties": false
+            },
+            "document_number": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "consistent",
+                    "mismatch",
+                    "unreadable"
+                  ]
+                },
+                "reason": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "status",
+                "reason"
+              ],
+              "additionalProperties": false
+            },
+            "expiry": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "consistent",
+                    "mismatch",
+                    "unreadable"
+                  ]
+                },
+                "reason": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "status",
+                "reason"
+              ],
+              "additionalProperties": false
+            },
+            "address": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "consistent",
+                    "mismatch",
+                    "unreadable"
+                  ]
+                },
+                "reason": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "status",
+                "reason"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "name",
+            "date_of_birth",
+            "document_number",
+            "expiry",
+            "address"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "verified",
+        "findings"
+      ],
+      "additionalProperties": false
+    },
+    "screening": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "hit_id": {
+            "type": "string"
+          },
+          "list_type": {
+            "type": "string",
+            "enum": [
+              "sanctions",
+              "pep",
+              "adverse_media"
+            ]
+          },
+          "disposition": {
+            "type": "string",
+            "enum": [
+              "true_match",
+              "false_positive",
+              "needs_review"
+            ]
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "name_exact",
+                "name_variant_or_transliteration",
+                "alias_match",
+                "weak_alias_only",
+                "name_dissimilar",
+                "dob_full_match",
+                "dob_partial_match",
+                "dob_conflict",
+                "dob_not_on_list",
+                "nationality_match",
+                "nationality_conflict",
+                "pob_match",
+                "pob_conflict",
+                "document_number_match",
+                "document_number_conflict",
+                "gender_conflict",
+                "relationship_stated_in_packet",
+                "relationship_not_established",
+                "vendor_score_only"
+              ]
+            }
+          },
+          "reason": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "hit_id",
+          "list_type",
+          "disposition",
+          "evidence",
+          "reason"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "risk": {
+      "type": "object",
+      "properties": {
+        "tier": {
+          "type": "string",
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ]
+        },
+        "drivers": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "sanctions_true_match",
+              "pep_foreign",
+              "pep_domestic",
+              "pep_family_or_associate",
+              "adverse_media_financial_crime",
+              "adverse_media_other",
+              "unresolved_screening_hit",
+              "high_risk_jurisdiction",
+              "source_of_funds_unclear",
+              "activity_inconsistent_with_profile",
+              "non_face_to_face_channel",
+              "high_risk_product",
+              "identity_document_issue",
+              "address_verification_issue",
+              "document_tampering_suspected",
+              "instructions_in_packet",
+              "none"
+            ]
+          }
+        }
+      },
+      "required": [
+        "tier",
+        "drivers"
+      ],
+      "additionalProperties": false
+    },
+    "required_actions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "senior_management_approval",
+          "verify_source_of_wealth",
+          "verify_source_of_funds",
+          "enhanced_ongoing_monitoring",
+          "request_valid_id_document",
+          "request_secondary_id",
+          "request_new_proof_of_address",
+          "document_authenticity_review",
+          "sanctions_compliance_review",
+          "enhanced_adverse_media_review",
+          "pep_relationship_confirmation",
+          "manual_packet_integrity_review"
+        ]
+      }
+    },
+    "decision": {
+      "type": "string",
+      "enum": [
+        "approve",
+        "reject",
+        "escalate"
+      ]
+    },
+    "narrative": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "sentence": {
+            "type": "string"
+          },
+          "evidence_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "application",
+                "id_document_visual",
+                "id_document_mrz",
+                "proof_of_address",
+                "screening_hits",
+                "context"
+              ]
+            }
+          }
+        },
+        "required": [
+          "sentence",
+          "evidence_refs"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 4,
+      "maxItems": 8
+    }
+  },
+  "required": [
+    "identity",
+    "screening",
+    "risk",
+    "required_actions",
+    "decision",
+    "narrative"
+  ],
+  "additionalProperties": false
+}

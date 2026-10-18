@@ -1,0 +1,8 @@
+{
+  "model": "Qwen3.5-0.8B (best prompt)",
+  "params": "0.8B",
+  "price_key": "modal-l4-c16",
+  "gold": "data/eval_id_v2/cases.jsonl",
+  "table1_group": "eval_id_v2",
+  "table1_order": 4
+}

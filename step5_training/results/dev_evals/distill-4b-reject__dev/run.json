@@ -1,0 +1,4 @@
+{
+  "model": "distill-4b-reject",
+  "gold": "data/dev/cases.jsonl"
+}

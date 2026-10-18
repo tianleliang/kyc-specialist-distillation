@@ -1,0 +1,181 @@
+{
+ "step": "reject_sample",
+ "kept": 2971,
+ "dropped": {
+  "no_passing_sample": 29
+ },
+ "dropped_total": 29,
+ "gold_cases": 3000,
+ "cases_with_samples": 3000,
+ "cases_kept": 2971,
+ "samples_checked": 3000,
+ "sample_failure_reasons": {
+  "fields": 27,
+  "decision": 20,
+  "risk_tier": 19
+ },
+ "teacher_pass_rate": {
+  "sol": 0.9903
+ },
+ "samples_per_case_hist": {
+  "1": 3000
+ },
+ "case_drop_rate_by_tag": {
+  "poa_contradicts": {
+   "n": 96,
+   "dropped": 4,
+   "rate": 0.0417
+  },
+  "tamper_looks_like_ocr": {
+   "n": 138,
+   "dropped": 5,
+   "rate": 0.0362
+  },
+  "name_mismatch": {
+   "n": 52,
+   "dropped": 1,
+   "rate": 0.0192
+  },
+  "translit_name": {
+   "n": 261,
+   "dropped": 5,
+   "rate": 0.0192
+  },
+  "poa_name_differs": {
+   "n": 57,
+   "dropped": 1,
+   "rate": 0.0175
+  },
+  "insufficient_evidence": {
+   "n": 125,
+   "dropped": 2,
+   "rate": 0.016
+  },
+  "tamper_obvious": {
+   "n": 126,
+   "dropped": 2,
+   "rate": 0.0159
+  },
+  "pep_associate": {
+   "n": 81,
+   "dropped": 1,
+   "rate": 0.0123
+  },
+  "alias_true_match": {
+   "n": 263,
+   "dropped": 3,
+   "rate": 0.0114
+  },
+  "sanctions_false_positive": {
+   "n": 358,
+   "dropped": 4,
+   "rate": 0.0112
+  },
+  "reordered_name": {
+   "n": 225,
+   "dropped": 2,
+   "rate": 0.0089
+  },
+  "partial_dob": {
+   "n": 138,
+   "dropped": 1,
+   "rate": 0.0072
+  },
+  "ocr_looks_like_tamper": {
+   "n": 167,
+   "dropped": 1,
+   "rate": 0.006
+  },
+  "foreign_address_format": {
+   "n": 229,
+   "dropped": 1,
+   "rate": 0.0044
+  },
+  "risk_profile": {
+   "n": 233,
+   "dropped": 1,
+   "rate": 0.0043
+  },
+  "clean": {
+   "n": 288,
+   "dropped": 1,
+   "rate": 0.0035
+  },
+  "adverse_media_false": {
+   "n": 76,
+   "dropped": 0,
+   "rate": 0.0
+  },
+  "adverse_media_true": {
+   "n": 93,
+   "dropped": 0,
+   "rate": 0.0
+  },
+  "dob_mismatch": {
+   "n": 81,
+   "dropped": 0,
+   "rate": 0.0
+  },
+  "expired_document": {
+   "n": 155,
+   "dropped": 0,
+   "rate": 0.0
+  },
+  "pep_false_positive": {
+   "n": 67,
+   "dropped": 0,
+   "rate": 0.0
+  },
+  "pep_family": {
+   "n": 87,
+   "dropped": 0,
+   "rate": 0.0
+  },
+  "pep_self": {
+   "n": 83,
+   "dropped": 0,
+   "rate": 0.0
+  },
+  "poa_stale": {
+   "n": 71,
+   "dropped": 0,
+   "rate": 0.0
+  },
+  "prompt_injection": {
+   "n": 215,
+   "dropped": 0,
+   "rate": 0.0
+  }
+ },
+ "kept_per_teacher": {
+  "sol": 2971
+ },
+ "check_cfg": {
+  "min_field_acc": 1.0,
+  "actions": "off",
+  "evidence_refs": "strict",
+  "allow_unchecked_refs": false,
+  "max_extra_hits": 0
+ },
+ "contamination_gate": {
+  "checked": true,
+  "manifests": [
+   "data\\eval\\MANIFEST.json"
+  ],
+  "config": {
+   "ngram": 8,
+   "containment": 0.5,
+   "jaccard": 0.7,
+   "max_df": 0.05,
+   "num_perm": 128,
+   "bands": 32
+  },
+  "n_train": 2971,
+  "n_eval": 500,
+  "boilerplate_ngrams_dropped": 84,
+  "eval_records_without_distinctive_text": 0,
+  "contaminated_eval_records": 0
+ },
+ "output": "data\\sft\\distill_reject_sol.jsonl",
+ "output_records": 2971
+}

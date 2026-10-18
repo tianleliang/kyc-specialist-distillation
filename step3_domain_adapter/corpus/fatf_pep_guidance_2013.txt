@@ -1,0 +1,1415 @@
+FATF GuidAn ce 
+ 
+poliTicAlly exposed persons 
+(recommendations 12 and 22)
+June 2013
+
+FINANCIAL ACTION TASK FORCE 
+ 
+The Financial Action Task Force (FATF) is an independent inter -governmental body that develops and 
+promotes policies to protect the global financial system against money laundering, terrorist financing 
+and the financing of proliferation of weapons of mass destruction . The FATF Recommendations are 
+recognised as the global anti-money laundering (AML) and counter-terrorist financing (CFT) standard. 
+For more information about the FATF, please visit the website: 
+www.fatf-gafi.org 
+ 
+© 2013 FATF/OECD. All rights reserved. 
+No reproduction or translation of this publication may be made without prior written permission. 
+Applications for such permission, for all or part of this publication, should be made to 
+the FATF Secretariat, 2 rue André Pascal 75775 Paris Cedex 16, France 
+(fax: +33 1 44 30 61 37 or e-mail: contact@fatf-gafi.org).
+
+FATF GUIDANCE 
+ POLITICALLY EXPOSED PERSONS (RECOMMENDATIONS 12 AND 22) 
+ 2013 1 
+CONTENTS 
+ACRONYMS ..................................................................................................................................................... 2 
+I. INTRODUCTION .................................................................................................................................... 3 
+II. DEFINITIONS ......................................................................................................................................... 4 
+III. THE RELATIONSHIP BETWEEN RECOMMENDATIO NS 10 (CUSTOMER DUE DILIGENCE) 
+AND RECOMMENDATION 12, AND THE SPECIFIC REQUIREMENTS FOR PEPS. ............................................. 5 
+A. Foreign PEPs ...................................................................................................................................... 7 
+B. Domestic and International organisation PEPs ................................................................................. 8 
+C. Identification of Beneficial Owners ................................................................................................... 9 
+Beneficiaries of life insurance policies ............................................................................................. 10 
+IV. SCOPE OF RECOMMENDATION 12 .................................................................................................... 10 
+A. Prominent public function .............................................................................................................. 10 
+B. Time limits of PEP status ................................................................................................................. 12 
+C. Family members and close associates ............................................................................................ 12 
+V. GUIDANCE ON THE USE OF SOURCES OF INFORMATION FOR THE DETERMINATION OF PEPS, 
+THEIR FAMILY MEMBERS & CLOSE ASSOCIATES ......................................................................................... 13 
+A. Ensuring client CDD information is up-to-date ............................................................................... 14 
+B. Employees ....................................................................................................................................... 14 
+C. Internet and media searches .......................................................................................................... 14 
+D. Commercial databases .................................................................................................................... 15 
+E. Government issued PEP-lists .......................................................................................................... 16 
+F. In-house databases and information sharing within financial groups or countries ....................... 17 
+G. Asset disclosure systems ................................................................................................................. 17 
+H. Customer self-declarations ............................................................................................................. 18 
+I. Information sharing by competent authorities .............................................................................. 18 
+VI. MEASURES APPLICABLE TO THE DIFFERENT TYPES OF PEPS ............................................................ 19 
+A. Foreign PEPs and high risk business relationships with domestic & international organisation 
+PEPs ......................................................................................................................................................... 19 
+Obtain senior management approval ............................................................................................. 19 
+Establish the source of wealth and source of funds ........................................................................ 20 
+Conduct enhanced ongoing monitoring of the business relationship ............................................. 22 
+B. Domestic & international organisation PEPs when not higher risk ................................................ 23 
+C. Life insurance policies with higher risks .......................................................................................... 23 
+VII. SUPERVISION ................................ ..................................................................................................... 23 
+Internal controls (Recommendation 18) ......................................................................................... 25 
+VIII. OTHER ISSUES ..................................................................................................................................... 25 
+A. Immunity from prosecution and conviction ................................................................................... 25 
+B. Consistency with anti-discrimination laws ...................................................................................... 25 
+C. Sharing of best practices between business associations .............................................................. 26 
+ANNEX 1: PEPS RED FLAGS / INDICATORS ................................................................................................... 27 
+ANNEX 2: SOURCES OF CASE INFORMATION............................................................................................... 33
+
+FATF GUIDANCE 
+POLITICALLY EXPOSED PERSONS (RECOMMENDATIONS 12 AND 22) 
+2  2013 
+ACRONYMS 
+AML/CFT Anti-Money Laundering / Countering the Financing of Terrorism 
+CDD Customer Due Diligence 
+DNFBPs Designated Non-Financial Business or Professions 
+FIU Financial Intelligence Unit 
+ML Money Laundering 
+PEP Politically Exposed Person 
+STR Suspicious Transaction Report 
+TF Terrorist Financing 
+UNCAC United Nations Convention against Corruption
+
+FATF GUIDANCE 
+ POLITICALLY EXPOSED PERSONS (RECOMMENDATIONS 12 AND 22) 
+ 2013 3 
+ 
+I. INTRODUCTION 
+1. A politically exposed person (PEP) is defined by the Financial Action Task Force (FATF) as an 
+individual who is or has been entrusted with a prominent public function. Due to their position and 
+influence, it is recognised that many PEPs are in positions that potentially can be abused for the 
+purpose of committing money laundering (ML) offences and related predicate offences, including 
+corruption and bribery, as well as conducting activity related to terrorist financing (TF). This has 
+been confirmed by analysis and case studies. The potential risks associated with PEPs justify the 
+application of additional anti-money laundering / counter-terrorist financing (AML/CF T) 
+preventive measures with respect to business relationships with PEPs. To address these risks, FATF 
+Recommendations 12 and 22 require countries to ensure that financial institutions and designated 
+non-financial businesses and professions (DNFBPs) implement measures to prevent the misuse of 
+the financial system and non-financial businesses and professions by PEPs, and to detect such 
+potential abuse if and when it occurs. 
+2. These requirements are preventive (not criminal) in nature, and should not be interpreted as 
+stigmatising PEPs as such being involved in criminal activity. Refusing a business relationship with a 
+PEP simply based on the determination that the client is a PEP is contrary to the letter and spirit of 
+Recommendation 12. 
+3. The FATF first issued mandatory requirements covering foreign PEPs, their family members 
+and close associates 1 in June 2003.2 In February 2012, the FATF expanded the mandatory 
+requirements to domestic PEPs and PEPs of international organisations, in line with Article 52 of the 
+United Nations Convention against Corruption (UNCAC).
+3 Article 52 of the UNCAC defines PEPs as 
+“individuals who are, or have been, entrusted with prominent public functions and their family 
+members and close associates”, and includes both domestic and foreign PEPs. The main aim of the 
+obligations in Article 52 of UNCAC is to fight corruption, which the FATF endorses. However, it is 
+important to note that the aim of the 2012 FATF requirements extends more broadly to the fight 
+against ML and its predicate offences (designated categories of offences), including corruption, and 
+TF. 
+4. Consistent with this objective, Recommendation 12 requires countries to implement 
+measures requiring financial institutions to have appropriate risk management systems in place to 
+determine whether customers or beneficial owners are foreign PEPs, or related or connected to a 
+foreign PEP, and, if so, to take additional measures beyond performing normal customer due 
+diligence (CDD) (as defined in Recommendation 10) to determine if and when they are doing 
+business with them. 
+5. For domestic PEPs and international organisation PEPs, financial institutions must take 
+reasonable measures to determine whether a customer or beneficial owner is a 
+ 
+1 See the 2003 FATF 40 Recommendations : Recommendation 6 (for financial institutions) and 
+Recommendation 12 (for DNFBPs). 
+2 The 2003 FATF Recommendations encouraged countries to extend the requirements to domestic 
+PEPs. 
+3 The UNCAC is also referred to as the Mérida Convention, after the Mexican city where the high level 
+signing Conference was held. The UNCAC was adopted by the United Nations General Assembly in 
+October 2003, and subsequently entered into force in December 2005.
+
+FATF GUIDANCE 
+POLITICALLY EXPOSED PERSONS (RECOMMENDATIONS 12 AND 22) 
+4  2013 
+domestic/international organisation PEP, and then assess the risk of the business relationship . For 
+higher risk business relationships with domestic PEPs and international organisation PEPs, financial 
+institutions should take additional measures consistent with those applicable to foreign PEPs. 
+6. Recommendation 12 applies to financial institutions, and Recommendation 22 requires 
+countries to apply these requirements to DNFBPs. 
+7. Effective implementation of the PEPs requirements has proven to be challenging for 
+competent authorities, financial institutions and DNFBPs worldwide. This is evident from the results 
+of the assessments of compliance with the 2003 FATF 40 Recommendations, undertaken by the 
+FATF, FATF-style regional bodies, International Monetary Fund and World Bank. 4 Implementation 
+challenges have also been identified through publicly available supervisory reports and regulatory 
+actions, and high profile cases of (former) government leaders and their relatives who appeared to 
+have significant assets available abroad which were inconsistent with their official or licit income. 
+8. It is also important to note that the effective implementation of Recommendations 10, 12 
+and 22 have to be part of a full and effective implementation of the FATF Recommendations as a 
+whole. S
+ee the Reference Guide and Information Note on the Use of the FATF Recommendations to 
+Support the Fight Against Corruption. 
+9. This guidance paper is non-binding and should be read in conjunction with FATF 
+Recommendations 12 and 22, and their Interpretive Notes. It is a guidance tool that is based on the 
+experiences of countries, international organisations, the private sector and non-governmental 
+organisations, and which may assist competent authorities and financial institutions and DNFBPs to 
+effectively implement those Recommendations. 
+II. DEFINITIONS 
+10. For the purpose of this guidance paper, the definitions set out in the Glossary to the FATF 
+Recommendations apply. 5 The FATF Glossary definition of politically exposed person is meant to 
+have the same meaning as the term persons with prominent public functions (as used in UNCAC 
+Article 52). 
+11. In particular, the following definitions, which do not cover middle ranking or more junior 
+individuals, apply to this guidance paper: 
+ Foreign PEPs: individuals who are or have been entrusted with prominent 
+public functions by a foreign country, for example Heads of State or of 
+government, senior politicians, senior government, judicial or military 
+officials, senior executives of state owned corporations, important political 
+party officials. 
+ 
+4 All FATF Mutual Evaluations are published on the website of the FATF, www.fatf-gafi.org, which also 
+holds links to the websites of the FATF -style regional bodies, the IMF and World Bank. See the 
+assessment of Recommendations 6 and 12 of the 2003 FATF 40 Recommendations in each of these 
+reports. 
+5 See in particular, the Glossary definitions of: beneficial owner, competent authorities, country, 
+criminal activity, financial institutions, designated non-financial businesses and professions, 
+international organisations, politically exposed person, reasonable measures, risk, satisfied, should, and 
+supervisors.
+
+FATF GUIDANCE 
+ POLITICALLY EXPOSED PERSONS (RECOMMENDATIONS 12 AND 22) 
+ 2013 5 
+ Domestic PEPs: individuals who are or have been entrusted domestically 
+with prominent public functions, for example Heads of State or of 
+government, senior politicians, senior government, judicial or military 
+officials, senior executives of state owned corporations, important political 
+party officials. 
+ International organisation PEPs: persons who are or have been entrusted 
+with a prominent function by an international organisation, refers to 
+members of senior management or individuals who have been entrusted 
+with equivalent functions, i.e. directors, deputy directors and members of 
+the board or equivalent functions. 
+ Family members are individuals who are related to a PEP either directly 
+(consanguinity) or through marriage or similar (civil) forms of 
+partnership. 
+ Close associates are individuals who are closely connected to a PEP, either 
+socially or professionally. 
+12. The difference between a foreign PEP and a domestic PEP is the country which has entrusted 
+the individual with the prominent public function. Pursuant to the definition of PEPs, other factors, 
+such as country of domicile or nationality, are not relevant in determining the type of PEP, but may 
+be relevant in determining the level of risk of a specific domestic PEP (as foreign PEPs are always 
+high risk). It should also be noted that a domestic PEP is subject to the foreign PEPs requirements if 
+that individual is also a foreign PEP through another prominent public function in another country. 
+13. Throughout the remainder of this guidance paper, references to Recommendation 12 should 
+be interpreted to mean both Recommendations 12 and 22, as the PEPs requirements are applicable 
+to both financial institutions and DNFBPs. 
+III. THE RELATIONSHIP BETWEEN RECOMMENDATIONS 10 (CUSTOMER DUE 
+DILIGENCE) AND RECOMMENDATION 12, AND THE SPECIFIC REQUIREMENTS FOR 
+PEPS. 
+14. Recommendations 10 and 12 are both part of the overall set of customer due diligence (CDD) 
+requirements. The ability to determine if customers or beneficial owners are PEPs fully depends 
+upon the effective implementation of CDD measures, including the identification, verification, and 
+ongoing due diligence requirements as set out in Recommendation 10 (for financial institutions) 
+and Recommendation 22 (for DNFBPs), as well as the effective application of a risk based approach 
+(Recommendation 1). CDD measures are the indispensable starting point as they must be applied to 
+any type of customer. 
+15. Recommendation 10 does not require CDD measures to be applied to customers who conduct 
+“occasional” transactions below the applicable thresholds in the circumstances which are described 
+in Recommendations 10 and 16 (wire transfers). Consequently, financial institutions and DNFBPs 
+are not expected to determine whether such customers are PEPs, or to apply in su ch cases the 
+enhanced measures required by Recommendation 12. However, if the financial institution or DNFBP
+
+FATF GUIDANCE 
+POLITICALLY EXPOSED PERSONS (RECOMMENDATIONS 12 AND 22) 
+6  2013 
+was provided with information which clearly indicates a PEP status of the occasional customer, it 
+would obviously have to apply the requirements of Recommendation 12. 
+16. The relationship between Recommendations 10 and 12, and the resulting requirements for 
+determining if clients are foreign or domestic/international organisation PEPs can be summarised 
+in three steps. Although these steps are sequenced, to determine if a new customer is a PEP (at the 
+on-boarding or customer intake stage), it is understood that the three steps can take place at the 
+same time. The three steps are further explained in the following table: 
+Step 1: Full and effective implementation of Recommendation 10 
+For foreign and domestic/international organisation PEPs 
+ Implement effective CDD measures in line with Recommendation 10. 
+ Recommendation 10 is the indispensable starting point for the effective implementation of 
+Recommendation 12. 
+ Recommendation 12 imposes additional requirements for PEPs which are summarised in 
+step 2 and 3. 
+Step 2: Determine if a customer is a PEP6 
+For foreign PEPs 
+ Recommendation 12 requires 
+appropriate risk management 
+systems to determine whether the 
+customer or beneficial owner is a 
+foreign PEP. 
+ This means that proactive steps 
+must be taken, such as assessing 
+customers on the basis of risk criteria, 
+risk profiles, the business model, 
+verification of CDD information, and 
+the i nstitution’s own research, to 
+determine whether a customer or a 
+beneficial owner is a foreign PEP. 
+For domestic/international organisation PEPs 
+ Recommendation 12 requires taking 
+reasonable measures, based on the 
+assessment of the level of risk, to 
+determine whether the customer or 
+beneficial owner is a domestic PEP. 
+ This means reviewing, according to 
+relevant risk factors, CDD data collected 
+pursuant to Recommendation 10 in 
+order to determine whether a customer 
+or beneficial owner is a domestic PEP. 
+ Determine the risk of the business 
+relationship and, in low risk cases, no 
+further steps to determine if a customer 
+is a PEP are required. 
+Step 3: Take risk mitigation measures 
+For foreign PEPs 
+ Apply the enhanced risk mitigation 
+measures of Recommendation 12 in 
+all cases. 
+For domestic/international organisation PEPs 
+ In cases of a higher risk business 
+relationship with the PEP, apply the 
+enhanced risk mitigation measures of 
+Recommendation 12. 
+ 
+17. The different sets of requirements to detect PEPs (one for foreign PEPs, and one for 
+domestic/international organisation PEPs) reflect that the level of risks are different. In practice 
+financial institutions and DNFBPs will often use one customer on-boarding procedure for all 
+customers. 
+ 
+6 For the purposes of determining whether a customer or beneficial owner is a PEP, use of commercial 
+databases is not required by the FATF Recommendations, and is not sufficient for the implementation 
+of Recommendation 12.
+
+FATF GUIDANCE 
+ POLITICALLY EXPOSED PERSONS (RECOMMENDATIONS 12 AND 22) 
+ 2013 7 
+18. When considering whether to establish or continue a business relationship with a PEP, the 
+focus should be on the level of ML/TF risk associated with the particular PEP, and whether the 
+financial institution or DNFBP has adequate controls in place to mitigate that ML/TF risk so as to 
+avoid the institution from being abused for illicit purposes should the PEP be involved in criminal 
+activity. This decision should be taken on the basis of the customer due diligence process and with 
+an understanding of the particular characteristics of the public functions that the PEP has been 
+entrusted with. The decision to establish or continue a customer relationship with a PEP should be 
+guided primarily by an assessment of ML/TF risks, even if other considerations, such as regulatory 
+risk, reputational risk or commercial interests, are taken into account. 
+19. Financial institutions and DNFBPs should consider whether they may be more vulnerable to 
+domestic PEPs compared to foreign PEPs. For example, small financial institutions, with little or no 
+exposure to foreign financial markets, who determine they are dealing with a foreign PEP, should 
+consider in detail the reasons why such a relationship is being started. Financial institutions wh o 
+operate in domestic markets where there are known issues relating to corruption should consider 
+whether their exposure to domestic PEPs may be higher than to foreign PEPs. 
+20. In all cases, where a financial institution or DNFBP suspects or has reasonable grounds to 
+suspect that funds are the proceeds of criminal activity, a STR (Suspicious Transaction Report) 
+should be filed with the FIU (Financial Intelligence Unit). 
+A. FOREIGN PEPS 
+21. Pursuant to Recommendation 12, financial institutions and DNFBPs are required to have 
+appropriate risk management systems as part of their internal rules to determine if a customer or 
+beneficial owner is a foreign PEP. What risk management system is appropriate for a financial 
+institution or DNFBP depends on the nature of the institution’s business, the nature of its client 
+profile, expected transactions and on other risk factors. 
+22. Financial institutions and DNFBPs doing business with a foreign PEP may not have much 
+first-hand knowledge or direct access to information about variables such as what a reasonable 
+income would be for a foreign public official at a particular level or in a particular position. This can 
+make it more difficult to assess information, both at the account opening stage and during 
+monitoring of the customer relationship. Consequently, appropriate risk management systems need 
+to be implemented to address these particular risks both at the account opening/CDD stage, and 
+when existing foreign customers become PEPs. If one of the tools used for the determination of 
+foreign PEPs (see Section V below) indicate the presence of a PEP, but if doubts still exist, further 
+investigation is necessary to be able to reach a sufficiently clear decision on the classification of the 
+customer. 
+23. Foreign PEPs are always considered high risk and require the application of enhanced due 
+diligence measures, as for all higher risk customers as described in Recommendation 10. 7 
+Recommendation 12 requires that the decision to engage or maintain the business relationship with 
+the foreign PEP customer should not be taken at the ordinary level of the hierarchy, but at the level 
+of the senior management. This should further lead to more proactive steps, in particular, to an 
+ 
+7 See paragraph 20 of the Interpretative Note to Recommendation 10.
+
+FATF GUIDANCE 
+POLITICALLY EXPOSED PERSONS (RECOMMENDATIONS 12 AND 22) 
+8  2013 
+increase in the monitoring of the business relationship, in order to determine whether those 
+transactions or activities appear unusual or suspicious. Recommendation 12 also requires that 
+financial institutions and DNFBPs take reasonable measures to establish the source of wealth and 
+the source of funds. 
+24. Examples of such enhanced CDD measures include (but are not limited to): i) obtaining 
+additional information on the customer; ii) obtaining additional information on the intended nature 
+of the business relationship, and on the reasons for intended or performed transactions; iii) 
+obtaining information on the source of funds or source of wealth of the customer; and iv) conducting 
+enhanced monitoring of the business relationship, potentially by increasing the number and timing 
+of controls applied, and identifying patterns of transactions that warrant additional scrutiny. 
+B. DOMESTIC AND INTERNATIONAL ORGANISATION PEPS 
+25. A financial institution or DNFBP may perform the steps that are required for the 
+implementation of the domestic/international organisation PEP requirements in concert as part of 
+their procedures implementing Recommendation 10. Pursuant to Recommendation 12, financial 
+institutions and DNFBPs are required to take reasonable measures as part of their internal controls 
+to determine if a customer or beneficial owner is a domestic/international organisation PEP. To do 
+this, financial institutions and DNFBPs should review, according to relevant risk factors, the CDD 
+data collected pursuant to Recommendation 10. 
+26. In case the customer is determined to be a domestic/international organisation PEP, then 
+financial institutions or DNFBPs should undertake a risk assessment of the PEPs business 
+relationship. To this effect, they should notably gather sufficient information to understand the 
+particular characteristics of the public functions that the PEP has been entrusted with and, in the 
+case of an international organisation, the business model of that organization. Information on 
+international organisations, for example, may be found on their respective website. The risk 
+assessment should be a composite assessment of all the risk factors and needs to be done to 
+determine if the business relationship with the PEP is of a higher risk. This assessment of the 
+business relationship may take into account, among other factors i) customer risk factors, 
+ii) country risk factors, and iii) product, service, transaction or delivery channel risks.
+8 Additional 
+factors to be taken into account should include the nature of the prominent public function that the 
+PEP has, such as his or her level of seniority, access to or control over public funds and the nature of 
+the position held. 
+27. If the risk assessment establishes that the business relationship with the 
+domestic/international organisation PEP presents a normal or low risk, the financial institution and 
+DNFBP is not required to apply enhanced due diligence measures. If, however, it suggests that the 
+business relationship is of a higher risk, then the financial institution or DNFBP needs to take 
+consistent measures that are required for foreign PEPs in as set in Recommendation 12 (b) to (d). 
+28. When implementing Recommendation12, financial institutions and DNFBPs should ensure 
+that they assess the risk of the customer and business relationship on the basis of the data collected 
+ 
+8 See paragraph 15 of the Interpretative Note to Recommendation 10.
+
+FATF GUIDANCE 
+ POLITICALLY EXPOSED PERSONS (RECOMMENDATIONS 12 AND 22) 
+ 2013 9 
+pursuant to Recommendation10.9 If as a result of this assessment, a financial institutions or DNFBP 
+has no reason to believe that a customer is a domestic/international organisation PEP, then based 
+on this assessment it may not need to take additional measures at this stage to determine if a 
+customer is a domestic/international organisation PEP. Financial institutions and DNFB s should be 
+satisfied, based on reasonable measures
+10, that the domestic/international organisation PEP is not a 
+higher risk customer, at the account opening stage or at a later stage. If the business relationship is 
+high risk, then low risk factors become irrelevant and the measures the financial institutions and 
+DNFBPs have in place in relation to such customers should be consistent with those applicable to 
+foreign PEPs and other high risk customers. 
+29. It is possible that a financial institution or DNFBP rates a customer relationship with 
+customer as high risk because of other factors, without determining at first that this customer is a 
+domestic/international organisation PEP. If this is the case, then the enhanced due diligence 
+measures that Recommendation 10 requires to be applied to this relationship because of these 
+other factors, could lead to the determination that the customer is a domestic/international 
+organisation PEP and, accordingly, lead to the application of the enhanced due diligence 
+requirements stated in Recommendation 12. 
+30. The risk based approach for domestic/internatio nal organisation PEPs (“reasonable 
+measures”) implies that in some jurisdictions, some or all business relationships with 
+domestic/international obligations PEPs may pose an equally high risk as those with foreign PEPs. 
+Jurisdictions should not assume that the risk for all domestic/international organisation PEPs is the 
+same, and that the risk is always lower for domestic/international organisation PEPs. Countries 
+should base their assessment of risks in accordance with their obligations under Recommendatio n 
+1, and communicate the appropriate guidance to financial institutions and DNFBPs. Financial 
+institutions and DNFBPs need to undertake their own assessment in this regard. 
+31. Even if a business relationship with a domestic/international obligation PEP is not initially 
+deemed to be high risk, it may evolve into a higher risk business relationship at a later stage. 
+Financial institutions and DNFBPs should conduct ongoing due diligence on their business 
+relationship, consistent with Recommendation 10, to ensure they identify any changes to the risk of 
+the customer relationship. If the risk changes and becomes high, the required measures of 
+Recommendation 12 need to be applied. 
+C. IDENTIFICATION OF BENEFICIAL OWNERS 
+32. Recommendation 12 requires the determination that a customer is a PEP. The PEP could be 
+the customer or the beneficial owner of a legal entity that is the client. There is a risk that corrupt 
+PEPs could circumvent AML/CFT and anti-corruption safeguards by opening accounts, establish 
+business relationships or conducting transactions by using third parties, such as intermediaries, 
+ 
+9 In scenarios that qualify for simplified due diligence and which involve customer identification, 
+financial institutions are not released from the obligation to determine domestic PEPs status of the 
+customer. However, simplified due diligence may limit the extent of what are reasonable measures for 
+PEP determination. 
+10 The Glossary defines “reasonable measures” as meaning “appropriate measures which are 
+commensurate with the ML/FT risks”. In this context, that would mean taking into account other 
+relevant risk factors as described in the Interpretative Note to Recommendation 10.
+
+FATF GUIDANCE 
+POLITICALLY EXPOSED PERSONS (RECOMMENDATIONS 12 AND 22) 
+10  2013 
+legal entities or legal arrangements. Cases have demonstrated that corrupt PEPs often use legal 
+entities to obscure their identity by being the beneficial owner of the client in order to distance 
+themselves from transactions, and to access the financial system undetected. Intermediaries ( e.g., 
+lawyers, real estate and escrow agents, lobbyists, bankers) have been known to access the financial 
+system on behalf of PEPs to conceal the controller of the assets. 
+33. When conducting CDD, financial institutions and DNFBPs are required to identify the 
+beneficial owner, and take reasonable measures to verify the identity of the beneficial owner, 
+pursuant to Recommendations 10
+11 and 22. If there are objective grounds to believe that a beneficial 
+owner is a PEP, complete verification is mandatory in any case. Where a person is purporting to act 
+on behalf of a beneficial owner (or is acting on behalf of a natural person), it is best practice to 
+inquire the reason for doing so. This may lead to awareness that the beneficial owner of the client is 
+a PEP. 
+34. If the person who is acting on behalf of a PEP, or if a customer or beneficial owner is 
+identified as a family member or close associate of a PEP, then the requirements for PEPs should 
+also apply accordingly. 
+Beneficiaries of life insurance policies 
+35. Additionally, the Interpretative Note to Recommendation 12 requires financial institutions 
+to take reasonable measures to determine whether the beneficiaries of a life insurance policy 
+and/or, where required, the beneficial owner or the beneficiary are PEPs. This should occur at the 
+latest at the time of the pay out, and should be covered by the internal controls of the financial 
+institution. The financial institution that processes payments purporting to be from life insurance 
+policy pay-outs should apply risk-based monitoring of such payments to determine if the recipient 
+of the funds is a PEP. 
+IV. SCOPE OF RECOMMENDATION 12 
+A. PROMINENT PUBLIC FUNCTION 
+36. The Glossary definition of politically exposed person provides some examples of the types of 
+prominent public functions that an individual may be or may have been entrusted with by a foreign 
+or domestic government ( e.g., Heads of State or of government, senior politicians, senior 
+government, judicial or military officials, senior executives of state owned corporations, important 
+political party officials) or by an international organisation ( e.g., directors, deputy directors and 
+members of the board or equivalent function). 
+37. Middle ranking or more junior individuals in the foregoing categories are explicitly excluded 
+from the Glossary definition of politically exposed person. However, there should be awareness that 
+middle ranking and more junior officials could act on behalf of a PEP to circumvent AML/CFT 
+controls. These less prominent public functions could be appropriately taken into account as 
+customer risk factors in the framework of the overall assessment of risks associated with the 
+ 
+11 Recommendation 10 requires that the beneficial owner (the natural person) be identified and that the 
+financial institution understand the purpose and intended nature of the business relationship.
+
+FATF GUIDANCE 
+ POLITICALLY EXPOSED PERSONS (RECOMMENDATIONS 12 AND 22) 
+ 2013 11 
+business relationship in accordance with Recommendation 10 when they are acting on behalf of a 
+PEP. 
+38. Although the Glossary definition includes some examples of what is meant by prominent 
+public function, the precise level of seniority which triggers the PEPs requirements is not specified, 
+and the list of examples provided is not exhaustive. This is because what constitutes a prominent 
+public function domestically depends on the size ( e.g. number of inhabitants, size of the budget), 
+particular organisational framework of government or international organisation concerned, and 
+the powers and responsibilities associated with particular public functions and other factors that 
+are considered as part of the risk assessment under Recommendation 1. For example, prominent 
+public functions may exist at the federal, state or provincial, and/or municipal levels. Jurisdictions 
+may use the risk assessment in Recommendation 1 to identify the specific levels and types of PEPs 
+which pose a higher risk. 
+39. It is a good practice for countries to provide guidance to financial institutions and DNFBPs 
+concerning what constitutes a prominent public function for both domestic and foreign PEPs. The 
+starting-point is the FATF Recommendations, with the specific guidance to be informed by the risk 
+assessment. The absence of guidance can create or perpetuate unintended determinations by 
+financial institutions and DNFBPs on who is (and is not) a PEP. Not only will this make monitoring 
+compliance more difficult for supervisory agencies, but it may lead to case- by-case PEP decisions by 
+reporting institutions that are influenced by the political preferences or business interests of senior 
+management. 
+40. A number of approaches are possible. In some cases, it may be best practice for such guidance 
+to specify a baseline list of particular positions within government which are sufficiently prominent 
+so as to qualify as a PEP ( e.g., President, minister, deputy minister, etcetera), and to make the list 
+publicly available (for example on the internet). Another possible method would be to use asset 
+disclosures of public officials who are required to disclose their assets. In these instances, domestic 
+and foreign financial institutions and DNFBPs could potentially access such information. This is 
+particularly important for foreign financial institutions and DNFBPs, as corrupt officials will tend to 
+hide proceeds of corruption abroad, yet it is extremely difficult for financial institutions and DNFBPs 
+to determine which customers would be considered PEPs in a foreign country. 
+41. Another approach would be to describe generally the types of responsibilities that are 
+sufficiently prominent ( e.g., final approval over government procurement processes, responsibility 
+for budgetary spending over a certain amount, decision making powers over government subsidies 
+and grants). It should be made clear that any list cannot be relied on as the sole source of 
+information and does not override financial institutions’ and DNFBPs’ assessment of risk of the 
+business relationship and the client in other ways. 
+42. For foreign PEPs, the financial institution or DNFBP may be less likely to have first-hand 
+knowledge of the PEP’s domestic situation readily at hand. Such information may be available from 
+other institutions within the same financial group which are doing business in the foreign country 
+or, alternatively, through the internet or other relevant sources. 
+43. International organisations could also provide information on their organisational structure 
+and business model, as well as the type of functions that their senior management has been
+
+FATF GUIDANCE 
+POLITICALLY EXPOSED PERSONS (RECOMMENDATIONS 12 AND 22) 
+12  2013 
+entrusted with, and, where relevant, the type of institutional measures taken to prevent the misuse 
+of these functions. 
+B. TIME LIMITS OF PEP STATUS 
+44. Recommendation 12 also defines a PEP as being someone who has been (but may no longer 
+be) entrusted with a prominent public function. The language of Recommendation 12 is consistent 
+with a possible open ended approach ( i.e., “once a PEP – could always remain a PEP”). The handling 
+of a client who is no longer entrusted with a prominent public function should be based on an 
+assessment of risk and not on prescribed time limits. 
+45. The risk based approach requires that financial institutions and DNFBPs assess the ML/TF 
+risk of a PEP who is no longer entrusted with a prominent public function, and take effective action 
+to mitigate this risk. Possible risk factors are: 
+ the level of (informal) influence that the individual could still exercise; the 
+seniority of the position that the individual held as a PEP; or 
+ whether the individual’s previous and current function are linked in any 
+way (e.g., formally by appointment of the PEPs successor, or informally by 
+the fact that the PEP continues to deal with the same substantive matters). 
+C. FAMILY MEMBERS AND CLOSE ASSOCIATES 
+46. Recommendation 12 applies also to family members and close associates of the PEP. The 
+Recommendation does not define the scope of the terms family members and close associates, as this 
+depends to some extent on the social-economic and cultural structure of the country of the PEP. 
+Identifying such persons is also challenging, since the number of persons who qualify as family 
+members and close associates is fluid, and may change significantly over time. 
+47. It is best practice for countries to provide financial institutions and DNFBPs with working 
+definitions or examples of close associates and family members. When doing so, it should be kept in 
+mind that such working definitions and examples should not be interpreted too narrowly or too 
+widely. 
+48. For family members, this includes such relevant factors as the influence that particular types 
+of family members generally have, and how broad the circle of close family members and 
+dependents tends to be. For example, in some cultures, the number of family members who are 
+considered to be close or who have influence may be quite small ( e.g., parents, siblings, 
+spouses/partners, and children). In other cultures, grandparents and grandchildren might also be 
+included, while in others, the circle of family members may be broader, and extend to cousins or 
+even clans. 
+49. For close associates, examples include the following types of relationships: (known) (sexual) 
+partners outside the family unit (e.g. girlfriends, boyfriends, mistresses); prominent members of the 
+same political party, civil organisation, labour or employee union as the PEP; business partners or 
+associates, especially those that share (beneficial) ownership of legal entities with the PEP, or who 
+are otherwise connected ( e.g., through joint membership of a company board). In the case of
+
+FATF GUIDANCE 
+ POLITICALLY EXPOSED PERSONS (RECOMMENDATIONS 12 AND 22) 
+ 2013 13 
+personal relationships, the social, economic and cultural context may also play a role in determining 
+how close those relationships generally are. 
+50. For the assessment of risk, it is the links between the close associate and/or family member 
+with the PEP that determine the level of risk. In some cultures, several different ethno-cultural-
+religious links (e.g. tribe, clan, caste, sect) may fit the description of both close associates and family 
+members. 
+51. For foreign PEPs, the financial institution or DNFBP may not have first-hand knowledge of the 
+PEP’s cultural context readily at hand. Such information may be available from other institutions 
+within the same financial group which are doing business in the foreign country or, alternatively, 
+through the internet and other relevant sources. 
+52. The FATF Recommendations require that family members and close associates of PEPs 
+should be determined to be PEPs because of the potential for abuse of the relationship for the 
+purpose of moving the proceeds of crime, or facilitating their placement and disguise, as well as for 
+terrorist financing purposes. Consistent with the risk based approach outlined above, the period for 
+which family members and close associates of PEPs who are no longer entrusted with a prominent 
+public function should be treated as PEPs is directly related to the assessment of risk for the PEP. 
+For example, the infant son of a foreign PEP would not be a PEP (unless he holds a prominent public 
+function, such as being the heir to the throne or Presidency). Although the infant son is not a PEP 
+himself, he should be treated as a foreign PEP as long as his parent is considered to be a foreign PEP. 
+Likewise, the close associate of a domestic PEP should be treated as a domestic PEP, even if that 
+associate does not qualify as a PEP in his/her own right, for as long as the status of the domestic PEP 
+remains. 
+53. If a financial institution or DNFBP finds that a PEP has known family members and close 
+associates, it should search its records to determine whether it may be providing financial services 
+to such members or associates, and if so classify them as PEPs and apply the required enhanced due 
+diligence measures. 
+V. GUIDANCE ON THE USE OF SOURCES OF INFORMATION FOR THE 
+DETERMINATION OF PEPS, THEIR FAMILY MEMBERS & CLOSE ASSOCIATES 
+54. Determining whether customers or beneficial owners are PEPs and/or finding out who are 
+their family members and close associates can be challenging, particularly when dealing with 
+foreign PEPs for whom current information may not be readily available. Another implementation 
+issue is determining whether existing clients of financial institutions and DNFBPs have become PEPs 
+since the business relationship began. PEP-related corruption case typologies and supervisory 
+reports (see Annex 2) show that, in many cases, the financial institutions and DNFBPs knew within 
+at least a year after the relationship began that they were dealing with a PEP, yet failed to apply the 
+appropriate risk classification and mitigation procedures. It is important that financial institutions 
+and DNFBPs periodically monitor their existing client base against changes in the PEP universe and 
+not just at the time of client on-boarding. 
+55. It is important to stress that customer due diligence is the key source of information for the 
+purpose of determining that a customer is a PEP, as required by Recommendations 10 and 12. For
+
+FATF GUIDANCE 
+POLITICALLY EXPOSED PERSONS (RECOMMENDATIONS 12 AND 22) 
+14  2013 
+example, a key factor in this ongoing process is the customer’s principle occupation, or employment. 
+However, there are several other sources of information that can be used by financial institutions 
+and DNFBPs to assist in determining if a client is a PEP. Financial institutions and DNFBPs should 
+consider using additional sources of information, particularly when determining if a client is a 
+foreign PEP, for the reasons noted above. 
+56. Unlike law enforcement and supervisors, financial institutions and DNFBPs have access to a 
+valuable source of information: the customer. They should utilise this rather than relying on third 
+party providers. However, financial institutions and DNFBPs will often need to use more than one of 
+these sources of information to support CDD and/or to gather other information required by 
+Recommendation 12 (such as on the source of funds and the source of wealth). As is indicated for 
+some of the sources the disadvantages of using some sources to help determine that a customer is a 
+PEP may outweigh potential advantages. 
+57. As a general starting point to enable an assessment of risk of specific customers, risk 
+management systems or other internal control mechanisms should draw on a range of sources for 
+establishing ML/TF risk and take this information effectively into account. This should not be 
+limited to international instruments, Recommendations and guidelines, but should be extended to 
+FATF, FATF-style regional bodies, IMF/World Bank and non-governmental organisation (NGO) 
+reports and assessments, whether mutual evaluations, or assessments and analyses of AML/CFT 
+compliance, governance, corruption, revenue management and transparency (including natural 
+resource revenue management and transparency). 
+A. ENSURING CLIENT CDD INFORMATION IS UP- TO-DATE 
+58. Existing clients sometimes become PEPs after they enter a business relationship, so it is 
+essential that financial institutions and DNFBPs monitor non-PEP accounts for a change in the PEP-
+status, customer profile or account activity and update customer information. Such ongoing 
+monitoring should be based on risk, consistent with Recommendation 10. 
+B. EMPLOYEES 
+59. FATF Interpretative Note to Recommendation 18 requires internal control policies to include 
+ongoing employee training programmes. These training programmes need to address effective ways 
+of determining whether clients are PEP and to understand, assess and handle the potential risks 
+associated with PEPs. Training should also use real life case studies and examples to ensure it is up 
+to date. Human input and analysis from experienced and trained employees can be more valuable 
+than automated software programmes for detecting and handling the risks associated with PEPs. 
+This is especially the case for high net worth customers that are PEPs, which potentially carry the 
+highest corruption and ML risks. 
+C. INTERNET AND MEDIA SEARCHES 
+60. Financial institutions and DNFBPs frequently use the internet and media as sources of 
+information for the determination, monitoring, verification of information in relation to PEPs, 
+although noting that information that is retrieved may not in all cases be comprehensive or reliable. 
+While general searches on the larger search engines can prove difficult because of the number of
+
+FATF GUIDANCE 
+ POLITICALLY EXPOSED PERSONS (RECOMMENDATIONS 12 AND 22) 
+ 2013 15 
+“hits” that would require reviewing, free search tools are offered through AML -specific websites 
+that would be more targeted. In addition, searching focused sources that could be linked to the 
+customer may assist in locating relevant information (for example, (social) media websites in the 
+customer’s country of origin). Internet searches can also assist in retrieving general relevant 
+(country) information. For example, for a financial institution or DNFBP it is relevant to know which 
+countries prohibit certain PEPs (such as elected officials) from maintaining bank accounts abroad. 
+D. COMMERCIAL DATABASES 
+61. There are a variety of commercial databases available which may assist in the detection of 
+PEPs. Use of these databases is not required by the FATF Recommendations, and is not sufficient for 
+compliance with Recommendation 12. Financial institutions, DNFBPs and competent authorities can 
+acquire access to such databases –although the subscription costs may be (too) high for many 
+institutions. As well, the costs of such systems are necessarily passed on to the clients, which will 
+ultimately increase the cost of accessing financial services. The fact that the cost of using 
+commercial websites is too high for some institutions should be taken into account when assessing 
+compliance with the PEP requirements. 
+62. The use of these databases should never replace traditional CDD processes. Using any lists or 
+database software to assist in the determination that a client is a PEP may increase the risk that 
+financial institutions or DNFBPs wrongly assume that if a name is (not) in such a database then the 
+client is (not) a PEP. Such databases are simply additional sources of information about higher risk 
+individuals in determining whether the person is a potential PEP or family members and close 
+associates of PEPs. Commercial databases also have limitations of which competent authorities, 
+financial institutions and DNFBPs should be aware: 
+ Commercial databases are not necessarily comprehensive or reliable as 
+they generally draw solely from information that is publicly available and 
+thus the subscribing financial institutions or DNFBPs have no way of 
+verifying the accuracy, comprehensiveness and/or quality of the 
+information contained in the databases. With elections, cabinet changes, 
+and the general turnover of public officials taking place almost daily 
+around the world, these lists cannot be relied upon as being up-to-date. 
+ The definition of PEPs used by providers of such databases may or may not 
+align with the definition used in a particular country or accurately reflect 
+the functions entrusted by a particular international organisation. 
+ The subscribing financial institutions and DNFBPs may not fully 
+understand the parameters used to populate the database and the 
+technical capabilities of the database. For example; the database may not 
+catch certain names, or may exclude certain categories of PEPs. 
+ Inconsistent transliterations and spellings of names affect the ability of 
+financial institutions and DNFBPs to match names in general. Scrubbing 
+customer databases for matches against commercial databases may result 
+in many false positives if such databases contain insufficient or inadequate
+
+FATF GUIDANCE 
+POLITICALLY EXPOSED PERSONS (RECOMMENDATIONS 12 AND 22) 
+16  2013 
+identifier information. This increases the risk of missing true matches and 
+requires additional resources to separate false positives from true 
+matches. 
+63. Financial institutions and DNFBPs using such databases as a support tool should ensure that 
+they are fit for the purpose and are not simply outsourcing their risk assessment. 
+E. GOVERNMENT ISSUED PEP-LISTS 
+64. Countries sometimes publish lists of domestic PEPs or prominent public functions, although 
+this is not required by the FATF standards and such lists have potential shortcomings and can pose 
+potential challenges for effective implementation. There are two types of lists that countries may 
+publish: a list of positions/functions that would be held by a PEP, or a list of actual names of PEPs. In 
+general, while the inclusion on a list can confirm the fact that a person is a PEP, not being featured 
+on a list does not exclude the possibility that a person is nevertheless a PEP. 
+65. With regard to the list of actual names, such lists of domestic PEPs can be problematic as they 
+are quickly outdated, difficult to manage, costly to maintain, and do not contain family members or 
+close associates, and therefore the FATF does not advocate this approach. In addition, such lists 
+depend on the foreign country’s interpretation of what constitutes a prominent public function and 
+the criteria for listing an individual as a PEP may diverge from the interpretation and criteria which 
+is applicable domestically. Finally, there is risk that financial institutions and DNFBPs would rely 
+exclusively on the list, fail to consider other customers who may be PEPs, and therefore fail to have 
+fully assessed the risk of the business relationship; significantly impacting the effectiveness of the 
+measures. 
+66. On the other hand, compiling a list of domestic positions/functions that are considered to be 
+prominent public functions ( i.e., positions held by PEPs) is a practice that can provide financial 
+institutions and DNFBPs with an important source of information to determine who is a PEP. Given 
+that the definition of prominent public function depends on the particular organizational framework 
+of a government and can vary from country- to-country, a list of functions also assists financial 
+institutions and DNFBPs with the difficult task of interpreting the categories of public officials they 
+should consider as a PEP in foreign countries. 
+67. Compiling and maintaining a list of domestic positions/functions would not be overly 
+onerous for individual countries. In fact, many countries already have such a list (or at least a 
+starting-point) of public functions that are required to file asset disclosures. Since it is a list of 
+positions/functions which are likely to remain consistent for a period of time (as opposed to a list of 
+names which can change from one day to the next) occasional updating would be sufficient. Again, 
+the process for updating would be similar to that used for asset disclosure systems. 
+68. Close associates and family members of PEPs might never be listed, but are still to be treated 
+as PEPs, as required by Recommendation 12. Conducting CDD on a family member or close associate 
+might also reveal information that can be cross-checked and used to verify information about the 
+PEP which has been obtained from other sources.
+
+FATF GUIDANCE 
+ POLITICALLY EXPOSED PERSONS (RECOMMENDATIONS 12 AND 22) 
+ 2013 17 
+F. IN-HOUSE DATABASES AND INFORMATION SHARING WITHIN FINANCIAL GROUPS OR 
+COUNTRIES 
+69. Some financial institutions and DNFBPs may choose to develop in-house databases as a tool 
+to assist in the determination of who is a PEP. Similar to commercial databases, they may be very 
+costly and resource intensive for financial institutions and DNFBPs to keep such database lists up-
+to-date. Recommendation 18 (internal controls and foreign branches and subsidiaries) requires 
+financial groups to implement procedures for sharing information with the group for AML/CFT 
+purposes. In relation to foreign PEPs, it is best practice for institutions within international financial 
+groups to share information on PEPs for AML purposes. Additionally, financial institutions and 
+DNFBPs within a country may be able to provide general information which is helpful to determine 
+whether a PEP is trying to abuse the financial system ( e.g., the level of corruption in the country, the 
+level of income for certain types of positions, etcetera). 
+70. However, data protection laws and/or privacy legislation may limit the ability of a financial 
+institution or DNFBP to obtain information from a financial institution or DNFBP within the group in 
+another jurisdiction for the purpose of verifying customer information, including on why the 
+customer is opening an account in a foreign jurisdiction. Where this causes the financial institution 
+or DNFBP to be unable to comply with the CDD requirements of Recommendation 10 in specific 
+cases, the good practice is to refuse to open the account, commence business relations or process 
+the transaction(s), or the business relationship should be terminated. 
+71. Where a financial institution or DNFBP frequently seeks information from financial 
+institutions and DNFBPs in a particular country for the purposes of verifying CDD information, but is 
+regularly denied on the grounds of data protection or privacy legislation, the institutions should 
+consider notifying its supervisor and/or FIU. This offers the supervisor and/or FIU an opportunity 
+to raise the issue with its foreign counterpart in an effort to find a solution which will meet the 
+needs of both AML/CFT and privacy/data protection systems. 
+72. Some countries allow their financial institutions and DNFBPs to alert other financial 
+institutions and DNFBPs in specific cases of action that they take regarding a customer, such as the 
+termination of a customer relationship. Provided that a legal basis is created for such information 
+exchange, this can prevent PEPs whose business was refused or terminated from shopping around. 
+G. ASSET DISCLOSURE SYSTEMS 
+73. Countries have asset disclosure systems in place that apply to those individuals that hold 
+prominent public functions. In implementing disclosure requirements, agencies managing asset 
+disclosures usually need to build a list of the public officials required by law to file disclosures, so as 
+to be able to monitor compliance. Financial institutions and DNFBPs could be aware of which 
+countries require asset declarations from PEPs and require their customers to submit copies of such 
+declarations. These could be used to help assess the PEP customer’s risk level as part of ongoing 
+monitoring to ensure account activity is consistent with assets and value disclosed. It should be 
+noted that in many disclosure systems the accuracy of the disclosures form can be verified either on 
+a routine basis, upon complaint, when corruption investigations are launched, etcetera. While many 
+disclosure agencies are involved in conducting verification activities, their effectiveness varies due
+
+FATF GUIDANCE 
+POLITICALLY EXPOSED PERSONS (RECOMMENDATIONS 12 AND 22) 
+18  2013 
+to their overall capacity, resource endowment, availability of sources of information for cross-
+checking the content of disclosures, etcetera. 
+74. These names of filers and/or list of positions, where publicly available, can help financial 
+institutions and DNFBPs to determine if a client is a PEP. Asset disclosure systems can also provide 
+insight into the public functions that a country deems to be prominent. Some asset disclosure 
+systems can provide guidance on the names of individuals filling these functions and their family 
+members or close associates (where these are to file, or be named. In addition, asset disclosure 
+systems may provide access to additional data, such as the date of birth and identification numbers, 
+which can assist financial institutions and DNFBPs to determine the PEP status of clients. 
+75. Financial institutions and DNFBPs should be aware that the criteria used by a foreign country 
+to determine which functions are covered by asset disclosure requirements may not correspond 
+with the domestic criteria for a definition of a PEP. A further limitation is that an asset disclosure 
+form is a self-declaration and, therefore, may not contain verified information or may contain 
+(deliberately) contain false statements. Although there may be sanctions available for filing false or 
+inaccurate information in an asset disclosure form, financial institutions and DNFBPs should take 
+reasonable efforts to verify the information. 
+H. CUSTOMER SELF-DECLARATIONS 
+76. Self-declaration by a customer of their PEP status (i.e. by disclosing present or former 
+employment or principal occupation clearly recognizable as a PEP) is known as a means of helping 
+to determine whether that customer is a PEP . Some financial institutions and DNFBPs may also 
+choose to obtain verbal or written declarations from customers to facilitate t aking civil, 
+administrative or criminal action against those PEPs who wrongly chose to not identify themselves 
+as such. 
+77. However, financial institutions and DNFBPs who provide the customer with a PEP definition 
+and ask the customer if they meet that definition should ensure that they do not rely solely on such 
+self-declarations (which may in fact be false). Such a procedure would shift the financial institution’s 
+or DNFBP’s obligation to their customer, which is not an acceptable practice. Moreover, many 
+customers would not be able to determine if they are indeed a PEP, or not –
+ for example because the 
+customer is not aware of the definition of a PEP. Instead, businesses should actively engage with 
+customers and elicit information pertinent to the different elements of the PEP definition. To do this 
+effectively, well-trained staff and effective information gathering is required. 
+I. INFORMATION SHARING BY COMPETENT AUTHORITIES 
+78. The competent authorities may also have general information which is helpful in determining 
+whether a PEP is trying to abuse the financial system ( e.g., the level of corruption in the country, the 
+level of income for certain types of positions, etcetera) or specific information about particular 
+persons which would facilitate the detection of foreign PEPs. Where such information may be made 
+publicly available (i.e., over the internet), it is best practice to do so. Alternatively, formal or informal 
+networking or MOUs (Memorandum of Understanding) may be required so that information can be 
+shared among domestic or foreign counterparts, also for purposes of disclosure to financial 
+institutions and DNFBPs (provided there is a legal basis for doing so and provided that MOUs, where
+
+FATF GUIDANCE 
+ POLITICALLY EXPOSED PERSONS (RECOMMENDATIONS 12 AND 22) 
+ 2013 19 
+applicable, allow such sharing). Both general information concerning the country from which a 
+foreign PEP originates and more specific information (e.g., about particular persons) are useful tools 
+for verifying CDD information. 
+VI. MEASURES APPLICABLE TO THE DIFFERENT TYPES OF PEPS 
+A. FOREIGN PEPS AND HIGH RISK BUSINESS RELATIONSHIPS WITH DOMESTIC & 
+INTERNATIONAL ORGANISATION PEPS 
+79. Foreign PEPs are always considered a high risk that warrants taking enhanced due diligence 
+measures. In addition, business relationships with domestic PEPs and international organisation 
+PEPs that are determined to be high risk should be subject to such measures. In both circumstances, 
+the following enhanced due diligence measures apply: senior management approval, reasonable 
+measures to establish the source of wealth and the source of funds, and enhanced ongoing 
+monitoring of the business relationship. 
+80. For higher risk PEP relationships, it is a misconception to assume that detailed knowledge of 
+a PEP may allow the relationship to be treated as other than high risk. For example, a foreign head of 
+government remains a high risk PEP, no matter what the staff of the financial institution or DNFBP 
+(i.e. account or client managers, senior executive staff) may know about this particular person, or 
+the product provided. To appropriately manage the risks related to higher risk PEPs, financial 
+institutions and DNFBPs may give greater weighting or emphasis in applying enhanced due 
+diligence measures in specific situations. 
+Obtain senior management approval 
+81. Pursuant to Recommendation 12, financial institutions and DNFBPs should be required to 
+obtain senior management approval for establishing (or continuing, for existing customers) 
+business relationships with foreign PEPs. Recommendation 12 does not define or specify the precise 
+level of seniority within a financial institution or DNFBP that would be considered sufficient for 
+being able to approve establishing or maintaining a customer relationship with a PEP because such 
+a definition would not be meaningful in all countries and in all relevant contexts. 
+82. What will constitute senior management will depend on the size, structure, and nature of the 
+financial institution or DNFBP involved. However, the objective is to ensure that more senior levels 
+of management are aware of relationships with PEPs and that financial institutions and DNFBPs do 
+not in any circumstance undertake business relationships with them in the absence of adequate 
+controls. To make this assessment, the senior management person(s) involved will need to have a 
+deep knowledge of the institution’s AML/CFT programmes ( i.e., the internal control programmes), 
+and a strong understanding of the potential or existing customer’s ML/TF risk pro file. Additionally, 
+the senior management person(s) should have active involvement in the approval process of the 
+institution’s AML/CFT policies and procedures. 
+83. Appropriate arrangements for senior management approval can include having monitoring 
+committees in place –
+ or comparable decision making structures - that review high risk PEP 
+customer and business relationships (both at the customer intake or acceptance stage as well as on 
+an on-going basis). These structures should normally include the AML/CFT head, compliance
+
+FATF GUIDANCE 
+POLITICALLY EXPOSED PERSONS (RECOMMENDATIONS 12 AND 22) 
+20  2013 
+officers and customer service representatives. Larger or international financial institutions and 
+DNFBPs may have a centralized monitoring/review process for higher risk PEPs. These structures 
+can also help to ensure that all relevant internal information is carefully considered in specific cases. 
+The responsibility regarding final decisions on customer relationships with PEPs should be clearly 
+described. In all cases, it is best to document the approval or refusal by those involved in writing. 
+84. Although Recommendation 12 only requires senior management approval for establishing or 
+continuing the customer relationship, it may be desirable, where financial institutions or DNFBPs 
+lack the resources to implement internal controls and enhance ongoing monitoring mechanisms 
+sufficiently to mitigate risk, for senior management to have a process to actively manage the 
+termination of a the business relationship. 
+85. Senior management mechanisms to address the foregoing should be part of the internal 
+control programs that financial institutions and DNFBPs are required to have in place pursuant to 
+Recommendation 18. This should, inter alia, ensure that appropriate information regarding PEPs is 
+available within institutions, when and where necessary, and include internal policies, procedures 
+and controls relating to PEPs. The type and extent of internal control measures to be taken should 
+be appropriate having regard to the risk of ML/TF and the size and nature of the business. Internal 
+compliance manuals should not simply repeat regulatory requirements regarding PEPs - but should 
+be tailored to the type of business and PEP customers that a firm does business with. 
+Establish the source of wealth and source of funds 
+86. Financial institutions and DNFBPs should be required to take reasonable measures to 
+establish the source of wealth and the source of funds of foreign PEPs, pursuant to 
+Recommendation 12. “Wealth” and “funds” are two different concepts. 
+87. The source of wealth refers to the origin of th e PEP’s entire body of wealth ( i.e., total assets). 
+This information will usually give an indication as to the volume of wealth the customer would be 
+expected to have, and a picture of how the PEP acquired such wealth. Although financial institutions 
+and DNFBPs may not have specific information about assets not deposited or processed by them, it 
+may be possible to gather general information from commercial databases or other open sources. 
+88. The source of funds refers to the origin of the particular funds or other assets which are the 
+subject of the business relationship between the PEP and the financial institution or DNFBP (e.g., the 
+amounts being invested, deposited, or wired as part of the business relationship). Normally it will be 
+easier to obtain this information but it should not simply be limited to knowing from which financial 
+institution it may have been transferred. The information obtained should be substantive and 
+establish a provenance or reason for having been acquired. 
+89. Information about the source of wealth and source of funds is useful for ongoing due 
+diligence purposes. When conducting ongoing due diligence of the business relationship, it is 
+important for financial institutions and DNFBPs to ensure that the level and type of transactions are 
+consistent with the institution’s knowledge of the PEP’s source of wealth and source of funds. The 
+aim is to ensure that the reason for the business relationship is commensurate with what one could 
+reasonably expect from the PEP, given his/her particular circumstances. When making this 
+determination, the following factors should be taken into account: the current income of the PEP;
+
+FATF GUIDANCE 
+ POLITICALLY EXPOSED PERSONS (RECOMMENDATIONS 12 AND 22) 
+ 2013 21 
+sources of wealth and funds which could be explained from previous positions, business 
+undertakings, and family estates. 
+90. Where the level or type of activity in the business relationship diverges from what can be 
+reasonably explained, given the knowledge of the PEP’s source of wealth and source of funds, 
+prompt further assessments of the situation should be undertaken. The outcomes of that 
+assessment should determine if the business relationship is to be established or maintained, or 
+whether further steps would be necessary, such as termination of the business relationship
+12 and/or 
+filing STRs to the financial intelligence unit (FIU), consistent with Recommendation 20 (reporting of 
+suspicious transactions). 
+91. There is often an absence of information to help determine the source of wealth. Some 
+institutions and DNFBPs will rely on (basic) information on publicly disclosed assets (going beyond 
+the lists of persons that need to be disclosed). Many countries with asset disclosure systems have 
+provisions in place on public access to the information in the disclosures, and make disclosures 
+available on-line. While in many cases only a summary of the information filed by officials is made 
+publicly available, the information that can be accessed sometimes includes categories such as 
+values of income, real estate, stock holdings sources of income, positions on boards of companies, 
+etcetera. Often, financial institutions and DNFBPs must primarily rely on a declaration by the 
+(potential) customer. Where financial institutions and DNFBPs are relying on the customer’s 
+declaration of the source of funds/wealth, and inability to verify the information should be taken 
+into account in establishing its value. 
+92. When inquiring into the source of wealth, it is also best practice to try to obtain a more 
+specific overview of how much wealth the PEP has or controls, although it is understood that it may 
+not always be fully possible to have an overview of the PEP’s entire body of asset s, especially when 
+this information is not voluntarily disclosed. Failure to voluntarily disclose this information could 
+also be considered a red flag. 
+93. The following sources of information are useful for verifying the accuracy of the customer’s 
+declaration about the source of wealth and source of funds: publicly available property registers, 
+land registers, asset disclosure registers, company registers, past transactions (in the case of 
+existing customers), and other sources of information about legal and beneficial ownership, where 
+available. In the case of particularly high-profile PEPs, an internet search (including of social media) 
+may also reveal useful information about the PEP’s wealth and lifestyle and about their official 
+income. Discrepancies between customer declarations and information from other sources could be 
+indicators of ML suspicion and should never be disregarded. 
+94. When researching the source of wealth and source of funds, financial institutions and 
+DNFBPs should focus on what can be reasonably explained, rather than on what might be expected. 
+It seems that in some countries, in practice, PEPs are expected to have access to larger amounts of 
+either licitly or illicitly obtained (cash) funds than non-PEPs, (e.g. , because there is an implicit 
+expectation that individuals holding certain positions may have illicit income from corruption and 
+other offences). This may lead to circumstances in which a higher risk PEP is assessed as having a 
+lower customer risk and/or to cases where financial institutions and DNFBPs have incorrectly 
+ 
+12 In some cases, the competent authorities may request the financial institution or DNFBP not to 
+terminate the business relationship, yet.
+
+FATF GUIDANCE 
+POLITICALLY EXPOSED PERSONS (RECOMMENDATIONS 12 AND 22) 
+22  2013 
+justified their (continued) business with a PEP based on the wealth and funds that could be 
+expected, rather than on the wealth and funds that could reasonably be explained. Basing a risk 
+assessment on such expectations is not compliant with Recommendation 12. 
+Conduct enhanced ongoing monitoring of the business relationship 
+95. Foreign PEPs are always considered high risk, which means that enhanced ongoing 
+monitoring of the business relationship is always required, as is the case for higher risk 
+domestic/international organisation PEPs. Some examples of enhanced due diligence measures are 
+set out in paragraph 20 of the Interpretive Note to Recommendation 10. In practice, financial 
+institutions and DNFBPs with the resources to implement electronic monitoring systems are able to 
+conduct automated monitoring on a relatively constant basis. However, financial institutions and 
+DNFBPs without the resources to fully computerise and fully link CDD information to an electronic 
+monitoring system do not have this capacity. In such cases, more manual and resource-intensive 
+methods of ongoing monitoring will be needed. This is an important implementation issue, 
+especially for smaller financial institutions and DNFBPs. 
+96. When assessing the ML/TF risk level of a relationship with a domestic/international 
+organisation PEP, financial institutions and DNFBPs should take into account such factors as 
+whether the PEP: 
+ has business interests which are related to his/her public functions 
+(conflict of interest); 
+ is involved in public procurement processes; whether the PEP holds 
+several (related or unrelated) prominent public functions which may 
+enable influence to be exerted at several key decision making points in a 
+process, especially in spending departments; 
+ is from a country which has been identified by the FATF or others a s 
+having strategic AML/CFT regime deficiencies, or is known to have a high 
+level of corruption; 
+ has a prominent public function in sectors known to be exposed to 
+corruption levels, such as the oil and gas, mining, construction, natural 
+resources, defence industries, sports, gaming, gambling sectors; or 
+ has a prominent public function that would allow him/her to exert a 
+negative impact on the effective implementation of the FATF 
+Recommendations in his/her country. The exact range of prominent public 
+positions that this would apply to will likely differ from country to country, 
+but could include the head of state, key ministers and other political or 
+parliamentary leaders. 
+97. A broader selection of red flags and indicators of suspicion that are also useful for financial 
+institutions and DNFBPs is provided in Annex 1. 
+98. When assessing whether adequate controls are in place to mitigate the risk of doing business 
+with a particular PEP, consideration should be given to the level, frequency and extent of ongoing
+
+FATF GUIDANCE 
+ POLITICALLY EXPOSED PERSONS (RECOMMENDATIONS 12 AND 22) 
+ 2013 23 
+monitoring and (enhanced) due diligence that will be required. It is important for the financial 
+institutions and DNFBPs to use their understanding of the risks posed to ensure the systems they 
+have in place are appropriate. The systems will therefore not be the same for all financial 
+institutions and DNFBPs. 
+B. DOMESTIC & INTERNATIONAL ORGANISATION PEPS WHEN NOT HIGHER RISK 
+99. When the risk assessment established that the business relationship with a 
+domestic/international organisation PEP does not present a higher risk, the PEP in question can be 
+treated like any other normal customer, i.e. the financial institution and DNFBP should apply normal 
+customer due diligence measures and monitoring. When undertaking ongoing due diligence as 
+required under Recommendation 10, it should be noted that a change in circumstances may change 
+the level of risk applicable to a particular PEP, such that enhanced CDD and/or the measures set out 
+in Recommendation 12 should be applied. This may necessitate a reconsideration of whether the 
+financial institution or DNFBP has implemented internal controls which are sufficient to mitigate 
+the higher level of risk. If the financial institution or DNFBP determines that it has not implemented 
+internal controls which are sufficient to mitigate the higher level of risk, the business relationship 
+should be terminated. 
+C. LIFE INSURANCE POLICIES WITH HIGHER RISKS 
+100. The Interpretative Note to Recommendation 12 requires life insurance companies to 
+determine whether individuals who are beneficiaries of the proceeds of life insurance policies are 
+PEPs. This applies to foreign and domestic PEPs. Where a life insurance company has a client 
+relationship with such an individual (for example, because the individual is him- or herself a holder 
+of a life insurance policy) then the life insurance company should have already determined if the 
+individual is a PEP. However, life insurance companies often do not have client relationships with 
+beneficiaries. Where this is the case, the life insurance company should conduct CDD and make a 
+PEP determination at the time that the company is gathering information and preparing the 
+documentation to support the pay-out of the proceeds. The life insurance company should treat 
+such beneficiary as a new customer for the purpose of applying this requirement. 
+VII. SUPERVISION 
+101. As part of the assessment of risk conducted under Recommendation 1, competent authorities 
+(which include supervisors) should identify and evaluate their National Risk Assessment 
+(Recommendation 1), and ML/TF risks presented by PEPs and their activities in each jurisdiction 
+and incorporate this knowledge and expertise into their risk-based approach to supervision, in line 
+with Recommendation 26. 
+102. Supervisors should ensure that financial institutions and DNFBPs understand that assessing 
+the reputational risk is not the same as assessing the risk that the institution will be abused for illicit 
+purposes (i.e., ML/TF risk) and should assess risk management controls and compliance with the 
+PEPs requirements, and apply effective sanctions for non-compliance, in line with 
+Recommendations 26 (regulation and supervision of financial institutions), 28 (and DNFBPs) and
+
+FATF GUIDANCE 
+POLITICALLY EXPOSED PERSONS (RECOMMENDATIONS 12 AND 22) 
+24  2013 
+35 (sanctions). Supervisory efforts should include a detailed review of systems used to determine 
+and monitor PEPs, and not simply be a check of what source is used to detect PEPs. Countries may 
+also consider publishing the sanctions which have been imposed for PEP violations to increase the 
+awareness of risk involved in doing business with higher risk PEPs in the absence of adequate 
+AML/CFT controls. At the same time, supervisors 
+103. Supervisors should also pay attention to PEPs, where appropriate, as a high-risk category in 
+their role of taking necessary legal or regulatory measures to prevent criminals or their associates 
+from holding, or being the beneficial owner of, a significant or controlling interest, or holding a 
+management function in, a financial institution or DNFBP. In past cases, corrupt PEPs have captured 
+domestic and foreign financial institutions and DNFBPs by gaining ownership, management control, 
+or becoming a shareholder with a significant controlling interest in a financial institution or 
+DNFBP – allowing them to exert control over the functioning of the institution or business and 
+making use of it as a vehicle for corruption and ML. 
+104. In addition to actual control, financial institutions and DNFBPs face potential political 
+pressures associated with a PEP and possible retributions for not accepting a PEP or filing an STR on 
+a PEP. These are potential issues that supervisors need to be aware of and monitor for compliance 
+for, as required by Recommendation 26 (regulation and supervision of financial institutions) and 
+Recommendation 28 (regulation and supervision of DNFBPs), as well as in their role of supervising 
+financial institutions engaged in correspondent banking services (Recommendation 13, 
+correspondent banking). Supervisors should be aware of these risks and take appropriate steps to 
+mitigate them. 
+105. It is important for competent authorities, to understand that the detailed measures required 
+for the implementation of Recommendation 12 and Recommendation 22 may differ from one sector 
+to another, and even within a sector.
+13 Regulatory requirements and day- to-day supervision should 
+take into account the risk that businesses face, depending on their size, business products and other 
+relevant factors. To this end, supervisors need to ensure that their staff is appropriately trained and 
+resourced. This, in combination with a regulatory framework that is tailored to the needs of each 
+sector / business line, should ensure that there is regulatory certainty. The publication of guidance, 
+informed by supervision, should further clarify regulatory expectations for financial institutions and 
+DNFBPs. 
+106. Supervisors (and other competent authorities) have an important role to play by providing 
+guidance (pursuant to Recommendation 34, guidance and feedback) to financial institutions and 
+DNFBPs on what constitutes a PEP (this could include definitions of prominent public function, 
+family members, and close associates) and how to effectively apply the PEP requirements. It is 
+equally important that supervisors articulate what the expectations are regarding higher risk 
+customers that are PEPs. The detection and identification of PEPs should not be seen in practice as 
+an aim in itself and lead to a ticking the box approach. However, the handling of the risks of higher 
+risk PEPs is the key to the effective implementation of Recommendation 12. To this end supervisors 
+could provide detailed guidance on good and poor practice to identify PEPs and about their 
+regulatory expectations ( e.g., when to file an STR or to terminate a customer relationship). This 
+ 
+13 For example, the regulatory needs regarding PEPs may be different for global financial groups 
+compared to small local not-for-profit cooperative credit unions.
+
+FATF GUIDANCE 
+ POLITICALLY EXPOSED PERSONS (RECOMMENDATIONS 12 AND 22) 
+ 2013 25 
+should be an ongoing process which reflects changing in wider risk factors and involves dialogues 
+with stakeholders. Supervisors may choose to undertake horizontal and thematic supervisory 
+reviews of the implementation of Recommendation 12 by financial institutions and DNFBPs, and to 
+publish the general results of these reviews as guidance that is relevant for both financial 
+institutions and DNFBPs. Such guidance reports should not only focus on identified common 
+shortcomings, but also identify best practices, including information on how to detect PEPs, as well 
+as PEP’s family members and close associates. Such reviews should be based on a representative 
+sample of institutions. 
+Internal controls (Recommendation 18) 
+107. In addition to the supervision of the general customer due diligence requirements, 
+supervisors should also pay attention to internal controls of financial institutions and DNFBPs. Their 
+supervisory methodology as it relates to PEPs should include: i) internal policies, procedures and 
+controls, including appropriate compliance management arrangements, ii) a relevant ongoing 
+employee training programme; and iii) an independent audit function to test the system. Competent 
+authorities need to assess the relevance of the internal manuals for each supervised entity. 
+VIII. OTHER ISSUES 
+A. IMMUNITY FROM PROSECUTION AND CONVICTION 
+108. A common misconception is that PEPs who may enjoy immunity from prosecution and 
+conviction (for example, Heads of State who, during their term of office, are immune from 
+prosecution for actions committed prior to their taking office; or diplomats who are immune from 
+prosecution and conviction in the countries where they are posted), are therefore exempt from the 
+requirements of Recommendation 12. However, this is not the case. PEPs are not immune from the 
+application of the requirements of Recommendation 12 or from being the subject of the obligation 
+to 
+report suspicious transactions pursuant to Recommendation 20. Although immunity may slow 
+down or prevent the criminal prosecution and conviction of such PEPs, a STR may trigger an 
+investigation which could identify other persons without immunity who are involved in criminal 
+activity, and who could be prosecuted immediately ( e.g., co-conspirators or accomplices). In 
+addition, the PEP may lose the immunity from domestic prosecution at a later stage, at which point a 
+criminal investigation could be opened or continued. 
+109.In addition, in light of the expanding modern doctrine of immunity, under which criminal 
+activities are not considered to fall within official acts of state and under which even high state 
+officials have personal criminal responsibility for such criminal activities, criminal immunity should 
+not simply be assumed to exist. 
+B. CONSISTENCY WITH ANTI-DISCRIMINATION LAWS 
+110. Another common misconception is that the proper implementation of PEP requirements 
+would 
+breach anti-discriminatory laws which safeguard the equality of all citizens of a country. It is 
+important to realise that the requirements of Recommendation 12 are one of many additional 
+preventive CDD measures that the FATF requires for higher risk business relationships. Other
+
+FATF GUIDANCE 
+POLITICALLY EXPOSED PERSONS (RECOMMENDATIONS 12 AND 22) 
+26  2013 
+examples are correspondent banking (Recommendation 13), new technologies 
+(Recommendation 15) and wire transfers (Recommendation 16). What these requirements have in 
+common with Recommendation 12 is that they focus on higher risk business relationships – 
+whether those relationships are with natural persons or legal persons. These requirements are 
+specifically linked to prominent public functions, irrespective of the personal characteristics of the 
+persons holding them. The definition of a PEP is not linked in any way to any of the personal 
+characteristics that fall within the prohibited grounds for discrimination by international 
+conventions. 
+C. SHARING OF BEST PRACTICES BETWEEN BUSINESS ASSOCIATIONS 
+111. National and international business associations have developed sector specific guidance to 
+as
+sist their members to implement the requirements regarding PEPs. While such guidance is not 
+FATF endorsed, it may nevertheless be a useful source of information for financial institutions and 
+DNBPBs. Supervisors could assist business associations to exchange guidance and best practices.
+
+FATF GUIDANCE 
+ POLITICALLY EXPOSED PERSONS (RECOMMENDATIONS 12 AND 22) 
+ 2013 27 
+ 
+ANNEX 1: PEPS RED FLAGS / INDICATORS 
+I. INTRODUCTION 
+1. The determination that a customer is a PEP is not an aim in itself but forms part of the 
+process that enables financial institutions and DNFBPs to assess the different types of higher risks 
+related to PEPs. Determining that a customer is a PEP does not absolve financial institutions and 
+DNFBPs of further ongoing due diligence specifically tailored to the fact that the client is a PEP. 
+Being a PEP does not prejudge a link to criminal activities, or equate to being a criminal and / or 
+subsequent abuse of the financial system. Similarly, the fact that a person is a 
+domestic/international organisation PEP does not automatically imply that he/she poses a higher 
+risk. Financial institutions and DNFBPs need nevertheless to be aware of the risks that a PEP may 
+abuse the financial system to launder illicit proceeds, and financial institutions and DNFBPs need to 
+be aware of the red flags / indicators that can be used to detect such abuse. 
+2. The FATF has developed a collection of red flags / indicators that can be used to assist in the 
+detection of misuse of the financial systems by PEPs during a customer relationship. This list of red 
+flags / indicators is relevant to detect those PEPs that abuse the financial system, and does not 
+intend to stigmatize all PEPs. Often, matching one or more of these red flags / indicators may only 
+raise the risk of doing business with a customer (red flags, risk factors), and several red flags may 
+need to be met to create a suspicion. However, in some cases and depending on the specific 
+circumstances, matching just one or more of these red flags / indicators will directly lead to a ML 
+suspicion
+14 (indicators of suspicion). 
+3. These PEP red flags are not an exhaustive list and are complementary to the usual ML red 
+flags that a reporting entity may be using. The methods of those PEPs that engage in illicit activity 
+change and therefore indicators of their activity will do so as well. Also, there may be other red flags 
+that should be considered as equally important in a particular country or region. 
+II. DETECTING MISUSE OF THE FINANCIAL SYSTEM BY PEPS – RED FLAGS AND 
+INDICATORS FOR SUSPICION 
+A. PEPS ATTEMPTING TO SHIELD THEIR IDENTITY: 
+4. PEPs are aware that their status as a PEP may facilitate the detection of their illicit behaviour. 
+This means that PEPs may attempt to shield their identity, to prevent detection. Examples of ways in 
+which this is done are: 
+ Use of corporate vehicles (legal entities and legal arrangements) to 
+obscure the beneficial owner. 
+ 
+14 If, during the establishment or course of the customer relationship with a PEP, or when conducting 
+occasional transactions for a PEP, a financial institution or DNFBP suspects ML, then the institution 
+should file an STR to the financial intelligence unit (FIU), in accordance with FATF Recommendation 20. 
+The FATF Recommendations do not require that a customer relationship with a PEP is terminated in 
+case of suspicion or multiple suspicions; however, financial institutions and DNFBPs should be aware of 
+the fact that continuing such a business relationship may create criminal liability, if appropriate.
+
+FATF GUIDANCE 
+POLITICALLY EXPOSED PERSONS (RECOMMENDATIONS 12 AND 22) 
+28  2013 
+ Use of corporate vehicles without valid business reason. 
+ Use of intermediaries when this does not match with normal business 
+practices or when this seems to be used to shield identity of PEP. 
+ Use of family members or close associates as legal owner. 
+B. RED FLAGS AND INDICATORS RELATING TO THE PEP AND HIS BEHAVIOU R: 
+5. Specific behaviour and individual characteristics of PEPs may raise red flags / risk levels or 
+cause a suspicion: 
+ Use of corporate vehicles (legal entities and legal arrangements) to 
+obscure i) ownership, ii) involved industries or iii) countries. 
+ The PEP makes inquiries about the institution’s AML policy or PEP policy. 
+ The PEP seems generally uncomfortable to provide information about 
+source of wealth or source of funds. 
+ The information that is provided by the PEP is inconsistent with other 
+(publicly available) information, such as asset declarations and published 
+official salaries. 
+ The PEP is unable or reluctant to explain the reason for doing business in 
+the country of the financial institution or DNFBP. 
+ The PEP provides inaccurate or incomplete information. 
+ The PEPs seeks to make use of the services of a financial institution or 
+DNFBP that would normally not cater to foreign or high value clients. 
+ Funds are repeatedly moved to and from countries to which the PEPs does 
+not seem to have ties with. 
+ The PEP is or has been denied entry to the country (visa denial). 
+ The PEP is from a country that prohibits or restricts its/certain citizens to 
+hold accounts or own certain property in a foreign country. 
+C. THE PEP’S POSITION OR INVOLVEMENT IN BUSINESSES: 
+6. The position that a PEP holds and the manner in which the PEP presents his/her position are 
+important factors to be taken into account. Possible red flags are: 
+ The PEP has a substantial authority over or access to state assets and 
+funds, policies and operations. 
+ The PEP has control over regulatory approvals, including awarding 
+licences and concessions. 
+ The PEP has the formal or informal ability to control mechanisms 
+established to prevent and detected ML/TF.
+
+FATF GUIDANCE 
+ POLITICALLY EXPOSED PERSONS (RECOMMENDATIONS 12 AND 22) 
+ 2013 29 
+ The PEP (actively) downplays importance of his/her public function, or the 
+public function s/he is relates to associated with. 
+ The PEP does not reveal all positions (including those that are ex officio). 
+ The PEP has access to, control or influence over, government or corporate 
+accounts. 
+ The PEP (partially) owns or controls financial institutions or DNFBPs, 
+either privately, or ex officio. 
+ The PEP (partially) owns or controls the financial institution or DNFBP 
+(either privately or ex officio) that is a counter part or a correspondent in a 
+transaction. 
+ The PEP is a director or beneficial owner of a legal entity that is a client of a 
+financial institution or a DNFBP. 
+D
+. RED FLAGS AND INDICATORS RELATING TO THE INDUSTRY/SECTOR WITH WHICH THE 
+PEP IS INVOLVED: 
+7. A connection with a high risk industry may raise the risk of doing business with a PEP. Under 
+Recommendation 1, competent authorities, financial institutions and DNFBPs are required for 
+determining which types of clients may be higher risk. For this, financial institutions and DNFBPs 
+will also be guided by national guidance or risk assessments. Which industries may be at risk 
+depends on the risk assessments and varies from country to country, and on other industry 
+safeguards that may be in place. Examples of higher risk industries are: 
+ Arms trade and defence industry. 
+ Banking and finance. 
+ Businesses active in government procurement, i.e., those whose business is 
+selling to government or state agencies. 
+ Construction and (large) infrastructure. 
+ Development and other types of assistance. 
+ Human health activities. 
+ Mining and extraction. 
+ Privatisation. 
+ Provision of public goods, utilities. 
+E. BUSINESS RELATIONSHIP / TRANSACTION, PURPOSE OF BUSINESS RELATIONSHIP: 
+8. Red flag and indicators can also relate to the specific business relationship or transaction: 
+ Multiple STRs have been submitted on a PEP.
+
+FATF GUIDANCE 
+POLITICALLY EXPOSED PERSONS (RECOMMENDATIONS 12 AND 22) 
+30  2013 
+ (Consistent) use of rounded amounts, where this cannot be explained by 
+the expected business. 
+ Deposit or withdrawal of large amounts of cash from an account, use of 
+bank cheques or other bearer instruments to make large payments. Use of 
+large amounts of cash in the business relationship. 
+ Other financial institutions and DNFBPs have terminated the business 
+relationship with the PEP. 
+ Other financial institutions and DNFBPs have been subject to regulatory 
+actions over doing business with the PEP. 
+ Personal and business related money flows are difficult to distinguish from 
+each other. 
+ Financial activity is inconsistent with legitimate or expected activity, funds 
+are moved to or from an account or between financial institutions without 
+a business rationale. 
+ The account shows substantial activity after a dormant period; or over a 
+relatively short time; or shortly after commencing the business 
+relationship. 
+ The account shows substantial flow of cash or wire transfers into or out of 
+the account. 
+ Transactions between non- client corporate vehicles and the PEP’s 
+accounts. 
+ A PEP is unable or reluctant to provide details or credible explanations for 
+establishing a business relationship, opening an account or conducting 
+transactions. 
+ A PEP receives large international funds transfers to a gaming account. The 
+PEP withdraws a small amount for gaming purposes and withdraws the 
+balance by way of cheque. 
+ A PEP uses third parties to exchange gaming chips for cash and vice versa 
+with little or minimal gaming activity. 
+ A PEP uses multiple bank accounts for no apparent commercial or other 
+reason. 
+F. PRODUCTS, SERVICE, TRANSACTION OR DELIVERY CHANNELS: 
+9. The FATF Recommendations (Interpretative Note to Recommendation 10) contain examples 
+of products, industries, service, transaction or delivery channels, which are of a higher risk, 
+irrespective of the type of customer. These examples are: 
+ Private banking. 
+ Anonymous transactions (including cash).
+
+FATF GUIDANCE 
+ POLITICALLY EXPOSED PERSONS (RECOMMENDATIONS 12 AND 22) 
+ 2013 31 
+ Non-face-to-face business relationships or transactions. 
+ Payments received from unknown or un-associated third parties. 
+10. If these industries, products, service, transaction or delivery channels are used by PEPs, then 
+this adds an additional risk factor (depending on the nature of the PEP). In addition to the examples 
+already listed in the FATF Recommendations, there are other products, industries, service, 
+transaction or delivery channels that can become additionally vulnerable when used by PEPs. 
+Examples of these are: 
+ Businesses that cater mainly to (high value) foreign clients. 
+ Trust and company service providers. 
+ Wire transfers, to and from a PEP account that cannot be economically 
+explained, or that lack relevant originator or beneficiary information. 
+ Correspondent and concentration accounts. 
+ Dealers in precious metals and precious stones, or other luxurious goods. 
+ Dealers in luxurious transport vehicles (such as cars, sports cars, ships, 
+helicopters and planes). 
+ High end real estate dealers. 
+G. COUNTRY SPECIFIC RED FLAGS AND INDICATORS 
+11. The FATF Recommendations (Interpretative Note to Recommendation 10) contain examples 
+of higher risk country or geographic risk factors, irrespective of the type of customer. Additionally, 
+the following red flags and indicators relating to countries can be taken into account when doing 
+business with a PEP: 
+ The foreign or domestic PEP is from a higher risk country (as defined by 
+the FATF in Recommendation 19, or the Interpretative Note to 
+Recommendation 10). 
+ Additional risks occur if a foreign or domestic PEP from a higher risk 
+country would in his/her position have control or influence over decisions 
+that would effectively address identified shortcomings in the AML/CFT 
+system. 
+ Foreign or domestic PEPs from countries identified by credible sources as 
+having a high risk of corruption. 
+ Foreign or domestic PEPs from countries that have not signed or ratified or 
+have not or insufficiently implemented relevant anti-corruption 
+conventions, such as the UNCAC, and the OECD Anti-Bribery Convention. 
+ Foreign or domestic PEPs from countries with a mono economies 
+(economic dependency on one or a few export products), especially if 
+export control or licensing measures have been put in place.
+
+FATF GUIDANCE 
+POLITICALLY EXPOSED PERSONS (RECOMMENDATIONS 12 AND 22) 
+32  2013 
+ Foreign or domestic PEPs from countries that are dependent on the export 
+of illicit goods, such as drugs. 
+ Foreign or domestic PEPs from countries (including political subdivisions) 
+with political systems that are based on personal rule, autocratic regimes, 
+or countries where a major objective is to enrich those in power, and 
+countries with high level of patronage appointments. 
+ Foreign or domestic PEPs from countries with poor and/or opaque 
+governance and accountability. 
+ Foreign or domestic PEPs from countries identified by credible sources as 
+having high levels of (organised) crime.
+
+FATF GUIDANCE 
+ POLITICALLY EXPOSED PERSONS (RECOMMENDATIONS 12 AND 22) 
+ 2013 33 
+ 
+ANNEX 2: SOURCES OF CASE INFORMATION 
+There is an abundance of sources with information on cases related to PEPs. This list below 
+highlights those sources that were used as input to the drafting of this guidance paper.15 
+ Banks’ management of high ML risk situations, How banks deal with hig h 
+risk customers (including PEPs), correspondent banking relationships and 
+wire transfers, Financial Services Authority (FSA), United Kingdom, 2011. 
+ Barriers to Asset Recovery, An Analysis of the Key Barriers and 
+Recommendations for Action (Stephenson, Gray, Power, Brun, Dunker and 
+Panjer), StAR (World Bank / UNODC) 2011. 
+ Corruption – ML Nexus: an Analysis of Risks and Control Measures in West 
+Africa, GIABA. 
+ Corruption Cases Search Center , Stolen Asset Recovery Initiative (StAR) at 
+http://star.worldbank.org/corruption-
+cases (World Bank / UNODC). 
+ Due diligence obligations of Swiss banks when handling assets of “politically 
+exposed persons”, Swiss Financial Market Supervisory Authority (FINMA), 
+2011. 
+ Laundering the Proceeds of Corruption , Financial Action Task Force, July 
+2011. 
+ PEPs, Preventive Measures for the Banking Sector (Greenberg, Gray, Schantz, 
+Latham, Gardner), StAR (World Bank / UNODC) 2010. 
+ Preventing ML and TF, a Practical Guide for Bank Supervisors (Chatain, 
+McDowell, Mousset, Schott, Van der Does de Willebois), World Bank, 2009. 
+ Specific Risk Factors in the Laundering of Proceeds of Corruption - 
+Assistance to reporting institutions, Financial Action Task Force, June 
+2012. 
+ The Puppet Masters, How the Corrupt Use Legal Structures to Hide Stolen 
+Assets and What to Do About It (Van der Does de Willebois, Halter, 
+Harrison, Won Park, Sharman), StAR(World Bank / UNODC) 2011. 
+ The Secret Life of a Shopaholic, How an African Dictator’s Playboy son 
+went on a multi-million dollar shopping spree in the U.S., Global Witness, 
+2009. 
+ Third round Mutual Evaluation Reports, Financial Action Task Force 2005 – 
+2012 (at www.fatf-
+gafi.org). 
+ Undue Diligence, How Banks do Business with Corrupt Regimes, Global 
+Witness, 2009. 
+ 
+15 The FATF does not necessarily partially or fully endorse all of the views expressed in all of these 
+publications.
+
+FATF GUIDANCE 
+POLITICALLY EXPOSED PERSONS (RECOMMENDATIONS 12 AND 22) 
+34  2013 
+ Using Asset Disclosure for Identifying PEPs (Rossi, Pop, Clementucci, 
+Sawaqed) World Bank, 2012. 
+ Wolfsberg Anti-Corruption Guidance, the Wolfsberg Group, 2011.

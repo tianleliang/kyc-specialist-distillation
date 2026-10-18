@@ -1,0 +1,302 @@
+{
+  "run_id": "qwen35-4b__baseline_best__eval_v1",
+  "assembled_by": "python -m step6_evaluation.collect_runs",
+  "parts": [
+    {
+      "source": "outputs/bench_open/4b__baseline_best__eval_id",
+      "predictions_sha256": "5a352eed16fff0be1c38200a6082e5a5ee9fb7b5249aedce3944b816b8545081",
+      "n_lines": 300,
+      "endpoint_run.json": {
+        "started_utc": "2026-10-17T21:33:13+00:00",
+        "base_url": "https://tianleliang--zorbe-bench-4b-vllm.us-east.modal.run/v1",
+        "model": "Qwen3.5-4B",
+        "api_key_env": "VLLM_API_KEY",
+        "cases": "data/eval_id/cases.jsonl",
+        "cases_sha256": "c144d1c082dfc65a4f64d70df1bc33443133a2f45e9d880124f57b160da291e5",
+        "n_cases": 300,
+        "n_written": 300,
+        "n_errors": 0,
+        "n_proxy_fallbacks": 0,
+        "n_cached": 0,
+        "n_resumed": 0,
+        "concurrency": 16,
+        "warmup": 2,
+        "wall_s": 617.432,
+        "throughput_cases_per_s": 0.486,
+        "latency_p50_ms": 31326.699999999997,
+        "latency_p95_ms": 39123.6615,
+        "request": {
+          "prompt": "baseline_best",
+          "response_format": "json_schema",
+          "max_tokens": 2048,
+          "temperature": 0.0,
+          "extra_body": {},
+          "template": "baseline_best",
+          "template_sha256": "ddb459d147cae2f834180a404d43af7695514166f185775b7899596392aeb308",
+          "system_sha256": "9b3b4620bc72f5aa383022fc38f5a5b633362e6cd5a210fa6cd90dd1517f3c5a",
+          "vars_sha256": {
+            "schema": "b9fbde069819fd001d2a83215bf001a8b4d836760f9f11a5f16f676b4c2d7d82",
+            "policy": "9f30e2c8fc95233496c1f218e90d2fee30b0dc5514e08c9838b720371b5dc652",
+            "field_guide": "23216e0492ea39c79c30d838bce49e6aae240d58007d6e1bd496af2b89e76474",
+            "examples": "a852da45ca883840856dc85eab5883d16904200361da83ab5fe4930753515420"
+          },
+          "few_shot_case_ids": [
+            "trn-1000000-001577",
+            "trn-1000000-001026"
+          ],
+          "schema_sha256": "df82fd48feb4642e0fb699447c4ae98eb19803263cd0a4a487ae8058a18cb41a"
+        },
+        "argv": [
+          "--cases",
+          "data/eval_id/cases.jsonl",
+          "--out",
+          "outputs/bench_open/4b__baseline_best__eval_id",
+          "--base-url",
+          "https://tianleliang--zorbe-bench-4b-vllm.us-east.modal.run/v1",
+          "--model",
+          "Qwen3.5-4B",
+          "--api-key-env",
+          "VLLM_API_KEY",
+          "--prompt",
+          "baseline_best",
+          "--frontier-prompt",
+          "--response-format",
+          "schema",
+          "--schema",
+          "step0_rules/schema/v1_serving.json",
+          "--warmup",
+          "2",
+          "--concurrency",
+          "16",
+          "--resume"
+        ]
+      },
+      "run.json": {
+        "model": "Qwen3.5-4B (baseline_best) eval_id",
+        "gold": "data/eval_id/cases.jsonl"
+      }
+    },
+    {
+      "source": "outputs/bench_open/4b__baseline_best__eval_ood_template",
+      "predictions_sha256": "e472bff3c31a1eea8f973765d9abf4bcb23481692b7a6f5e8df0b7baeb3c6e83",
+      "n_lines": 50,
+      "endpoint_run.json": {
+        "started_utc": "2026-10-17T21:36:01+00:00",
+        "base_url": "https://tianleliang--zorbe-bench-4b-vllm.us-east.modal.run/v1",
+        "model": "Qwen3.5-4B",
+        "api_key_env": "VLLM_API_KEY",
+        "cases": "data/eval_ood_template/cases.jsonl",
+        "cases_sha256": "0d030c320208d0abbdec642041157d45581f76f9a4824bbb964930f67d467153",
+        "n_cases": 50,
+        "n_written": 50,
+        "n_errors": 0,
+        "n_proxy_fallbacks": 0,
+        "n_cached": 0,
+        "n_resumed": 0,
+        "concurrency": 16,
+        "warmup": 2,
+        "wall_s": 118.05,
+        "throughput_cases_per_s": 0.424,
+        "latency_p50_ms": 31126.465,
+        "latency_p95_ms": 39773.9315,
+        "request": {
+          "prompt": "baseline_best",
+          "response_format": "json_schema",
+          "max_tokens": 2048,
+          "temperature": 0.0,
+          "extra_body": {},
+          "template": "baseline_best",
+          "template_sha256": "ddb459d147cae2f834180a404d43af7695514166f185775b7899596392aeb308",
+          "system_sha256": "9b3b4620bc72f5aa383022fc38f5a5b633362e6cd5a210fa6cd90dd1517f3c5a",
+          "vars_sha256": {
+            "schema": "b9fbde069819fd001d2a83215bf001a8b4d836760f9f11a5f16f676b4c2d7d82",
+            "policy": "9f30e2c8fc95233496c1f218e90d2fee30b0dc5514e08c9838b720371b5dc652",
+            "field_guide": "23216e0492ea39c79c30d838bce49e6aae240d58007d6e1bd496af2b89e76474",
+            "examples": "a852da45ca883840856dc85eab5883d16904200361da83ab5fe4930753515420"
+          },
+          "few_shot_case_ids": [
+            "trn-1000000-001577",
+            "trn-1000000-001026"
+          ],
+          "schema_sha256": "df82fd48feb4642e0fb699447c4ae98eb19803263cd0a4a487ae8058a18cb41a"
+        },
+        "argv": [
+          "--cases",
+          "data/eval_ood_template/cases.jsonl",
+          "--out",
+          "outputs/bench_open/4b__baseline_best__eval_ood_template",
+          "--base-url",
+          "https://tianleliang--zorbe-bench-4b-vllm.us-east.modal.run/v1",
+          "--model",
+          "Qwen3.5-4B",
+          "--api-key-env",
+          "VLLM_API_KEY",
+          "--prompt",
+          "baseline_best",
+          "--frontier-prompt",
+          "--response-format",
+          "schema",
+          "--schema",
+          "step0_rules/schema/v1_serving.json",
+          "--warmup",
+          "2",
+          "--concurrency",
+          "16",
+          "--resume"
+        ]
+      },
+      "run.json": {
+        "model": "Qwen3.5-4B (baseline_best) eval_ood_template",
+        "gold": "data/eval_ood_template/cases.jsonl"
+      }
+    },
+    {
+      "source": "outputs/bench_open/4b__baseline_best__eval_ood_hand",
+      "predictions_sha256": "539bbd49a128468bc734abf3791fe5d9c6a50ce48c753818d814ebad657b9369",
+      "n_lines": 50,
+      "endpoint_run.json": {
+        "started_utc": "2026-10-17T21:38:42+00:00",
+        "base_url": "https://tianleliang--zorbe-bench-4b-vllm.us-east.modal.run/v1",
+        "model": "Qwen3.5-4B",
+        "api_key_env": "VLLM_API_KEY",
+        "cases": "data/eval_ood_hand/cases.jsonl",
+        "cases_sha256": "f77438671a27cd5c4e2f6fb6b3ff577c84ad8a391d129885d79b2f4a23b43d88",
+        "n_cases": 50,
+        "n_written": 50,
+        "n_errors": 0,
+        "n_proxy_fallbacks": 0,
+        "n_cached": 0,
+        "n_resumed": 0,
+        "concurrency": 16,
+        "warmup": 2,
+        "wall_s": 112.814,
+        "throughput_cases_per_s": 0.443,
+        "latency_p50_ms": 30583.12,
+        "latency_p95_ms": 37448.4245,
+        "request": {
+          "prompt": "baseline_best",
+          "response_format": "json_schema",
+          "max_tokens": 2048,
+          "temperature": 0.0,
+          "extra_body": {},
+          "template": "baseline_best",
+          "template_sha256": "ddb459d147cae2f834180a404d43af7695514166f185775b7899596392aeb308",
+          "system_sha256": "9b3b4620bc72f5aa383022fc38f5a5b633362e6cd5a210fa6cd90dd1517f3c5a",
+          "vars_sha256": {
+            "schema": "b9fbde069819fd001d2a83215bf001a8b4d836760f9f11a5f16f676b4c2d7d82",
+            "policy": "9f30e2c8fc95233496c1f218e90d2fee30b0dc5514e08c9838b720371b5dc652",
+            "field_guide": "23216e0492ea39c79c30d838bce49e6aae240d58007d6e1bd496af2b89e76474",
+            "examples": "a852da45ca883840856dc85eab5883d16904200361da83ab5fe4930753515420"
+          },
+          "few_shot_case_ids": [
+            "trn-1000000-001577",
+            "trn-1000000-001026"
+          ],
+          "schema_sha256": "df82fd48feb4642e0fb699447c4ae98eb19803263cd0a4a487ae8058a18cb41a"
+        },
+        "argv": [
+          "--cases",
+          "data/eval_ood_hand/cases.jsonl",
+          "--out",
+          "outputs/bench_open/4b__baseline_best__eval_ood_hand",
+          "--base-url",
+          "https://tianleliang--zorbe-bench-4b-vllm.us-east.modal.run/v1",
+          "--model",
+          "Qwen3.5-4B",
+          "--api-key-env",
+          "VLLM_API_KEY",
+          "--prompt",
+          "baseline_best",
+          "--frontier-prompt",
+          "--response-format",
+          "schema",
+          "--schema",
+          "step0_rules/schema/v1_serving.json",
+          "--warmup",
+          "2",
+          "--concurrency",
+          "16",
+          "--resume"
+        ]
+      },
+      "run.json": {
+        "model": "Qwen3.5-4B (baseline_best) eval_ood_hand",
+        "gold": "data/eval_ood_hand/cases.jsonl"
+      }
+    },
+    {
+      "source": "outputs/bench_open/4b__baseline_best__eval_ood_llm",
+      "predictions_sha256": "b1af9bdb080d8a13eba57adaa2ed654b231437ef572d9b562d323f1e0a7212e7",
+      "n_lines": 100,
+      "endpoint_run.json": {
+        "started_utc": "2026-10-17T21:43:03+00:00",
+        "base_url": "https://tianleliang--zorbe-bench-4b-vllm.us-east.modal.run/v1",
+        "model": "Qwen3.5-4B",
+        "api_key_env": "VLLM_API_KEY",
+        "cases": "data/eval_ood_llm/cases.jsonl",
+        "cases_sha256": "f25c221f69b0e87cf3c530467e30ecdd7cc70d361891ddc06efe5eb6cf81c901",
+        "n_cases": 100,
+        "n_written": 100,
+        "n_errors": 0,
+        "n_proxy_fallbacks": 0,
+        "n_cached": 0,
+        "n_resumed": 0,
+        "concurrency": 16,
+        "warmup": 2,
+        "wall_s": 216.401,
+        "throughput_cases_per_s": 0.462,
+        "latency_p50_ms": 32045.815000000002,
+        "latency_p95_ms": 39339.018,
+        "request": {
+          "prompt": "baseline_best",
+          "response_format": "json_schema",
+          "max_tokens": 2048,
+          "temperature": 0.0,
+          "extra_body": {},
+          "template": "baseline_best",
+          "template_sha256": "ddb459d147cae2f834180a404d43af7695514166f185775b7899596392aeb308",
+          "system_sha256": "9b3b4620bc72f5aa383022fc38f5a5b633362e6cd5a210fa6cd90dd1517f3c5a",
+          "vars_sha256": {
+            "schema": "b9fbde069819fd001d2a83215bf001a8b4d836760f9f11a5f16f676b4c2d7d82",
+            "policy": "9f30e2c8fc95233496c1f218e90d2fee30b0dc5514e08c9838b720371b5dc652",
+            "field_guide": "23216e0492ea39c79c30d838bce49e6aae240d58007d6e1bd496af2b89e76474",
+            "examples": "a852da45ca883840856dc85eab5883d16904200361da83ab5fe4930753515420"
+          },
+          "few_shot_case_ids": [
+            "trn-1000000-001577",
+            "trn-1000000-001026"
+          ],
+          "schema_sha256": "df82fd48feb4642e0fb699447c4ae98eb19803263cd0a4a487ae8058a18cb41a"
+        },
+        "argv": [
+          "--cases",
+          "data/eval_ood_llm/cases.jsonl",
+          "--out",
+          "outputs/bench_open/4b__baseline_best__eval_ood_llm",
+          "--base-url",
+          "https://tianleliang--zorbe-bench-4b-vllm.us-east.modal.run/v1",
+          "--model",
+          "Qwen3.5-4B",
+          "--api-key-env",
+          "VLLM_API_KEY",
+          "--prompt",
+          "baseline_best",
+          "--frontier-prompt",
+          "--response-format",
+          "schema",
+          "--schema",
+          "step0_rules/schema/v1_serving.json",
+          "--warmup",
+          "2",
+          "--concurrency",
+          "16",
+          "--resume"
+        ]
+      },
+      "run.json": {
+        "model": "Qwen3.5-4B (baseline_best) eval_ood_llm",
+        "gold": "data/eval_ood_llm/cases.jsonl"
+      }
+    }
+  ]
+}

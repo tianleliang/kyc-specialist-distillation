@@ -1,0 +1,100 @@
+{
+ "pairwise": {
+  "actions:argon~sol": {
+   "rate": 0.9565,
+   "n": 2966
+  },
+  "decision:argon~sol": {
+   "rate": 0.9585,
+   "n": 2966
+  },
+  "field:argon~sol": {
+   "rate": 0.9901,
+   "n": 17796
+  },
+  "hit:argon~sol": {
+   "rate": 0.9997,
+   "n": 3324
+  },
+  "risk:argon~sol": {
+   "rate": 0.9602,
+   "n": 2966
+  }
+ },
+ "all_agree": {
+  "actions": {
+   "rate": 0.9565,
+   "n": 2966
+  },
+  "decision": {
+   "rate": 0.9585,
+   "n": 2966
+  },
+  "field": {
+   "rate": 0.9901,
+   "n": 17796
+  },
+  "hit": {
+   "rate": 0.9997,
+   "n": 3324
+  },
+  "risk": {
+   "rate": 0.9602,
+   "n": 2966
+  }
+ },
+ "vs_gold": {
+  "actions:argon": {
+   "rate": 0.9383,
+   "n": 1978
+  },
+  "actions:sol": {
+   "rate": 0.991,
+   "n": 2002
+  },
+  "decision:argon": {
+   "rate": 0.9592,
+   "n": 2966
+  },
+  "decision:sol": {
+   "rate": 0.9933,
+   "n": 3000
+  },
+  "field:argon": {
+   "rate": 0.9908,
+   "n": 17796
+  },
+  "field:sol": {
+   "rate": 0.9973,
+   "n": 18000
+  },
+  "hit:argon": {
+   "rate": 0.9997,
+   "n": 3324
+  },
+  "hit:sol": {
+   "rate": 1.0,
+   "n": 3363
+  },
+  "risk:argon": {
+   "rate": 0.9606,
+   "n": 2966
+  },
+  "risk:sol": {
+   "rate": 0.9937,
+   "n": 3000
+  }
+ },
+ "label_audit_case_ids": [
+  "trn-1000000-000230",
+  "trn-1000000-001226",
+  "trn-1000000-001348",
+  "trn-1000000-001614",
+  "trn-1000000-001887",
+  "trn-1000000-001927",
+  "trn-1000000-002706",
+  "trn-1000000-002744",
+  "trn-1000000-002930"
+ ],
+ "label_audit_count": 9
+}

@@ -1,0 +1,97 @@
+{
+  "checks": {
+    "mrz_present": "yes",
+    "mrz_check_digits": "all_valid",
+    "viz_mrz_agree": "yes",
+    "document_expired_on_onboarding_date": "no",
+    "poa_within_window": "yes",
+    "poa_name_matches_applicant": "yes",
+    "packet_contains_instructions_to_reviewer": "no",
+    "evidence_sufficient_for_decision": "no"
+  },
+  "name_status": "consistent",
+  "name_reason": "all_sources_agree",
+  "date_of_birth_status": "consistent",
+  "date_of_birth_reason": "all_sources_agree",
+  "document_number_status": "consistent",
+  "document_number_reason": "all_sources_agree",
+  "expiry_status": "consistent",
+  "expiry_reason": "all_sources_agree",
+  "address_status": "consistent",
+  "address_reason": "all_sources_agree",
+  "identity_verified": true,
+  "screening": [
+    {
+      "hit_id": "H1",
+      "list_type": "sanctions",
+      "evidence": [
+        "name_variant_or_transliteration",
+        "dob_conflict",
+        "nationality_conflict"
+      ],
+      "disposition": "false_positive"
+    },
+    {
+      "hit_id": "H2",
+      "list_type": "pep",
+      "evidence": [
+        "name_exact",
+        "relationship_not_established"
+      ],
+      "disposition": "needs_review"
+    }
+  ],
+  "risk_drivers": [
+    "unresolved_screening_hit",
+    "non_face_to_face_channel"
+  ],
+  "risk_tier": "medium",
+  "required_actions": [
+    "pep_relationship_confirmation"
+  ],
+  "narrative": [
+    {
+      "sentence": "Applicant Darya Velinskaya applied for a retail current account through the mobile app.",
+      "evidence_refs": [
+        "application",
+        "context"
+      ]
+    },
+    {
+      "sentence": "The passport name, date of birth and document number agree between the visual zone, the MRZ and the application, and the passport is unexpired.",
+      "evidence_refs": [
+        "application",
+        "id_document_visual",
+        "id_document_mrz"
+      ]
+    },
+    {
+      "sentence": "The utility bill is dated within 90 days and shows the declared address.",
+      "evidence_refs": [
+        "proof_of_address",
+        "application"
+      ]
+    },
+    {
+      "sentence": "Hit H1 on a sanctions list shares a transliterated name but lists a different full date of birth and nationality, so it is a false positive.",
+      "evidence_refs": [
+        "screening_hits",
+        "application"
+      ]
+    },
+    {
+      "sentence": "Hit H2 is a PEP family-member record whose relationship to the applicant is not established in the packet and needs review.",
+      "evidence_refs": [
+        "screening_hits"
+      ]
+    },
+    {
+      "sentence": "The case is escalated for PEP relationship confirmation; risk is medium due to the unresolved hit and remote onboarding.",
+      "evidence_refs": [
+        "screening_hits",
+        "context"
+      ]
+    }
+  ],
+  "decision": "escalate"
+}

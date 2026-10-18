@@ -1,0 +1,17 @@
+{
+ "input": "data/sft/gold_train_solnarr.jsonl",
+ "output": "data/sft/gold_train_solnarr_pc3.jsonl",
+ "rows": 3000,
+ "blocks_added": 3000,
+ "assistant_targets_changed": 0,
+ "blank_rate": 0.25,
+ "blank_seed": 17,
+ "blanked_rows": 762,
+ "nd_counts": {
+  "as_of": 762,
+  "mrz": 915,
+  "expiry": 910,
+  "poa_date": 926,
+  "integrity": 780
+ }
+}

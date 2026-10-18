@@ -1,0 +1,151 @@
+U.S. DEPARTMENT OF THE TREASURY READ THE LATEST TREASURY NEWS
+HOME FREQUENTLY ASKED QUESTIONS 122
+Specially
+Designated
+Nationals List
+(SDN List)
+Consolidated
+Sanctions List
+(Non-SDN Lists)
+Additional
+Sanctions Lists
+Search OFAC's
+Sanctions Lists
+Sanctions
+Programs and
+Country
+Information
+Recent Actions
+OFAC License
+Application Page
+Additional OFAC
+Resources
+Frequently
+Asked Questions
+Civil Penalties
+and Enforcement
+WEAK ALIASES
+122. What are weak aliases
+(AKAs)?
+Search FAQs
+Search FAQs
+A "weak AKA" is a term for a relatively broad
+or generic alias that may generate a large
+volume of false hits when such names are run
+through a computer-based screening system. 
+OFAC includes these AKAs because, based on
+information available to it, the sanctions
+targets refer to themselves, or are referred to,
+by these names. As a result, these AKAs may
+be useful for identification purposes,
+particularly in confirming a possible "hit" or
+"match" triggered by other identifier
+information. Realizing, however, the large
+number of false hits that these names may
+generate, OFAC qualitatively distinguishes
+them from other AKAs by designating them as
+weak. OFAC has instituted procedures that
+Similar FAQs
+5. When screening for
+sanctions, how do I
+determine if I have a
+valid match to a name
+on one of OFAC’s lists?
+123. Where can I find
+weak aliases (AKAs)?
+124. Am I required to
+screen for weak aliases
+(AKAs)?
+73. My company
+provides money
+remittance and
+account services via
+the Internet. Does
+OFAC have any
+compliance guidance
+for this type of
+business?
+48. I just received an
+interdiction "alert."
+What do I do?
+Office of Foreign Assets Control
+A PART OF TREASURY'S
+OFFICE OF TERRORISM AND
+FINANCIAL INTELLIGENCE
+An official website of the United States government Here’s how you know
+10/17/26, 6:04 PM 122 | Office of Foreign Assets Control
+https://ofac.treasury.gov/faqs/122 1/3
+
+Information
+OFAC Reporting
+System
+Selected General
+Licenses Issued
+by OFAC
+Contact OFAC
+attempt to make this qualitative review of
+aliases as objective as possible. Before issuing
+this updated guidance, OFAC conducted a
+review of all aliases on the Specially
+Designated Nationals (SDN) list. Each SDN
+alias was run through a computer program
+that evaluated the potential of an alias to
+produce false positives in an automated
+screening environment. Names were
+evaluated using the following criteria:
+1. Character length (shorter strings were
+assumed to be less effective in a
+screening environment than longer
+strings);
+2. The presence of numbers in an alias
+(digits 0-9);
+3. The presence of common words that are
+generally considered to constitute a
+nickname (example: Ahmed the Tall);
+4. References in the alias to geographic
+locations (example: Ahmed the
+Sudanese);
+5. The presence of very common prefixes
+in a name where the prefix was one of
+only two strings in a name (example: Mr.
+Smith).
+Aliases that met one or more of the above
+criteria were flagged for human review. OFAC
+subject matter experts then reviewed each of
+the automated recommendations and made
+final decisions on the flagging of each alias.
+OFAC intends to use these procedures to
+evaluate all new aliases added to its sanctions
+lists.
+249. How is the Score
+calculated?
+10/17/26, 6:04 PM 122 | Office of Foreign Assets Control
+https://ofac.treasury.gov/faqs/122 2/3
+
+January 18, 2011
+OFFICE OF
+TERRORISM AND
+FINANCIAL
+INTELLIGENCE
+ADDITIONAL RESOURCES
+P r i v a c y A c t
+S m a l l B u s i n e s s C o n t a c t s
+B u d g e t a n d P e r f o r m a n c e
+T r e a s u r y D i r e c t . g o v S e c u r i t i e s / B o n d s
+F r e e d o m o f I n f o r m a t i o n A c t ( F O I A )
+N o F E A R A c t D a t a
+W h i s t l e b l o w e r P r o t e c t i o n
+HELPFUL OFAC LINKS
+S i g n U p F o r O F A C E - m a i l A l e r t s
+C o n t a c t O F A C
+D e a l i n g w i t h a n " O F A C A l e r t "
+L i s t o f C o u n t r y - r e l a t e d S a n c t i o n s
+A p p e a l a n O F A C d e s i g n a t i o n o r o t h e r l i s t i n g OTHER GOVERNMENT SITES
+U S A . g o v
+U S A J O B S . g o v
+O P M . g o v
+M y M o n e y . g o v
+D a t a . g o v
+Privacy Policy • Google Privacy • Site Policies and Notices • Accessibility
+10/17/26, 6:04 PM 122 | Office of Foreign Assets Control
+https://ofac.treasury.gov/faqs/122 3/3

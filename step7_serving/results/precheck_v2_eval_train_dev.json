@@ -1,0 +1,241 @@
+{
+  "train": {
+    "as_of": {
+      "n": 3000,
+      "covered": 3000,
+      "correct": 3000
+    },
+    "mrz": {
+      "n": 2801,
+      "covered": 2801,
+      "correct": 2801,
+      "no_mrz_cases": 199
+    },
+    "expiry": {
+      "n": 2911,
+      "covered": 2793,
+      "correct": 2793
+    },
+    "expired": {
+      "n": 2911,
+      "covered": 2793,
+      "correct": 2793
+    },
+    "poa_date": {
+      "n": 2972,
+      "covered": 2661,
+      "correct": 2661
+    },
+    "poa_window": {
+      "n": 2972,
+      "covered": 2661,
+      "correct": 2661
+    },
+    "integ_date_of_birth": {
+      "n": 3000,
+      "covered": 2883,
+      "correct": 2883
+    },
+    "integ_document_number": {
+      "n": 3000,
+      "covered": 2999,
+      "correct": 2999
+    },
+    "integ_expiry": {
+      "n": 3000,
+      "covered": 2886,
+      "correct": 2886
+    },
+    "integ_overall": {
+      "n": 3000,
+      "covered": 2877,
+      "correct": 2877
+    },
+    "expired_label_missed": {
+      "n": 155
+    },
+    "poa_nd": {
+      "ambiguous_dmy": 292,
+      "illegible_scan": 19
+    },
+    "integ_confusions": []
+  },
+  "dev": {
+    "as_of": {
+      "n": 150,
+      "covered": 150,
+      "correct": 150
+    },
+    "mrz": {
+      "n": 137,
+      "covered": 137,
+      "correct": 137,
+      "no_mrz_cases": 13
+    },
+    "expiry": {
+      "n": 146,
+      "covered": 137,
+      "correct": 137
+    },
+    "expired": {
+      "n": 146,
+      "covered": 137,
+      "correct": 137
+    },
+    "poa_date": {
+      "n": 145,
+      "covered": 129,
+      "correct": 129
+    },
+    "poa_window": {
+      "n": 145,
+      "covered": 129,
+      "correct": 129
+    },
+    "integ_date_of_birth": {
+      "n": 150,
+      "covered": 146,
+      "correct": 146
+    },
+    "integ_document_number": {
+      "n": 150,
+      "covered": 150,
+      "correct": 150
+    },
+    "integ_expiry": {
+      "n": 150,
+      "covered": 146,
+      "correct": 146
+    },
+    "integ_overall": {
+      "n": 150,
+      "covered": 145,
+      "correct": 145
+    },
+    "expired_label_missed": {
+      "n": 6
+    },
+    "poa_nd": {
+      "ambiguous_dmy": 16
+    },
+    "integ_confusions": []
+  },
+  "decision_errors": {
+    "predictions": "step5_training/results/dev_evals/distill-4b-twins__dev/predictions.jsonl",
+    "cases": [
+      {
+        "case_id": "dev-2000000-000001",
+        "pred": "reject",
+        "gold": "escalate",
+        "integrity": "ambiguous",
+        "integrity_is_deciding": true,
+        "resolved": true
+      },
+      {
+        "case_id": "dev-2000000-000017",
+        "pred": "reject",
+        "gold": "escalate",
+        "integrity": "ambiguous",
+        "integrity_is_deciding": true,
+        "resolved": true
+      },
+      {
+        "case_id": "dev-2000000-000031",
+        "pred": "escalate",
+        "gold": "reject",
+        "integrity": "clear tamper",
+        "integrity_is_deciding": true,
+        "resolved": true
+      },
+      {
+        "case_id": "dev-2000000-000041",
+        "pred": "reject",
+        "gold": "escalate",
+        "integrity": "ambiguous",
+        "integrity_is_deciding": true,
+        "resolved": true
+      },
+      {
+        "case_id": "dev-2000000-000053",
+        "pred": "approve",
+        "gold": "escalate",
+        "integrity": "consistent",
+        "integrity_is_deciding": false,
+        "resolved": false
+      },
+      {
+        "case_id": "dev-2000000-000082",
+        "pred": "approve",
+        "gold": "escalate",
+        "integrity": "consistent",
+        "integrity_is_deciding": false,
+        "resolved": false
+      },
+      {
+        "case_id": "dev-2000000-000090",
+        "pred": "reject",
+        "gold": "escalate",
+        "integrity": "ambiguous",
+        "integrity_is_deciding": true,
+        "resolved": true
+      },
+      {
+        "case_id": "dev-2000000-000106",
+        "pred": "approve",
+        "gold": "escalate",
+        "integrity": "consistent",
+        "integrity_is_deciding": false,
+        "resolved": false
+      },
+      {
+        "case_id": "dev-2000000-000107",
+        "pred": "approve",
+        "gold": "reject",
+        "integrity": "clear tamper",
+        "integrity_is_deciding": true,
+        "resolved": true
+      },
+      {
+        "case_id": "dev-2000000-000110",
+        "pred": "approve",
+        "gold": "escalate",
+        "integrity": "consistent",
+        "integrity_is_deciding": false,
+        "resolved": false
+      },
+      {
+        "case_id": "dev-2000000-000111",
+        "pred": "escalate",
+        "gold": "reject",
+        "integrity": "clear tamper",
+        "integrity_is_deciding": true,
+        "resolved": true
+      },
+      {
+        "case_id": "dev-2000000-000133",
+        "pred": "reject",
+        "gold": "escalate",
+        "integrity": "ambiguous",
+        "integrity_is_deciding": true,
+        "resolved": true
+      },
+      {
+        "case_id": "dev-2000000-000134",
+        "pred": "reject",
+        "gold": "escalate",
+        "integrity": "ambiguous",
+        "integrity_is_deciding": true,
+        "resolved": true
+      },
+      {
+        "case_id": "dev-2000000-000136",
+        "pred": "approve",
+        "gold": "reject",
+        "integrity": "clear tamper",
+        "integrity_is_deciding": true,
+        "resolved": true
+      }
+    ],
+    "resolved": 10
+  }
+}

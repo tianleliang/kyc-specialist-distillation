@@ -1,0 +1,37 @@
+| split | field | n | coverage | accuracy (when determinable) | errors |
+|---|---|---:|---:|---:|---:|
+| train | as_of | 3000 | 100.0% | 100.00% | 0 |
+| train | mrz | 2801 | 100.0% | 100.00% | 0 |
+| train | expiry | 2911 | 95.9% | 100.00% | 0 |
+| train | expired | 2911 | 95.9% | 100.00% | 0 |
+| train | poa_date | 2972 | 93.5% | 100.00% | 0 |
+| train | poa_window | 2972 | 93.5% | 100.00% | 0 |
+| dev | as_of | 150 | 100.0% | 100.00% | 0 |
+| dev | mrz | 137 | 100.0% | 100.00% | 0 |
+| dev | expiry | 146 | 93.8% | 100.00% | 0 |
+| dev | expired | 146 | 93.8% | 100.00% | 0 |
+| dev | poa_date | 145 | 94.5% | 100.00% | 0 |
+| dev | poa_window | 145 | 94.5% | 100.00% | 0 |
+| reader_dev | as_of | 600 | 100.0% | 100.00% | 0 |
+| reader_dev | mrz | 558 | 100.0% | 100.00% | 0 |
+| reader_dev | expiry | 583 | 94.7% | 100.00% | 0 |
+| reader_dev | expired | 583 | 94.7% | 100.00% | 0 |
+| reader_dev | poa_date | 594 | 93.6% | 100.00% | 0 |
+| reader_dev | poa_window | 594 | 93.6% | 100.00% | 0 |
+| split | field | n | coverage | accuracy (when determinable) | errors |
+|---|---|---:|---:|---:|---:|
+| train | integ_date_of_birth | 3000 | 99.4% | 100.00% | 0 |
+| train | integ_document_number | 3000 | 100.0% | 100.00% | 0 |
+| train | integ_expiry | 3000 | 99.5% | 100.00% | 0 |
+| train | integ_overall | 3000 | 99.0% | 100.00% | 0 |
+| dev | integ_date_of_birth | 150 | 99.3% | 100.00% | 0 |
+| dev | integ_document_number | 150 | 100.0% | 100.00% | 0 |
+| dev | integ_expiry | 150 | 99.3% | 100.00% | 0 |
+| dev | integ_overall | 150 | 98.7% | 100.00% | 0 |
+| reader_dev | integ_date_of_birth | 600 | 98.8% | 100.00% | 0 |
+| reader_dev | integ_document_number | 600 | 100.0% | 100.00% | 0 |
+| reader_dev | integ_expiry | 600 | 99.2% | 100.00% | 0 |
+| reader_dev | integ_overall | 600 | 98.3% | 100.00% | 0 |
+[train] no-MRZ docs: 199, MRZ invented: 0; expected=document_expired: 155, said NOT EXPIRED: 0; PoA n/d reasons: {'ambiguous_dmy': 168, 'illegible_scan': 19, 'other': 5}
+[dev] no-MRZ docs: 13, MRZ invented: 0; expected=document_expired: 6, said NOT EXPIRED: 0; PoA n/d reasons: {'ambiguous_dmy': 8}
+[reader_dev] no-MRZ docs: 42, MRZ invented: 0; expected=document_expired: 29, said NOT EXPIRED: 0; PoA n/d reasons: {'ambiguous_dmy': 25, 'other': 8, 'illegible_scan': 5}

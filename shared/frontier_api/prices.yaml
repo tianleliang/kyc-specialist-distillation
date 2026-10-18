@@ -1,0 +1,22 @@
+# USD per 1M tokens. Source: documentation/00_case_brief_and_plan/05 research brief (agent-reported, 2026-10-16).
+# VERIFY against each provider console before reporting spend. Batch APIs are 50% off on all three.
+# `cached_input` is optional; when absent, cached input tokens are billed at the `input` rate.
+# Reasoning / thinking tokens are billed as output on all three providers.
+batch_discount: 0.5
+
+models:
+  # OpenAI
+  gpt-6-astra:       {provider: openai, input: 10.00, output: 50.00}
+  gpt-6.1-sol:       {provider: openai, input: 2.00,  output: 10.00}
+  gpt-6-luna:        {provider: openai, input: 0.10,  output: 0.50}
+  # Anthropic
+  claude-fable-5-1:  {provider: anthropic, input: 10.00, output: 50.00}
+  claude-opus-5-5:   {provider: anthropic, input: 4.00,  output: 20.00, cached_input: 0.20}
+  claude-sonnet-5-5: {provider: anthropic, input: 2.00,  output: 10.00, cached_input: 0.20}
+  claude-haiku-5-5:  {provider: anthropic, input: 0.10,  output: 0.50}
+  # Google (gemini-4-argon price rises Dec 1)
+  gemini-4-argon:        {provider: gemini, input: 2.00, output: 10.00}
+  gemini-3.8-flash:      {provider: gemini, input: 0.75, output: 3.75}
+  # gemini-3.5-flash-lite: price not in the brief; add before use
+  # Mock models cost nothing
+  mock:              {provider: mock, input: 0.0, output: 0.0}

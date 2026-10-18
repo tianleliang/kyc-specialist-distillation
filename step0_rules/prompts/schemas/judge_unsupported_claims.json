@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Unsupported-claims judge output",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["judgments"],
+  "properties": {
+    "judgments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "verdict", "unsupported_claim", "packet_quote"],
+        "properties": {
+          "id": {"type": "string"},
+          "verdict": {"type": "string", "enum": ["supported", "unsupported"]},
+          "unsupported_claim": {"type": "string"},
+          "packet_quote": {"type": "string"}
+        }
+      }
+    }
+  }
+}

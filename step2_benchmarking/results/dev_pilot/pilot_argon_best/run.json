@@ -1,0 +1,5 @@
+{
+  "model": "gemini-4-argon (baseline_best)",
+  "gold": "data/dev/cases.jsonl",
+  "params": "frontier"
+}

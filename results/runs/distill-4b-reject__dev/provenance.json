@@ -1,0 +1,68 @@
+{
+  "run_id": "distill-4b-reject__dev",
+  "assembled_by": "python -m step6_evaluation.collect_runs",
+  "parts": [
+    {
+      "source": "step5_training/results/dev_evals/distill-4b-reject__dev",
+      "predictions_sha256": "146d81d3bb86f5df50b92e9cd47c2ade4c0d2437c2a16120cb85cdb350080368",
+      "n_lines": 150,
+      "endpoint_run.json": {
+        "started_utc": "2026-10-18T01:47:32+00:00",
+        "base_url": "https://tianleliang--zorbe-distill-4b-reject-vllm.us-east.modal.run/v1",
+        "model": "distill-4b-reject",
+        "api_key_env": "VLLM_API_KEY",
+        "cases": "data/dev/cases.jsonl",
+        "cases_sha256": "b18c5b04959ea79a949c397c662bab9b1d0d22f3bada691295224306e84e0cd8",
+        "n_cases": 150,
+        "n_written": 150,
+        "n_errors": 0,
+        "n_proxy_fallbacks": 0,
+        "n_cached": 0,
+        "n_resumed": 0,
+        "concurrency": 16,
+        "warmup": 2,
+        "wall_s": 396.271,
+        "throughput_cases_per_s": 0.379,
+        "latency_p50_ms": 32858.465,
+        "latency_p95_ms": 111101.9835,
+        "request": {
+          "prompt": "student_short",
+          "response_format": "json_schema",
+          "max_tokens": 2048,
+          "temperature": 0.0,
+          "extra_body": {},
+          "template": "student_short",
+          "template_sha256": "ffb18a734e5c01265763eb6ba631df855d072b2c466fc68fc874a62f56fbbe2b",
+          "system_sha256": "f84d656eb20f0cd2078b2907310f8812b754e4825c7a8476249d47f4d9298ff9",
+          "vars_sha256": {},
+          "few_shot_case_ids": [],
+          "schema_sha256": "df82fd48feb4642e0fb699447c4ae98eb19803263cd0a4a487ae8058a18cb41a"
+        },
+        "argv": [
+          "--cases",
+          "data/dev/cases.jsonl",
+          "--out",
+          "outputs/student/distill-4b-reject__dev",
+          "--base-url",
+          "https://tianleliang--zorbe-distill-4b-reject-vllm.us-east.modal.run/v1",
+          "--model",
+          "distill-4b-reject",
+          "--api-key-env",
+          "VLLM_API_KEY",
+          "--prompt",
+          "student_short",
+          "--schema",
+          "step0_rules/schema/v1_serving.json",
+          "--warmup",
+          "2",
+          "--concurrency",
+          "16"
+        ]
+      },
+      "run.json": {
+        "model": "distill-4b-reject",
+        "gold": "data/dev/cases.jsonl"
+      }
+    }
+  ]
+}

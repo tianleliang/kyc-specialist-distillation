@@ -1,0 +1,17 @@
+{
+  "total_usd": 11.16302,
+  "by_model": {
+    "claude-opus-5-5": {
+      "provider": "anthropic",
+      "calls": 100,
+      "cache_hits": 3,
+      "batch_calls": 0,
+      "input_tokens": 2194895,
+      "output_tokens": 119172,
+      "reasoning_tokens": 0,
+      "cost_usd": 11.163020000000001,
+      "saved_by_cache_usd": 0.35160800000000003,
+      "unpriced_calls": 0
+    }
+  }
+}
