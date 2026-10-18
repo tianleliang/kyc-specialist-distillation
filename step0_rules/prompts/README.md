@@ -4,7 +4,8 @@ Prompt templates, parameterized by `{schema}`, `{policy}` and `{packet}`. **No s
 
 | Template | Used for | Variables |
 |---|---|---|
-| `student.md` | the small model: SFT records, serving (the proxy injects it when a caller sends a bare packet) | policy, schema, packet |
+| `student.md` | the long student prompt (early experiments) | policy, schema, packet |
+| `student_short.md` | **the student prompt actually used** for training, evaluation and serving (613 characters; the proxy injects it when a caller sends a bare packet) | packet |
 | `baseline_zero_shot.md` | Stage 1 zero-shot rows: task description + schema only | schema, packet |
 | `baseline_best.md` | Stage 1 "best prompt" rows: policy + field guide + 2 few-shot examples | policy, schema, field_guide, examples, packet |
 | `teacher.md` | teacher calls for distillation: best prompt + complete `evidence_refs` | policy, schema, field_guide, examples, packet |
@@ -29,7 +30,7 @@ The policy is `step0_rules/policy_v1.md` (the published v1 policy); the schema i
 Eyeball a prompt: `python -m step0_rules.prompts.render student --schema step0_rules/schema/v1.json --policy step0_rules/policy_v1.md --packet-file x.txt`
 
 ## Contamination rules built in
-- `load_examples` refuses any pool under an `eval*` directory, and for `purpose="teacher"` also `draft` (`data/draft/README.md`: nothing there may feed teacher prompts). With `eval_manifests`, every picked example is checked against the frozen eval set with `scripts/split_guard.EvalGuard`.
+- `load_examples` refuses any pool under an `eval*` directory, and for `purpose="teacher"` also `draft` (`data/draft/README.md`: nothing there may feed teacher prompts). With `eval_manifests`, every picked example is checked against the frozen eval set with `step6_evaluation/split_guard.EvalGuard`.
 - `ood_renderer` and its outputs are eval-only. Never reuse them for training or teacher data. After rendering, run `check_ood_packet(packet, required_strings)` and drop any packet where the frontier model "fixed" a deliberate error, because its gold label may no longer hold.
 
 ## Judge bias controls

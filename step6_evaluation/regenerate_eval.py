@@ -45,6 +45,9 @@ SPLITS = {  # split -> (module, argv without --out)
     "eval_id": ("step1_data_generation.build",
                 ["--config", "step1_data_generation/configs/eval_id.yaml", "--n", "300", "--seed", "3000000",
                  "--allow-eval"]),
+    "eval_id_v2": ("step1_data_generation.build",   # fresh in-distribution set (Sun 10/18): same config, new seed
+                   ["--config", "step1_data_generation/configs/eval_id.yaml", "--n", "300", "--seed", "3050000",
+                    "--allow-eval"]),
     "eval_ood_template": ("step1_data_generation.build",
                           ["--config", "step1_data_generation/configs/eval_ood_template.yaml", "--n", "50",
                            "--seed", "4000000", "--allow-eval"]),
@@ -57,6 +60,7 @@ SPLITS = {  # split -> (module, argv without --out)
 FROZEN = [  # (committed manifest, splits it covers)
     ("data/eval/MANIFEST.json", ["eval_id", "eval_ood_template", "eval_ood_hand", "eval_ood_llm"]),
     ("data/eval_hard/manifest.json", ["eval_hard"]),
+    ("data/eval_v2/MANIFEST.json", ["eval_id_v2"]),
 ]
 
 

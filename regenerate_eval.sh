@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Rebuild every frozen eval split (eval_id, eval_ood_template, eval_ood_hand, eval_ood_llm, eval_hard)
+# Rebuild every frozen eval split (eval_id, eval_ood_template, eval_ood_hand, eval_ood_llm, eval_hard, eval_id_v2)
 # from its recorded seed/config into a scratch dir and verify it against the freeze manifests
 # (split_guard verify) and byte for byte against data/. Never writes under data/. No API, no GPU:
 # eval_ood_llm replays the recorded LLM responses in results/eval_regen/ood_llm_cache/.

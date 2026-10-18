@@ -1,0 +1,593 @@
+{
+ "run_name": "adapter-qwen35-4b",
+ "base_model": "Qwen/Qwen3.5-4B",
+ "adapter_dir": "/vol/ckpt/adapter/adapter-qwen35-4b/adapter",
+ "n_probe_items": 30,
+ "n_probe_answerable": 23,
+ "before": {
+  "perplexity": {
+   "overall": 7.388606516114285,
+   "tokens": 26739,
+   "by_file": {
+    "address_formats": {
+     "tokens": 1024,
+     "ppl": 2.0793511594586764
+    },
+    "fatf_pep_guidance_2013": {
+     "tokens": 3657,
+     "ppl": 7.5135228176587825
+    },
+    "fatf_recommendations_2012": {
+     "tokens": 3447,
+     "ppl": 7.590630803867534
+    },
+    "fincen_cdd_final_rule_2016": {
+     "tokens": 4908,
+     "ppl": 12.407771005224594
+    },
+    "icao9303_mrz_thirdparty": {
+     "tokens": 1045,
+     "ppl": 9.11479985101735
+    },
+    "icao9303_p3": {
+     "tokens": 7804,
+     "ppl": 6.589926791921322
+    },
+    "icao9303_p4": {
+     "tokens": 2681,
+     "ppl": 5.987439368258302
+    },
+    "icao9303_p5": {
+     "tokens": 959,
+     "ppl": 11.571228490391526
+    },
+    "ofac_faq_122": {
+     "tokens": 442,
+     "ppl": 4.81505789455545
+    },
+    "sanctions_list_structure": {
+     "tokens": 772,
+     "ppl": 4.377865316938215
+    }
+   }
+  },
+  "probe": {
+   "all": {
+    "n": 30,
+    "accuracy": 0.6333333333333333,
+    "mean_margin": 0.4893736898899078
+   },
+   "by_topic": {
+    "alias": {
+     "n": 10,
+     "accuracy": 0.7,
+     "mean_margin": 1.0905092358589172
+    },
+    "mrz": {
+     "n": 10,
+     "accuracy": 0.3,
+     "mean_margin": -0.7730561196804047
+    },
+    "pep": {
+     "n": 10,
+     "accuracy": 0.9,
+     "mean_margin": 1.150667953491211
+    }
+   },
+   "items": [
+    {
+     "id": "mrz_cd_1",
+     "topic": "mrz",
+     "correct": true,
+     "margin": 0.0625,
+     "answerable": true
+    },
+    {
+     "id": "mrz_cd_2",
+     "topic": "mrz",
+     "correct": false,
+     "margin": -0.25,
+     "answerable": true
+    },
+    {
+     "id": "mrz_cd_3",
+     "topic": "mrz",
+     "correct": false,
+     "margin": -0.25,
+     "answerable": true
+    },
+    {
+     "id": "mrz_cd_4",
+     "topic": "mrz",
+     "correct": true,
+     "margin": 0.0625,
+     "answerable": true
+    },
+    {
+     "id": "mrz_filler",
+     "topic": "mrz",
+     "correct": false,
+     "margin": -2.866415500640869,
+     "answerable": true
+    },
+    {
+     "id": "mrz_td3_shape",
+     "topic": "mrz",
+     "correct": true,
+     "margin": 0.07763123512268066,
+     "answerable": true
+    },
+    {
+     "id": "mrz_td1_shape",
+     "topic": "mrz",
+     "correct": false,
+     "margin": -0.4379408359527588,
+     "answerable": true
+    },
+    {
+     "id": "mrz_date",
+     "topic": "mrz",
+     "correct": false,
+     "margin": -0.2369779348373413,
+     "answerable": true
+    },
+    {
+     "id": "mrz_weights",
+     "topic": "mrz",
+     "correct": false,
+     "margin": -0.2149246335029602,
+     "answerable": false
+    },
+    {
+     "id": "mrz_name_sep",
+     "topic": "mrz",
+     "correct": false,
+     "margin": -3.676933526992798,
+     "answerable": true
+    },
+    {
+     "id": "pep_rec12",
+     "topic": "pep",
+     "correct": true,
+     "margin": 1.8026347160339355,
+     "answerable": false
+    },
+    {
+     "id": "pep_foreign_measures",
+     "topic": "pep",
+     "correct": true,
+     "margin": 1.1141939163208008,
+     "answerable": false
+    },
+    {
+     "id": "pep_family",
+     "topic": "pep",
+     "correct": true,
+     "margin": 1.758559226989746,
+     "answerable": true
+    },
+    {
+     "id": "pep_intl_org",
+     "topic": "pep",
+     "correct": true,
+     "margin": 1.5661933422088623,
+     "answerable": true
+    },
+    {
+     "id": "pep_not_criminal",
+     "topic": "pep",
+     "correct": false,
+     "margin": -0.4176673889160156,
+     "answerable": false
+    },
+    {
+     "id": "cdd_rec10",
+     "topic": "pep",
+     "correct": true,
+     "margin": 1.2107124328613281,
+     "answerable": false
+    },
+    {
+     "id": "cdd_threshold",
+     "topic": "pep",
+     "correct": true,
+     "margin": 0.3057281970977783,
+     "answerable": true
+    },
+    {
+     "id": "cdd_control",
+     "topic": "pep",
+     "correct": true,
+     "margin": 1.9360690116882324,
+     "answerable": true
+    },
+    {
+     "id": "cdd_nature",
+     "topic": "pep",
+     "correct": true,
+     "margin": 1.0390222072601318,
+     "answerable": true
+    },
+    {
+     "id": "cdd_monitoring",
+     "topic": "pep",
+     "correct": true,
+     "margin": 1.1912338733673096,
+     "answerable": true
+    },
+    {
+     "id": "alias_weak",
+     "topic": "alias",
+     "correct": false,
+     "margin": -3.3513689041137695,
+     "answerable": true
+    },
+    {
+     "id": "alias_previous",
+     "topic": "alias",
+     "correct": true,
+     "margin": 2.740246295928955,
+     "answerable": true
+    },
+    {
+     "id": "alias_lastname",
+     "topic": "alias",
+     "correct": false,
+     "margin": -1.4473509788513184,
+     "answerable": true
+    },
+    {
+     "id": "alias_sanction_schema",
+     "topic": "alias",
+     "correct": true,
+     "margin": 7.035127639770508,
+     "answerable": true
+    },
+    {
+     "id": "screen_fuzzy",
+     "topic": "alias",
+     "correct": true,
+     "margin": 2.829986095428467,
+     "answerable": false
+    },
+    {
+     "id": "screen_translit",
+     "topic": "alias",
+     "correct": true,
+     "margin": 0.1597599983215332,
+     "answerable": false
+    },
+    {
+     "id": "addr_de",
+     "topic": "alias",
+     "correct": false,
+     "margin": -0.1365668773651123,
+     "answerable": true
+    },
+    {
+     "id": "addr_us",
+     "topic": "alias",
+     "correct": true,
+     "margin": 0.5296429395675659,
+     "answerable": true
+    },
+    {
+     "id": "addr_cn",
+     "topic": "alias",
+     "correct": true,
+     "margin": 0.4679832458496094,
+     "answerable": true
+    },
+    {
+     "id": "addr_postcode_varies",
+     "topic": "alias",
+     "correct": true,
+     "margin": 2.0776329040527344,
+     "answerable": true
+    }
+   ],
+   "answerable": {
+    "n": 23,
+    "accuracy": 0.6086956521739131,
+    "mean_margin": 0.35637024174565857
+   }
+  }
+ },
+ "after": {
+  "perplexity": {
+   "overall": 5.518788135540365,
+   "tokens": 26739,
+   "by_file": {
+    "address_formats": {
+     "tokens": 1024,
+     "ppl": 1.7250011315124296
+    },
+    "fatf_pep_guidance_2013": {
+     "tokens": 3657,
+     "ppl": 5.662608485404109
+    },
+    "fatf_recommendations_2012": {
+     "tokens": 3447,
+     "ppl": 4.787599556649753
+    },
+    "fincen_cdd_final_rule_2016": {
+     "tokens": 4908,
+     "ppl": 9.20859251395961
+    },
+    "icao9303_mrz_thirdparty": {
+     "tokens": 1045,
+     "ppl": 8.766891167325236
+    },
+    "icao9303_p3": {
+     "tokens": 7804,
+     "ppl": 5.010966269159792
+    },
+    "icao9303_p4": {
+     "tokens": 2681,
+     "ppl": 4.037802945411118
+    },
+    "icao9303_p5": {
+     "tokens": 959,
+     "ppl": 9.149229194590879
+    },
+    "ofac_faq_122": {
+     "tokens": 442,
+     "ppl": 4.53942019346656
+    },
+    "sanctions_list_structure": {
+     "tokens": 772,
+     "ppl": 4.165474657255935
+    }
+   }
+  },
+  "probe": {
+   "all": {
+    "n": 30,
+    "accuracy": 0.6666666666666666,
+    "mean_margin": 0.5500110040108362
+   },
+   "by_topic": {
+    "alias": {
+     "n": 10,
+     "accuracy": 0.8,
+     "mean_margin": 0.9456873178482056
+    },
+    "mrz": {
+     "n": 10,
+     "accuracy": 0.3,
+     "mean_margin": -0.6397673785686493
+    },
+    "pep": {
+     "n": 10,
+     "accuracy": 0.9,
+     "mean_margin": 1.3441130727529527
+    }
+   },
+   "items": [
+    {
+     "id": "mrz_cd_1",
+     "topic": "mrz",
+     "correct": false,
+     "margin": -0.0625,
+     "answerable": true
+    },
+    {
+     "id": "mrz_cd_2",
+     "topic": "mrz",
+     "correct": false,
+     "margin": -0.25,
+     "answerable": true
+    },
+    {
+     "id": "mrz_cd_3",
+     "topic": "mrz",
+     "correct": false,
+     "margin": -0.125,
+     "answerable": true
+    },
+    {
+     "id": "mrz_cd_4",
+     "topic": "mrz",
+     "correct": true,
+     "margin": 0.0,
+     "answerable": true
+    },
+    {
+     "id": "mrz_filler",
+     "topic": "mrz",
+     "correct": false,
+     "margin": -2.6336874961853027,
+     "answerable": true
+    },
+    {
+     "id": "mrz_td3_shape",
+     "topic": "mrz",
+     "correct": true,
+     "margin": 0.14278042316436768,
+     "answerable": true
+    },
+    {
+     "id": "mrz_td1_shape",
+     "topic": "mrz",
+     "correct": false,
+     "margin": -0.39882421493530273,
+     "answerable": true
+    },
+    {
+     "id": "mrz_date",
+     "topic": "mrz",
+     "correct": true,
+     "margin": 0.6957172751426697,
+     "answerable": true
+    },
+    {
+     "id": "mrz_weights",
+     "topic": "mrz",
+     "correct": false,
+     "margin": -0.00592195987701416,
+     "answerable": false
+    },
+    {
+     "id": "mrz_name_sep",
+     "topic": "mrz",
+     "correct": false,
+     "margin": -3.7602378129959106,
+     "answerable": true
+    },
+    {
+     "id": "pep_rec12",
+     "topic": "pep",
+     "correct": true,
+     "margin": 2.0186400413513184,
+     "answerable": false
+    },
+    {
+     "id": "pep_foreign_measures",
+     "topic": "pep",
+     "correct": true,
+     "margin": 1.242762804031372,
+     "answerable": false
+    },
+    {
+     "id": "pep_family",
+     "topic": "pep",
+     "correct": true,
+     "margin": 1.589482307434082,
+     "answerable": true
+    },
+    {
+     "id": "pep_intl_org",
+     "topic": "pep",
+     "correct": true,
+     "margin": 1.5078532695770264,
+     "answerable": true
+    },
+    {
+     "id": "pep_not_criminal",
+     "topic": "pep",
+     "correct": false,
+     "margin": -0.23236441612243652,
+     "answerable": false
+    },
+    {
+     "id": "cdd_rec10",
+     "topic": "pep",
+     "correct": true,
+     "margin": 0.921539306640625,
+     "answerable": false
+    },
+    {
+     "id": "cdd_threshold",
+     "topic": "pep",
+     "correct": true,
+     "margin": 0.6731224954128265,
+     "answerable": true
+    },
+    {
+     "id": "cdd_control",
+     "topic": "pep",
+     "correct": true,
+     "margin": 2.3217179775238037,
+     "answerable": true
+    },
+    {
+     "id": "cdd_nature",
+     "topic": "pep",
+     "correct": true,
+     "margin": 1.6669999361038208,
+     "answerable": true
+    },
+    {
+     "id": "cdd_monitoring",
+     "topic": "pep",
+     "correct": true,
+     "margin": 1.7313770055770874,
+     "answerable": true
+    },
+    {
+     "id": "alias_weak",
+     "topic": "alias",
+     "correct": false,
+     "margin": -4.184846639633179,
+     "answerable": true
+    },
+    {
+     "id": "alias_previous",
+     "topic": "alias",
+     "correct": true,
+     "margin": 0.9458823204040527,
+     "answerable": true
+    },
+    {
+     "id": "alias_lastname",
+     "topic": "alias",
+     "correct": true,
+     "margin": 0.5683860778808594,
+     "answerable": true
+    },
+    {
+     "id": "alias_sanction_schema",
+     "topic": "alias",
+     "correct": true,
+     "margin": 6.056869745254517,
+     "answerable": true
+    },
+    {
+     "id": "screen_fuzzy",
+     "topic": "alias",
+     "correct": true,
+     "margin": 2.580380916595459,
+     "answerable": false
+    },
+    {
+     "id": "screen_translit",
+     "topic": "alias",
+     "correct": true,
+     "margin": 0.5548064708709717,
+     "answerable": false
+    },
+    {
+     "id": "addr_de",
+     "topic": "alias",
+     "correct": false,
+     "margin": -0.08912408351898193,
+     "answerable": true
+    },
+    {
+     "id": "addr_us",
+     "topic": "alias",
+     "correct": true,
+     "margin": 0.3908289670944214,
+     "answerable": true
+    },
+    {
+     "id": "addr_cn",
+     "topic": "alias",
+     "correct": true,
+     "margin": 0.3738126754760742,
+     "answerable": true
+    },
+    {
+     "id": "addr_postcode_varies",
+     "topic": "alias",
+     "correct": true,
+     "margin": 2.2598767280578613,
+     "answerable": true
+    }
+   ],
+   "answerable": {
+    "n": 23,
+    "accuracy": 0.6521739130434783,
+    "mean_margin": 0.4095863894275997
+   }
+  }
+ },
+ "verdict": {
+  "moved": true,
+  "ppl_relative_drop": 0.25306779789882067,
+  "probe_subset": "answerable",
+  "probe_acc_before": 0.6086956521739131,
+  "probe_acc_after": 0.6521739130434783,
+  "summary": "MOVED: held-out perplexity 7.39 -> 5.52 (-25.3%); probe accuracy (answerable, n=23) 61% -> 65%; probe margin +0.356 -> +0.410"
+ }
+}

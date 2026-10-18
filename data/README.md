@@ -22,7 +22,7 @@ Each split dir has `cases.jsonl` (what a model sees, plus `expected` = gold), `t
 
 ## How to use
 ```bash
-bash regenerate_eval.sh                                   # rebuild frozen v1 + eval_hard in a scratch dir, verify hashes (free)
+bash regenerate_eval.sh                                   # rebuild frozen v1 + eval_hard + eval_id_v2 in a scratch dir, verify hashes (free)
 python -m step6_evaluation.split_guard verify --manifest data/eval/MANIFEST.json
 python -m step6_evaluation.split_guard verify --manifest data/eval_v2/MANIFEST.json
 python -m step1_data_generation.build --config step1_data_generation/configs/train.yaml --n 3000   # rebuild train (free)

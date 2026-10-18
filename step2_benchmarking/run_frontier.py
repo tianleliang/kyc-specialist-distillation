@@ -71,6 +71,12 @@ def main(argv=None) -> None:
     ap.add_argument("--seed", type=int, default=0)
     ap.add_argument("--out-root", default="outputs")
     a = ap.parse_args(argv)
+    # Teachers never see eval cases: refuse a teacher run on any eval split (path or case-id prefix).
+    if a.prompt == "teacher":
+        from pathlib import Path as _P
+        _ids = [json.loads(l)["case_id"] for l in _P(a.cases).read_text(encoding="utf-8").splitlines() if l.strip()]
+        if any(part.startswith("eval") for part in _P(a.cases).parts) or any(i.startswith(("eid-", "ood", "ehd-")) for i in _ids):
+            raise SystemExit("refusing: teacher prompts never see eval cases")
 
     provider, model = a.model.split(":", 1)
     schema = json.loads(Path(SCHEMA).read_text(encoding="utf-8"))
