@@ -6,7 +6,7 @@ One case packet in (applicant profile, OCR'd ID document with MRZ, proof of addr
 
 ## Results (fresh eval_id v2, 300 cases generated after all development, never seen by any part of the system)
 
-| | Decision accuracy | vs ours, paired 95% CI | Unsupported narrative claims | p50 latency | $ / 1,000 cases |
+| | Decision accuracy | Their accuracy − ours (pts, paired 95% CI) | Unsupported narrative claims | p50 latency | $ / 1,000 cases |
 |---|---|---|---|---|---|
 | **Ours (Qwen3.5-4B specialist)** | **96.3%** | – | 13.7% | **3.3 s on H100** · 24.3 s on L4 | **$3.59** (H100) · $0.47–5.36 (L4) |
 | GPT-6 Astra (best prompt) | 99.3% | Astra ahead (+3.0, +0.7 to +5.3) | 7.4% | 12.1 s | $175 |
