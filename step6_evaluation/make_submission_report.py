@@ -95,10 +95,32 @@ def lat_cells(run: str, model_key: str | None) -> list[str]:
     return [ms(x.get("latency_p50_ms")) + how, ms(x.get("latency_p95_ms")) + how, usd(x.get("cost_per_1k_usd")) + how]
 
 
+def adv_cell(run: str, kind: str) -> str:
+    """Escalation rate on adversarial cases whose gold decision is escalate (fieldmap:
+    adv_escalation_gold_escalate_only), shown as rate (escalated / gold-escalate cases)."""
+    split = run.rsplit("__", 1)[1]
+    gpaths = {"eval_id_v2": ["data/eval_id_v2/cases.jsonl"], "eval_v1": V1}[split]
+    import yaml
+    scen = set(yaml.safe_load((ROOT / "step6_evaluation/fieldmap_v1.yaml").read_text(encoding="utf-8"))["adversarial_subsets"][kind])
+    rows = {}
+    for gp in gpaths:
+        for line in (ROOT / gp).read_text(encoding="utf-8").splitlines():
+            r = json.loads(line)
+            rows[r["case_id"]] = r
+    rate = m(run).get(f"adv_escalation_rate.{kind}")
+    n = round(m(run).get(f"n_adv.{kind}", 0))
+    esc = [c for c, r in rows.items() if r["expected"]["decision"] == "escalate"
+           and (scen & set(r.get("scenarios", [])))]
+    if rate is None:
+        return "–"
+    den = len(esc) if esc else n
+    return f"{rate * 100:.1f} ({round(rate * den)}/{den})"
+
+
 # ---------------------------------------------------------------- Table 1
 T = "eval_id_v2"
 G2 = gold(["data/eval_id_v2/cases.jsonl"])
-t1_runs = [(f"{FINAL}__{T}", "**Ours: Zorbe KYC specialist (B2), Qwen3.5-4B**", "4B")]
+t1_runs = [(f"{FINAL}__{T}", "**Ours: KYC specialist (B2), Qwen3.5-4B**", "4B")]
 t1_runs += [(f"{k}__baseline_best__{T}", f"{d} (best prompt)", p) for k, d, p in OPEN]
 t1_runs += [(f"{k}__baseline_best__{T}", f"{d} (best prompt)", "undisclosed") for k, d in FRONT]
 cOURS = correct(f"{FINAL}__{T}", G2)
@@ -118,14 +140,13 @@ for run, disp, params in t1_runs:
                 pct(x["actions_precision"]), pct(x.get("judge_unsupported_rate")), pct(x["schema_validity"])])
 
 h1b = ["Model", "Verified %", "Name %", "Date of birth %", "Document no. %", "Expiry %", "Address %",
-       "Escalation on injection % (n)", "Escalation on ambiguous % (n)", "p50 latency", "p95 latency", "$ / 1k cases"]
+       "Escalation on injection % (escalated / should escalate)", "Escalation on ambiguous evidence % (escalated / should escalate)", "p50 latency", "p95 latency", "$ / 1k cases"]
 r1b = []
 for run, disp, params in t1_runs:
     x = m(run)
     f = lambda k: pct(x.get(f"field_accuracy.{k}"))
     r1b.append([disp, f("verified"), f("name"), f("date_of_birth"), f("document_number"), f("expiry"), f("address"),
-                f"{pct(x.get('adv_escalation_rate.injection'))} ({x.get('n_adv.injection')})",
-                f"{pct(x.get('adv_escalation_rate.ambiguous'))} ({x.get('n_adv.ambiguous')})"]
+                adv_cell(run, "injection"), adv_cell(run, "ambiguous")]
                + lat_cells(run, "frontier" if params == "undisclosed" else "open"))
 
 # ---------------------------------------------------------------- Table 2
@@ -168,7 +189,7 @@ def safe(run):
     return run in M
 
 
-appA = [("final-A-s4", "A: model alone (Final A)"), ("final-B-s4", "B: model + pre-checker v2 (Final B, pre-diagnosis)"),
+appA = [("final-A-s4", "A: model alone"), ("final-B-s4", "B: model + pre-checker v2 (before diagnosis)"),
         (FINAL, "B2: model + pre-checker v3, blank-block training (shipped model)")]
 hA = ["Model"] + [s for _, s in SPL] + ["Frozen 500", "Hard (150)", "Fresh eval_id v2 (300)"]
 rA = []
