@@ -47,8 +47,8 @@ Source: [benchmark_report_submission.md](documentation/04_results/benchmark_repo
 | OpenAI (GPT-6.1 Sol teacher, GPT-6 Astra baseline) | ~405 | per-run cost ledgers |
 | Google (Gemini 4 Argon teacher + baseline) | ~138 | per-run cost ledgers |
 | Anthropic (Claude Opus 5.5 baseline, Claude Sonnet 5.5 judge) | ~165 | per-run cost ledgers |
-| **API total** | **~708** | ledgers in `results/runs/*/provenance.json`, `step4_distillation/teacher_outputs/*/ledger.json`, `results/judge/*/calls.jsonl` |
-| Modal GPU (training, scoring, serving) | (final figure added at submission) | Modal billing dashboard |
+| **API total** | **~708** (≈ $800 overall with Modal) | ledgers in `results/runs/*/provenance.json`, `step4_distillation/teacher_outputs/*/ledger.json`, `results/judge/*/calls.jsonl` |
+| Modal GPU (training, scoring, serving) | ~100 (estimate; final on the invoice) | Modal billing dashboard |
 
 ## 5. Build timeline (Fri 10/16 night → Sun 10/18, ET)
 | When | Phase | Brief / report |
