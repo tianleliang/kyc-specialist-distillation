@@ -1,5 +1,5 @@
 {
-  "model": "B-run2 halfway (reader v3 + 25% blank blocks; after diagnosis)",
+  "model": "B2 halfway (pre-checker reader v3 + 25% blank blocks)",
   "params": "4B",
   "price_key": "modal-l4-c16",
   "gold": "data/eval_hard/cases.jsonl",

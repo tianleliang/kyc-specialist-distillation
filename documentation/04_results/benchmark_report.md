@@ -10,31 +10,27 @@ Gold files (sha256):
 - `data/eval_id/cases.jsonl + data/eval_ood_template/cases.jsonl + data/eval_ood_hand/cases.jsonl + data/eval_ood_llm/cases.jsonl`: `1b343c59e39d06ef…` (500 cases)
 - `data/eval_id_v2/cases.jsonl`: `01b7079bda7d5e26…` (300 cases)
 
-**Draft (Sun 10/18, Session D).** All numbers below are computed from the committed runs in `results/runs/`
-(rebuild: `bash make_tables.sh`). Rows and columns marked PENDING / pending are not measured yet:
-B-v3 (pre-checker reader v3 + retrain), the LLM-judge unsupported-claims column (Session J, `eval_id` only),
-and latency / cost of our model (measured at deploy, one warm L4, concurrency 1:
-`python -m step7_serving.measure_latency`). Frontier models run without tools, as customers use them;
-Final B uses the code pre-checks (packet text only), and both rows (model alone = A, model + pre-checks = B) are reported.
+All numbers below are computed from the committed runs in `results/runs/` (rebuild: `bash make_tables.sh`).
+Frontier models run without tools, as customers use them; our models A (model alone), B and B2 (model + code pre-checks) are all reported.
 
 ## Table 1: models × metrics
 
 ### Fresh eval_id v2 (300; generated Sun 10/18 with the eval_id config and a new seed, untouched by any development; frontier re-run on it)
 
-| Model | Params | Cases | Valid % | Decision acc % | Screening macro-F1 % | Field acc % (mean) | Risk exact % | Risk ±1 % | Actions recall % | Actions precision % | Unsupported claims, LLM judge % (eval_id subset) | Unsupported refs, programmatic % | Adversarial escalation % | p50 ms | p95 ms | $ / 1k cases |
+| Model | Params | Cases | Valid % | Decision acc % | Screening macro-F1 % | Field acc % (mean) | Risk exact % | Risk ±1 % | Actions recall % | Actions precision % | Unsupported claims, LLM judge % (judged sentences) | Unsupported refs, programmatic % | Adversarial escalation % | p50 ms | p95 ms | $ / 1k cases |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | GPT-6 Astra (best prompt) | frontier (undisclosed) | 300 | 100.0 [100.0, 100.0] | 99.3 [98.3, 100.0] | 100.0 [100.0, 100.0] | 99.7 [99.5, 99.9] | 99.3 [98.3, 100.0] | 100.0 [100.0, 100.0] | 98.8 [97.0, 100.0] | 99.7 [99.1, 100.0] | 7.4 [6.1, 8.8] | 0.0 [0.0, 0.0] | 100.0 [100.0, 100.0] | 12,143 | 15,253 | $175.31 |
 | Claude Opus 5.5 (best prompt) | frontier (undisclosed) | 300 | 100.0 [100.0, 100.0] | 97.7 [95.7, 99.0] | 100.0 [100.0, 100.0] | 99.5 [99.1, 99.8] | 97.3 [95.3, 99.0] | 100.0 [100.0, 100.0] | 97.4 [95.0, 99.4] | 96.3 [93.6, 98.3] | 8.6 [7.2, 10.3] | 0.0 [0.0, 0.0] | 100.0 [100.0, 100.0] | 11,494 | 16,810 | $116.41 |
 | Gemini 4 Argon (best prompt) | frontier (undisclosed) | 300 | 100.0 [100.0, 100.0] | 95.0 [92.3, 97.3] | 100.0 [100.0, 100.0] | 99.5 [99.1, 99.8] | 95.7 [93.3, 97.7] | 100.0 [100.0, 100.0] | 92.2 [87.7, 95.7] | 96.1 [93.1, 98.4] | 8.8 [7.3, 10.3] | 0.0 [0.0, 0.0] | 100.0 [100.0, 100.0] | 8,554 | 32,735 | $36.92 |
 | Qwen3.5-0.8B (best prompt) | 0.8B | 300 | 100.0 [100.0, 100.0] | 44.3 [39.0, 50.7] | 25.2 [19.5, 30.3] | 93.0 [91.8, 94.1] | 26.3 [21.7, 31.3] | 83.7 [79.3, 88.0] | 4.7 [2.8, 6.8] | 32.0 [20.0, 46.8] | 60.8 [58.5, 63.0] | 3.3 [2.3, 4.6] | 7.4 [2.6, 12.5] | 8,655 | 10,908 | $0.121 |
 | Qwen3.5-2B (best prompt) | 2B | 300 | 100.0 [100.0, 100.0] | 39.7 [34.0, 45.0] | 42.9 [38.6, 47.5] | 93.1 [92.0, 94.3] | 37.0 [31.3, 42.7] | 88.3 [84.7, 91.7] | 30.2 [22.8, 37.0] | 17.8 [13.6, 22.7] | 45.3 [43.0, 47.3] | 2.3 [1.6, 3.0] | 25.9 [16.2, 34.5] | 14,093 | 19,505 | $0.200 |
-| Qwen3.5-4B (zero-shot) | 4B | 300 | 100.0 [100.0, 100.0] | 56.3 [50.7, 62.0] | 23.6 [16.4, 30.1] | 89.9 [88.5, 91.3] | 34.0 [28.7, 39.7] | 89.7 [85.7, 92.7] | 33.1 [29.0, 37.3] | 12.9 [10.8, 15.1] | 59.4 [56.4, 62.2] | 2.3 [1.5, 3.2] | 59.3 [50.0, 69.7] | not deployed | not deployed | not deployed |
-| Qwen3.5-4B (best prompt) | 4B | 300 | 100.0 [100.0, 100.0] | 56.0 [50.3, 61.7] | 34.6 [28.5, 39.7] | 86.9 [84.9, 88.7] | 50.3 [44.0, 56.0] | 98.3 [96.7, 99.7] | 34.6 [29.0, 40.6] | 17.3 [14.5, 20.2] | 52.0 [50.0, 54.0] | 0.3 [0.1, 0.5] | 90.7 [85.2, 96.9] | not deployed | not deployed | not deployed |
-| A halfway (adapter + twins distillation) | 4B | 300 | 100.0 [100.0, 100.0] | 88.7 [84.7, 92.0] | 97.4 [95.0, 99.5] | 98.7 [98.1, 99.3] | 88.3 [84.7, 92.0] | 100.0 [100.0, 100.0] | 85.2 [79.8, 89.8] | 89.6 [85.2, 93.8] | 16.2 [14.2, 18.3] | 0.5 [0.1, 1.1] | 90.7 [85.3, 97.0] | not deployed | not deployed | not deployed |
-| B-run2 halfway (reader v3 + 25% blank blocks; after diagnosis) | 4B | 300 | 100.0 [100.0, 100.0] | 96.7 [94.3, 98.3] | 99.5 [98.5, 100.0] | 99.3 [98.9, 99.7] | 96.0 [93.7, 98.0] | 100.0 [100.0, 100.0] | 95.1 [91.6, 97.7] | 96.5 [94.0, 98.6] | 13.7 [12.0, 15.5] | 0.5 [0.1, 1.2] | 94.4 [90.3, 100.0] | not deployed | not deployed | not deployed |
-| B-run2 final (shipped; after diagnosis) | 4B | 300 | 100.0 [100.0, 100.0] | 96.3 [94.0, 98.0] | 99.6 [98.6, 100.0] | 99.3 [98.9, 99.7] | 95.3 [92.7, 97.3] | 100.0 [100.0, 100.0] | 93.6 [90.2, 96.4] | 97.6 [95.4, 99.3] | 13.7 [11.9, 15.5] | 0.3 [0.0, 0.8] | 92.6 [87.5, 97.3] | 24,269 on L4 (H100: 3,296) | 29,087 on L4 (H100: 3,849) | $5.36 on L4 (H100: $3.59) |
-| B-run2 halfway, served with reader v3.1 | 4B | 300 | 100.0 [100.0, 100.0] | 97.0 [95.0, 98.7] | 99.5 [98.5, 100.0] | 99.4 [98.9, 99.8] | 96.7 [94.7, 98.3] | 100.0 [100.0, 100.0] | 95.1 [91.6, 97.7] | 97.6 [95.6, 99.4] | 12.5 [10.8, 14.2] | 0.5 [0.1, 1.2] | 94.4 [90.3, 100.0] | not deployed | not deployed | not deployed |
-| B-run2 final, served with reader v3.1 | 4B | 300 | 100.0 [100.0, 100.0] | 96.3 [94.0, 98.0] | 99.6 [98.6, 100.0] | 99.3 [98.9, 99.7] | 95.3 [92.7, 97.3] | 100.0 [100.0, 100.0] | 93.6 [90.2, 96.4] | 97.6 [95.4, 99.3] | 13.1 [11.3, 15.0] | 0.3 [0.0, 0.8] | 92.6 [87.5, 97.3] | not deployed | not deployed | not deployed |
+| Qwen3.5-4B (zero-shot) | 4B | 300 | 100.0 [100.0, 100.0] | 56.3 [50.7, 62.0] | 23.6 [16.4, 30.1] | 89.9 [88.5, 91.3] | 34.0 [28.7, 39.7] | 89.7 [85.7, 92.7] | 33.1 [29.0, 37.3] | 12.9 [10.8, 15.1] | 59.4 [56.4, 62.2] | 2.3 [1.5, 3.2] | 59.3 [50.0, 69.7] | 25,635 | 35,240 | $0.364 |
+| Qwen3.5-4B (best prompt) | 4B | 300 | 100.0 [100.0, 100.0] | 56.0 [50.3, 61.7] | 34.6 [28.5, 39.7] | 86.9 [84.9, 88.7] | 50.3 [44.0, 56.0] | 98.3 [96.7, 99.7] | 34.6 [29.0, 40.6] | 17.3 [14.5, 20.2] | 52.0 [50.0, 54.0] | 0.3 [0.1, 0.5] | 90.7 [85.2, 96.9] | 31,105 | 39,976 | $0.442 |
+| A halfway (adapter + twins distillation, no pre-checks) | 4B | 300 | 100.0 [100.0, 100.0] | 88.7 [84.7, 92.0] | 97.4 [95.0, 99.5] | 98.7 [98.1, 99.3] | 88.3 [84.7, 92.0] | 100.0 [100.0, 100.0] | 85.2 [79.8, 89.8] | 89.6 [85.2, 93.8] | 16.2 [14.2, 18.3] | 0.5 [0.1, 1.1] | 90.7 [85.3, 97.0] | not deployed | not deployed | not deployed |
+| B2 halfway (pre-checker reader v3 + 25% blank blocks) | 4B | 300 | 100.0 [100.0, 100.0] | 96.7 [94.3, 98.3] | 99.5 [98.5, 100.0] | 99.3 [98.9, 99.7] | 96.0 [93.7, 98.0] | 100.0 [100.0, 100.0] | 95.1 [91.6, 97.7] | 96.5 [94.0, 98.6] | 13.7 [12.0, 15.5] | 0.5 [0.1, 1.2] | 94.4 [90.3, 100.0] | not deployed | not deployed | not deployed |
+| B2: shipped model (pre-checker reader v3, after diagnosis) | 4B | 300 | 100.0 [100.0, 100.0] | 96.3 [94.0, 98.0] | 99.6 [98.6, 100.0] | 99.3 [98.9, 99.7] | 95.3 [92.7, 97.3] | 100.0 [100.0, 100.0] | 93.6 [90.2, 96.4] | 97.6 [95.4, 99.3] | 13.7 [11.9, 15.5] | 0.3 [0.0, 0.8] | 92.6 [87.5, 97.3] | 24,269 on L4 (H100: 3,296) | 29,087 on L4 (H100: 3,849) | $5.36 on L4 (H100: $3.59) |
+| B2 halfway, served with reader v3.1 | 4B | 300 | 100.0 [100.0, 100.0] | 97.0 [95.0, 98.7] | 99.5 [98.5, 100.0] | 99.4 [98.9, 99.8] | 96.7 [94.7, 98.3] | 100.0 [100.0, 100.0] | 95.1 [91.6, 97.7] | 97.6 [95.6, 99.4] | 12.5 [10.8, 14.2] | 0.5 [0.1, 1.2] | 94.4 [90.3, 100.0] | not deployed | not deployed | not deployed |
+| B2, served with reader v3.1 (swap test) | 4B | 300 | 100.0 [100.0, 100.0] | 96.3 [94.0, 98.0] | 99.6 [98.6, 100.0] | 99.3 [98.9, 99.7] | 95.3 [92.7, 97.3] | 100.0 [100.0, 100.0] | 93.6 [90.2, 96.4] | 97.6 [95.4, 99.3] | 13.1 [11.3, 15.0] | 0.3 [0.0, 0.8] | 92.6 [87.5, 97.3] | not deployed | not deployed | not deployed |
 
 Per identity field, adversarial subsets, counts:
 
@@ -47,15 +43,15 @@ Per identity field, adversarial subsets, counts:
 | Qwen3.5-2B (best prompt) | 68.3 | 97.7 | 91.7 | 94.0 | 94.3 | 88.0 | 17.2 (30) | 34.6 (26) | 25.5 | 347 | 14 | 1897 | 1891 | 0 |
 | Qwen3.5-4B (zero-shot) | 68.7 | 83.3 | 95.0 | 96.3 | 92.3 | 82.3 | 34.5 (30) | 88.5 (26) | 58.2 | 347 | 186 | 1646 | 1638 | 0 |
 | Qwen3.5-4B (best prompt) | 73.3 | 68.7 | 94.3 | 91.0 | 90.0 | 90.7 | 82.8 (30) | 96.2 (26) | 89.1 | 347 | 0 | 2025 | 2019 | 0 |
-| A halfway (adapter + twins distillation) | 95.0 | 99.7 | 99.7 | 98.7 | 98.0 | 97.7 | 86.2 (30) | 96.2 (26) | 89.1 | 347 | 10 | 1848 | 1842 | 0 |
-| B-run2 halfway (reader v3 + 25% blank blocks; after diagnosis) | 98.3 | 99.3 | 99.7 | 99.3 | 100.0 | 98.3 | 89.7 (30) | 100.0 (26) | 94.5 | 347 | 3 | 1847 | 1841 | 0 |
-| B-run2 final (shipped; after diagnosis) | 98.3 | 99.3 | 99.7 | 99.3 | 100.0 | 98.3 | 86.2 (30) | 100.0 (26) | 92.7 | 347 | 2 | 1850 | 1844 | 0 |
-| B-run2 halfway, served with reader v3.1 | 98.3 | 99.3 | 99.7 | 99.3 | 100.0 | 98.7 | 89.7 (30) | 100.0 (26) | 94.5 | 347 | 3 | 1848 | 1733 | 0 |
-| B-run2 final, served with reader v3.1 | 98.3 | 99.3 | 99.7 | 99.3 | 100.0 | 98.3 | 86.2 (30) | 100.0 (26) | 92.7 | 347 | 2 | 1849 | 1737 | 0 |
+| A halfway (adapter + twins distillation, no pre-checks) | 95.0 | 99.7 | 99.7 | 98.7 | 98.0 | 97.7 | 86.2 (30) | 96.2 (26) | 89.1 | 347 | 10 | 1848 | 1842 | 0 |
+| B2 halfway (pre-checker reader v3 + 25% blank blocks) | 98.3 | 99.3 | 99.7 | 99.3 | 100.0 | 98.3 | 89.7 (30) | 100.0 (26) | 94.5 | 347 | 3 | 1847 | 1841 | 0 |
+| B2: shipped model (pre-checker reader v3, after diagnosis) | 98.3 | 99.3 | 99.7 | 99.3 | 100.0 | 98.3 | 86.2 (30) | 100.0 (26) | 92.7 | 347 | 2 | 1850 | 1844 | 0 |
+| B2 halfway, served with reader v3.1 | 98.3 | 99.3 | 99.7 | 99.3 | 100.0 | 98.7 | 89.7 (30) | 100.0 (26) | 94.5 | 347 | 3 | 1848 | 1733 | 0 |
+| B2, served with reader v3.1 (swap test) | 98.3 | 99.3 | 99.7 | 99.3 | 100.0 | 98.3 | 86.2 (30) | 100.0 (26) | 92.7 | 347 | 2 | 1849 | 1737 | 0 |
 
 ### Frozen eval v1 (eval_id 300 + OOD template 50 + OOD hand 50 + OOD LLM 100 = 500)
 
-| Model | Params | Cases | Valid % | Decision acc % | Screening macro-F1 % | Field acc % (mean) | Risk exact % | Risk ±1 % | Actions recall % | Actions precision % | Unsupported claims, LLM judge % (eval_id subset) | Unsupported refs, programmatic % | Adversarial escalation % | p50 ms | p95 ms | $ / 1k cases |
+| Model | Params | Cases | Valid % | Decision acc % | Screening macro-F1 % | Field acc % (mean) | Risk exact % | Risk ±1 % | Actions recall % | Actions precision % | Unsupported claims, LLM judge % (judged sentences) | Unsupported refs, programmatic % | Adversarial escalation % | p50 ms | p95 ms | $ / 1k cases |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | GPT-6 Astra (zero-shot) | frontier (undisclosed) | 500 | 100.0 [100.0, 100.0] | 92.6 [90.4, 94.8] | 84.0 [77.9, 89.1] | 97.4 [96.8, 98.0] | 73.4 [69.6, 77.0] | 99.6 [99.0, 100.0] | 96.0 [94.1, 97.4] | 67.2 [63.0, 71.4] | 18.2 [16.1, 20.3] | 0.2 [0.1, 0.4] | 94.0 [90.4, 98.2] | 13,117 | 16,518 | $108.29 |
 | GPT-6 Astra (best prompt) | frontier (undisclosed) | 500 | 100.0 [100.0, 100.0] | 99.2 [98.4, 99.8] | 100.0 [100.0, 100.0] | 99.8 [99.6, 100.0] | 99.2 [98.4, 99.8] | 100.0 [100.0, 100.0] | 99.4 [98.5, 100.0] | 99.1 [98.2, 99.8] | 7.3 [5.9, 8.8] | 0.3 [0.1, 0.5] | 100.0 [100.0, 100.0] | 11,003 | 13,403 | $176.17 |
@@ -69,13 +65,12 @@ Per identity field, adversarial subsets, counts:
 | Qwen3.5-2B (best prompt) | 2B | 500 | 100.0 [100.0, 100.0] | 39.4 [34.8, 43.6] | 44.3 [40.1, 48.7] | 93.4 [92.5, 94.2] | 36.2 [32.2, 40.4] | 87.2 [84.2, 90.2] | 29.4 [24.6, 34.7] | 17.7 [14.5, 21.2] | 45.9 [43.7, 48.0] | 1.9 [1.5, 2.4] | 29.8 [22.2, 37.0] | 14,364 | 19,492 | $0.203 |
 | Qwen3.5-4B (zero-shot) | 4B | 500 | 100.0 [100.0, 100.0] | 60.0 [55.8, 64.0] | 25.8 [21.1, 30.4] | 89.9 [88.8, 91.1] | 34.8 [30.8, 38.8] | 90.0 [87.2, 92.6] | 38.5 [34.8, 42.4] | 16.1 [14.1, 18.1] | 59.7 [57.1, 62.3] | 1.0 [0.7, 1.5] | 63.1 [54.5, 71.2] | 26,042 | 34,730 | $0.364 |
 | Qwen3.5-4B (best prompt) | 4B | 500 | 100.0 [100.0, 100.0] | 61.2 [57.2, 65.4] | 34.7 [30.4, 38.7] | 87.0 [85.7, 88.4] | 51.6 [46.8, 55.8] | 97.8 [96.4, 99.0] | 37.2 [32.6, 41.7] | 19.5 [17.0, 22.0] | 53.1 [51.2, 55.1] | 0.1 [0.0, 0.2] | 96.4 [93.9, 100.0] | 31,347 | 39,308 | $0.442 |
-| A halfway (adapter + twins distillation) | 4B | 500 | 100.0 [100.0, 100.0] | 88.2 [85.0, 90.8] | 96.7 [94.7, 98.3] | 98.8 [98.3, 99.2] | 85.8 [82.6, 88.8] | 99.2 [98.4, 99.8] | 85.0 [81.4, 88.5] | 92.5 [90.1, 94.8] | 15.4 [13.4, 17.4] | 0.5 [0.1, 0.9] | 92.9 [88.9, 97.9] | not deployed | not deployed | not deployed |
-| Final A (model alone) | 4B | 500 | 100.0 [100.0, 100.0] | 88.4 [85.6, 91.0] | 97.1 [95.4, 98.6] | 98.6 [98.2, 99.1] | 86.0 [83.0, 89.0] | 99.0 [98.2, 99.8] | 85.2 [81.7, 88.5] | 91.6 [88.8, 94.1] | 14.9 [13.0, 17.0] | 0.4 [0.1, 0.8] | 94.0 [90.2, 98.1] | not deployed | not deployed | not deployed |
+| A halfway (adapter + twins distillation, no pre-checks) | 4B | 500 | 100.0 [100.0, 100.0] | 88.2 [85.0, 90.8] | 96.7 [94.7, 98.3] | 98.8 [98.3, 99.2] | 85.8 [82.6, 88.8] | 99.2 [98.4, 99.8] | 85.0 [81.4, 88.5] | 92.5 [90.1, 94.8] | 15.4 [13.4, 17.4] | 0.5 [0.1, 0.9] | 92.9 [88.9, 97.9] | not deployed | not deployed | not deployed |
+| A: model alone | 4B | 500 | 100.0 [100.0, 100.0] | 88.4 [85.6, 91.0] | 97.1 [95.4, 98.6] | 98.6 [98.2, 99.1] | 86.0 [83.0, 89.0] | 99.0 [98.2, 99.8] | 85.2 [81.7, 88.5] | 91.6 [88.8, 94.1] | 14.9 [13.0, 17.0] | 0.4 [0.1, 0.8] | 94.0 [90.2, 98.1] | not deployed | not deployed | not deployed |
 | B halfway (+ pre-checks v2) | 4B | 500 | 100.0 [100.0, 100.0] | 91.2 [88.6, 93.4] | 98.5 [96.9, 99.8] | 98.6 [98.1, 99.0] | 88.4 [85.4, 91.0] | 99.4 [98.6, 100.0] | 88.0 [84.8, 91.0] | 94.5 [92.2, 96.5] | 13.3 [11.5, 15.1] | 0.4 [0.1, 0.8] | 91.7 [87.3, 96.2] | not deployed | not deployed | not deployed |
-| Final B (model + pre-checks v2; pre-diagnosis) | 4B | 500 | 100.0 [100.0, 100.0] | 90.8 [88.2, 93.2] | 98.1 [96.2, 99.6] | 98.7 [98.2, 99.1] | 88.8 [86.0, 91.4] | 99.6 [99.0, 100.0] | 88.9 [85.8, 91.8] | 94.7 [92.3, 96.7] | 14.2 [12.4, 15.9] | 0.4 [0.1, 0.8] | 91.7 [87.3, 96.2] | not deployed | not deployed | not deployed |
-| B-run2 halfway (reader v3 + 25% blank blocks; after diagnosis) | 4B | 500 | 100.0 [100.0, 100.0] | 94.6 [92.6, 96.6] | 97.7 [95.7, 99.3] | 99.2 [98.8, 99.6] | 91.4 [88.8, 93.6] | 100.0 [100.0, 100.0] | 90.5 [87.4, 93.2] | 95.4 [93.6, 97.2] | 16.4 [14.6, 18.4] | 0.4 [0.1, 0.8] | 91.7 [87.5, 96.2] | not deployed | not deployed | not deployed |
-| B-run2 final (shipped; after diagnosis) | 4B | 500 | 100.0 [100.0, 100.0] | 94.6 [92.6, 96.6] | 98.1 [96.2, 99.6] | 99.3 [98.8, 99.7] | 91.0 [88.2, 93.4] | 100.0 [100.0, 100.0] | 91.1 [88.3, 93.7] | 94.7 [92.6, 96.6] | 17.3 [15.5, 19.3] | 0.4 [0.1, 0.8] | 91.7 [87.5, 96.2] | 24,269 on L4 (H100: 3,296) | 29,087 on L4 (H100: 3,849) | $5.36 on L4 (H100: $3.59) |
-| **B-v3 (after diagnosis): pre-checker reader v3 + retrain** (PENDING) | 4B | 500 | pending | pending | pending | pending | pending | pending | pending | pending | pending | pending | pending | pending | pending | pending |
+| B: model + pre-checker v2 (before diagnosis) | 4B | 500 | 100.0 [100.0, 100.0] | 90.8 [88.2, 93.2] | 98.1 [96.2, 99.6] | 98.7 [98.2, 99.1] | 88.8 [86.0, 91.4] | 99.6 [99.0, 100.0] | 88.9 [85.8, 91.8] | 94.7 [92.3, 96.7] | 14.2 [12.4, 15.9] | 0.4 [0.1, 0.8] | 91.7 [87.3, 96.2] | not deployed | not deployed | not deployed |
+| B2 halfway (pre-checker reader v3 + 25% blank blocks) | 4B | 500 | 100.0 [100.0, 100.0] | 94.6 [92.6, 96.6] | 97.7 [95.7, 99.3] | 99.2 [98.8, 99.6] | 91.4 [88.8, 93.6] | 100.0 [100.0, 100.0] | 90.5 [87.4, 93.2] | 95.4 [93.6, 97.2] | 16.4 [14.6, 18.4] | 0.4 [0.1, 0.8] | 91.7 [87.5, 96.2] | not deployed | not deployed | not deployed |
+| B2: shipped model (pre-checker reader v3, after diagnosis) | 4B | 500 | 100.0 [100.0, 100.0] | 94.6 [92.6, 96.6] | 98.1 [96.2, 99.6] | 99.3 [98.8, 99.7] | 91.0 [88.2, 93.4] | 100.0 [100.0, 100.0] | 91.1 [88.3, 93.7] | 94.7 [92.6, 96.6] | 17.3 [15.5, 19.3] | 0.4 [0.1, 0.8] | 91.7 [87.5, 96.2] | 24,269 on L4 (H100: 3,296) | 29,087 on L4 (H100: 3,849) | $5.36 on L4 (H100: $3.59) |
 
 Per split (the same runs, scores restricted to each split's cases):
 
@@ -93,12 +88,12 @@ Per split (the same runs, scores restricted to each split's cases):
 | Qwen3.5-2B (best prompt) | 300: 38.0 / 38.3 / 29.7 | 50: 32.0 / 24.0 / 23.5 | 50: 38.0 / 28.0 / 39.7 | 100: 48.0 / 40.0 / 25.5 |
 | Qwen3.5-4B (zero-shot) | 300: 58.7 / 36.0 / 39.1 | 50: 68.0 / 34.0 / 35.3 | 50: 58.0 / 38.0 / 35.6 | 100: 61.0 / 30.0 / 40.0 |
 | Qwen3.5-4B (best prompt) | 300: 60.0 / 50.7 / 36.3 | 50: 70.0 / 46.0 / 41.2 | 50: 60.0 / 54.0 / 39.7 | 100: 61.0 / 56.0 / 36.4 |
-| A halfway (adapter + twins distillation) | 300: 86.7 / 85.0 / 83.9 | 50: 88.0 / 88.0 / 85.3 | 50: 86.0 / 82.0 / 84.9 | 100: 94.0 / 89.0 / 89.1 |
-| Final A (model alone) | 300: 88.3 / 86.3 / 84.9 | 50: 84.0 / 82.0 / 85.3 | 50: 82.0 / 84.0 / 83.6 | 100: 94.0 / 88.0 / 87.3 |
+| A halfway (adapter + twins distillation, no pre-checks) | 300: 86.7 / 85.0 / 83.9 | 50: 88.0 / 88.0 / 85.3 | 50: 86.0 / 82.0 / 84.9 | 100: 94.0 / 89.0 / 89.1 |
+| A: model alone | 300: 88.3 / 86.3 / 84.9 | 50: 84.0 / 82.0 / 85.3 | 50: 82.0 / 84.0 / 83.6 | 100: 94.0 / 88.0 / 87.3 |
 | B halfway (+ pre-checks v2) | 300: 93.0 / 90.3 / 90.8 | 50: 90.0 / 86.0 / 86.8 | 50: 88.0 / 86.0 / 86.3 | 100: 88.0 / 85.0 / 80.0 |
-| Final B (model + pre-checks v2; pre-diagnosis) | 300: 93.0 / 90.7 / 91.8 | 50: 90.0 / 86.0 / 88.2 | 50: 88.0 / 86.0 / 86.3 | 100: 86.0 / 86.0 / 80.9 |
-| B-run2 halfway (reader v3 + 25% blank blocks; after diagnosis) | 300: 95.7 / 92.7 / 92.3 | 50: 94.0 / 88.0 / 89.7 | 50: 92.0 / 86.0 / 84.9 | 100: 93.0 / 92.0 / 88.2 |
-| B-run2 final (shipped; after diagnosis) | 300: 96.0 / 93.7 / 93.6 | 50: 94.0 / 88.0 / 89.7 | 50: 92.0 / 84.0 / 84.9 | 100: 92.0 / 88.0 / 87.3 |
+| B: model + pre-checker v2 (before diagnosis) | 300: 93.0 / 90.7 / 91.8 | 50: 90.0 / 86.0 / 88.2 | 50: 88.0 / 86.0 / 86.3 | 100: 86.0 / 86.0 / 80.9 |
+| B2 halfway (pre-checker reader v3 + 25% blank blocks) | 300: 95.7 / 92.7 / 92.3 | 50: 94.0 / 88.0 / 89.7 | 50: 92.0 / 86.0 / 84.9 | 100: 93.0 / 92.0 / 88.2 |
+| B2: shipped model (pre-checker reader v3, after diagnosis) | 300: 96.0 / 93.7 / 93.6 | 50: 94.0 / 88.0 / 89.7 | 50: 92.0 / 84.0 / 84.9 | 100: 92.0 / 88.0 / 87.3 |
 
 Per identity field, adversarial subsets, counts:
 
@@ -116,26 +111,25 @@ Per identity field, adversarial subsets, counts:
 | Qwen3.5-2B (best prompt) | 69.2 | 96.8 | 92.6 | 96.8 | 93.6 | 87.2 | 23.3 (46) | 32.6 (46) | 29.9 | 581 | 28 | 3153 | 1894 | 0 |
 | Qwen3.5-4B (zero-shot) | 71.0 | 79.2 | 97.6 | 95.6 | 91.8 | 85.4 | 51.2 (46) | 76.1 (46) | 62.1 | 581 | 208 | 2767 | 1626 | 0 |
 | Qwen3.5-4B (best prompt) | 73.0 | 68.4 | 95.8 | 88.0 | 91.8 | 91.2 | 95.3 (46) | 97.8 (46) | 95.4 | 581 | 0 | 3314 | 1989 | 0 |
-| A halfway (adapter + twins distillation) | 94.4 | 99.0 | 100.0 | 99.0 | 98.0 | 97.8 | 88.4 (46) | 97.8 (46) | 92.0 | 581 | 15 | 3090 | 1847 | 0 |
-| Final A (model alone) | 95.0 | 99.0 | 100.0 | 99.0 | 97.8 | 97.4 | 90.7 (46) | 97.8 (46) | 93.1 | 581 | 13 | 3095 | 1850 | 0 |
+| A halfway (adapter + twins distillation, no pre-checks) | 94.4 | 99.0 | 100.0 | 99.0 | 98.0 | 97.8 | 88.4 (46) | 97.8 (46) | 92.0 | 581 | 15 | 3090 | 1847 | 0 |
+| A: model alone | 95.0 | 99.0 | 100.0 | 99.0 | 97.8 | 97.4 | 90.7 (46) | 97.8 (46) | 93.1 | 581 | 13 | 3095 | 1850 | 0 |
 | B halfway (+ pre-checks v2) | 95.0 | 98.6 | 99.4 | 99.0 | 98.8 | 97.0 | 88.4 (46) | 95.7 (46) | 92.0 | 581 | 2 | 3087 | 1849 | 0 |
-| Final B (model + pre-checks v2; pre-diagnosis) | 94.6 | 98.6 | 99.4 | 99.2 | 99.2 | 97.0 | 88.4 (46) | 95.7 (46) | 92.0 | 581 | 2 | 3080 | 1847 | 0 |
-| B-run2 halfway (reader v3 + 25% blank blocks; after diagnosis) | 97.8 | 98.8 | 99.6 | 99.4 | 99.6 | 98.6 | 86.0 (46) | 97.8 (46) | 92.0 | 581 | 5 | 3089 | 1849 | 0 |
-| B-run2 final (shipped; after diagnosis) | 97.8 | 99.0 | 99.6 | 99.4 | 99.6 | 98.8 | 86.0 (46) | 97.8 (46) | 92.0 | 581 | 3 | 3091 | 1851 | 0 |
+| B: model + pre-checker v2 (before diagnosis) | 94.6 | 98.6 | 99.4 | 99.2 | 99.2 | 97.0 | 88.4 (46) | 95.7 (46) | 92.0 | 581 | 2 | 3080 | 1847 | 0 |
+| B2 halfway (pre-checker reader v3 + 25% blank blocks) | 97.8 | 98.8 | 99.6 | 99.4 | 99.6 | 98.6 | 86.0 (46) | 97.8 (46) | 92.0 | 581 | 5 | 3089 | 1849 | 0 |
+| B2: shipped model (pre-checker reader v3, after diagnosis) | 97.8 | 99.0 | 99.6 | 99.4 | 99.6 | 98.8 | 86.0 (46) | 97.8 (46) | 92.0 | 581 | 3 | 3091 | 1851 | 0 |
 
 ### eval_hard (150 stress cases, frozen separately)
 
-| Model | Params | Cases | Valid % | Decision acc % | Screening macro-F1 % | Field acc % (mean) | Risk exact % | Risk ±1 % | Actions recall % | Actions precision % | Unsupported claims, LLM judge % (eval_id subset) | Unsupported refs, programmatic % | Adversarial escalation % | p50 ms | p95 ms | $ / 1k cases |
+| Model | Params | Cases | Valid % | Decision acc % | Screening macro-F1 % | Field acc % (mean) | Risk exact % | Risk ±1 % | Actions recall % | Actions precision % | Unsupported claims, LLM judge % (judged sentences) | Unsupported refs, programmatic % | Adversarial escalation % | p50 ms | p95 ms | $ / 1k cases |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | GPT-6 Astra (best prompt) | frontier (undisclosed) | 150 | 100.0 [100.0, 100.0] | 99.3 [98.0, 100.0] | 100.0 [100.0, 100.0] | 99.9 [99.6, 100.0] | 100.0 [100.0, 100.0] | 100.0 [100.0, 100.0] | 100.0 [100.0, 100.0] | 99.6 [98.7, 100.0] | n/a (not judged) | 0.0 [0.0, 0.0] | 100.0 [100.0, 100.0] | 12,180 | 14,930 | $177.95 |
 | Claude Opus 5.5 (best prompt) | frontier (undisclosed) | 150 | 100.0 [100.0, 100.0] | 98.7 [96.7, 100.0] | 100.0 [100.0, 100.0] | 99.7 [99.3, 100.0] | 98.7 [96.7, 100.0] | 100.0 [100.0, 100.0] | 100.0 [100.0, 100.0] | 97.7 [95.2, 99.6] | n/a (not judged) | 0.0 [0.0, 0.0] | 100.0 [100.0, 100.0] | 12,069 | 14,896 | $118.57 |
-| A halfway (adapter + twins distillation) | 4B | 150 | 100.0 [100.0, 100.0] | 86.0 [80.0, 91.3] | 95.9 [91.9, 99.0] | 98.4 [97.5, 99.2] | 82.7 [76.0, 88.0] | 99.3 [98.0, 100.0] | 81.9 [76.0, 87.8] | 90.8 [86.0, 95.2] | n/a (not judged) | 1.0 [0.3, 1.9] | 86.4 [80.0, 93.8] | not deployed | not deployed | not deployed |
-| Final A (model alone) | 4B | 150 | 100.0 [100.0, 100.0] | 85.3 [80.0, 91.3] | 96.0 [92.1, 99.1] | 98.3 [97.3, 99.1] | 82.7 [76.7, 88.0] | 100.0 [100.0, 100.0] | 81.5 [75.3, 87.5] | 89.6 [84.4, 94.2] | n/a (not judged) | 1.6 [0.6, 2.8] | 86.4 [80.0, 93.8] | not deployed | not deployed | not deployed |
+| A halfway (adapter + twins distillation, no pre-checks) | 4B | 150 | 100.0 [100.0, 100.0] | 86.0 [80.0, 91.3] | 95.9 [91.9, 99.0] | 98.4 [97.5, 99.2] | 82.7 [76.0, 88.0] | 99.3 [98.0, 100.0] | 81.9 [76.0, 87.8] | 90.8 [86.0, 95.2] | n/a (not judged) | 1.0 [0.3, 1.9] | 86.4 [80.0, 93.8] | not deployed | not deployed | not deployed |
+| A: model alone | 4B | 150 | 100.0 [100.0, 100.0] | 85.3 [80.0, 91.3] | 96.0 [92.1, 99.1] | 98.3 [97.3, 99.1] | 82.7 [76.7, 88.0] | 100.0 [100.0, 100.0] | 81.5 [75.3, 87.5] | 89.6 [84.4, 94.2] | n/a (not judged) | 1.6 [0.6, 2.8] | 86.4 [80.0, 93.8] | not deployed | not deployed | not deployed |
 | B halfway (+ pre-checks v2) | 4B | 150 | 100.0 [100.0, 100.0] | 92.7 [88.0, 96.7] | 97.7 [94.3, 100.0] | 99.2 [98.4, 99.9] | 84.7 [78.7, 90.7] | 100.0 [100.0, 100.0] | 83.1 [77.2, 88.5] | 95.5 [91.4, 98.6] | n/a (not judged) | 0.5 [0.0, 1.3] | 91.5 [86.5, 97.3] | not deployed | not deployed | not deployed |
-| Final B (model + pre-checks v2; pre-diagnosis) | 4B | 150 | 100.0 [100.0, 100.0] | 93.3 [89.3, 97.3] | 98.4 [95.2, 99.9] | 99.2 [98.4, 99.9] | 86.0 [80.7, 91.3] | 100.0 [100.0, 100.0] | 83.5 [77.7, 88.8] | 96.8 [93.7, 99.1] | n/a (not judged) | 0.6 [0.1, 1.3] | 89.8 [84.2, 96.9] | not deployed | not deployed | not deployed |
-| B-run2 halfway (reader v3 + 25% blank blocks; after diagnosis) | 4B | 150 | 100.0 [100.0, 100.0] | 90.0 [84.7, 94.7] | 98.5 [96.8, 99.8] | 99.2 [98.4, 99.9] | 84.0 [78.0, 90.0] | 100.0 [100.0, 100.0] | 84.3 [78.9, 89.7] | 96.0 [93.0, 98.6] | n/a (not judged) | 1.0 [0.3, 2.0] | 89.8 [84.2, 96.6] | not deployed | not deployed | not deployed |
-| B-run2 final (shipped; after diagnosis) | 4B | 150 | 100.0 [100.0, 100.0] | 92.7 [88.7, 96.7] | 98.7 [96.9, 99.9] | 99.5 [98.7, 100.0] | 85.3 [79.3, 90.7] | 100.0 [100.0, 100.0] | 84.6 [79.1, 90.2] | 96.8 [94.1, 99.1] | n/a (not judged) | 0.8 [0.2, 1.7] | 89.8 [84.2, 96.6] | not deployed | not deployed | not deployed |
-| **B-v3 (after diagnosis)** (PENDING) | 4B | 150 | pending | pending | pending | pending | pending | pending | pending | pending | pending | pending | pending | pending | pending | pending |
+| B: model + pre-checker v2 (before diagnosis) | 4B | 150 | 100.0 [100.0, 100.0] | 93.3 [89.3, 97.3] | 98.4 [95.2, 99.9] | 99.2 [98.4, 99.9] | 86.0 [80.7, 91.3] | 100.0 [100.0, 100.0] | 83.5 [77.7, 88.8] | 96.8 [93.7, 99.1] | n/a (not judged) | 0.6 [0.1, 1.3] | 89.8 [84.2, 96.9] | not deployed | not deployed | not deployed |
+| B2 halfway (pre-checker reader v3 + 25% blank blocks) | 4B | 150 | 100.0 [100.0, 100.0] | 90.0 [84.7, 94.7] | 98.5 [96.8, 99.8] | 99.2 [98.4, 99.9] | 84.0 [78.0, 90.0] | 100.0 [100.0, 100.0] | 84.3 [78.9, 89.7] | 96.0 [93.0, 98.6] | n/a (not judged) | 1.0 [0.3, 2.0] | 89.8 [84.2, 96.6] | not deployed | not deployed | not deployed |
+| B2: shipped model (pre-checker reader v3, after diagnosis) | 4B | 150 | 100.0 [100.0, 100.0] | 92.7 [88.7, 96.7] | 98.7 [96.9, 99.9] | 99.5 [98.7, 100.0] | 85.3 [79.3, 90.7] | 100.0 [100.0, 100.0] | 84.6 [79.1, 90.2] | 96.8 [94.1, 99.1] | n/a (not judged) | 0.8 [0.2, 1.7] | 89.8 [84.2, 96.6] | not deployed | not deployed | not deployed |
 
 Per identity field, adversarial subsets, counts:
 
@@ -143,16 +137,16 @@ Per identity field, adversarial subsets, counts:
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | GPT-6 Astra (best prompt) | 99.3 | 100.0 | 100.0 | 100.0 | 100.0 | 99.3 | 100.0 (51) | 100.0 (19) | 100.0 | 193 | 0 | 973 | 0 | 0 |
 | Claude Opus 5.5 (best prompt) | 98.7 | 100.0 | 100.0 | 100.0 | 100.0 | 98.7 | 100.0 (51) | 100.0 (19) | 100.0 | 193 | 0 | 971 | 0 | 0 |
-| A halfway (adapter + twins distillation) | 92.7 | 97.3 | 100.0 | 98.0 | 97.3 | 99.3 | 83.0 (51) | 100.0 (19) | 85.7 | 193 | 11 | 963 | 0 | 0 |
-| Final A (model alone) | 91.3 | 97.3 | 100.0 | 98.0 | 96.7 | 99.3 | 83.0 (51) | 100.0 (19) | 85.7 | 193 | 13 | 964 | 0 | 0 |
+| A halfway (adapter + twins distillation, no pre-checks) | 92.7 | 97.3 | 100.0 | 98.0 | 97.3 | 99.3 | 83.0 (51) | 100.0 (19) | 85.7 | 193 | 11 | 963 | 0 | 0 |
+| A: model alone | 91.3 | 97.3 | 100.0 | 98.0 | 96.7 | 99.3 | 83.0 (51) | 100.0 (19) | 85.7 | 193 | 13 | 964 | 0 | 0 |
 | B halfway (+ pre-checks v2) | 97.3 | 97.3 | 99.3 | 100.0 | 100.0 | 99.3 | 89.4 (51) | 100.0 (19) | 92.1 | 193 | 3 | 963 | 0 | 0 |
-| Final B (model + pre-checks v2; pre-diagnosis) | 97.3 | 97.3 | 99.3 | 100.0 | 100.0 | 99.3 | 87.2 (51) | 100.0 (19) | 90.5 | 193 | 4 | 964 | 0 | 0 |
-| B-run2 halfway (reader v3 + 25% blank blocks; after diagnosis) | 96.7 | 96.7 | 100.0 | 100.0 | 100.0 | 99.3 | 87.2 (51) | 100.0 (19) | 90.5 | 193 | 6 | 964 | 0 | 0 |
-| B-run2 final (shipped; after diagnosis) | 98.0 | 98.0 | 100.0 | 100.0 | 100.0 | 99.3 | 87.2 (51) | 100.0 (19) | 90.5 | 193 | 5 | 966 | 0 | 0 |
+| B: model + pre-checker v2 (before diagnosis) | 97.3 | 97.3 | 99.3 | 100.0 | 100.0 | 99.3 | 87.2 (51) | 100.0 (19) | 90.5 | 193 | 4 | 964 | 0 | 0 |
+| B2 halfway (pre-checker reader v3 + 25% blank blocks) | 96.7 | 96.7 | 100.0 | 100.0 | 100.0 | 99.3 | 87.2 (51) | 100.0 (19) | 90.5 | 193 | 6 | 964 | 0 | 0 |
+| B2: shipped model (pre-checker reader v3, after diagnosis) | 98.0 | 98.0 | 100.0 | 100.0 | 100.0 | 99.3 | 87.2 (51) | 100.0 (19) | 90.5 | 193 | 5 | 966 | 0 | 0 |
 
 ### dev (150; model selection and ablations, never eval)
 
-| Model | Params | Cases | Valid % | Decision acc % | Screening macro-F1 % | Field acc % (mean) | Risk exact % | Risk ±1 % | Actions recall % | Actions precision % | Unsupported claims, LLM judge % (eval_id subset) | Unsupported refs, programmatic % | Adversarial escalation % | p50 ms | p95 ms | $ / 1k cases |
+| Model | Params | Cases | Valid % | Decision acc % | Screening macro-F1 % | Field acc % (mean) | Risk exact % | Risk ±1 % | Actions recall % | Actions precision % | Unsupported claims, LLM judge % (judged sentences) | Unsupported refs, programmatic % | Adversarial escalation % | p50 ms | p95 ms | $ / 1k cases |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | gold SFT 0.8B | 0.8B | 150 | 100.0 [100.0, 100.0] | 84.0 [78.7, 89.3] | 100.0 [100.0, 100.0] | 97.6 [96.5, 98.5] | 84.7 [78.7, 90.0] | 99.3 [98.0, 100.0] | 79.5 [72.4, 86.4] | 93.8 [89.2, 97.4] | n/a (not judged) | 0.0 [0.0, 0.0] | 88.5 [78.6, 100.0] | not deployed | not deployed | not deployed |
 | gold SFT 0.8B + twins | 0.8B | 150 | 100.0 [100.0, 100.0] | 87.3 [82.0, 92.7] | 100.0 [100.0, 100.0] | 98.1 [97.2, 99.1] | 84.7 [79.3, 90.0] | 98.7 [96.7, 100.0] | 83.7 [77.8, 89.6] | 94.6 [90.4, 98.1] | n/a (not judged) | 0.0 [0.0, 0.0] | 100.0 [100.0, 100.0] | not deployed | not deployed | not deployed |
@@ -162,12 +156,12 @@ Per identity field, adversarial subsets, counts:
 | distill 4B + rejection | 4B | 150 | 100.0 [100.0, 100.0] | 91.3 [86.7, 95.3] | 97.2 [90.3, 100.0] | 98.1 [97.1, 99.1] | 90.7 [85.3, 95.3] | 98.7 [96.7, 100.0] | 84.2 [77.0, 90.5] | 98.2 [95.7, 100.0] | n/a (not judged) | 0.0 [0.0, 0.0] | 100.0 [100.0, 100.0] | not deployed | not deployed | not deployed |
 | distill 4B + arbitration | 4B | 150 | 100.0 [100.0, 100.0] | 90.0 [85.3, 94.0] | 100.0 [100.0, 100.0] | 98.1 [97.1, 99.1] | 89.3 [84.7, 94.0] | 98.7 [96.7, 100.0] | 86.3 [79.8, 92.0] | 95.3 [91.5, 98.4] | n/a (not judged) | 0.0 [0.0, 0.0] | 100.0 [100.0, 100.0] | not deployed | not deployed | not deployed |
 | distill 4B + Counterfactual Twins | 4B | 150 | 100.0 [100.0, 100.0] | 90.7 [86.0, 95.3] | 100.0 [100.0, 100.0] | 98.8 [97.9, 99.6] | 90.7 [86.0, 95.3] | 98.7 [96.7, 100.0] | 90.5 [84.8, 95.8] | 95.6 [92.3, 98.3] | n/a (not judged) | 0.0 [0.0, 0.0] | 100.0 [100.0, 100.0] | not deployed | not deployed | not deployed |
-| A halfway (adapter + twins distillation) | 4B | 150 | 100.0 [100.0, 100.0] | 91.3 [86.7, 95.3] | 100.0 [100.0, 100.0] | 98.7 [97.7, 99.5] | 90.7 [86.0, 95.3] | 98.7 [96.7, 100.0] | 90.5 [84.5, 95.7] | 94.5 [91.2, 97.7] | n/a (not judged) | 0.0 [0.0, 0.0] | 100.0 [100.0, 100.0] | not deployed | not deployed | not deployed |
-| Final A (model alone) | 4B | 150 | 100.0 [100.0, 100.0] | 93.3 [89.3, 97.3] | 100.0 [100.0, 100.0] | 98.7 [97.7, 99.5] | 93.3 [88.7, 97.3] | 98.7 [96.7, 100.0] | 91.1 [85.2, 96.1] | 96.1 [93.2, 98.9] | n/a (not judged) | 0.0 [0.0, 0.0] | 100.0 [100.0, 100.0] | not deployed | not deployed | not deployed |
+| A halfway (adapter + twins distillation, no pre-checks) | 4B | 150 | 100.0 [100.0, 100.0] | 91.3 [86.7, 95.3] | 100.0 [100.0, 100.0] | 98.7 [97.7, 99.5] | 90.7 [86.0, 95.3] | 98.7 [96.7, 100.0] | 90.5 [84.5, 95.7] | 94.5 [91.2, 97.7] | n/a (not judged) | 0.0 [0.0, 0.0] | 100.0 [100.0, 100.0] | not deployed | not deployed | not deployed |
+| A: model alone | 4B | 150 | 100.0 [100.0, 100.0] | 93.3 [89.3, 97.3] | 100.0 [100.0, 100.0] | 98.7 [97.7, 99.5] | 93.3 [88.7, 97.3] | 98.7 [96.7, 100.0] | 91.1 [85.2, 96.1] | 96.1 [93.2, 98.9] | n/a (not judged) | 0.0 [0.0, 0.0] | 100.0 [100.0, 100.0] | not deployed | not deployed | not deployed |
 | B halfway (+ pre-checks v2) | 4B | 150 | 100.0 [100.0, 100.0] | 97.3 [94.7, 99.3] | 100.0 [100.0, 100.0] | 99.2 [98.4, 99.7] | 94.7 [90.7, 98.0] | 100.0 [100.0, 100.0] | 93.7 [88.8, 97.5] | 97.8 [94.3, 100.0] | n/a (not judged) | 0.0 [0.0, 0.0] | 100.0 [100.0, 100.0] | not deployed | not deployed | not deployed |
-| Final B (model + pre-checks v2; pre-diagnosis) | 4B | 150 | 100.0 [100.0, 100.0] | 98.0 [95.3, 100.0] | 100.0 [100.0, 100.0] | 99.3 [98.5, 99.9] | 96.0 [92.7, 98.7] | 100.0 [100.0, 100.0] | 94.7 [90.2, 98.3] | 97.8 [94.5, 100.0] | n/a (not judged) | 0.0 [0.0, 0.0] | 100.0 [100.0, 100.0] | not deployed | not deployed | not deployed |
-| B-run2 halfway (reader v3 + 25% blank blocks; after diagnosis) | 4B | 150 | 100.0 [100.0, 100.0] | 96.7 [93.3, 99.3] | 100.0 [100.0, 100.0] | 99.2 [98.4, 99.9] | 94.7 [90.7, 98.0] | 100.0 [100.0, 100.0] | 94.7 [89.8, 98.4] | 100.0 [100.0, 100.0] | n/a (not judged) | 0.3 [0.0, 1.0] | 100.0 [100.0, 100.0] | not deployed | not deployed | not deployed |
-| B-run2 final (shipped; after diagnosis) | 4B | 150 | 100.0 [100.0, 100.0] | 98.0 [95.3, 100.0] | 100.0 [100.0, 100.0] | 99.5 [98.7, 100.0] | 96.0 [92.0, 98.7] | 100.0 [100.0, 100.0] | 95.8 [91.3, 99.4] | 99.5 [98.1, 100.0] | n/a (not judged) | 0.3 [0.0, 1.0] | 100.0 [100.0, 100.0] | not deployed | not deployed | not deployed |
+| B: model + pre-checker v2 (before diagnosis) | 4B | 150 | 100.0 [100.0, 100.0] | 98.0 [95.3, 100.0] | 100.0 [100.0, 100.0] | 99.3 [98.5, 99.9] | 96.0 [92.7, 98.7] | 100.0 [100.0, 100.0] | 94.7 [90.2, 98.3] | 97.8 [94.5, 100.0] | n/a (not judged) | 0.0 [0.0, 0.0] | 100.0 [100.0, 100.0] | not deployed | not deployed | not deployed |
+| B2 halfway (pre-checker reader v3 + 25% blank blocks) | 4B | 150 | 100.0 [100.0, 100.0] | 96.7 [93.3, 99.3] | 100.0 [100.0, 100.0] | 99.2 [98.4, 99.9] | 94.7 [90.7, 98.0] | 100.0 [100.0, 100.0] | 94.7 [89.8, 98.4] | 100.0 [100.0, 100.0] | n/a (not judged) | 0.3 [0.0, 1.0] | 100.0 [100.0, 100.0] | not deployed | not deployed | not deployed |
+| B2: shipped model (pre-checker reader v3, after diagnosis) | 4B | 150 | 100.0 [100.0, 100.0] | 98.0 [95.3, 100.0] | 100.0 [100.0, 100.0] | 99.5 [98.7, 100.0] | 96.0 [92.0, 98.7] | 100.0 [100.0, 100.0] | 95.8 [91.3, 99.4] | 99.5 [98.1, 100.0] | n/a (not judged) | 0.3 [0.0, 1.0] | 100.0 [100.0, 100.0] | not deployed | not deployed | not deployed |
 
 Per identity field, adversarial subsets, counts:
 
@@ -181,12 +175,12 @@ Per identity field, adversarial subsets, counts:
 | distill 4B + rejection | 92.0 | 98.0 | 99.3 | 98.0 | 99.3 | 96.0 | 100.0 (16) | 100.0 (11) | 96.3 | 166 | 0 | 928 | 0 | 0 |
 | distill 4B + arbitration | 92.0 | 98.0 | 98.0 | 98.0 | 99.3 | 97.3 | 100.0 (16) | 100.0 (11) | 96.3 | 166 | 0 | 928 | 0 | 0 |
 | distill 4B + Counterfactual Twins | 94.7 | 99.3 | 100.0 | 98.0 | 99.3 | 97.3 | 100.0 (16) | 100.0 (11) | 96.3 | 166 | 0 | 927 | 0 | 0 |
-| A halfway (adapter + twins distillation) | 94.7 | 98.0 | 99.3 | 98.0 | 99.3 | 98.7 | 100.0 (16) | 100.0 (11) | 96.3 | 166 | 0 | 926 | 0 | 0 |
-| Final A (model alone) | 94.7 | 98.0 | 99.3 | 98.0 | 99.3 | 98.7 | 100.0 (16) | 100.0 (11) | 96.3 | 166 | 0 | 928 | 0 | 0 |
+| A halfway (adapter + twins distillation, no pre-checks) | 94.7 | 98.0 | 99.3 | 98.0 | 99.3 | 98.7 | 100.0 (16) | 100.0 (11) | 96.3 | 166 | 0 | 926 | 0 | 0 |
+| A: model alone | 94.7 | 98.0 | 99.3 | 98.0 | 99.3 | 98.7 | 100.0 (16) | 100.0 (11) | 96.3 | 166 | 0 | 928 | 0 | 0 |
 | B halfway (+ pre-checks v2) | 97.3 | 99.3 | 98.7 | 100.0 | 100.0 | 98.0 | 100.0 (16) | 100.0 (11) | 100.0 | 166 | 0 | 927 | 0 | 0 |
-| Final B (model + pre-checks v2; pre-diagnosis) | 98.0 | 99.3 | 98.7 | 100.0 | 100.0 | 98.7 | 100.0 (16) | 100.0 (11) | 100.0 | 166 | 0 | 928 | 0 | 0 |
-| B-run2 halfway (reader v3 + 25% blank blocks; after diagnosis) | 96.7 | 98.7 | 99.3 | 100.0 | 100.0 | 98.0 | 100.0 (16) | 100.0 (11) | 100.0 | 166 | 0 | 928 | 0 | 0 |
-| B-run2 final (shipped; after diagnosis) | 98.0 | 99.3 | 99.3 | 100.0 | 100.0 | 98.7 | 100.0 (16) | 100.0 (11) | 100.0 | 166 | 0 | 928 | 0 | 0 |
+| B: model + pre-checker v2 (before diagnosis) | 98.0 | 99.3 | 98.7 | 100.0 | 100.0 | 98.7 | 100.0 (16) | 100.0 (11) | 100.0 | 166 | 0 | 928 | 0 | 0 |
+| B2 halfway (pre-checker reader v3 + 25% blank blocks) | 96.7 | 98.7 | 99.3 | 100.0 | 100.0 | 98.0 | 100.0 (16) | 100.0 (11) | 100.0 | 166 | 0 | 928 | 0 | 0 |
+| B2: shipped model (pre-checker reader v3, after diagnosis) | 98.0 | 99.3 | 99.3 | 100.0 | 100.0 | 98.7 | 100.0 (16) | 100.0 (11) | 100.0 | 166 | 0 | 928 | 0 | 0 |
 
 Unsupported claims, LLM judge (the brief's metric): share of narrative sentences from schema-valid outputs that a blind Claude Sonnet judge found not grounded in the packet and policy v1 (`step6_evaluation/judge_claims.py`, prompt v2; sentences of all runs pooled and shuffled per case, one call per packet); `n/a` where a run's sentences judge covers the `eval_id` cases only, so the column is each run's eval_id rate (sentences judged / not judged are in Table 1b); `n/a` = no judged sentences. Unsupported refs, programmatic: share of the same sentences whose `evidence_refs` / `hit_ids` are missing or do not resolve to the packet (checks that cited evidence exists, not that the sentence is true). Lower is better for both. Latency and cost are point estimates from the saved per-case measurements; a literal text in a cell (e.g. `pending (deploy)`) comes from the run's `display` override, used where the saved latency was measured under load.
 
@@ -205,26 +199,18 @@ Run notes:
 
 | Pipeline | Stage | Compared to | Paired cases | Δ Valid | Δ Decision | Δ Screening F1 | Δ Field acc | Δ Risk exact | Δ Actions recall | Δ Unsupported (judge) | Δ Unsupported refs | Δ Adv. escalation |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| B-run2: model + pre-checks v3 (after diagnosis) | + reader v3 + blank-block training (halfway) (B-run2 halfway (reader v3 + 25% blank blocks; after diagnosis)) | + pre-checks v2 (halfway) (B halfway (+ pre-checks v2)) | 500 | +0.0 [+0.0, +0.0] | +3.4 [+1.4, +5.6] | -0.8 [-3.1, +1.5] | +0.6 [+0.2, +1.1] | +3.0 [+0.8, +5.6] | +2.5 [+0.1, +4.9] | +3.1 [+1.4, +4.9] | -0.0 [-0.4, +0.4] | +0.0 [-2.1, +2.1] |
-| B-run2: model + pre-checks v3 (after diagnosis) | + post-train (B-run2 final) (B-run2 final (shipped; after diagnosis)) | + reader v3 + blank-block training (halfway) (B-run2 halfway (reader v3 + 25% blank blocks; after diagnosis)) | 500 | +0.0 [+0.0, +0.0] | +0.0 [-0.8, +0.8] | +0.4 [+0.0, +1.3] | +0.1 [-0.1, +0.2] | -0.4 [-2.0, +1.0] | +0.6 [-0.5, +1.7] | +0.8 [-0.3, +2.1] | -0.0 [-0.3, +0.3] | +0.0 [+0.0, +0.0] |
+| B2: model + pre-checks v3 (after diagnosis) | + reader v3 + blank-block training (halfway) (B2 halfway (pre-checker reader v3 + 25% blank blocks)) | + pre-checks v2 (halfway) (B halfway (+ pre-checks v2)) | 500 | +0.0 [+0.0, +0.0] | +3.4 [+1.4, +5.6] | -0.8 [-3.1, +1.5] | +0.6 [+0.2, +1.1] | +3.0 [+0.8, +5.6] | +2.5 [+0.1, +4.9] | +3.1 [+1.4, +4.9] | -0.0 [-0.4, +0.4] | +0.0 [-2.1, +2.1] |
+| B2: model + pre-checks v3 (after diagnosis) | + post-train (B2) (B2: shipped model (pre-checker reader v3, after diagnosis)) | + reader v3 + blank-block training (halfway) (B2 halfway (pre-checker reader v3 + 25% blank blocks)) | 500 | +0.0 [+0.0, +0.0] | +0.0 [-0.8, +0.8] | +0.4 [+0.0, +1.3] | +0.1 [-0.1, +0.2] | -0.4 [-2.0, +1.0] | +0.6 [-0.5, +1.7] | +0.8 [-0.3, +2.1] | -0.0 [-0.3, +0.3] | +0.0 [+0.0, +0.0] |
 | dev: plain 4B distillation (stage 3) | floor (Sol SFT) (distill 4B floor (Sol)) | gold-only SFT (control) (gold SFT 4B (gold-only control)) | 150 | +0.0 [+0.0, +0.0] | -0.7 [-5.3, +3.3] | +0.0 [+0.0, +0.0] | +0.7 [+0.0, +1.5] | -1.3 [-6.0, +3.3] | +3.2 [+0.0, +6.7] | n/a | +0.3 [+0.0, +1.0] | +0.0 [+0.0, +0.0] |
 | dev: plain 4B distillation (stage 3) | + rejection sampling (distill 4B + rejection) | floor (Sol SFT) (distill 4B floor (Sol)) | 150 | +0.0 [+0.0, +0.0] | +2.0 [-2.7, +6.0] | -2.8 [-9.7, +0.0] | -0.3 [-0.8, +0.3] | +2.7 [-2.7, +8.0] | -4.2 [-9.3, +0.0] | n/a | -0.3 [-1.0, +0.0] | +0.0 [+0.0, +0.0] |
 | dev: plain 4B distillation (stage 3) | + arbitration (distill 4B + arbitration) | + rejection sampling (distill 4B + rejection) | 150 | +0.0 [+0.0, +0.0] | -1.3 [-4.7, +1.3] | +2.8 [+0.0, +9.7] | +0.0 [-0.5, +0.5] | -1.3 [-5.3, +2.7] | +2.1 [-2.4, +7.5] | n/a | +0.0 [+0.0, +0.0] | +0.0 [+0.0, +0.0] |
 | dev: plain 4B distillation (stage 3) | + Counterfactual Twin Distillation (distill 4B + Counterfactual Twins) | + arbitration (distill 4B + arbitration) | 150 | +0.0 [+0.0, +0.0] | +0.7 [-4.7, +6.0] | +0.0 [+0.0, +0.0] | +0.7 [+0.0, +1.3] | +1.3 [-4.7, +7.3] | +4.2 [-0.5, +8.9] | n/a | +0.0 [+0.0, +0.0] | +0.0 [+0.0, +0.0] |
-| v1 A: model alone | + adapter + twins distillation (halfway) (A halfway (adapter + twins distillation)) | base Qwen3.5-4B, best prompt (Qwen3.5-4B (best prompt)) | 500 | +0.0 [+0.0, +0.0] | +27.0 [+22.0, +31.4] | +62.1 [+57.5, +66.8] | +11.7 [+10.3, +13.1] | +34.2 [+29.2, +39.4] | +47.8 [+42.9, +53.2] | -37.7 [-40.6, -35.0] | +0.4 [+0.0, +0.9] | -3.6 [-9.1, +2.0] |
-| v1 A: model alone | + post-train (Final A) (Final A (model alone)) | + adapter + twins distillation (halfway) (A halfway (adapter + twins distillation)) | 500 | +0.0 [+0.0, +0.0] | +0.2 [-1.4, +1.8] | +0.4 [-0.1, +1.5] | -0.1 [-0.3, +0.1] | +0.2 [-1.4, +1.8] | +0.2 [-1.4, +1.8] | -0.5 [-1.6, +0.7] | -0.1 [-0.4, +0.2] | +1.2 [+0.0, +2.2] |
-| v1 B: model + pre-checks | + pre-checks v2 (halfway) (B halfway (+ pre-checks v2)) | + adapter + twins distillation (halfway) (A halfway (adapter + twins distillation)) | 500 | +0.0 [+0.0, +0.0] | +3.0 [+0.2, +5.8] | +1.8 [-0.2, +3.9] | -0.2 [-0.7, +0.3] | +2.6 [-0.2, +5.4] | +3.0 [-0.6, +6.4] | -2.1 [-3.7, -0.4] | -0.1 [-0.6, +0.5] | -1.2 [-2.2, +0.0] |
-| v1 B: model + pre-checks | + post-train (Final B) (Final B (model + pre-checks v2; pre-diagnosis)) | + pre-checks v2 (halfway) (B halfway (+ pre-checks v2)) | 500 | +0.0 [+0.0, +0.0] | -0.4 [-1.6, +0.6] | -0.4 [-1.5, +0.0] | +0.1 [-0.1, +0.3] | +0.4 [-0.8, +1.6] | +0.9 [+0.0, +2.1] | +0.9 [+0.0, +1.7] | +0.0 [-0.3, +0.3] | +0.0 [+0.0, +0.0] |
-| v1 B: model + pre-checks | **B-v3 halfway (pre-checker reader v3)** (PENDING) | + pre-checks v2 (halfway) (B halfway) | pending | pending | pending | pending | pending | pending | pending | pending | pending | pending |
-| v1 B: model + pre-checks | **B-v3 final (+ post-train)** (PENDING) | B-v3 halfway | pending | pending | pending | pending | pending | pending | pending | pending | pending | pending |
+| v1 A: model alone | + adapter + twins distillation (halfway) (A halfway (adapter + twins distillation, no pre-checks)) | base Qwen3.5-4B, best prompt (Qwen3.5-4B (best prompt)) | 500 | +0.0 [+0.0, +0.0] | +27.0 [+22.0, +31.4] | +62.1 [+57.5, +66.8] | +11.7 [+10.3, +13.1] | +34.2 [+29.2, +39.4] | +47.8 [+42.9, +53.2] | -37.7 [-40.6, -35.0] | +0.4 [+0.0, +0.9] | -3.6 [-9.1, +2.0] |
+| v1 A: model alone | + post-train (Final A) (A: model alone) | + adapter + twins distillation (halfway) (A halfway (adapter + twins distillation, no pre-checks)) | 500 | +0.0 [+0.0, +0.0] | +0.2 [-1.4, +1.8] | +0.4 [-0.1, +1.5] | -0.1 [-0.3, +0.1] | +0.2 [-1.4, +1.8] | +0.2 [-1.4, +1.8] | -0.5 [-1.6, +0.7] | -0.1 [-0.4, +0.2] | +1.2 [+0.0, +2.2] |
+| v1 B: model + pre-checks | + pre-checks v2 (halfway) (B halfway (+ pre-checks v2)) | + adapter + twins distillation (halfway) (A halfway (adapter + twins distillation, no pre-checks)) | 500 | +0.0 [+0.0, +0.0] | +3.0 [+0.2, +5.8] | +1.8 [-0.2, +3.9] | -0.2 [-0.7, +0.3] | +2.6 [-0.2, +5.4] | +3.0 [-0.6, +6.4] | -2.1 [-3.7, -0.4] | -0.1 [-0.6, +0.5] | -1.2 [-2.2, +0.0] |
+| v1 B: model + pre-checks | + post-train (Final B) (B: model + pre-checker v2 (before diagnosis)) | + pre-checks v2 (halfway) (B halfway (+ pre-checks v2)) | 500 | +0.0 [+0.0, +0.0] | -0.4 [-1.6, +0.6] | -0.4 [-1.5, +0.0] | +0.1 [-0.1, +0.3] | +0.4 [-0.8, +1.6] | +0.9 [+0.0, +2.1] | +0.9 [+0.0, +1.7] | +0.0 [-0.3, +0.3] | +0.0 [+0.0, +0.0] |
 
 Deltas are percentage points, new stage minus the stage it is compared to, on the cases both share. For unsupported claims, negative is better.
-
-## Fresh eval_id v2 (generated Sun, untouched): B-v3 vs Argon
-
-**PENDING.** A fresh in-distribution set generated Sunday from a new seed range, frozen before any model saw it,
-scored once for B-v3 and Gemini 4 Argon (best prompt). Purpose: a check that B-v3's diagnosis-driven fixes
-(made after looking at frozen-v1 errors) did not overfit frozen v1. Numbers go here when the run exists.
 
 ## Decision confusion matrices
 
@@ -428,7 +414,7 @@ scored once for B-v3 and Gemini 4 Argon (best prompt). Purpose: a check that B-v
 | reject | 1 | 6 | 21 |
 | escalate | 10 | 8 | 146 |
 
-**A halfway (adapter + twins distillation)** (rows = expected, columns = predicted)
+**A halfway (adapter + twins distillation, no pre-checks)** (rows = expected, columns = predicted)
 
 | expected \ predicted | approve | reject | escalate |
 |---|---|---|---|
@@ -444,7 +430,7 @@ scored once for B-v3 and Gemini 4 Argon (best prompt). Purpose: a check that B-v
 | reject | 26 | 25 | 0 | 0 |
 | escalate | 167 | 125 | 2 | 2 |
 
-**B-run2 halfway (reader v3 + 25% blank blocks; after diagnosis)** (rows = expected, columns = predicted)
+**B2 halfway (pre-checker reader v3 + 25% blank blocks)** (rows = expected, columns = predicted)
 
 | expected \ predicted | approve | reject | escalate |
 |---|---|---|---|
@@ -460,7 +446,7 @@ scored once for B-v3 and Gemini 4 Argon (best prompt). Purpose: a check that B-v
 | reject | 29 | 8 | 14 |
 | escalate | 139 | 69 | 88 |
 
-**B-run2 final (shipped; after diagnosis)** (rows = expected, columns = predicted)
+**B2: shipped model (pre-checker reader v3, after diagnosis)** (rows = expected, columns = predicted)
 
 | expected \ predicted | approve | reject | escalate |
 |---|---|---|---|
@@ -476,7 +462,7 @@ scored once for B-v3 and Gemini 4 Argon (best prompt). Purpose: a check that B-v
 | reject | 5 | 15 | 31 |
 | escalate | 42 | 16 | 238 |
 
-**B-run2 halfway, served with reader v3.1** (rows = expected, columns = predicted)
+**B2 halfway, served with reader v3.1** (rows = expected, columns = predicted)
 
 | expected \ predicted | approve | reject | escalate |
 |---|---|---|---|
@@ -492,7 +478,7 @@ scored once for B-v3 and Gemini 4 Argon (best prompt). Purpose: a check that B-v
 | reject | 2 | 17 | 32 |
 | escalate | 13 | 17 | 266 |
 
-**A halfway (adapter + twins distillation)** (rows = expected, columns = predicted)
+**A halfway (adapter + twins distillation, no pre-checks)** (rows = expected, columns = predicted)
 
 | expected \ predicted | approve | reject | escalate |
 |---|---|---|---|
@@ -500,7 +486,7 @@ scored once for B-v3 and Gemini 4 Argon (best prompt). Purpose: a check that B-v
 | reject | 1 | 7 | 2 |
 | escalate | 8 | 3 | 88 |
 
-**A halfway (adapter + twins distillation)** (rows = expected, columns = predicted)
+**A halfway (adapter + twins distillation, no pre-checks)** (rows = expected, columns = predicted)
 
 | expected \ predicted | approve | reject | escalate |
 |---|---|---|---|
@@ -508,7 +494,7 @@ scored once for B-v3 and Gemini 4 Argon (best prompt). Purpose: a check that B-v
 | reject | 10 | 33 | 8 |
 | escalate | 24 | 10 | 262 |
 
-**B-run2 final, served with reader v3.1** (rows = expected, columns = predicted)
+**B2, served with reader v3.1 (swap test)** (rows = expected, columns = predicted)
 
 | expected \ predicted | approve | reject | escalate |
 |---|---|---|---|
@@ -516,7 +502,7 @@ scored once for B-v3 and Gemini 4 Argon (best prompt). Purpose: a check that B-v
 | reject | 0 | 28 | 0 |
 | escalate | 8 | 0 | 156 |
 
-**Final A (model alone)** (rows = expected, columns = predicted)
+**A: model alone** (rows = expected, columns = predicted)
 
 | expected \ predicted | approve | reject | escalate |
 |---|---|---|---|
@@ -524,7 +510,7 @@ scored once for B-v3 and Gemini 4 Argon (best prompt). Purpose: a check that B-v
 | reject | 1 | 7 | 2 |
 | escalate | 8 | 3 | 88 |
 
-**Final A (model alone)** (rows = expected, columns = predicted)
+**A: model alone** (rows = expected, columns = predicted)
 
 | expected \ predicted | approve | reject | escalate |
 |---|---|---|---|
@@ -548,7 +534,7 @@ scored once for B-v3 and Gemini 4 Argon (best prompt). Purpose: a check that B-v
 | reject | 3 | 44 | 4 |
 | escalate | 28 | 2 | 266 |
 
-**Final B (model + pre-checks v2; pre-diagnosis)** (rows = expected, columns = predicted)
+**B: model + pre-checker v2 (before diagnosis)** (rows = expected, columns = predicted)
 
 | expected \ predicted | approve | reject | escalate |
 |---|---|---|---|
@@ -556,7 +542,7 @@ scored once for B-v3 and Gemini 4 Argon (best prompt). Purpose: a check that B-v
 | reject | 0 | 10 | 0 |
 | escalate | 8 | 0 | 91 |
 
-**Final B (model + pre-checks v2; pre-diagnosis)** (rows = expected, columns = predicted)
+**B: model + pre-checker v2 (before diagnosis)** (rows = expected, columns = predicted)
 
 | expected \ predicted | approve | reject | escalate |
 |---|---|---|---|
@@ -564,7 +550,7 @@ scored once for B-v3 and Gemini 4 Argon (best prompt). Purpose: a check that B-v
 | reject | 2 | 45 | 4 |
 | escalate | 29 | 4 | 263 |
 
-**B-run2 halfway (reader v3 + 25% blank blocks; after diagnosis)** (rows = expected, columns = predicted)
+**B2 halfway (pre-checker reader v3 + 25% blank blocks)** (rows = expected, columns = predicted)
 
 | expected \ predicted | approve | reject | escalate |
 |---|---|---|---|
@@ -572,7 +558,7 @@ scored once for B-v3 and Gemini 4 Argon (best prompt). Purpose: a check that B-v
 | reject | 0 | 10 | 0 |
 | escalate | 9 | 0 | 90 |
 
-**B-run2 halfway (reader v3 + 25% blank blocks; after diagnosis)** (rows = expected, columns = predicted)
+**B2 halfway (pre-checker reader v3 + 25% blank blocks)** (rows = expected, columns = predicted)
 
 | expected \ predicted | approve | reject | escalate |
 |---|---|---|---|
@@ -580,7 +566,7 @@ scored once for B-v3 and Gemini 4 Argon (best prompt). Purpose: a check that B-v
 | reject | 1 | 49 | 1 |
 | escalate | 19 | 3 | 274 |
 
-**B-run2 final (shipped; after diagnosis)** (rows = expected, columns = predicted)
+**B2: shipped model (pre-checker reader v3, after diagnosis)** (rows = expected, columns = predicted)
 
 | expected \ predicted | approve | reject | escalate |
 |---|---|---|---|
@@ -588,7 +574,7 @@ scored once for B-v3 and Gemini 4 Argon (best prompt). Purpose: a check that B-v
 | reject | 0 | 10 | 0 |
 | escalate | 7 | 0 | 92 |
 
-**B-run2 final (shipped; after diagnosis)** (rows = expected, columns = predicted)
+**B2: shipped model (pre-checker reader v3, after diagnosis)** (rows = expected, columns = predicted)
 
 | expected \ predicted | approve | reject | escalate |
 |---|---|---|---|
@@ -596,7 +582,7 @@ scored once for B-v3 and Gemini 4 Argon (best prompt). Purpose: a check that B-v
 | reject | 1 | 49 | 1 |
 | escalate | 18 | 3 | 275 |
 
-**A halfway (adapter + twins distillation)** (rows = expected, columns = predicted)
+**A halfway (adapter + twins distillation, no pre-checks)** (rows = expected, columns = predicted)
 
 | expected \ predicted | approve | reject | escalate |
 |---|---|---|---|
@@ -604,7 +590,7 @@ scored once for B-v3 and Gemini 4 Argon (best prompt). Purpose: a check that B-v
 | reject | 2 | 13 | 2 |
 | escalate | 4 | 5 | 74 |
 
-**Final A (model alone)** (rows = expected, columns = predicted)
+**A: model alone** (rows = expected, columns = predicted)
 
 | expected \ predicted | approve | reject | escalate |
 |---|---|---|---|
@@ -620,7 +606,7 @@ scored once for B-v3 and Gemini 4 Argon (best prompt). Purpose: a check that B-v
 | reject | 0 | 17 | 0 |
 | escalate | 4 | 0 | 79 |
 
-**Final B (model + pre-checks v2; pre-diagnosis)** (rows = expected, columns = predicted)
+**B: model + pre-checker v2 (before diagnosis)** (rows = expected, columns = predicted)
 
 | expected \ predicted | approve | reject | escalate |
 |---|---|---|---|
@@ -628,7 +614,7 @@ scored once for B-v3 and Gemini 4 Argon (best prompt). Purpose: a check that B-v
 | reject | 0 | 17 | 0 |
 | escalate | 3 | 0 | 80 |
 
-**B-run2 halfway (reader v3 + 25% blank blocks; after diagnosis)** (rows = expected, columns = predicted)
+**B2 halfway (pre-checker reader v3 + 25% blank blocks)** (rows = expected, columns = predicted)
 
 | expected \ predicted | approve | reject | escalate |
 |---|---|---|---|
@@ -636,7 +622,7 @@ scored once for B-v3 and Gemini 4 Argon (best prompt). Purpose: a check that B-v
 | reject | 0 | 17 | 0 |
 | escalate | 5 | 0 | 78 |
 
-**B-run2 final (shipped; after diagnosis)** (rows = expected, columns = predicted)
+**B2: shipped model (pre-checker reader v3, after diagnosis)** (rows = expected, columns = predicted)
 
 | expected \ predicted | approve | reject | escalate |
 |---|---|---|---|

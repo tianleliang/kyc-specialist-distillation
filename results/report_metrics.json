@@ -849,7 +849,7 @@
     }
   },
   "final-A-s3__dev": {
-    "model": "A halfway (adapter + twins distillation)",
+    "model": "A halfway (adapter + twins distillation, no pre-checks)",
     "metrics": {
       "n_cases": 150,
       "schema_validity": 1.0,
@@ -954,7 +954,7 @@
     }
   },
   "final-A-s3__eval_hard": {
-    "model": "A halfway (adapter + twins distillation)",
+    "model": "A halfway (adapter + twins distillation, no pre-checks)",
     "metrics": {
       "n_cases": 150,
       "schema_validity": 1.0,
@@ -1059,7 +1059,7 @@
     }
   },
   "final-A-s3__eval_id_v2": {
-    "model": "A halfway (adapter + twins distillation)",
+    "model": "A halfway (adapter + twins distillation, no pre-checks)",
     "metrics": {
       "n_cases": 300,
       "schema_validity": 1.0,
@@ -1167,7 +1167,7 @@
     }
   },
   "final-A-s3__eval_v1": {
-    "model": "A halfway (adapter + twins distillation)",
+    "model": "A halfway (adapter + twins distillation, no pre-checks)",
     "metrics": {
       "n_cases": 500,
       "schema_validity": 1.0,
@@ -1275,7 +1275,7 @@
     }
   },
   "final-A-s4__dev": {
-    "model": "Final A (model alone)",
+    "model": "A: model alone",
     "metrics": {
       "n_cases": 150,
       "schema_validity": 1.0,
@@ -1380,7 +1380,7 @@
     }
   },
   "final-A-s4__eval_hard": {
-    "model": "Final A (model alone)",
+    "model": "A: model alone",
     "metrics": {
       "n_cases": 150,
       "schema_validity": 1.0,
@@ -1485,7 +1485,7 @@
     }
   },
   "final-A-s4__eval_v1": {
-    "model": "Final A (model alone)",
+    "model": "A: model alone",
     "metrics": {
       "n_cases": 500,
       "schema_validity": 1.0,
@@ -1911,7 +1911,7 @@
     }
   },
   "final-B-s4__dev": {
-    "model": "Final B (model + pre-checks v2; pre-diagnosis)",
+    "model": "B: model + pre-checker v2 (before diagnosis)",
     "metrics": {
       "n_cases": 150,
       "schema_validity": 1.0,
@@ -2016,7 +2016,7 @@
     }
   },
   "final-B-s4__eval_hard": {
-    "model": "Final B (model + pre-checks v2; pre-diagnosis)",
+    "model": "B: model + pre-checker v2 (before diagnosis)",
     "metrics": {
       "n_cases": 150,
       "schema_validity": 1.0,
@@ -2121,7 +2121,7 @@
     }
   },
   "final-B-s4__eval_v1": {
-    "model": "Final B (model + pre-checks v2; pre-diagnosis)",
+    "model": "B: model + pre-checker v2 (before diagnosis)",
     "metrics": {
       "n_cases": 500,
       "schema_validity": 1.0,
@@ -2229,7 +2229,7 @@
     }
   },
   "final-Brun2-s3-r31__eval_id_v2": {
-    "model": "B-run2 halfway, served with reader v3.1",
+    "model": "B2 halfway, served with reader v3.1",
     "metrics": {
       "n_cases": 300,
       "schema_validity": 1.0,
@@ -2337,7 +2337,7 @@
     }
   },
   "final-Brun2-s3__dev": {
-    "model": "B-run2 halfway (reader v3 + 25% blank blocks; after diagnosis)",
+    "model": "B2 halfway (pre-checker reader v3 + 25% blank blocks)",
     "metrics": {
       "n_cases": 150,
       "schema_validity": 1.0,
@@ -2442,7 +2442,7 @@
     }
   },
   "final-Brun2-s3__eval_hard": {
-    "model": "B-run2 halfway (reader v3 + 25% blank blocks; after diagnosis)",
+    "model": "B2 halfway (pre-checker reader v3 + 25% blank blocks)",
     "metrics": {
       "n_cases": 150,
       "schema_validity": 1.0,
@@ -2547,7 +2547,7 @@
     }
   },
   "final-Brun2-s3__eval_id_v2": {
-    "model": "B-run2 halfway (reader v3 + 25% blank blocks; after diagnosis)",
+    "model": "B2 halfway (pre-checker reader v3 + 25% blank blocks)",
     "metrics": {
       "n_cases": 300,
       "schema_validity": 1.0,
@@ -2655,7 +2655,7 @@
     }
   },
   "final-Brun2-s3__eval_v1": {
-    "model": "B-run2 halfway (reader v3 + 25% blank blocks; after diagnosis)",
+    "model": "B2 halfway (pre-checker reader v3 + 25% blank blocks)",
     "metrics": {
       "n_cases": 500,
       "schema_validity": 1.0,
@@ -2763,7 +2763,7 @@
     }
   },
   "final-Brun2-s4-r31__eval_id_v2": {
-    "model": "B-run2 final, served with reader v3.1",
+    "model": "B2, served with reader v3.1 (swap test)",
     "metrics": {
       "n_cases": 300,
       "schema_validity": 1.0,
@@ -2871,7 +2871,7 @@
     }
   },
   "final-Brun2-s4__dev": {
-    "model": "B-run2 final (shipped; after diagnosis)",
+    "model": "B2: shipped model (pre-checker reader v3, after diagnosis)",
     "metrics": {
       "n_cases": 150,
       "schema_validity": 1.0,
@@ -2976,7 +2976,7 @@
     }
   },
   "final-Brun2-s4__eval_hard": {
-    "model": "B-run2 final (shipped; after diagnosis)",
+    "model": "B2: shipped model (pre-checker reader v3, after diagnosis)",
     "metrics": {
       "n_cases": 150,
       "schema_validity": 1.0,
@@ -3081,7 +3081,7 @@
     }
   },
   "final-Brun2-s4__eval_id_v2": {
-    "model": "B-run2 final (shipped; after diagnosis)",
+    "model": "B2: shipped model (pre-checker reader v3, after diagnosis)",
     "metrics": {
       "n_cases": 300,
       "schema_validity": 1.0,
@@ -3189,7 +3189,7 @@
     }
   },
   "final-Brun2-s4__eval_v1": {
-    "model": "B-run2 final (shipped; after diagnosis)",
+    "model": "B2: shipped model (pre-checker reader v3, after diagnosis)",
     "metrics": {
       "n_cases": 500,
       "schema_validity": 1.0,

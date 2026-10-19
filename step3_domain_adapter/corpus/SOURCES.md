@@ -1,3 +1,5 @@
+> **Note:** this file is the retrieval log written while the corpus was being collected; some "in repo?" marks predate the manual downloads. The corpus actually used is exactly the files in this folder (14 files, ~420k tokens: FATF, FinCEN CDD rule, ICAO 9303 parts 3–5, OFAC FAQ, Wolfsberg, sanctions-list structure, address formats).
+
 # Domain corpus: sources
 
 Retrieved 2026-10-17 from a cloud session whose egress proxy **denied CONNECT (HTTP 403, policy)** to every primary publisher:

@@ -4,10 +4,5 @@
   "price_key": "modal-l4-c16",
   "gold": "data/eval_id_v2/cases.jsonl",
   "table1_group": "eval_id_v2",
-  "table1_order": 8,
-  "display": {
-    "latency_p50_ms": "not deployed",
-    "latency_p95_ms": "not deployed",
-    "cost_per_1k_usd": "not deployed"
-  }
+  "table1_order": 8
 }

@@ -1,5 +1,5 @@
 {
-  "model": "B-run2 halfway (reader v3 + 25% blank blocks; after diagnosis)",
+  "model": "B2 halfway (pre-checker reader v3 + 25% blank blocks)",
   "params": "4B",
   "price_key": "modal-l4-c16",
   "gold": [
@@ -15,7 +15,7 @@
     "latency_p95_ms": "not deployed",
     "cost_per_1k_usd": "not deployed"
   },
-  "pipeline": "B-run2: model + pre-checks v3 (after diagnosis)",
+  "pipeline": "B2: model + pre-checks v3 (after diagnosis)",
   "stage": "+ reader v3 + blank-block training (halfway)",
   "stage_order": 1,
   "compare_to": "final-B-s3__eval_v1"

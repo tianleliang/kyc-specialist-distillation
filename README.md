@@ -1,6 +1,6 @@
 # kyc-specialist-distillation
 
-**A 4B open-weight specialist for KYC onboarding adjudication that statistically matches two of three frontier models on fresh in-distribution cases, answers faster than the frontier APIs on an H100, and costs about 1/10th to 1/50th as much per case.**
+**A 4B open-weight specialist for KYC onboarding adjudication. On 300 fresh in-distribution cases it scores 96.3%, a statistical tie with Gemini 4 Argon and Claude Opus 5.5 (GPT-6 Astra stays ahead), at $3.59–5.36 per 1,000 cases against $37–175 for the frontier APIs. Latency is a hardware choice: 24 s per case on the L4 hand-over endpoint, 3.3 s on an H100 (frontier APIs: 8.6–12.1 s). It trails the frontier on out-of-distribution free prose and on injected instructions (86% escalated vs 100%); both are documented.**
 
 One case packet in (applicant profile, OCR'd ID document with MRZ, proof of address, sanctions / PEP / adverse-media hits, jurisdiction) → one JSON decision out (identity findings, screening dispositions, risk tier, required actions, approve / reject / escalate, a grounded narrative).
 
@@ -8,7 +8,7 @@ One case packet in (applicant profile, OCR'd ID document with MRZ, proof of addr
 
 | | Decision accuracy | Their accuracy − ours (pts, paired 95% CI) | Unsupported narrative claims | p50 latency | $ / 1,000 cases |
 |---|---|---|---|---|---|
-| **Ours (Qwen3.5-4B specialist)** | **96.3%** | – | 13.7% | **3.3 s on H100** · 24.3 s on L4 | **$3.59** (H100) · $0.47–5.36 (L4) |
+| **Ours (Qwen3.5-4B specialist, B2)** | **96.3%** | – | 13.7% | 24.3 s (L4, hand-over) · 3.3 s (H100) | $5.36 (L4) · $3.59 (H100) · $0.47 (L4, 16 concurrent) |
 | GPT-6 Astra (best prompt) | 99.3% | Astra ahead (+3.0, +0.7 to +5.3) | 7.4% | 12.1 s | $175 |
 | Claude Opus 5.5 (best prompt) | 97.7% | **tie** (+1.3, −1.3 to +4.0) | 8.6% | 11.5 s | $116 |
 | Gemini 4 Argon (best prompt) | 95.0% | **tie** (−1.3, −4.7 to +2.0) | 8.8% | 8.6 s | $37 |

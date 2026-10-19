@@ -94,6 +94,6 @@ Tests: `python -m pytest -q tests/a_*_test.py tests/j_*_test.py tests/m_ood_test
 | eval_hard (150) | `build.py`, `configs/eval_hard.yaml` | 5000000 |
 | eval_id_v2 (300) | `build.py`, `configs/eval_id.yaml`, generated after all development | 3050000 |
 
-`regenerate_eval.sh` does not cover eval_id_v2; its exact command is in `data/eval_id_v2/manifest.json` and its hashes in `data/eval_v2/MANIFEST.json`.
+`regenerate_eval.sh` covers every frozen set, including eval_id_v2 (seed 3050000; hashes in `data/eval_v2/MANIFEST.json`).
 
 **Legacy.** `build_draft.py` writes the 200 PROVISIONAL v0 cases to `data/draft/` (frozen fixtures for older tests, never training). It still runs but no longer reproduces the committed `data/draft/` hashes.

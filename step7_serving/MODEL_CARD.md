@@ -3,7 +3,7 @@ license: apache-2.0
 base_model: Qwen/Qwen3.5-4B
 tags: [kyc, aml, onboarding, distillation, synthetic-data]
 ---
-# Zorbe KYC specialist (Qwen3.5-4B), B-run2 final
+# KYC specialist (Qwen3.5-4B), shipped model B2
 
 A 4B specialist for KYC onboarding adjudication: one case packet in, one JSON decision out (schema v1, policy v1). Built for the Zorbe take-home.
 

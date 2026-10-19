@@ -166,7 +166,7 @@ T1_COLS = [
     ("Risk ±1 %", "risk_within_one"),
     ("Actions recall %", "actions_recall"),
     ("Actions precision %", "actions_precision"),
-    ("Unsupported claims, LLM judge % (eval_id subset)", "judge_unsupported_rate"),
+    ("Unsupported claims, LLM judge % (judged sentences)", "judge_unsupported_rate"),
     ("Unsupported refs, programmatic %", "unsupported_rate"),
     ("Adversarial escalation %", "adv_escalation_rate"),
 ]

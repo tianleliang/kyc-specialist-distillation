@@ -1,3 +1,5 @@
+> **Historical working document** (Sat 10/17 morning). Superseded by `step0_rules/policy_v1.md` and `documentation/01_decisions/decision_log.md`; placeholders here were resolved there.
+
 # Decision Policy v1: CANDIDATE
 
 **Status: a candidate, not the policy.** Session H (wave 2) reconciled A's provisional code (`step1_data_generation/project.py`), D's research draft (`documentation/02_research/decision_policy_draft.md`) and E's proposed label rules (`documentation/03_design/data_design.md`). Wherever they forked, it takes the option `decision_sheet.md` recommends. **Every choice that was a fork is marked `[DEFAULT, pending Tianle]` with its decision number (D#).** Rules without a tag are ones all three drafts already agree on.

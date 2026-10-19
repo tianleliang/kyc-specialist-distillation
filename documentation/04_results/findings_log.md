@@ -1,6 +1,6 @@
-# Write-up Evidence Log: findings, numbers, and the reasoning behind them
+# Findings log: every result, its numbers, and the reasoning behind it
 
-Running log of every result and judgment that belongs in the 4-page write-up. Each entry: **what happened → evidence (file or run) → write-up section it supports.** Keep appending; the Sunday fact-check verifies every number here against saved outputs.
+Every result and judgment in the order it happened. Each entry: **what happened → evidence (file or run) → section of the write-up it supports.**
 
 ---
 
@@ -9,7 +9,7 @@ Running log of every result and judgment that belongs in the 4-page write-up. Ea
 - **The dev pilot found a second rule ambiguity.** On `name_mismatch` cases, all 4 frontier models (given the policy) compared the proof-of-address addressee with the **application** name; our labeller compared it with the document name. Fix: the policy now says "as named on the application"; labeller and policy updated, every split rebuilt. The first fix overcorrected (2 cases where the PoA *is* in the application name); the pilot data caught that too. After the fix, Astra and Sol agree with gold 100% on decision, risk, and address. → `step2_benchmarking/results/dev_pilot/`, commit `d400398`. *§4 rigor ("label audit by frontier disagreement"), §5 what failed.*
 - **Rule of thumb adopted:** where our policy differs from frontier default behaviour without a strong reason, align with consensus, because Zorbe's hidden set will be labelled by their process. Example: frontier zero-shot rejects an expired passport; our policy escalates (the applicant can cure it), and that's stated explicitly. *§2.*
 - **Difficulty is mixed, not one-trap-per-case:** train 7% clean / 70% one difficulty / 23% two stacked; eval_id 31% two stacked; OOD-LLM 38%. The policy precedence order (P1–P10) keeps labels defined under stacking. *§2 data.*
-- **eval_hard (stress set, added mid-run):** 150 cases, every case 2–3 stacked difficulties (55% three), ID OCR noise ×2.5, no clean cases, frozen separately. **Frontier with policy stays saturated even here** (Astra 99.3% decision, Opus 98.7%). Interpretation: our cases' real difficulty is *knowing and applying the policy*, not perceiving messy evidence. That's an honest limitation of synthetic data, and it's why OOD sets exist. → `data/eval_hard/`, `outputs/bench_hard/`. *§4, §5.*
+- **eval_hard (stress set, added mid-run):** 150 cases, every case 2–3 stacked difficulties (55% three), ID OCR noise ×2.5, no clean cases, frozen separately. **Frontier with policy stays saturated even here** (Astra 99.3% decision, Opus 98.7%). Interpretation: our cases' real difficulty is *knowing and applying the policy*, not perceiving messy evidence. That's an honest limitation of synthetic data, and it's why OOD sets exist. → `data/eval_hard/`, `step2_benchmarking/results/bench_hard/`. *§4, §5.*
 
 ## 2. Contamination controls (evidence)
 - Eval frozen with a sha256 manifest, read-only (`data/eval/MANIFEST.json`, 500 records; `data/eval_hard/MANIFEST.json`, 150). `split_guard verify` passes.
@@ -94,6 +94,4 @@ Running log of every result and judgment that belongs in the 4-page write-up. Ea
 - Dev scoring latency (p50 32.6 s, p95 114 s) is queueing: 16 concurrent requests on one L4. Not the per-case latency; measure Sunday at concurrency 1 warm. Throughput ≈ 1,500 cases/h on an L4 (~$0.80/h) ≈ **$0.55 / 1k cases** vs Sol ~$35 / 1k, Astra ~$175 / 1k (dev pilot).
 
 ## 8. Cost and logistics
-- Zorbe shortened the endpoint requirement to 1 day after submission.
-- GPU is cheap at this scale: ~$5 on Modal so far (within the free $30).
-- Running API spend is in each run's `ledger.json`; the final table comes from the run logs plus provider dashboards.
+- Total spend: see [RESULTS.md](../../RESULTS.md#4-spend). Per-run API cost ledgers are inside each `results/runs/*/provenance.json` and `step4_distillation/teacher_outputs/*/ledger.json`.

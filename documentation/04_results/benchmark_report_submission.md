@@ -44,7 +44,7 @@ A = model alone. B = model + code pre-checker (reader v2), the result before the
 |---|---|---|---|---|---|---|---|
 | A: model alone (Final A) | 88.3 | 84.0 | 82.0 | 94.0 | 88.4 | 85.3 | – |
 | B: model + pre-checker v2 (Final B, pre-diagnosis) | 93.0 | 90.0 | 88.0 | 86.0 | 90.8 | 93.3 | – |
-| B2: model + pre-checker v3, blank-block training (final model, after diagnosis) | 96.0 | 94.0 | 92.0 | 92.0 | 94.6 | 92.7 | 96.3 |
+| B2: model + pre-checker v3, blank-block training (shipped model) | 96.0 | 94.0 | 92.0 | 92.0 | 94.6 | 92.7 | 96.3 |
 | GPT-6 Astra (best prompt) | 99.0 | 100.0 | 100.0 | 99.0 | 99.2 | 99.3 | 99.3 |
 | Claude Opus 5.5 (best prompt) | 98.0 | 100.0 | 100.0 | 98.0 | 98.4 | 98.7 | 97.7 |
 | Gemini 4 Argon (best prompt) | 94.0 | 100.0 | 98.0 | 98.0 | 95.8 | – | 95.0 |
@@ -65,3 +65,19 @@ A = model alone. B = model + code pre-checker (reader v2), the result before the
 | Qwen3.5-2B | best prompt | 2B | 39.4 | 36.2 | 29.4 | 44.3 | 45.9 | 100.0 | $0.20 |
 | Qwen3.5-4B | zero-shot | 4B | 60.0 | 34.8 | 38.5 | 25.8 | 59.7 | 100.0 | $0.36 |
 | Qwen3.5-4B | best prompt | 4B | 61.2 | 51.6 | 37.2 | 34.7 | 53.1 | 100.0 | $0.44 |
+
+## Appendix C. Model size and distillation ablation (dev, 150 cases; model selection only, never the test sets)
+
+Rejection sampling scored one case higher than Counterfactual Twin Distillation on decision accuracy (a tie within noise); twins was chosen after seeing dev for its required-actions recall and fewest wrong approvals, and that choice is stated as post-hoc.
+
+| Run (dev, 150 cases) | Decision acc % | Risk exact % | Field acc % (mean) | Actions recall % | Screening macro-F1 % |
+|---|---|---|---|---|---|
+| Qwen3.5-0.8B, trained on the answer key | 84.0 | 84.7 | 97.6 | 79.5 | 100.0 |
+| Qwen3.5-0.8B, answer key + Counterfactual Twins | 87.3 | 84.7 | 98.1 | 83.7 | 100.0 |
+| Qwen3.5-2B, trained on the answer key | 86.7 | 80.7 | 97.6 | 79.5 | 100.0 |
+| Qwen3.5-4B, trained on the answer key (ceiling / control) | 90.0 | 89.3 | 97.7 | 85.3 | 100.0 |
+| 4B distillation: floor (Sol answers) | 89.3 | 88.0 | 98.4 | 88.4 | 100.0 |
+| 4B distillation: + rejection sampling (code checks) | 91.3 | 90.7 | 98.1 | 84.2 | 97.2 |
+| 4B distillation: + multi-teacher arbitration (Sol / Argon) | 90.0 | 89.3 | 98.1 | 86.3 | 100.0 |
+| 4B distillation: + Counterfactual Twin Distillation (chosen) | 90.7 | 90.7 | 98.8 | 90.5 | 100.0 |
+| 4B: twins on the domain-adapted base | 91.3 | 90.7 | 98.7 | 90.5 | 100.0 |

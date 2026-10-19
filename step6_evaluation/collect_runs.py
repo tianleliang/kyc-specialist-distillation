@@ -35,12 +35,12 @@ OPEN = [("0.8b", "Qwen3.5-0.8B", "0.8B"), ("2b", "Qwen3.5-2B", "2B"), ("4b", "Qw
 PROMPTS = [("baseline_zero_shot", "zero-shot"), ("baseline_best", "best prompt")]
 
 STUDENTS = {  # run name -> display
-    "final-A-s3": "A halfway (adapter + twins distillation)",
-    "final-A-s4": "Final A (model alone)",
+    "final-A-s3": "A halfway (adapter + twins distillation, no pre-checks)",
+    "final-A-s4": "A: model alone",
     "final-B-s3": "B halfway (+ pre-checks v2)",
-    "final-B-s4": "Final B (model + pre-checks v2; pre-diagnosis)",
-    "final-Brun2-s3": "B-run2 halfway (reader v3 + 25% blank blocks; after diagnosis)",
-    "final-Brun2-s4": "B-run2 final (shipped; after diagnosis)",
+    "final-B-s4": "B: model + pre-checker v2 (before diagnosis)",
+    "final-Brun2-s3": "B2 halfway (pre-checker reader v3 + 25% blank blocks)",
+    "final-Brun2-s4": "B2: shipped model (pre-checker reader v3, after diagnosis)",
 }
 
 DEV_ABLATIONS = {  # dir under step5_training/results/dev_evals or outputs/student -> (display, params, stage, order)
@@ -168,11 +168,11 @@ def main(argv: list[str] | None = None) -> int:
                        "stage_order": 1, "compare_to": "final-A-s3__eval_v1"},
         "final-B-s4": {"pipeline": "v1 B: model + pre-checks", "stage": "+ post-train (Final B)",
                        "stage_order": 2},
-        "final-Brun2-s3": {"pipeline": "B-run2: model + pre-checks v3 (after diagnosis)",
+        "final-Brun2-s3": {"pipeline": "B2: model + pre-checks v3 (after diagnosis)",
                            "stage": "+ reader v3 + blank-block training (halfway)", "stage_order": 1,
                            "compare_to": "final-B-s3__eval_v1"},
-        "final-Brun2-s4": {"pipeline": "B-run2: model + pre-checks v3 (after diagnosis)",
-                           "stage": "+ post-train (B-run2 final)", "stage_order": 2},
+        "final-Brun2-s4": {"pipeline": "B2: model + pre-checks v3 (after diagnosis)",
+                           "stage": "+ post-train (B2)", "stage_order": 2},
     }
     for name, disp in STUDENTS.items():
         order += 1
@@ -200,8 +200,8 @@ def main(argv: list[str] | None = None) -> int:
     v2 += [(src / "student" / "final-A-s3__eval_id_v2", STUDENTS["final-A-s3"], "4B", "modal-l4-c16")]
     v2 += [(src / "student" / "final-Brun2-s3__eval_id_v2", STUDENTS["final-Brun2-s3"], "4B", "modal-l4-c16"),
            (src / "student" / "final-Brun2-s4__eval_id_v2", STUDENTS["final-Brun2-s4"], "4B", "modal-l4-c16"),
-           (swap_src / "student" / "final-Brun2-s3-r31__eval_id_v2", "B-run2 halfway, served with reader v3.1", "4B", "modal-l4-c16"),
-           (swap_src / "student" / "final-Brun2-s4-r31__eval_id_v2", "B-run2 final, served with reader v3.1", "4B", "modal-l4-c16")]
+           (swap_src / "student" / "final-Brun2-s3-r31__eval_id_v2", "B2 halfway, served with reader v3.1", "4B", "modal-l4-c16"),
+           (swap_src / "student" / "final-Brun2-s4-r31__eval_id_v2", "B2, served with reader v3.1 (swap test)", "4B", "modal-l4-c16")]
     for i, item in enumerate(v2):
         p, disp, params, price = item[:4]
         rid = item[4] if len(item) > 4 else p.name
@@ -210,7 +210,7 @@ def main(argv: list[str] | None = None) -> int:
         package(out, rid, [p], {"model": disp, "params": params, "price_key": price, "gold": V2_GOLD,
                                    "table1_group": "eval_id_v2", "table1_order": i,
                                    **({"display": shipped if p.name.startswith("final-Brun2-s4__") else pending}
-                                      if params == "4B" else {})}, root)
+                                      if p.parent.name == "student" else {})}, root)
         n += 1
 
     # ---- dev ablations (stage-3 distillation on plain 4B, gold-SFT sizes) ----

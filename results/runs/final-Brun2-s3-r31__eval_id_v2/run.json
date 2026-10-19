@@ -1,5 +1,5 @@
 {
-  "model": "B-run2 halfway, served with reader v3.1",
+  "model": "B2 halfway, served with reader v3.1",
   "params": "4B",
   "price_key": "modal-l4-c16",
   "gold": "data/eval_id_v2/cases.jsonl",

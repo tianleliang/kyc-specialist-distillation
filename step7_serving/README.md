@@ -87,4 +87,4 @@ A cold start of ~5 min means the hand-over endpoint keeps one container warm (`Z
 7. Modal labels the web URLs "(unauthenticated)"; that is Modal's own auth. The bearer tokens do the auth.
 
 ### Reader bench
-`reader_bench_*.md` were produced by a format fuzzer (`step7_serving.reader_bench`) developed on a separate branch. That script is **not in this repo**; only its saved outputs are.
+`reader_bench_*.md` are produced by the format fuzzer: `fuzz_render.py` (random layouts from train truth), `fuzz_heldout.py` (the family held out from the reader's authors) and `reader_bench.py` (never-wrong check + coverage), all in this folder; tests in `tests/f_fuzz_test.py`.

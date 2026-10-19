@@ -1,5 +1,5 @@
 {
-  "model": "Final B (model + pre-checks v2; pre-diagnosis)",
+  "model": "B: model + pre-checker v2 (before diagnosis)",
   "params": "4B",
   "price_key": "modal-l4-c16",
   "gold": "data/dev/cases.jsonl",

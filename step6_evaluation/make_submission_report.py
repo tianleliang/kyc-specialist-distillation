@@ -169,7 +169,7 @@ def safe(run):
 
 
 appA = [("final-A-s4", "A: model alone (Final A)"), ("final-B-s4", "B: model + pre-checker v2 (Final B, pre-diagnosis)"),
-        (FINAL, "B2: model + pre-checker v3, blank-block training (final model, after diagnosis)")]
+        (FINAL, "B2: model + pre-checker v3, blank-block training (shipped model)")]
 hA = ["Model"] + [s for _, s in SPL] + ["Frozen 500", "Hard (150)", "Fresh eval_id v2 (300)"]
 rA = []
 for run, disp in appA:
@@ -256,6 +256,12 @@ A = model alone. B = model + code pre-checker (reader v2), the result before the
 ## Appendix B. Initial benchmark: open and frontier models, zero-shot and best prompt (frozen eval v1, 500 cases)
 
 {table(hB, rB)}
+
+## Appendix C. Model size and distillation ablation (dev, 150 cases; model selection only, never the test sets)
+
+Rejection sampling scored one case higher than Counterfactual Twin Distillation on decision accuracy (a tie within noise); twins was chosen after seeing dev for its required-actions recall and fewest wrong approvals, and that choice is stated as post-hoc.
+
+{table(hC, rC)}
 """
 OUT.write_text(doc, encoding="utf-8", newline="\n")
 print(f"wrote {OUT.relative_to(ROOT)}")

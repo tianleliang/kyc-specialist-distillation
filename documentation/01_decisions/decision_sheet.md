@@ -399,7 +399,7 @@ Where all three agree (no decision needed beyond ticking): PEP true match → es
 | Activity/income check | obvious-only cases, no numeric threshold | J's `risk_profile` scenario | D Q-A2 |
 | Validity limits | flat 10 years | generator | D Q-T2 |
 | Spend reporting | to date + projected serving through 10/25 | write-up §7 | G Q5 |
-| Stage 7 stance | drafting assistant: a human signs every reject and escalate; auto-approve only after the ramp gates | `documentation/04_results/stages_7_9_draft.md` | G Q2 |
+| Stage 7 stance | drafting assistant: a human signs every reject and escalate; auto-approve only after the ramp gates | the write-up (stages 7–9) | G Q2 |
 | Stage 8 controller | acts on route-around and rollback; proposes model changes | same | G Q3 |
 | Eval-look budget | each Table 1 / 2 row hits eval once, logged in `outputs/eval/RUNLOG.jsonl` | contamination §7 | E |
 | Corpus | run `bash step3_domain_adapter/corpus/fetch_corpus.sh` on the laptop (the cloud proxy blocked every publisher) | `step3_domain_adapter/corpus/` | A |

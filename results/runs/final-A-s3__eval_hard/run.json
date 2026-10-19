@@ -1,5 +1,5 @@
 {
-  "model": "A halfway (adapter + twins distillation)",
+  "model": "A halfway (adapter + twins distillation, no pre-checks)",
   "params": "4B",
   "price_key": "modal-l4-c16",
   "gold": "data/eval_hard/cases.jsonl",

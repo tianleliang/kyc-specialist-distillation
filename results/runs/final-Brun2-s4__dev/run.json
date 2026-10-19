@@ -1,5 +1,5 @@
 {
-  "model": "B-run2 final (shipped; after diagnosis)",
+  "model": "B2: shipped model (pre-checker reader v3, after diagnosis)",
   "params": "4B",
   "price_key": "modal-l4-c16",
   "gold": "data/dev/cases.jsonl",

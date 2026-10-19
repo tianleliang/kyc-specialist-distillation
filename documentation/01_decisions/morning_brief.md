@@ -1,3 +1,5 @@
+> **Historical working document** (Sat 10/17 morning). Superseded by `step0_rules/policy_v1.md` and `documentation/01_decisions/decision_log.md`; placeholders here were resolved there.
+
 # Morning Brief: Saturday 10/17, 07:00
 
 **Read this first (2 min), then `decision_sheet.md` (the 20 decisions), then `policy_v1_candidate.md` (the policy, already written with the recommended answer at each fork).**

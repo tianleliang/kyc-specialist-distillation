@@ -1,5 +1,5 @@
 {
-  "model": "B-run2 final (shipped; after diagnosis)",
+  "model": "B2: shipped model (pre-checker reader v3, after diagnosis)",
   "params": "4B",
   "price_key": "modal-l4-c16",
   "gold": [
@@ -15,7 +15,7 @@
     "latency_p95_ms": "29,087 on L4 (H100: 3,849)",
     "cost_per_1k_usd": "$5.36 on L4 (H100: $3.59)"
   },
-  "pipeline": "B-run2: model + pre-checks v3 (after diagnosis)",
-  "stage": "+ post-train (B-run2 final)",
+  "pipeline": "B2: model + pre-checks v3 (after diagnosis)",
+  "stage": "+ post-train (B2)",
   "stage_order": 2
 }

@@ -39,7 +39,7 @@ Tests: `python -m pytest -q tests/m_adapter_test.py` (the CPU smoke part is skip
 ## Outputs / where results live
 - On the Modal volume `zorbe-checkpoints`: `adapter/<run_name>/` (adapter + `run.json` + `measure.json`); merged weights at `/vol/ckpt/merged/adapter-qwen35-4b` (with `verify.json`).
 - Local copy of the measurement: `outputs/adapter/<run_name>/measure.json` (gitignored).
-- Committed logs: `step5_training/results/logs/merge_adapter_4b.log` (merge proof: base vs merged generations differ). `step5_training/results/logs/adapter_4b_measure.log` is meant to hold the measurement table but contains only a shell error line (see Details).
+- Committed logs: `step5_training/results/logs/merge_adapter_4b.log` (merge proof: base vs merged generations differ). `step5_training/results/logs/adapter_4b_measure.log` is meant to hold the measurement table but holds the full before/after table (MOVED) (see Details).
 
 ## Reports and evidence
 - [findings_log.md](../documentation/04_results/findings_log.md) §5b: 4B result. Held-out perplexity 7.39 → 5.52 (−25%), down on all 10 documents; probe 61% → 65% on 23 answerable items (1 item, within noise). It learned the domain's language, not measurably its knowledge.
@@ -61,4 +61,4 @@ Tests: `python -m pytest -q tests/m_adapter_test.py` (the CPU smoke part is skip
 
 **Corpus history.** The first cloud session could not reach the publishers (HTTP 403), so the corpus was fetched on the laptop with `fetch_corpus.sh`. FATF and ICAO PDFs say "no reproduction without permission", so only extracted text is kept. `SOURCES.md` still has some pre-fetch notes (file names and "in repo? no" marks) that no longer match the files in `corpus/`.
 
-**Known gap.** The committed `adapter_4b_measure.log` holds one line (`launch_4b_batch.sh: line 18: r_4b.yaml: command not found`), not the before/after table. The quoted numbers come from the session's own record in `TONIGHT_4B.md`.
+**Evidence.** `step5_training/results/logs/adapter_4b_measure.log` holds the full before/after table: held-out perplexity 7.389 → 5.519 (−25%), probe (23 answerable items) 61% → 65%, verdict MOVED. Same numbers in `results/adapter/measure_adapter_4b.json`. Task effect on dev: twins on the adapted base 91.3% vs plain base 90.7% (+0.7, 1 case).
