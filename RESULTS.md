@@ -1,6 +1,6 @@
 # Results and progress, in one place
 
-Every headline number, what it means, and the file it comes from. Tables are generated from `results/` by `bash make_tables.sh`; nothing here is hand-typed from memory. Model names: **A** = model alone, **B** = model + pre-checker v2 (before the diagnosis), **B2** = shipped model (pre-checker v3, blank-block training). See [GUIDE.md](GUIDE.md) for the pipeline.
+Every headline number, what it means, and the file it comes from. Tables are generated from `results/` by `bash make_tables.sh`; nothing here is hand-typed from memory. Model names: **A** = model alone, **B** = model + pre-checker v2 (before the diagnosis), **B2** = shipped model (pre-checker v3, blank-block training). See [GUIDE.md](GUIDE.md) for the pipeline and [full_writeup.md](documentation/04_results/full_writeup.md) for the reasoning behind every result.
 
 ## 1. Headline: fresh eval_id v2 (300 cases, generated after all development)
 | Model | Decision acc. | Their acc. − ours (paired 95% CI) | Unsupported claims | p50 latency | $ / 1k cases |

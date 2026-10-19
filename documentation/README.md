@@ -7,6 +7,7 @@ Everything written around the code: what was required, what was decided and why,
 |---|---|
 | **[04_results/benchmark_report_submission.md](04_results/benchmark_report_submission.md)** | **The headline tables**: final model B2 vs open and frontier models (Table 1), gain per pipeline stage (Table 2), A / B / B2 on every test set |
 | [04_results/benchmark_report.md](04_results/benchmark_report.md) | Full generated report: every model × every eval set, CIs, confusion matrices. Rebuilt by `bash make_tables.sh` |
+| **[04_results/full_writeup.md](04_results/full_writeup.md)** | **The long write-up**: every decision, realization and failure, and the full stage 7–9 answers |
 | [04_results/findings_log.md](04_results/findings_log.md) | Every finding with its numbers and the reasoning behind it (data, contamination, teachers, students, diagnosis, pre-checker, cost) |
 | [01_decisions/decision_log.md](01_decisions/decision_log.md) | Every design decision in order, with its reason |
 | [00_requirements/](00_requirements/) | The case requirements (paraphrased) and where each one is met |

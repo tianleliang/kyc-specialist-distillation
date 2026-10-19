@@ -22,6 +22,7 @@ One case packet in (applicant profile, OCR'd ID document with MRZ, proof of addr
 | You want | Where |
 |---|---|
 | **All results + build timeline, one page** | [`RESULTS.md`](RESULTS.md) |
+| **The long write-up: every decision, realization and failure** | [`documentation/04_results/full_writeup.md`](documentation/04_results/full_writeup.md) |
 | Pipeline map (each step folder, what it does, how to run) | [`GUIDE.md`](GUIDE.md) |
 | **Output JSON schema** | [`step0_rules/schema/v1.json`](step0_rules/schema/v1.json) (serving copy: [`v1_serving.json`](step0_rules/schema/v1_serving.json)) |
 | Decision policy (what every situation must produce) | [`step0_rules/policy_v1.md`](step0_rules/policy_v1.md) |
