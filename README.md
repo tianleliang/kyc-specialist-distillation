@@ -43,7 +43,7 @@ Qwen3.5-4B (Apache 2.0: commercial use and derivative weights allowed) → **dom
 
 ## Endpoint, weights
 
-- **Endpoint:** OpenAI-compatible `POST https://tianleliang--zorbe-kyc-final-brun2-s4-proxy.us-east.modal.run/v1/chat/completions`, model `zorbe-kyc`, bearer token (shared privately), 1× NVIDIA L4, always warm. Send the bare case packet as the user message; the proxy adds the prompt, pre-checks and JSON schema.
+- **Endpoint:** OpenAI-compatible `POST https://tianleliang--zorbe-kyc-final-brun2-s4-proxy.us-east.modal.run/v1/chat/completions`, model `zorbe-kyc`, bearer token (shared privately), 1× NVIDIA L4, always warm. Send the bare case packet as the user message; the proxy adds the prompt, pre-checks and JSON schema. **Measured per case** (warm, one request at a time): p50 24.3 s, p95 29.1 s, $5.36 per 1,000 cases ($0.47 at 16 concurrent); same model on an H100: p50 3.3 s, p95 3.8 s, $3.59 per 1,000 ([`results/latency/`](results/latency/)).
 - **Weights (merged, public):** https://huggingface.co/tianle-terrence-liang/zorbe-kyc-specialist-4b · LoRA adapters in the same repo under `adapters/`: `domain_adapter` (on Qwen3.5-4B), `stage3_distillation` (on Qwen3.5-4B + merged domain adapter), `stage4_posttrain` (on the merged stage-3 model); merging all three in that order gives the shipped weights.
 - **Output schema:** [`step0_rules/schema/v1.json`](step0_rules/schema/v1.json) (serving variant `v1_serving.json`); **policy:** [`step0_rules/policy_v1.md`](step0_rules/policy_v1.md).
 
