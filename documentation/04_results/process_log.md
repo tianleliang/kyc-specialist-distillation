@@ -1,6 +1,6 @@
-# The full write-up: every decision, realization and failure
+# Process log: every decision, realization and failure
 
-The submitted PDF is the four-page summary. This is the long version: everything we chose, why, what each result taught us, and what failed. Numbers come from the committed results ([RESULTS.md](../../RESULTS.md), [benchmark_report_submission.md](benchmark_report_submission.md)); the chronological record is [findings_log.md](findings_log.md) and the decision list is [decision_log.md](../01_decisions/decision_log.md). Model names: **A** = model alone, **B** = model + pre-checker v2, **B2** = shipped model.
+Everything we chose, why, what each result taught us, and what failed, in the order of the pipeline. Numbers come from the committed results ([RESULTS.md](../../RESULTS.md), [benchmark_report_submission.md](benchmark_report_submission.md)); the chronological record is [findings_log.md](findings_log.md) and the decision list is [decision_log.md](../01_decisions/decision_log.md). Model names: **A** = model alone, **B** = model + pre-checker v2, **B2** = shipped model.
 
 ---
 
@@ -82,7 +82,7 @@ Final B scored **98.0% on dev but 93.0% on eval_id and 90.8% on the frozen 500**
 - **Latency and cost (measured, one request at a time, warm):** L4 hand-over endpoint p50 24.3 s / p95 29.1 s, $5.36 per 1,000 ($0.47 at 16 concurrent); H100 p50 3.3 s / p95 3.8 s, $3.59 per 1,000. A faster GPU barely changes cost per case because it finishes sooner; it only raises the idle cost of an always-on endpoint.
 
 ## 11. Reporting choices (and why)
-- **Headline = eval_id v2 (in-distribution).** The product is a specialist for one desk's known formats; out-of-distribution is reported right beside it, never hidden, and it defines where to route to the frontier (section 13).
+- **Headline = eval_id v2 (in-distribution).** The product is a specialist for one desk's known formats; out-of-distribution is reported right beside it, never hidden, and it shows which packets to route to the frontier.
 - **Post-hoc choices, all disclosed:** twins over rejection (section 5); the reader fix after seeing the frozen sets (section 9), which is why eval_id v2 exists.
 - **Final B is kept as the pre-diagnosis result;** B2's numbers on the frozen v1 sets are "after diagnosis".
 
@@ -94,35 +94,10 @@ Final B scored **98.0% on dev but 93.0% on eval_id and 90.8% on the frozen 500**
 - Narratives got less grounded with fallback training (14.2% → 17.3%).
 - Engineering: a launch log written inside an uploaded folder crashed a training launch; a merge safety check rejected a correct post-trained model at 1 a.m. (its first 96 tokens matched the base; logits differed); Gemini's rate cap stalled a teacher run; an Anthropic budget ran out mid-benchmark (resumed from cache).
 
-## 13. Stages 7–9
-**The thread:** our build measured where the specialist is strong (known formats) and where it isn't (unreadable packets, free prose, injection), so production is built around knowing when to trust it and when to hand the case to the frontier.
-
-**Stage 7, shadow and ramp.**
-- Shadow: every case goes to both models; only the frontier's answer is used; the specialist's is logged and never shown to analysts (no anchoring). Log packet hash and every model / prompt / policy / reader version.
-- Score against analysts' final decisions and later outcomes, not agreement; send every disagreement to a blind reviewer; segment every score (a model can match on average and fail one slice, as ours did on unreadable packets: 82% vs 96%).
-- Ramp by risk: no-hit domestic cases → PEP / adverse media → sanctions hits last; 1% → 5% → 25% → 50% → 100% inside each. Early on, let escalations and rejections through but send approvals to the frontier for a second look (approvals carry the risk).
-- Gates: non-inferior accuracy with a confidence interval; **zero** approvals of sanctions true matches (hard rule); escalation rate within the frontier's range; fallback and latency within budget; sign-off by model risk / compliance.
-- Per-case fallback: the whole case goes to the frontier when the pre-checker can't read most of the packet, an injection is detected, a code check contradicts the answer, the JSON fails, or the segment hasn't ramped. Each fallback logs a reason; the rate per reason is monitored. Rollback is one switch.
-- Our position: the specialist drafts and a human signs until the gates have held for a long period.
-
-**Stage 8, controller.** Classify each failure by its cause and apply the cheapest fix that targets it; contain first.
-- Fixes, cheapest first: route around (seconds) → re-prompt → roll back → re-tune → re-distill → rebuild on a better base.
-- Taxonomy: **arithmetic / mechanical** (code recomputes and disagrees → move it into code; our biggest win) · **new input format** (the pre-checker's "not determinable" rate rises in a segment → route around, extend the reader, retrain; exactly what happened to us) · **policy change** (version bump → re-prompt the same day, then re-tune) · **injection** (detector, or the decision changes when the injected text is removed → route away, re-tune on adversarial cases) · **calibration drift** (drift test on approve / escalate / reject rates → re-tune on blind-reviewed cases) · **our own regression** (fixed test set at every deploy → roll back) · **unsupported narrative** (evidence-ref check + sampled LLM judge → re-tune).
-- Decision order: severe → contain and page a human; started with our change → roll back; checkable in code → move into code; one segment → re-distill it; failed twice → capability limit → rebuild. The controller contains on its own and proposes every model change to a human.
-
-**Stage 9, continuous learning.** Automate first what is cheap, reversible and feeds everything else.
-1. A case store joining every packet to its outcome, with train / test assigned **at arrival by hashing the case id**, so contamination is impossible by construction.
-2. A regression gate: every new model, prompt or reader passes a frozen test set plus a fresh recent slice (what eval_id v2 did for us).
-3. Tool upgrades without retraining: the model learned the block format, so a better reader drops in at serving (the v3.1 swap).
-4. Disagreement mining into training queues, grouped by failure class; humans confirm labels.
-5. Re-distill when a new frontier model beats the current teacher on the test set, mainly for new formats and rare cases (a 99% teacher made our techniques flat).
-6. RL from the case flow later: the policy is code, so it is an exact reward, but outcomes arrive slowly and sanctions true matches are rare.
-- Two KYC facts: true sanctions matches are too rare in production to learn from, so the synthetic generator stays in the loop; analyst labels inherit the deployed model's errors, so blind QA samples are the clean signal. Never automated: policy changes, label overrides, promotions, and letting a segment leave the frontier.
-
-## 14. What we'd do next
+## 13. What we'd do next
 Model extraction + code arithmetic (the model reads the values, code computes); "competing values → not determinable" in the reader; RL with the policy as the reward; DPO on the student's own mistakes; hard-case mining on injection and free prose; route OOD-looking packets to the frontier in production.
 
-## 15. Models, assistants, spend
+## 14. Models, assistants, spend
 - **Base:** Qwen3.5-4B (Apache 2.0; commercial use and derivative weights allowed).
 - **Frontier models, never shipped:** GPT-6.1 Sol (main teacher), Gemini 4 Argon (second teacher, baseline), GPT-6 Astra and Claude Opus 5.5 (baselines), Claude Sonnet 5.5 (blind judge; co-wrote the LLM OOD set with Gemini 3.8 Flash).
 - **Coding assistants:** Claude Code (desktop and cloud sessions) wrote and ran the code under written briefs ([06_agent_instructions](../06_agent_instructions/README.md), reports in [05_progress_reports](../05_progress_reports/README.md)); Claude in Obsidian for planning, audits and the decision log. Every design decision is Tianle's ([decision_log.md](../01_decisions/decision_log.md)).
