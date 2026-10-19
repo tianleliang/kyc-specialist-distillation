@@ -5,7 +5,7 @@ These are the reports that each build session wrote when it finished, listed in 
 Notes:
 - Order inside a wave follows the session letter. The sessions in a wave ran in parallel, so the letter does not tell you which one finished first.
 - Only one report gives a calendar date. The time windows in the "session" column come from the matching instruction file in [../06_agent_instructions](../06_agent_instructions/README.md).
-- There are no reports here for the Saturday-evening and Sunday sessions (4B training, final runs, reader v3, the B2 retrain). Their results are in [../04_writeup/writeup_evidence_log.md](../04_writeup/writeup_evidence_log.md) (sections 5b and 5c) and in the instruction files themselves.
+- There are no reports here for the Saturday-evening and Sunday sessions (4B training, final runs, reader v3, the B2 retrain). Their results are in [../04_results/findings_log.md](../04_results/findings_log.md) (sections 5b and 5c) and in the instruction files themselves.
 
 | File | Session | Date if stated | What it did | Key result |
 |---|---|---|---|---|

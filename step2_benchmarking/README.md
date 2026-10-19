@@ -49,9 +49,9 @@ Score saved runs (free, no API): `bash make_tables.sh` from the repo root. Tests
 - Response cache for `--cache` and the frontier client: `outputs/llm_cache/`.
 
 ## Reports and evidence
-- [benchmark_report_submission.md](../documentation/04_writeup/benchmark_report_submission.md): Table 1 (eval_id v2) and Appendix B (initial benchmark on frozen eval v1, zero-shot and best prompt).
-- [benchmark_report.md](../documentation/04_writeup/benchmark_report.md): generated report with confidence intervals.
-- [writeup_evidence_log.md](../documentation/04_writeup/writeup_evidence_log.md) §3: frontier panel findings.
+- [benchmark_report_submission.md](../documentation/04_results/benchmark_report_submission.md): Table 1 (eval_id v2) and Appendix B (initial benchmark on frozen eval v1, zero-shot and best prompt).
+- [benchmark_report.md](../documentation/04_results/benchmark_report.md): generated report with confidence intervals.
+- [findings_log.md](../documentation/04_results/findings_log.md) §3: frontier panel findings.
 - [results/dev_pilot/report.md](results/dev_pilot/report.md): dev pilot of 4 frontier models.
 - [BIGRUNS.md](../documentation/06_agent_instructions/BIGRUNS.md): Sessions F (frontier benchmark) and Q (open-model benchmark), with the exact commands and the fairness rule.
 - [SUNDAY_BRUN2.md](../documentation/06_agent_instructions/SUNDAY_BRUN2.md): frontier and open models on eval_id v2.

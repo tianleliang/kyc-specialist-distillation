@@ -246,7 +246,7 @@ Covers: E data_design §5, Q6–Q7; E Q8; G Q1; contamination Q4.
 |---|---|---|---|
 | Composition | **O1: 100 LLM-rendered (Sonnet 5.5 + Gemini 3.8 Flash) + O2: 50 hand templates** / O1 only (cut line C1) | **O1 + O2** | `step1_data_generation/configs/eval_ood_template.yaml` *(J)*; `step0_rules/prompts/ood_renderer` *(I)* |
 | Who writes the O2 templates | Tianle (~45 min) / **a fresh session given only the truth spec, never `step1_data_generation/render.py`** | **A fresh session**; Tianle reviews one sample per template (~10 min) | none |
-| Headline | ID first / OOD first / **both columns, lead with the lower** | **Both, lead with the lower** | `documentation/04_writeup/writeup_skeleton.md` §1 |
+| Headline | ID first / OOD first / **both columns, lead with the lower** | **Both, lead with the lower** | `documentation/04_results/writeup_skeleton.md` §1 |
 
 **Recommendation:** as above. *Why:* "a different process" is our best proxy for Zorbe's hidden set, and Tianle's morning hours are worth more on decisions than on templates.
 **Decide by 12:30** (the freeze is at 13:30–14:00). **Unblocks:** eval freeze.
@@ -399,7 +399,7 @@ Where all three agree (no decision needed beyond ticking): PEP true match → es
 | Activity/income check | obvious-only cases, no numeric threshold | J's `risk_profile` scenario | D Q-A2 |
 | Validity limits | flat 10 years | generator | D Q-T2 |
 | Spend reporting | to date + projected serving through 10/25 | write-up §7 | G Q5 |
-| Stage 7 stance | drafting assistant: a human signs every reject and escalate; auto-approve only after the ramp gates | `documentation/04_writeup/stages_7_9_draft.md` | G Q2 |
+| Stage 7 stance | drafting assistant: a human signs every reject and escalate; auto-approve only after the ramp gates | `documentation/04_results/stages_7_9_draft.md` | G Q2 |
 | Stage 8 controller | acts on route-around and rollback; proposes model changes | same | G Q3 |
 | Eval-look budget | each Table 1 / 2 row hits eval once, logged in `outputs/eval/RUNLOG.jsonl` | contamination §7 | E |
 | Corpus | run `bash step3_domain_adapter/corpus/fetch_corpus.sh` on the laptop (the cloud proxy blocked every publisher) | `step3_domain_adapter/corpus/` | A |

@@ -42,8 +42,8 @@ Tests: `python -m pytest -q tests/m_adapter_test.py` (the CPU smoke part is skip
 - Committed logs: `step5_training/results/logs/merge_adapter_4b.log` (merge proof: base vs merged generations differ). `step5_training/results/logs/adapter_4b_measure.log` is meant to hold the measurement table but contains only a shell error line (see Details).
 
 ## Reports and evidence
-- [writeup_evidence_log.md](../documentation/04_writeup/writeup_evidence_log.md) §5b: 4B result. Held-out perplexity 7.39 → 5.52 (−25%), down on all 10 documents; probe 61% → 65% on 23 answerable items (1 item, within noise). It learned the domain's language, not measurably its knowledge.
-- [benchmark_report_submission.md](../documentation/04_writeup/benchmark_report_submission.md) Table 2: the adapter is reported together with twins distillation as one stage row.
+- [findings_log.md](../documentation/04_results/findings_log.md) §5b: 4B result. Held-out perplexity 7.39 → 5.52 (−25%), down on all 10 documents; probe 61% → 65% on 23 answerable items (1 item, within noise). It learned the domain's language, not measurably its knowledge.
+- [benchmark_report_submission.md](../documentation/04_results/benchmark_report_submission.md) Table 2: the adapter is reported together with twins distillation as one stage row.
 - [TONIGHT_4B.md](../documentation/06_agent_instructions/TONIGHT_4B.md): the 4B adapter check; the result is written into the file.
 - [FINAL_RUN_INFRA.md](../documentation/06_agent_instructions/FINAL_RUN_INFRA.md): the merge into the 4B base.
 - [lunch-M.md](../documentation/05_progress_reports/lunch-M.md): how the adapter code, probe and verdict rule were built; CPU smoke.

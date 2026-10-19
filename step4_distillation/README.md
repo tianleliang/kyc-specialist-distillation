@@ -51,7 +51,7 @@ New teacher answers cost money: `teacher_requests.py` + `python -m shared.fronti
 - Teacher agreement: `data/sft/arbitration_agreement.json`.
 
 ## Reports and evidence
-- [Evidence log §4 (teachers) and §5b (4B distillation results, winner pick)](../documentation/04_writeup/writeup_evidence_log.md)
+- [Evidence log §4 (teachers) and §5b (4B distillation results, winner pick)](../documentation/04_results/findings_log.md)
 - [Session K report (how the pipeline was built)](../documentation/05_progress_reports/overnight-K.md)
 - [FINAL_TONIGHT.md](../documentation/06_agent_instructions/FINAL_TONIGHT.md), [SUNDAY_BRUN2.md](../documentation/06_agent_instructions/SUNDAY_BRUN2.md), [SUNDAY_READER_V3.md](../documentation/06_agent_instructions/SUNDAY_READER_V3.md) (blank-block option)
 - Dev scores of each recipe: [`results/runs/distill-4b-*__dev/`](../results/runs/), [`step5_training/results/dev_evals/`](../step5_training/results/dev_evals/)

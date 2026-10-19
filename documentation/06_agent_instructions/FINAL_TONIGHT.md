@@ -1,6 +1,6 @@
 # Final runs tonight: Sat 10/17 ~22:15 ET (Sessions R, V). Local Claude Code desktop
 
-Read `CLAUDE.md`, `PIPELINE.md`, `documentation/04_writeup/writeup_evidence_log.md` §5b, then this file. Decisions are Tianle's and fixed. Build exactly this; don't redesign.
+Read `CLAUDE.md`, `PIPELINE.md`, `documentation/04_results/findings_log.md` §5b, then this file. Decisions are Tianle's and fixed. Build exactly this; don't redesign.
 **Winner recipe: `distill_arbitrate_plus_twins` (Counterfactual Twin Distillation).**
 
 **Rules for all sessions**

@@ -61,7 +61,7 @@ Tests: `python -m pytest -q tests/a_*_test.py tests/j_*_test.py tests/m_ood_test
 - [v1_data_samples.md](../documentation/05_progress_reports/v1_data_samples.md): one example case per data pile.
 - [data_design.md](../documentation/03_design/data_design.md), [contamination_protocol.md](../documentation/03_design/contamination_protocol.md): design and contamination rules.
 - [OVERNIGHT2.md](../documentation/06_agent_instructions/OVERNIGHT2.md) (Session J), [LUNCH.md](../documentation/06_agent_instructions/LUNCH.md) (Sessions L, M): the briefs that built it.
-- [writeup_evidence_log.md](../documentation/04_writeup/writeup_evidence_log.md) §1–2: data, labels, contamination evidence.
+- [findings_log.md](../documentation/04_results/findings_log.md) §1–2: data, labels, contamination evidence.
 
 ## Details
 **Building blocks (`lib/`, decision-free)**

@@ -15,8 +15,26 @@ One case packet in (applicant profile, OCR'd ID document with MRZ, proof of addr
 | Qwen3.5-4B untrained (best prompt) | 56.0% | | 52.0% | | |
 
 - On the frozen eval v1 (500 cases incl. 200 out-of-distribution), the specialist scores 94.6% (Argon 95.8, Opus 98.4, Astra 99.2); out-of-distribution free prose is where it still trails.
-- Full tables (every metric of the brief, case counts, stage deltas): [`documentation/04_writeup/benchmark_report_submission.md`](documentation/04_writeup/benchmark_report_submission.md). Generated report with confidence intervals: [`documentation/04_writeup/benchmark_report.md`](documentation/04_writeup/benchmark_report.md).
+- Full tables (every metric of the brief, case counts, stage deltas): [`documentation/04_results/benchmark_report_submission.md`](documentation/04_results/benchmark_report_submission.md). Generated report with confidence intervals: [`documentation/04_results/benchmark_report.md`](documentation/04_results/benchmark_report.md).
 - Our latency is measured one request at a time on a warm endpoint (100 dev cases on L4, 30 on H100); frontier latency is measured through their public APIs during the benchmark. Different hardware; same caller-side measurement.
+
+## Find it fast
+| You want | Where |
+|---|---|
+| **All results + build timeline, one page** | [`RESULTS.md`](RESULTS.md) |
+| Pipeline map (each step folder, what it does, how to run) | [`GUIDE.md`](GUIDE.md) |
+| **Output JSON schema** | [`step0_rules/schema/v1.json`](step0_rules/schema/v1.json) (serving copy: [`v1_serving.json`](step0_rules/schema/v1_serving.json)) |
+| Decision policy (what every situation must produce) | [`step0_rules/policy_v1.md`](step0_rules/policy_v1.md) |
+| **Rebuild every table from saved outputs** | `bash make_tables.sh` |
+| **Regenerate every evaluation set (and verify hashes)** | `bash regenerate_eval.sh` |
+| Benchmark tables (Table 1, Table 2, appendices) | [`documentation/04_results/benchmark_report_submission.md`](documentation/04_results/benchmark_report_submission.md) |
+| Data generation | [`step1_data_generation/`](step1_data_generation/README.md) |
+| Training (adapter, distillation data, SFT / merge) | [`step3_domain_adapter/`](step3_domain_adapter/README.md) · [`step4_distillation/`](step4_distillation/README.md) · [`step5_training/`](step5_training/README.md) |
+| Evaluation harness (metrics, report, contamination guard, LLM judge) | [`step6_evaluation/`](step6_evaluation/README.md) |
+| Serving (vLLM + proxy + code pre-checker) | [`step7_serving/`](step7_serving/README.md) |
+| Saved per-case predictions behind every number | [`results/runs/`](results/README.md) |
+| Decisions and why | [`documentation/01_decisions/decision_log.md`](documentation/01_decisions/decision_log.md) |
+| Case requirements → where each is met | [`documentation/00_requirements/REQUIREMENTS.md`](documentation/00_requirements/REQUIREMENTS.md) |
 
 ## What's in the pipeline
 
@@ -34,9 +52,8 @@ Python 3.11+, from a clean clone, no API keys and no GPU needed:
 
 ```bash
 pip install -r requirements.txt
-bash make_tables.sh        # rebuilds every benchmark table from the saved outputs in results/runs/
+bash make_tables.sh        # rebuilds every benchmark table from the saved outputs in results/runs/ (both reports)
 bash regenerate_eval.sh    # rebuilds every frozen eval split from its seed/config and verifies the sha256 manifests
-python -m step6_evaluation.make_submission_report   # the headline tables (benchmark_report_submission.md)
 ```
 
 Training and serving commands (Modal GPU, cost money) are in each step folder's README; the agent briefs that ran them are in [`documentation/06_agent_instructions/`](documentation/06_agent_instructions/).

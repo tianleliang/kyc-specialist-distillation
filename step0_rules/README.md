@@ -56,7 +56,7 @@ Tests: `python -m pytest -q tests/i_prompts_test.py tests/l_schema_v1_test.py`
 - [overnight-D.md](../documentation/05_progress_reports/overnight-D.md) and [overnight-H.md](../documentation/05_progress_reports/overnight-H.md): schema options, draft policy, decision sheet that led to v1.
 - [LUNCH.md](../documentation/06_agent_instructions/LUNCH.md): decisions D1–D16 the schema and policy implement.
 - [decision_log.md](../documentation/01_decisions/decision_log.md): why each schema and policy choice was made.
-- [writeup_evidence_log.md](../documentation/04_writeup/writeup_evidence_log.md) §1: data, labels and the rulebook.
+- [findings_log.md](../documentation/04_results/findings_log.md) §1: data, labels and the rulebook.
 - Sub-READMEs: [schema/README.md](schema/README.md), [prompts/README.md](prompts/README.md).
 
 ## Details

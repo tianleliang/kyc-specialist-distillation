@@ -21,8 +21,8 @@
 ## How to use
 From the repo root. All free unless marked.
 ```bash
-bash make_tables.sh          # -> documentation/04_writeup/benchmark_report.md + results/report_metrics.json (~2 min, byte-identical)
-python -m step6_evaluation.make_submission_report   # -> documentation/04_writeup/benchmark_report_submission.md
+bash make_tables.sh          # -> documentation/04_results/benchmark_report.md + results/report_metrics.json (~2 min, byte-identical)
+python -m step6_evaluation.make_submission_report   # -> documentation/04_results/benchmark_report_submission.md
 bash regenerate_eval.sh      # rebuild + verify every frozen eval split; never writes under data/
 
 python -m step6_evaluation.split_guard verify --manifest data/eval/MANIFEST.json
@@ -39,14 +39,14 @@ python -m step6_evaluation.judge_claims results/runs/<run_id> --max-usd 50      
 `make_submission_report.py` reads `results/report_metrics.json`, so run `make_tables.sh` first.
 
 ## Outputs / where results live
-- `documentation/04_writeup/benchmark_report.md` (full report) and `documentation/04_writeup/benchmark_report_submission.md` (headline tables).
+- `documentation/04_results/benchmark_report.md` (full report) and `documentation/04_results/benchmark_report_submission.md` (headline tables).
 - `results/report_metrics.json` (per-run metrics, CIs, diagnostics).
 - `results/judge/<set>/` (`verdicts.jsonl`, `calls.jsonl`, `summary.md`).
 - Freeze manifests: `data/eval/MANIFEST.json` (frozen v1: eval_id + 3 OOD = 500), `data/eval_hard/manifest.json` (150), `data/eval_v2/MANIFEST.json` (eval_id v2, 300).
 
 ## Reports and evidence
-- [Headline tables](../documentation/04_writeup/benchmark_report_submission.md), [full generated report](../documentation/04_writeup/benchmark_report.md)
-- [Evidence log §2 (contamination controls), §3, §5c](../documentation/04_writeup/writeup_evidence_log.md)
+- [Headline tables](../documentation/04_results/benchmark_report_submission.md), [full generated report](../documentation/04_results/benchmark_report.md)
+- [Evidence log §2 (contamination controls), §3, §5c](../documentation/04_results/findings_log.md)
 - [Contamination protocol](../documentation/03_design/contamination_protocol.md)
 - [Judge README (prompt versions, spot checks, cost)](../results/judge/README.md)
 - Session reports: [overnight-C.md](../documentation/05_progress_reports/overnight-C.md) (metrics), [overnight-C-harness-check.md](../documentation/05_progress_reports/overnight-C-harness-check.md), [lunch-L-harness-v1.md](../documentation/05_progress_reports/lunch-L-harness-v1.md), [overnight-F.md](../documentation/05_progress_reports/overnight-F.md) (split guard)

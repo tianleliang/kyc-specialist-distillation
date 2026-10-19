@@ -1,6 +1,6 @@
 # Decision log
 
-Every design decision, in order, with its reason. Decisions are Tianle's; where Claude proposed the option, that's noted. Times are US Eastern, Oct 16–18 2026. The original 20-question sheet behind the Saturday-morning decisions is [`decision_sheet.md`](decision_sheet.md); numbers come from [`../04_writeup/writeup_evidence_log.md`](../04_writeup/writeup_evidence_log.md).
+Every design decision, in order, with its reason. Decisions are Tianle's; where Claude proposed the option, that's noted. Times are US Eastern, Oct 16–18 2026. The original 20-question sheet behind the Saturday-morning decisions is [`decision_sheet.md`](decision_sheet.md); numbers come from [`../04_results/findings_log.md`](../04_results/findings_log.md).
 
 ## Setup (Sat morning)
 | # | Decision | Why |

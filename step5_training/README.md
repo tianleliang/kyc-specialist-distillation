@@ -45,8 +45,8 @@ All launch scripts read `.env` (see `.env.example`) and need a Modal login and t
 - Committed: `step5_training/results/dev_evals/` (dev predictions of the 4B recipe batch and gold sweeps), `step5_training/results/logs/` (training and merge logs), and every scored run in `results/runs/`.
 
 ## Reports and evidence
-- [Evidence log §5 (dev size sweep), §5b (4B recipes, winner, stage 4 choice), §5c (frozen results, diagnosis)](../documentation/04_writeup/writeup_evidence_log.md)
-- [Headline tables](../documentation/04_writeup/benchmark_report_submission.md) (Table 2 = gain per stage)
+- [Evidence log §5 (dev size sweep), §5b (4B recipes, winner, stage 4 choice), §5c (frozen results, diagnosis)](../documentation/04_results/findings_log.md)
+- [Headline tables](../documentation/04_results/benchmark_report_submission.md) (Table 2 = gain per stage)
 - [Session F report (how the jobs were built)](../documentation/05_progress_reports/overnight-F.md)
 - Instructions: [TONIGHT_4B.md](../documentation/06_agent_instructions/TONIGHT_4B.md), [FINAL_RUN_INFRA.md](../documentation/06_agent_instructions/FINAL_RUN_INFRA.md), [FINAL_TONIGHT.md](../documentation/06_agent_instructions/FINAL_TONIGHT.md), [SUNDAY_BRUN2.md](../documentation/06_agent_instructions/SUNDAY_BRUN2.md)
 - Logs: [`results/logs/`](results/logs/), adapter merge: [`results/logs/merge_adapter_4b.log`](results/logs/merge_adapter_4b.log)

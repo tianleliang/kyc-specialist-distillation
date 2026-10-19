@@ -37,10 +37,10 @@ Start here after the [README](README.md). Each step folder has its own README (w
 | **B2 (shipped)** | `final-Brun2-s4` | same pipeline, pre-checker reader v3, 25% blank-block training |
 | halfway | `*-s3` | the same model before stage-4 post-training |
 
-**The diagnosis, in one line:** B scored 98% on dev but 93% on eval_id because the pre-checker's reader only knew the training layouts; the frozen sets caught it, reader v3 + a format fuzzer fixed it, and eval_id v2 re-tests cleanly. Full story: [`documentation/04_writeup/writeup_evidence_log.md`](documentation/04_writeup/writeup_evidence_log.md) §5b–5c.
+**The diagnosis, in one line:** B scored 98% on dev but 93% on eval_id because the pre-checker's reader only knew the training layouts; the frozen sets caught it, reader v3 + a format fuzzer fixed it, and eval_id v2 re-tests cleanly. Full story: [`documentation/04_results/findings_log.md`](documentation/04_results/findings_log.md) §5b–5c.
 
 ## Where everything is documented
-- **Numbers:** [`documentation/04_writeup/`](documentation/04_writeup/) (headline tables, full report, evidence log).
+- **Numbers:** [`documentation/04_results/`](documentation/04_results/) (headline tables, full report, evidence log).
 - **Decisions and why:** [`documentation/01_decisions/decision_log.md`](documentation/01_decisions/decision_log.md).
 - **Every agent session:** what it was asked ([`06_agent_instructions/`](documentation/06_agent_instructions/README.md)) and what it reported ([`05_progress_reports/`](documentation/05_progress_reports/README.md)).
 - **The case requirements, mapped to this repo:** [`documentation/00_requirements/REQUIREMENTS.md`](documentation/00_requirements/REQUIREMENTS.md).

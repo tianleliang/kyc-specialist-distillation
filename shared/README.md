@@ -57,7 +57,7 @@ Tests (mocks only, no keys): `python -m pytest -q tests/f_llm_clients_test.py te
 - [overnight-K.md](../documentation/05_progress_reports/overnight-K.md): distillation steps that build batch requests for this client.
 - [lunch-M.md](../documentation/05_progress_reports/lunch-M.md): the LLM OOD writer that calls it.
 - [OVERNIGHT.md](../documentation/06_agent_instructions/OVERNIGHT.md) (Session F): the brief that built it.
-- [writeup_evidence_log.md](../documentation/04_writeup/writeup_evidence_log.md) §8: cost and logistics.
+- [findings_log.md](../documentation/04_results/findings_log.md) §8: cost and logistics.
 
 ## Details
 - **Structured output per provider:** OpenAI `response_format`, Anthropic `output_config.format`, Gemini `response_json_schema`. Responses are parsed and validated locally.

@@ -36,7 +36,7 @@ Rebuilding `eval_ood_llm` from scratch calls two LLMs (API, costs money); `regen
 - Model predictions on these sets live in `results/runs/`, not here.
 
 ## Reports and evidence
-- [Evidence log §1 (data, labels, rulebook) and §2 (contamination controls)](../documentation/04_writeup/writeup_evidence_log.md)
+- [Evidence log §1 (data, labels, rulebook) and §2 (contamination controls)](../documentation/04_results/findings_log.md)
 - [Brief compliance audit](../documentation/05_progress_reports/brief_compliance.md), [one example per pile](../documentation/05_progress_reports/v1_data_samples.md)
 - [Data design](../documentation/03_design/data_design.md), [contamination protocol](../documentation/03_design/contamination_protocol.md)
 - Session reports: [lunch-L.md](../documentation/05_progress_reports/lunch-L.md) (v1 datasets), [lunch-M.md](../documentation/05_progress_reports/lunch-M.md) (OOD sets), [overnight-J.md](../documentation/05_progress_reports/overnight-J.md) (generator v1)

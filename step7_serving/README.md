@@ -51,8 +51,8 @@ Callers send a bare packet to `<proxy URL>/v1/chat/completions` with `Authorizat
 ## Reports and evidence
 - [Reader v3 gate: 0 wrong values on train, dev, reader_dev and fuzz seeds](results/p3_reader_v3_gate.md)
 - [Pre-checker v3 by style](results/precheck_v3_eval_reader_dev_by_style.txt), [v2 eval](results/precheck_v2_eval_train_dev.md)
-- [Evidence log §5c (diagnosis, reader v3) and §6 (the pre-check component)](../documentation/04_writeup/writeup_evidence_log.md)
-- [Headline tables (latency and cost in Table 1b)](../documentation/04_writeup/benchmark_report_submission.md)
+- [Evidence log §5c (diagnosis, reader v3) and §6 (the pre-check component)](../documentation/04_results/findings_log.md)
+- [Headline tables (latency and cost in Table 1b)](../documentation/04_results/benchmark_report_submission.md)
 - Session reports: [overnight-B.md](../documentation/05_progress_reports/overnight-B.md) (serving smoke), [overnight-I.md](../documentation/05_progress_reports/overnight-I.md) (proxy, endpoint runner)
 - [SUNDAY_READER_V3.md](../documentation/06_agent_instructions/SUNDAY_READER_V3.md), [SUNDAY_DELIVERABLES.md](../documentation/06_agent_instructions/SUNDAY_DELIVERABLES.md)
 

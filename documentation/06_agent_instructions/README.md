@@ -3,9 +3,9 @@
 These are the task files Tianle gave to the build sessions, one file per run of sessions, listed in time order (Friday night 10/16 to Sunday 10/18, all times ET).
 
 Notes:
-- Only the first three files have matching reports in [../05_progress_reports](../05_progress_reports/README.md). The later files ask for a short report but not a report file. Their results are in [../04_writeup/writeup_evidence_log.md](../04_writeup/writeup_evidence_log.md) (sections 5b and 5c), and some are written into the instruction file itself.
+- Only the first three files have matching reports in [../05_progress_reports](../05_progress_reports/README.md). The later files ask for a short report but not a report file. Their results are in [../04_results/findings_log.md](../04_results/findings_log.md) (sections 5b and 5c), and some are written into the instruction file itself.
 - Session letters are reused across files. For example, "Session F" is the API and training plumbing in OVERNIGHT.md, the frontier benchmark in BIGRUNS.md, and the format fuzzer in SUNDAY_READER_V3.md. Read a letter together with its file.
-- Paths in these files refer to the working repo at the time (`D:\zorbe-kyc`). `CLAUDE.md` and `PIPELINE.md` are at this repo's root; `documentation/00_case_brief_and_plan/` is not in this repo (its public part is now [`00_requirements/`](../00_requirements/)).
+- Paths in these files refer to the private working repo at the time. Files they mention that are not here (`CLAUDE.md`, `PIPELINE.md`, `documentation/00_case_brief_and_plan/`, `stages_7_9_draft.md`) were internal and are replaced by [GUIDE.md](../../GUIDE.md) and [00_requirements](../00_requirements/REQUIREMENTS.md).
 
 | File | What the session was asked to do | When |
 |---|---|---|

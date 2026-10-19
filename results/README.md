@@ -29,13 +29,13 @@ python -m step6_evaluation.judge_claims results/runs/<run_id> --gold data/eval_i
 The runs were packaged once from local `outputs/` with `python -m step6_evaluation.collect_runs --src <outputs dir>` (copies only, nothing re-scored).
 
 ## Outputs / where results live
-- Tables built from this folder: `documentation/04_writeup/benchmark_report.md` and `documentation/04_writeup/benchmark_report_submission.md`.
+- Tables built from this folder: `documentation/04_results/benchmark_report.md` and `documentation/04_results/benchmark_report_submission.md`.
 - Frozen eval v1 runs (`__eval_v1`) concatenate the 4 split predictions in this order: eval_id, eval_ood_template, eval_ood_hand, eval_ood_llm.
 
 ## Reports and evidence
-- [Headline tables](../documentation/04_writeup/benchmark_report_submission.md), [full generated report](../documentation/04_writeup/benchmark_report.md)
+- [Headline tables](../documentation/04_results/benchmark_report_submission.md), [full generated report](../documentation/04_results/benchmark_report.md)
 - [Judge README: prompt versions, spot checks, cost](judge/README.md)
-- [Evidence log §3 (frontier panel), §5c (frozen results), §8 (cost)](../documentation/04_writeup/writeup_evidence_log.md)
+- [Evidence log §3 (frontier panel), §5c (frozen results), §8 (cost)](../documentation/04_results/findings_log.md)
 - [SUNDAY_DELIVERABLES.md](../documentation/06_agent_instructions/SUNDAY_DELIVERABLES.md) (packaging and regeneration), [BIGRUNS.md](../documentation/06_agent_instructions/BIGRUNS.md) (frontier and open benchmark runs)
 
 ## Details

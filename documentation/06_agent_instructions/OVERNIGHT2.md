@@ -17,7 +17,7 @@ Tests must be named `tests/<letter>_*_test.py`; files not ending in `_test.py` a
 ---
 
 ## Session H: the decision sheet (`documentation/01_decisions/`, Fable, writing only)
-Read every wave-1 report plus `documentation/02_research/decision_policy_draft.md`, `documentation/02_research/schema_options.md`, `documentation/03_design/*.md`, `step1_data_generation/project.py` (A's provisional policy) and `documentation/04_writeup/writeup_skeleton.md`.
+Read every wave-1 report plus `documentation/02_research/decision_policy_draft.md`, `documentation/02_research/schema_options.md`, `documentation/03_design/*.md`, `step1_data_generation/project.py` (A's provisional policy) and `documentation/04_results/writeup_skeleton.md`.
 1. `decision_sheet.md`: **deduplicate the ~50 questions** in the wave-1 reports into **at most 20 decisions**, in the order they must be made: schema → policy → data → models → techniques → serving/repo.
    - Each decision is a small table of options, a recommendation with a one-line reason, which other decisions it unblocks, and a **"code change if chosen"** column naming the exact file/config to flip.
    - Mark which ones must be made at 07:45 and which can wait (with their deadline, e.g. the invented technique by 15:00).

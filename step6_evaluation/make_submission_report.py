@@ -1,6 +1,6 @@
 """Submission benchmark report (plain markdown tables, paste-ready) from the saved results.
 
-    python -m step6_evaluation.make_submission_report      # -> documentation/04_writeup/benchmark_report_submission.md
+    python -m step6_evaluation.make_submission_report      # -> documentation/04_results/benchmark_report_submission.md
 
 Reads results/report_metrics.json (written by make_tables.sh), results/latency/*.json (measured endpoint
 latency) and results/runs/*/predictions.jsonl (paired bootstrap for Table 2). No API calls; deterministic.
@@ -13,7 +13,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 M = json.loads((ROOT / "results/report_metrics.json").read_text(encoding="utf-8"))
-OUT = ROOT / "documentation/04_writeup/benchmark_report_submission.md"
+OUT = ROOT / "documentation/04_results/benchmark_report_submission.md"
 LAT = {p.stem: json.loads(p.read_text(encoding="utf-8")) for p in (ROOT / "results/latency").glob("*.json")}
 
 FINAL = "final-Brun2-s4"

@@ -17,7 +17,7 @@
    | D | `documentation/02_research/` |
    | E | `documentation/03_design/` |
    | F | `shared/frontier_api/`, `step5_training/`, `step6_evaluation/split_guard.py` |
-   | G | `documentation/04_writeup/` |
+   | G | `documentation/04_results/` |
 
    Tests go under `tests/<letter>_*.py`. Don't edit `CLAUDE.md`, `documentation/00_case_brief_and_plan/` or this file.
    **If anything in `documentation/00_case_brief_and_plan/` conflicts with this file, this file wins.** The "Tonight" section in `02 Plan` is stale.
@@ -104,7 +104,7 @@ Read Session A's files; never edit them.
 3. `step5_training/`: Unsloth/TRL scripts for **SFT (16-bit LoRA)** and **DPO** that run as Modal functions, plus `step5_training/merge.py` (merge the LoRA into the base and push to HF) and config files with placeholder model IDs and data paths. Write them, don't run them. Follow the tooling traps in `05`: no QLoRA on Qwen3.5, Transformers v5, serve merged weights.
 4. `step6_evaluation/split_guard.py`: hash and freeze eval files; detect exact and near-duplicate overlap (n-gram/MinHash) between train and eval JSONL; exit non-zero on contamination. With tests.
 
-## Session G: write-up scaffolding (`documentation/04_writeup/`, writing only)
+## Session G: write-up scaffolding (`documentation/04_results/`, writing only)
 1. `writeup_skeleton.md`: the 4-page structure with word budgets per section, following the brief's required contents: choices, what failed, the invented technique, contamination controls, stages 7–9, the models-used table, spend, and coding assistants. Use `{{placeholders}}` for every number.
 2. `stages_7_9_draft.md`: a DRAFT, for Tianle to rewrite in his own judgment.
    - **Shadow and ramp** for a KYC desk: mirroring, scoring against the frontier as outcomes land, ramp steps and gates, mid-request frontier fallback.

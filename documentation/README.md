@@ -5,9 +5,9 @@ Everything written around the code: what was required, what was decided and why,
 ## Start here
 | File | Why |
 |---|---|
-| **[04_writeup/benchmark_report_submission.md](04_writeup/benchmark_report_submission.md)** | **The headline tables**: final model B2 vs open and frontier models (Table 1), gain per pipeline stage (Table 2), A / B / B2 on every test set |
-| [04_writeup/benchmark_report.md](04_writeup/benchmark_report.md) | Full generated report: every model × every eval set, CIs, confusion matrices. Rebuilt by `bash make_tables.sh` |
-| [04_writeup/writeup_evidence_log.md](04_writeup/writeup_evidence_log.md) | Every finding with its numbers and the reasoning behind it (data, contamination, teachers, students, diagnosis, pre-checker, cost) |
+| **[04_results/benchmark_report_submission.md](04_results/benchmark_report_submission.md)** | **The headline tables**: final model B2 vs open and frontier models (Table 1), gain per pipeline stage (Table 2), A / B / B2 on every test set |
+| [04_results/benchmark_report.md](04_results/benchmark_report.md) | Full generated report: every model × every eval set, CIs, confusion matrices. Rebuilt by `bash make_tables.sh` |
+| [04_results/findings_log.md](04_results/findings_log.md) | Every finding with its numbers and the reasoning behind it (data, contamination, teachers, students, diagnosis, pre-checker, cost) |
 | [01_decisions/decision_log.md](01_decisions/decision_log.md) | Every design decision in order, with its reason |
 | [00_requirements/](00_requirements/) | The case requirements (paraphrased) and where each one is met |
 
@@ -18,7 +18,7 @@ Everything written around the code: what was required, what was decided and why,
 | [01_decisions/](01_decisions/) | The decision log, plus the Saturday-morning decision material (morning summary, 20-decision sheet, policy candidate) | **[decision_log.md](01_decisions/decision_log.md)**, [decision_sheet.md](01_decisions/decision_sheet.md), [morning_brief.md](01_decisions/morning_brief.md), [policy_v1_candidate.md](01_decisions/policy_v1_candidate.md) |
 | [02_research/](02_research/) | Background research drafts (options, not decisions): KYC primer, draft policy, schema options, distillation options | [kyc_primer.md](02_research/kyc_primer.md), [distillation_options.md](02_research/distillation_options.md), [schema_options.md](02_research/schema_options.md) (+ `schema_options/` example schemas), [decision_policy_draft.md](02_research/decision_policy_draft.md) |
 | [03_design/](03_design/) | Design drafts written before the build: decision memos, data design, contamination protocol, experiment plan | [contamination_protocol.md](03_design/contamination_protocol.md), [data_design.md](03_design/data_design.md), [experiment_plan.md](03_design/experiment_plan.md), [decision_memos.md](03_design/decision_memos.md) |
-| [04_writeup/](04_writeup/) | The benchmark reports, the evidence log, and a draft of the deployment stages | **[benchmark_report_submission.md](04_writeup/benchmark_report_submission.md)**, **[benchmark_report.md](04_writeup/benchmark_report.md)**, **[writeup_evidence_log.md](04_writeup/writeup_evidence_log.md)**, [stages_7_9_draft.md](04_writeup/stages_7_9_draft.md) |
+| [04_results/](04_results/) | The benchmark reports and the findings log (every number with its source) | **[benchmark_report_submission.md](04_results/benchmark_report_submission.md)**, **[benchmark_report.md](04_results/benchmark_report.md)**, **[findings_log.md](04_results/findings_log.md)** |
 | [05_progress_reports/](05_progress_reports/) | One report per build session (overnight waves 1–2, lunch), plus data samples and the brief-coverage audit | [index](05_progress_reports/README.md) |
 | [06_agent_instructions/](06_agent_instructions/) | The instruction files each agent session ran from, Friday night to Sunday | [index](06_agent_instructions/README.md) |
 

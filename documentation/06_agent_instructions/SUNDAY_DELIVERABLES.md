@@ -1,6 +1,6 @@
 # Sunday 10/18: deliverables (Session D, local, free) + claims judge (Session J, local, API ~$20–40)
 
-Read `CLAUDE.md`, `PIPELINE.md`, `documentation/04_writeup/writeup_evidence_log.md` (§5b + §6/§7), the brief's deliverables (`documentation/00_case_brief_and_plan/`), then this file.
+Read `CLAUDE.md`, `PIPELINE.md`, `documentation/04_results/findings_log.md` (§5b + §6/§7), the brief's deliverables (`documentation/00_case_brief_and_plan/`), then this file.
 
 ## Situation
 Modeling is done except one pending row: **B-v3** (pre-checker reader v3 + retrain, results ~13:30 ET). Everything else is final and saved under `D:\zorbe-kyc\outputs\` (git-ignored, so **not in the repo yet**). Submission ~21:00 ET. Graders check that the repo contains: the schema, data generation, training, eval harness, serving code, **one command that rebuilds the evaluation tables from saved outputs**, and **one command that regenerates the eval set**, and that both run from a clean clone. Table 1 must show every metric of the brief for every model on the same held-out set; Table 2 the gain per pipeline stage. Missing any of this loses points we already earned.
@@ -24,7 +24,7 @@ Copy every run that feeds a table into a committed folder `results/runs/<run_id>
 Write each `run.json` per `step6_evaluation/report.py` (`model`, `params`, `price_key`, `gold`, `table1_order`, `pipeline`/`stage`/`stage_order`/`compare_to`). Check size (<150 MB total) and that no file contains a key.
 
 ### D2. One command each
-- `bash make_tables.sh` → runs `python -m step6_evaluation.report results/runs …` and writes `documentation/04_writeup/benchmark_report.md`. Byte-identical on rerun.
+- `bash make_tables.sh` → runs `python -m step6_evaluation.report results/runs …` and writes `documentation/04_results/benchmark_report.md`. Byte-identical on rerun.
 - `bash regenerate_eval.sh` → rebuilds every frozen eval split with its recorded seed/config (`build.py --allow-eval` into a scratch dir, never over `data/`) and verifies against the manifests (`split_guard verify`). The LLM OOD set: rebuild from its cache if deterministic, otherwise document that it's regenerated from the cached LLM responses; the hand set is a static file (say so).
 - Mention both in `README.md` (top, "Reproduce").
 
