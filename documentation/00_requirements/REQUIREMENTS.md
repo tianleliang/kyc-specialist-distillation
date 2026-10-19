@@ -7,7 +7,7 @@ The case brief itself is confidential and not in this repo; this is our own chec
 |---|---|
 | OpenAI-compatible chat-completions endpoint, bearer token, model name, hardware | [`README.md`](../../README.md#endpoint-weights) · [`step7_serving/`](../../step7_serving/README.md) (`deploy_endpoint.sh`, `modal_vllm.py`, `proxy.py`) |
 | p50 / p95 latency per case and cost per 1,000 cases, **measured** | `results/latency/final-Brun2-s4.json` (L4, 100 cases) and `final-Brun2-s4-h100.json` (H100, 30 cases); `step7_serving/measure_latency.py`; Table 1b |
-| Weights and adapters downloadable | Merged weights (public): https://huggingface.co/tianle-terrence-liang/zorbe-kyc-specialist-4b (`step7_serving/upload_hf.py`); LoRA adapters (domain adapter, stage 3, stage 4) on request |
+| Weights and adapters downloadable | Merged weights (public): https://huggingface.co/tianle-terrence-liang/zorbe-kyc-specialist-4b (`step7_serving/upload_hf.py`); LoRA adapters in `adapters/` of the same repo (domain adapter, stage 3, stage 4; `step7_serving/upload_hf.py --adapters`) |
 | Benchmark table: our model, each open baseline, each frontier model, same held-out set, all metrics, case counts | [`benchmark_report_submission.md`](../04_results/benchmark_report_submission.md) Table 1 (eval_id v2) + Appendix C (size curve, distillation ablation) · full report with CIs: [`benchmark_report.md`](../04_results/benchmark_report.md) |
 | Second table: delta from each pipeline stage | `benchmark_report_submission.md` Table 2 (paired 95% CIs) |
 | Repo: output schema | [`step0_rules/schema/v1.json`](../../step0_rules/schema/v1.json) |

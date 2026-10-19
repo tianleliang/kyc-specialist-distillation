@@ -67,7 +67,7 @@ def upload_adapters(repo: str, items: list, dry_run: bool) -> dict:
         files = sorted(str(f.relative_to(p)) for f in p.rglob("*") if f.is_file())
         out[dst] = {"src": str(p), "files": len(files), "bytes": sum((p / f).stat().st_size for f in files)}
         if api is not None:
-            api.upload_folder(folder_path=str(p), repo_id=repo, repo_type="model", path_in_repo=dst,
+            api.upload_folder(folder_path=str(p), repo_id=repo, repo_type="model", path_in_repo=dst, ignore_patterns=["README.md"],
                               commit_message=f"LoRA adapter: {dst}")
     return out
 

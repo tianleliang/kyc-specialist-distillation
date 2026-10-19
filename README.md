@@ -43,7 +43,7 @@ Qwen3.5-4B (Apache 2.0: commercial use and derivative weights allowed) → **dom
 ## Endpoint, weights
 
 - **Endpoint:** OpenAI-compatible `POST https://tianleliang--zorbe-kyc-final-brun2-s4-proxy.us-east.modal.run/v1/chat/completions`, model `zorbe-kyc`, bearer token (shared privately), 1× NVIDIA L4, always warm. Send the bare case packet as the user message; the proxy adds the prompt, pre-checks and JSON schema.
-- **Weights (merged, public):** https://huggingface.co/tianle-terrence-liang/zorbe-kyc-specialist-4b · LoRA adapters (domain adapter, stage 3, stage 4) available on request.
+- **Weights (merged, public):** https://huggingface.co/tianle-terrence-liang/zorbe-kyc-specialist-4b · LoRA adapters in the same repo under `adapters/`: `domain_adapter` (on Qwen3.5-4B), `stage3_distillation` (on Qwen3.5-4B + merged domain adapter), `stage4_posttrain` (on the merged stage-3 model); merging all three in that order gives the shipped weights.
 - **Output schema:** [`step0_rules/schema/v1.json`](step0_rules/schema/v1.json) (serving variant `v1_serving.json`); **policy:** [`step0_rules/policy_v1.md`](step0_rules/policy_v1.md).
 
 ## Reproduce
