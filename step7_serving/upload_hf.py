@@ -3,6 +3,7 @@ nothing is downloaded to the laptop). Public by default, so the link works witho
 
     python -m modal run -m step7_serving.upload_hf --run final-Brun2-s4 --repo tianle-terrence-liang/zorbe-kyc-specialist-4b
     python -m modal run -m step7_serving.upload_hf ... --dry-run      # list what would be uploaded
+    python -m modal run -m step7_serving.upload_hf --repo <repo> --adapters [--dry-run]   # the 3 LoRA adapters
 
 Uploads /vol/ckpt/merged/<run>/ (weights, config, tokenizer, verify.json) plus the model card
 step7_serving/MODEL_CARD.md as README.md. Uses the Modal secret `huggingface` (HF_TOKEN).
@@ -52,8 +53,35 @@ def upload(run: str, repo: str, card: str, private: bool, dry_run: bool) -> dict
     return out
 
 
+@app.function(image=image, volumes=VOLUMES, secrets=SECRETS, timeout=3600,
+              env={"HF_HUB_ENABLE_HF_TRANSFER": "1"})
+def upload_adapters(repo: str, items: list, dry_run: bool) -> dict:
+    """Upload LoRA adapter folders from the volume into subfolders of an existing model repo."""
+    import os
+    from huggingface_hub import HfApi
+    checkpoints.reload()
+    out = {}
+    api = None if dry_run else HfApi(token=os.environ["HF_TOKEN"])
+    for src, dst in items:
+        p = Path(CKPT) / src
+        files = sorted(str(f.relative_to(p)) for f in p.rglob("*") if f.is_file())
+        out[dst] = {"src": str(p), "files": len(files), "bytes": sum((p / f).stat().st_size for f in files)}
+        if api is not None:
+            api.upload_folder(folder_path=str(p), repo_id=repo, repo_type="model", path_in_repo=dst,
+                              commit_message=f"LoRA adapter: {dst}")
+    return out
+
+
+ADAPTERS = [("adapter/adapter-qwen35-4b/adapter", "adapters/domain_adapter"),
+            ("sft/final-Brun2-s3/adapter", "adapters/stage3_distillation"),
+            ("sft/final-Brun2-s4/adapter", "adapters/stage4_posttrain")]
+
+
 @app.local_entrypoint()
-def main(run: str, repo: str, private: bool = False, dry_run: bool = False):
+def main(run: str = "", repo: str = "", private: bool = False, dry_run: bool = False, adapters: bool = False):
+    if adapters:
+        print(upload_adapters.remote(repo, ADAPTERS, dry_run))
+        return
     card_path = Path(__file__).with_name("MODEL_CARD.md")
     card = card_path.read_text(encoding="utf-8") if card_path.exists() else f"# {repo}\n"
     r = upload.remote(run, repo, card, private, dry_run)
