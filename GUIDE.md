@@ -19,7 +19,7 @@ Start here after the [README](README.md). Each step folder has its own README (w
 | – | [`shared/`](shared/README.md) | used by 2, 4, 6 | One client for OpenAI / Anthropic / Gemini with response cache, cost ledger, eval guard | 🟡 | |
 | – | [`data/`](data/README.md) | | All splits; eval sets frozen by sha256 manifest | | 0 overlap with training |
 | – | [`results/`](results/README.md) | | Saved per-case outputs behind every number (`runs/`), judge verdicts, latency, metrics JSON | | |
-| – | [`tests/`](tests/README.md) | | `python -m pytest -q` | 🟢 | 486 pass |
+| – | [`tests/`](tests/README.md) | | `python -m pytest -q` | 🟢 | 0 failures: 510 pass with all requirements files; 476 pass + 11 skipped with `requirements.txt` only |
 
 ## Test sets (all frozen before any teacher call or training; `step6_evaluation/split_guard.py`)
 | Set | Cases | Built by | Role |
